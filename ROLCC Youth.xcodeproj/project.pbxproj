@@ -1,0 +1,511 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		911233891D1B66A100A8B44B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911233881D1B66A100A8B44B /* AppDelegate.swift */; };
+		9112338B1D1B66A100A8B44B /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9112338A1D1B66A100A8B44B /* FirstViewController.swift */; };
+		9112338D1D1B66A100A8B44B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9112338C1D1B66A100A8B44B /* SecondViewController.swift */; };
+		911233901D1B66A100A8B44B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9112338E1D1B66A100A8B44B /* Main.storyboard */; };
+		911233921D1B66A100A8B44B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 911233911D1B66A100A8B44B /* Assets.xcassets */; };
+		911233951D1B66A100A8B44B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 911233931D1B66A100A8B44B /* LaunchScreen.storyboard */; };
+		911233A01D1B66A100A8B44B /* ROLCC_YouthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9112339F1D1B66A100A8B44B /* ROLCC_YouthTests.swift */; };
+		911233AB1D1B66A100A8B44B /* ROLCC_YouthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911233AA1D1B66A100A8B44B /* ROLCC_YouthUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9112339C1D1B66A100A8B44B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9112337D1D1B66A100A8B44B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 911233841D1B66A100A8B44B;
+			remoteInfo = "ROLCC Youth";
+		};
+		911233A71D1B66A100A8B44B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9112337D1D1B66A100A8B44B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 911233841D1B66A100A8B44B;
+			remoteInfo = "ROLCC Youth";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		911233851D1B66A100A8B44B /* ROLCC Youth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ROLCC Youth.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		911233881D1B66A100A8B44B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9112338A1D1B66A100A8B44B /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		9112338C1D1B66A100A8B44B /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		9112338F1D1B66A100A8B44B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		911233911D1B66A100A8B44B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		911233941D1B66A100A8B44B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		911233961D1B66A100A8B44B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9112339B1D1B66A100A8B44B /* ROLCC YouthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ROLCC YouthTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9112339F1D1B66A100A8B44B /* ROLCC_YouthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ROLCC_YouthTests.swift; sourceTree = "<group>"; };
+		911233A11D1B66A100A8B44B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		911233A61D1B66A100A8B44B /* ROLCC YouthUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ROLCC YouthUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		911233AA1D1B66A100A8B44B /* ROLCC_YouthUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ROLCC_YouthUITests.swift; sourceTree = "<group>"; };
+		911233AC1D1B66A100A8B44B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		911233821D1B66A100A8B44B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		911233981D1B66A100A8B44B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		911233A31D1B66A100A8B44B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9112337C1D1B66A100A8B44B = {
+			isa = PBXGroup;
+			children = (
+				911233871D1B66A100A8B44B /* ROLCC Youth */,
+				9112339E1D1B66A100A8B44B /* ROLCC YouthTests */,
+				911233A91D1B66A100A8B44B /* ROLCC YouthUITests */,
+				911233861D1B66A100A8B44B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		911233861D1B66A100A8B44B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				911233851D1B66A100A8B44B /* ROLCC Youth.app */,
+				9112339B1D1B66A100A8B44B /* ROLCC YouthTests.xctest */,
+				911233A61D1B66A100A8B44B /* ROLCC YouthUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		911233871D1B66A100A8B44B /* ROLCC Youth */ = {
+			isa = PBXGroup;
+			children = (
+				911233881D1B66A100A8B44B /* AppDelegate.swift */,
+				9112338A1D1B66A100A8B44B /* FirstViewController.swift */,
+				9112338C1D1B66A100A8B44B /* SecondViewController.swift */,
+				9112338E1D1B66A100A8B44B /* Main.storyboard */,
+				911233911D1B66A100A8B44B /* Assets.xcassets */,
+				911233931D1B66A100A8B44B /* LaunchScreen.storyboard */,
+				911233961D1B66A100A8B44B /* Info.plist */,
+			);
+			path = "ROLCC Youth";
+			sourceTree = "<group>";
+		};
+		9112339E1D1B66A100A8B44B /* ROLCC YouthTests */ = {
+			isa = PBXGroup;
+			children = (
+				9112339F1D1B66A100A8B44B /* ROLCC_YouthTests.swift */,
+				911233A11D1B66A100A8B44B /* Info.plist */,
+			);
+			path = "ROLCC YouthTests";
+			sourceTree = "<group>";
+		};
+		911233A91D1B66A100A8B44B /* ROLCC YouthUITests */ = {
+			isa = PBXGroup;
+			children = (
+				911233AA1D1B66A100A8B44B /* ROLCC_YouthUITests.swift */,
+				911233AC1D1B66A100A8B44B /* Info.plist */,
+			);
+			path = "ROLCC YouthUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		911233841D1B66A100A8B44B /* ROLCC Youth */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 911233AF1D1B66A100A8B44B /* Build configuration list for PBXNativeTarget "ROLCC Youth" */;
+			buildPhases = (
+				911233811D1B66A100A8B44B /* Sources */,
+				911233821D1B66A100A8B44B /* Frameworks */,
+				911233831D1B66A100A8B44B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ROLCC Youth";
+			productName = "ROLCC Youth";
+			productReference = 911233851D1B66A100A8B44B /* ROLCC Youth.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9112339A1D1B66A100A8B44B /* ROLCC YouthTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 911233B21D1B66A100A8B44B /* Build configuration list for PBXNativeTarget "ROLCC YouthTests" */;
+			buildPhases = (
+				911233971D1B66A100A8B44B /* Sources */,
+				911233981D1B66A100A8B44B /* Frameworks */,
+				911233991D1B66A100A8B44B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9112339D1D1B66A100A8B44B /* PBXTargetDependency */,
+			);
+			name = "ROLCC YouthTests";
+			productName = "ROLCC YouthTests";
+			productReference = 9112339B1D1B66A100A8B44B /* ROLCC YouthTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		911233A51D1B66A100A8B44B /* ROLCC YouthUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 911233B51D1B66A100A8B44B /* Build configuration list for PBXNativeTarget "ROLCC YouthUITests" */;
+			buildPhases = (
+				911233A21D1B66A100A8B44B /* Sources */,
+				911233A31D1B66A100A8B44B /* Frameworks */,
+				911233A41D1B66A100A8B44B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				911233A81D1B66A100A8B44B /* PBXTargetDependency */,
+			);
+			name = "ROLCC YouthUITests";
+			productName = "ROLCC YouthUITests";
+			productReference = 911233A61D1B66A100A8B44B /* ROLCC YouthUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9112337D1D1B66A100A8B44B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Dave&Joe";
+				TargetAttributes = {
+					911233841D1B66A100A8B44B = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					9112339A1D1B66A100A8B44B = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 911233841D1B66A100A8B44B;
+					};
+					911233A51D1B66A100A8B44B = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 911233841D1B66A100A8B44B;
+					};
+				};
+			};
+			buildConfigurationList = 911233801D1B66A100A8B44B /* Build configuration list for PBXProject "ROLCC Youth" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9112337C1D1B66A100A8B44B;
+			productRefGroup = 911233861D1B66A100A8B44B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				911233841D1B66A100A8B44B /* ROLCC Youth */,
+				9112339A1D1B66A100A8B44B /* ROLCC YouthTests */,
+				911233A51D1B66A100A8B44B /* ROLCC YouthUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		911233831D1B66A100A8B44B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				911233951D1B66A100A8B44B /* LaunchScreen.storyboard in Resources */,
+				911233921D1B66A100A8B44B /* Assets.xcassets in Resources */,
+				911233901D1B66A100A8B44B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		911233991D1B66A100A8B44B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		911233A41D1B66A100A8B44B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		911233811D1B66A100A8B44B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9112338D1D1B66A100A8B44B /* SecondViewController.swift in Sources */,
+				911233891D1B66A100A8B44B /* AppDelegate.swift in Sources */,
+				9112338B1D1B66A100A8B44B /* FirstViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		911233971D1B66A100A8B44B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				911233A01D1B66A100A8B44B /* ROLCC_YouthTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		911233A21D1B66A100A8B44B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				911233AB1D1B66A100A8B44B /* ROLCC_YouthUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9112339D1D1B66A100A8B44B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 911233841D1B66A100A8B44B /* ROLCC Youth */;
+			targetProxy = 9112339C1D1B66A100A8B44B /* PBXContainerItemProxy */;
+		};
+		911233A81D1B66A100A8B44B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 911233841D1B66A100A8B44B /* ROLCC Youth */;
+			targetProxy = 911233A71D1B66A100A8B44B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9112338E1D1B66A100A8B44B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9112338F1D1B66A100A8B44B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		911233931D1B66A100A8B44B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				911233941D1B66A100A8B44B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		911233AD1D1B66A100A8B44B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		911233AE1D1B66A100A8B44B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		911233B01D1B66A100A8B44B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "ROLCC Youth/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Dave-Joe.ROLCC-Youth";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		911233B11D1B66A100A8B44B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "ROLCC Youth/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Dave-Joe.ROLCC-Youth";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		911233B31D1B66A100A8B44B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "ROLCC YouthTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Dave-Joe.ROLCC-YouthTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ROLCC Youth.app/ROLCC Youth";
+			};
+			name = Debug;
+		};
+		911233B41D1B66A100A8B44B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "ROLCC YouthTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Dave-Joe.ROLCC-YouthTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ROLCC Youth.app/ROLCC Youth";
+			};
+			name = Release;
+		};
+		911233B61D1B66A100A8B44B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "ROLCC YouthUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Dave-Joe.ROLCC-YouthUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "ROLCC Youth";
+			};
+			name = Debug;
+		};
+		911233B71D1B66A100A8B44B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "ROLCC YouthUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Dave-Joe.ROLCC-YouthUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "ROLCC Youth";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		911233801D1B66A100A8B44B /* Build configuration list for PBXProject "ROLCC Youth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				911233AD1D1B66A100A8B44B /* Debug */,
+				911233AE1D1B66A100A8B44B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		911233AF1D1B66A100A8B44B /* Build configuration list for PBXNativeTarget "ROLCC Youth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				911233B01D1B66A100A8B44B /* Debug */,
+				911233B11D1B66A100A8B44B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		911233B21D1B66A100A8B44B /* Build configuration list for PBXNativeTarget "ROLCC YouthTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				911233B31D1B66A100A8B44B /* Debug */,
+				911233B41D1B66A100A8B44B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		911233B51D1B66A100A8B44B /* Build configuration list for PBXNativeTarget "ROLCC YouthUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				911233B61D1B66A100A8B44B /* Debug */,
+				911233B71D1B66A100A8B44B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9112337D1D1B66A100A8B44B /* Project object */;
+}
