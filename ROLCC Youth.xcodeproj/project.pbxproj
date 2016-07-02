@@ -8,13 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		911233891D1B66A100A8B44B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911233881D1B66A100A8B44B /* AppDelegate.swift */; };
-		9112338B1D1B66A100A8B44B /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9112338A1D1B66A100A8B44B /* FirstViewController.swift */; };
-		9112338D1D1B66A100A8B44B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9112338C1D1B66A100A8B44B /* SecondViewController.swift */; };
+		9112338B1D1B66A100A8B44B /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9112338A1D1B66A100A8B44B /* Home.swift */; };
+		9112338D1D1B66A100A8B44B /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9112338C1D1B66A100A8B44B /* Calendar.swift */; };
 		911233901D1B66A100A8B44B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9112338E1D1B66A100A8B44B /* Main.storyboard */; };
 		911233921D1B66A100A8B44B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 911233911D1B66A100A8B44B /* Assets.xcassets */; };
 		911233951D1B66A100A8B44B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 911233931D1B66A100A8B44B /* LaunchScreen.storyboard */; };
 		911233A01D1B66A100A8B44B /* ROLCC_YouthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9112339F1D1B66A100A8B44B /* ROLCC_YouthTests.swift */; };
 		911233AB1D1B66A100A8B44B /* ROLCC_YouthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911233AA1D1B66A100A8B44B /* ROLCC_YouthUITests.swift */; };
+		911233BB1D1B6F0100A8B44B /* CellGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911233BA1D1B6F0100A8B44B /* CellGroup.swift */; };
+		911233BD1D1BB4AD00A8B44B /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911233BC1D1BB4AC00A8B44B /* Contact.swift */; };
+		911233BF1D1BD1D100A8B44B /* Almaden.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911233BE1D1BD1D100A8B44B /* Almaden.swift */; };
+		911233C11D1BD2AE00A8B44B /* Berryessa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911233C01D1BD2AE00A8B44B /* Berryessa.swift */; };
+		911233C31D1BD42300A8B44B /* homeicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 911233C21D1BD42300A8B44B /* homeicon.png */; };
+		911233C51D1BD54F00A8B44B /* calendaricon.png in Resources */ = {isa = PBXBuildFile; fileRef = 911233C41D1BD54F00A8B44B /* calendaricon.png */; };
+		911233C91D1BD61600A8B44B /* groupicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 911233C81D1BD61600A8B44B /* groupicon.png */; };
+		911233CB1D1BD6CF00A8B44B /* contacticon.png in Resources */ = {isa = PBXBuildFile; fileRef = 911233CA1D1BD6CF00A8B44B /* contacticon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +45,8 @@
 /* Begin PBXFileReference section */
 		911233851D1B66A100A8B44B /* ROLCC Youth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ROLCC Youth.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		911233881D1B66A100A8B44B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9112338A1D1B66A100A8B44B /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		9112338C1D1B66A100A8B44B /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		9112338A1D1B66A100A8B44B /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		9112338C1D1B66A100A8B44B /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
 		9112338F1D1B66A100A8B44B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		911233911D1B66A100A8B44B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		911233941D1B66A100A8B44B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +57,14 @@
 		911233A61D1B66A100A8B44B /* ROLCC YouthUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ROLCC YouthUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		911233AA1D1B66A100A8B44B /* ROLCC_YouthUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ROLCC_YouthUITests.swift; sourceTree = "<group>"; };
 		911233AC1D1B66A100A8B44B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		911233BA1D1B6F0100A8B44B /* CellGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellGroup.swift; sourceTree = "<group>"; };
+		911233BC1D1BB4AC00A8B44B /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		911233BE1D1BD1D100A8B44B /* Almaden.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Almaden.swift; sourceTree = "<group>"; };
+		911233C01D1BD2AE00A8B44B /* Berryessa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Berryessa.swift; sourceTree = "<group>"; };
+		911233C21D1BD42300A8B44B /* homeicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homeicon.png; sourceTree = "<group>"; };
+		911233C41D1BD54F00A8B44B /* calendaricon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendaricon.png; sourceTree = "<group>"; };
+		911233C81D1BD61600A8B44B /* groupicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = groupicon.png; sourceTree = "<group>"; };
+		911233CA1D1BD6CF00A8B44B /* contacticon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contacticon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,11 +116,19 @@
 			isa = PBXGroup;
 			children = (
 				911233881D1B66A100A8B44B /* AppDelegate.swift */,
-				9112338A1D1B66A100A8B44B /* FirstViewController.swift */,
-				9112338C1D1B66A100A8B44B /* SecondViewController.swift */,
+				9112338A1D1B66A100A8B44B /* Home.swift */,
+				9112338C1D1B66A100A8B44B /* Calendar.swift */,
+				911233BA1D1B6F0100A8B44B /* CellGroup.swift */,
+				911233BC1D1BB4AC00A8B44B /* Contact.swift */,
 				9112338E1D1B66A100A8B44B /* Main.storyboard */,
+				911233BE1D1BD1D100A8B44B /* Almaden.swift */,
+				911233C01D1BD2AE00A8B44B /* Berryessa.swift */,
 				911233911D1B66A100A8B44B /* Assets.xcassets */,
 				911233931D1B66A100A8B44B /* LaunchScreen.storyboard */,
+				911233C21D1BD42300A8B44B /* homeicon.png */,
+				911233C41D1BD54F00A8B44B /* calendaricon.png */,
+				911233C81D1BD61600A8B44B /* groupicon.png */,
+				911233CA1D1BD6CF00A8B44B /* contacticon.png */,
 				911233961D1B66A100A8B44B /* Info.plist */,
 			);
 			path = "ROLCC Youth";
@@ -233,7 +257,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				911233951D1B66A100A8B44B /* LaunchScreen.storyboard in Resources */,
+				911233C51D1BD54F00A8B44B /* calendaricon.png in Resources */,
+				911233C31D1BD42300A8B44B /* homeicon.png in Resources */,
 				911233921D1B66A100A8B44B /* Assets.xcassets in Resources */,
+				911233CB1D1BD6CF00A8B44B /* contacticon.png in Resources */,
+				911233C91D1BD61600A8B44B /* groupicon.png in Resources */,
 				911233901D1B66A100A8B44B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,9 +287,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9112338D1D1B66A100A8B44B /* SecondViewController.swift in Sources */,
+				911233BD1D1BB4AD00A8B44B /* Contact.swift in Sources */,
+				911233C11D1BD2AE00A8B44B /* Berryessa.swift in Sources */,
+				911233BB1D1B6F0100A8B44B /* CellGroup.swift in Sources */,
+				911233BF1D1BD1D100A8B44B /* Almaden.swift in Sources */,
+				9112338D1D1B66A100A8B44B /* Calendar.swift in Sources */,
 				911233891D1B66A100A8B44B /* AppDelegate.swift in Sources */,
-				9112338B1D1B66A100A8B44B /* FirstViewController.swift in Sources */,
+				9112338B1D1B66A100A8B44B /* Home.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,6 +438,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "ROLCC Youth/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Dave-Joe.ROLCC-Youth";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -417,6 +450,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "ROLCC Youth/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Dave-Joe.ROLCC-Youth";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -488,6 +522,7 @@
 				911233B11D1B66A100A8B44B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		911233B21D1B66A100A8B44B /* Build configuration list for PBXNativeTarget "ROLCC YouthTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +531,7 @@
 				911233B41D1B66A100A8B44B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		911233B51D1B66A100A8B44B /* Build configuration list for PBXNativeTarget "ROLCC YouthUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +540,7 @@
 				911233B71D1B66A100A8B44B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
