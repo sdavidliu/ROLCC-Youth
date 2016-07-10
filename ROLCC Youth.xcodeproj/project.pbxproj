@@ -23,6 +23,13 @@
 		911233C51D1BD54F00A8B44B /* calendaricon.png in Resources */ = {isa = PBXBuildFile; fileRef = 911233C41D1BD54F00A8B44B /* calendaricon.png */; };
 		911233C91D1BD61600A8B44B /* groupicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 911233C81D1BD61600A8B44B /* groupicon.png */; };
 		911233CB1D1BD6CF00A8B44B /* contacticon.png in Resources */ = {isa = PBXBuildFile; fileRef = 911233CA1D1BD6CF00A8B44B /* contacticon.png */; };
+		91765F381D2F49C8009C0555 /* LOGO.png in Resources */ = {isa = PBXBuildFile; fileRef = 91765F371D2F49C8009C0555 /* LOGO.png */; };
+		91765F3A1D2F5C58009C0555 /* almaden.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91765F391D2F5C58009C0555 /* almaden.jpg */; };
+		91765F3C1D2F6E54009C0555 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 91765F3B1D2F6E54009C0555 /* facebook.png */; };
+		91765F401D2F6F04009C0555 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 91765F3F1D2F6F04009C0555 /* twitter.png */; };
+		91765F421D2F6F84009C0555 /* youtube.png in Resources */ = {isa = PBXBuildFile; fileRef = 91765F411D2F6F84009C0555 /* youtube.png */; };
+		91765F441D2F7053009C0555 /* instagram.png in Resources */ = {isa = PBXBuildFile; fileRef = 91765F431D2F7053009C0555 /* instagram.png */; };
+		91765F461D2F7EDD009C0555 /* snowflake_white16.png in Resources */ = {isa = PBXBuildFile; fileRef = 91765F451D2F7EDD009C0555 /* snowflake_white16.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +72,13 @@
 		911233C41D1BD54F00A8B44B /* calendaricon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendaricon.png; sourceTree = "<group>"; };
 		911233C81D1BD61600A8B44B /* groupicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = groupicon.png; sourceTree = "<group>"; };
 		911233CA1D1BD6CF00A8B44B /* contacticon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contacticon.png; sourceTree = "<group>"; };
+		91765F371D2F49C8009C0555 /* LOGO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LOGO.png; sourceTree = "<group>"; };
+		91765F391D2F5C58009C0555 /* almaden.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = almaden.jpg; sourceTree = "<group>"; };
+		91765F3B1D2F6E54009C0555 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
+		91765F3F1D2F6F04009C0555 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
+		91765F411D2F6F84009C0555 /* youtube.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = youtube.png; sourceTree = "<group>"; };
+		91765F431D2F7053009C0555 /* instagram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = instagram.png; sourceTree = "<group>"; };
+		91765F451D2F7EDD009C0555 /* snowflake_white16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snowflake_white16.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,10 +139,17 @@
 				911233C01D1BD2AE00A8B44B /* Berryessa.swift */,
 				911233911D1B66A100A8B44B /* Assets.xcassets */,
 				911233931D1B66A100A8B44B /* LaunchScreen.storyboard */,
+				91765F451D2F7EDD009C0555 /* snowflake_white16.png */,
 				911233C21D1BD42300A8B44B /* homeicon.png */,
 				911233C41D1BD54F00A8B44B /* calendaricon.png */,
 				911233C81D1BD61600A8B44B /* groupicon.png */,
 				911233CA1D1BD6CF00A8B44B /* contacticon.png */,
+				91765F371D2F49C8009C0555 /* LOGO.png */,
+				91765F3B1D2F6E54009C0555 /* facebook.png */,
+				91765F411D2F6F84009C0555 /* youtube.png */,
+				91765F431D2F7053009C0555 /* instagram.png */,
+				91765F3F1D2F6F04009C0555 /* twitter.png */,
+				91765F391D2F5C58009C0555 /* almaden.jpg */,
 				911233961D1B66A100A8B44B /* Info.plist */,
 			);
 			path = "ROLCC Youth";
@@ -259,8 +280,15 @@
 				911233951D1B66A100A8B44B /* LaunchScreen.storyboard in Resources */,
 				911233C51D1BD54F00A8B44B /* calendaricon.png in Resources */,
 				911233C31D1BD42300A8B44B /* homeicon.png in Resources */,
+				91765F421D2F6F84009C0555 /* youtube.png in Resources */,
 				911233921D1B66A100A8B44B /* Assets.xcassets in Resources */,
+				91765F381D2F49C8009C0555 /* LOGO.png in Resources */,
+				91765F441D2F7053009C0555 /* instagram.png in Resources */,
 				911233CB1D1BD6CF00A8B44B /* contacticon.png in Resources */,
+				91765F3A1D2F5C58009C0555 /* almaden.jpg in Resources */,
+				91765F3C1D2F6E54009C0555 /* facebook.png in Resources */,
+				91765F401D2F6F04009C0555 /* twitter.png in Resources */,
+				91765F461D2F7EDD009C0555 /* snowflake_white16.png in Resources */,
 				911233C91D1BD61600A8B44B /* groupicon.png in Resources */,
 				911233901D1B66A100A8B44B /* Main.storyboard in Resources */,
 			);
@@ -442,6 +470,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Dave-Joe.ROLCC-Youth";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -454,6 +483,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Dave-Joe.ROLCC-Youth";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

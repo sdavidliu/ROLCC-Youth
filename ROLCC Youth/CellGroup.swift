@@ -15,6 +15,8 @@ class CellGroup: UIPageViewController, UIPageViewControllerDelegate, UIPageViewC
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        
         self.delegate = self
         self.dataSource = self
         

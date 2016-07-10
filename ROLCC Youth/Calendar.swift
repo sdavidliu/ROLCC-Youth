@@ -13,6 +13,8 @@ class Calendar: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
+        
         /*
         let url = NSURL (string: "http://www.rolccyouth.com/new-events/")
         let requestObj = NSURLRequest(URL: url!);
