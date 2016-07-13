@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class Home: UIViewController {
     
@@ -23,50 +24,71 @@ class Home: UIViewController {
     let emitter = CAEmitterLayer()
     var animating = false
     var animationTimer = NSTimer()
+    var array1 = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         
-        update()
-        
-        _ = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(UIMenuController.update), userInfo: nil, repeats: true)
-        
         let thisWeek = UILabel(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 30))
         thisWeek.text = "This Week:"
-        thisWeek.center = CGPoint(x: screenWidth/2, y: 470)
+        thisWeek.center = CGPoint(x: screenWidth/2, y: 400)
         thisWeek.textAlignment = NSTextAlignment.Center
         thisWeek.font = UIFont(name: "Avenir-Medium", size: 20)
         thisWeek.textColor = UIColor.whiteColor()
         self.view.addSubview(thisWeek)
-
+        
+        let ref = FIRDatabase.database().reference()
+        ref.observeEventType(.Value, withBlock: { snapshot in
+            
+            let s = snapshot.value!.objectForKey("home")! as! String
+            
+            let Str = s.componentsSeparatedByString(",")
+            
+            for part in Str {
+                self.array1.append(part)
+            }
+            
+            self.showInfo()
+            
+            }, withCancelBlock: { error in
+                print(error.description)
+        })
+        
+        update()
+        
+        _ = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(UIMenuController.update), userInfo: nil, repeats: true)
+        
+    }
+    
+    func showInfo(){
+        
         let preacher = UILabel(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 30))
-        preacher.text = "Sermon: Pastor Richard"
-        preacher.center = CGPoint(x: screenWidth/2, y: 500)
+        preacher.text = "Sermon: " + String(array1[0])
+        preacher.center = CGPoint(x: screenWidth/2, y: 440)
         preacher.textAlignment = NSTextAlignment.Center
         preacher.font = UIFont(name: "Avenir", size: 15)
         preacher.textColor = UIColor.whiteColor()
         self.view.addSubview(preacher)
         
         let worship = UILabel(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 30))
-        worship.text = "Worship: Jessica"
-        worship.center = CGPoint(x: screenWidth/2, y: 520)
+        worship.text = "Worship: " + String(array1[1])
+        worship.center = CGPoint(x: screenWidth/2, y: 460)
         worship.textAlignment = NSTextAlignment.Center
         worship.font = UIFont(name: "Avenir", size: 15)
         worship.textColor = UIColor.whiteColor()
         self.view.addSubview(worship)
         
         let announcements = UILabel(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 30))
-        announcements.text = "Announcements: Almaden"
-        announcements.center = CGPoint(x: screenWidth/2, y: 540)
+        announcements.text = "Announcements: " + String(array1[2])
+        announcements.center = CGPoint(x: screenWidth/2, y: 480)
         announcements.textAlignment = NSTextAlignment.Center
         announcements.font = UIFont(name: "Avenir", size: 15)
         announcements.textColor = UIColor.whiteColor()
         self.view.addSubview(announcements)
         
         youthLogo.addTarget(self, action: #selector(test), forControlEvents: .TouchUpInside)
-        
     }
     
     func test(sender: UIButton!){
@@ -83,26 +105,33 @@ class Home: UIViewController {
             emitter.emitterSize = rect.size
             
             let emitterCell = CAEmitterCell()
-            emitterCell.contents = UIImage(named: "snowflake_white16.png")!.CGImage
+            let date = NSDate()
+            let calendar = NSCalendar.currentCalendar()
+            let components = calendar.components([.Month], fromDate: date)
+            let month = components.month
+            if (month == 12 || month == 1 || month == 2){
+                emitterCell.contents = UIImage(named: "winter.png")!.CGImage
+            }else if (month == 3 || month == 4 || month == 5){
+                emitterCell.contents = UIImage(named: "spring.png")!.CGImage
+            }else if (month == 6 || month == 7 || month == 8){
+                emitterCell.contents = UIImage(named: "summer.png")!.CGImage
+            }else{
+                emitterCell.contents = UIImage(named: "fall.png")!.CGImage
+            }
             emitterCell.birthRate = 8
             emitterCell.lifetime = 15
             emitterCell.yAcceleration = 20.0
             emitterCell.xAcceleration = 1.0
             //    emitterCell.velocity = 20.0
             //    emitterCell.velocityRange = 250.0
-            //
             //    emitterCell.emissionLongitude = CGFloat(-M_PI)
             //    emitterCell.emissionRange = CGFloat(M_PI_2)
-            
-            //    emitterCell.color = UIColor(red: 0.9, green: 1.0, blue: 1.0, alpha: 1.0).CGColor
-            //    emitterCell.redRange   = 0.1
-            //    emitterCell.greenRange = 0.1
-            //    emitterCell.blueRange  = 0.1
-            //
             emitterCell.scale = 1.8
             emitterCell.scaleRange = 1.0
             emitterCell.scaleSpeed = -0.15
             emitterCell.alphaRange = 1.00
+            emitterCell.spin = 0.5
+            emitterCell.spinRange = 1.0
             emitterCell.alphaSpeed = -0.15
             emitterCell.lifetimeRange = 2.0
             
@@ -131,7 +160,11 @@ class Home: UIViewController {
         }
         weekday = 7 - currentWeekday
         
-        countdownTimer.text = String(format: "%02d", weekday) + ":" + String(format: "%02d", hours) + ":" + String(format: "%02d", minutes)
+        if (currentWeekday == 1 && currentHour >= 9 && currentMin >= 45){
+            countdownTimer.text = "0:00:00"
+        }else{
+            countdownTimer.text = String(format: "%02d", weekday) + ":" + String(format: "%02d", hours) + ":" + String(format: "%02d", minutes)
+        }
         
     }
     

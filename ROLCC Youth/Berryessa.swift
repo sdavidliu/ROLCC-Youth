@@ -9,11 +9,41 @@
 import UIKit
 
 class Berryessa: UIViewController {
-
+    
+    var button = DOFavoriteButton()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        button = DOFavoriteButton(frame: CGRectMake(UIScreen.mainScreen().bounds.width - 50, 20, 50, 50), image: UIImage(named: "stars.png"))
+        self.view.addSubview(button)
+        
+        button.addTarget(self, action: #selector(Berryessa.tapped), forControlEvents: .TouchUpInside)
+    }
+    
+    func tapped(sender: DOFavoriteButton) {
+        if sender.selected {
+            // deselect
+            sender.deselect()
+        } else {
+            // select with animation
+            sender.select()
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setValue("Berryessa", forKey: "Favorite")
+            defaults.synchronize()
+        }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        if (defaults.stringForKey("Favorite") == "Berryessa"){
+            if (button.selected == false){
+                button.select()
+            }
+        }else{
+            button.deselect()
+        }
     }
 
     override func didReceiveMemoryWarning() {

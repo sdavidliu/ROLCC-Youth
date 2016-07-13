@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07AC326855CF21DF9ADB2CD0 /* Pods_ROLCC_YouthUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2A1C667A2590EBB6FA91D31 /* Pods_ROLCC_YouthUITests.framework */; };
+		486F4FBCE86DC31ED0B051DD /* Pods_ROLCC_Youth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C44CE91AA25BFE0848B43FF /* Pods_ROLCC_Youth.framework */; };
+		7CD1C3848CC369B62E047613 /* Pods_ROLCC_YouthTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DD87B060D490D541A8EB4EA /* Pods_ROLCC_YouthTests.framework */; };
 		911233891D1B66A100A8B44B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911233881D1B66A100A8B44B /* AppDelegate.swift */; };
 		9112338B1D1B66A100A8B44B /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9112338A1D1B66A100A8B44B /* Home.swift */; };
 		9112338D1D1B66A100A8B44B /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9112338C1D1B66A100A8B44B /* Calendar.swift */; };
@@ -17,19 +20,38 @@
 		911233AB1D1B66A100A8B44B /* ROLCC_YouthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911233AA1D1B66A100A8B44B /* ROLCC_YouthUITests.swift */; };
 		911233BB1D1B6F0100A8B44B /* CellGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911233BA1D1B6F0100A8B44B /* CellGroup.swift */; };
 		911233BD1D1BB4AD00A8B44B /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911233BC1D1BB4AC00A8B44B /* Contact.swift */; };
-		911233BF1D1BD1D100A8B44B /* Almaden.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911233BE1D1BD1D100A8B44B /* Almaden.swift */; };
 		911233C11D1BD2AE00A8B44B /* Berryessa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911233C01D1BD2AE00A8B44B /* Berryessa.swift */; };
 		911233C31D1BD42300A8B44B /* homeicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 911233C21D1BD42300A8B44B /* homeicon.png */; };
 		911233C51D1BD54F00A8B44B /* calendaricon.png in Resources */ = {isa = PBXBuildFile; fileRef = 911233C41D1BD54F00A8B44B /* calendaricon.png */; };
 		911233C91D1BD61600A8B44B /* groupicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 911233C81D1BD61600A8B44B /* groupicon.png */; };
 		911233CB1D1BD6CF00A8B44B /* contacticon.png in Resources */ = {isa = PBXBuildFile; fileRef = 911233CA1D1BD6CF00A8B44B /* contacticon.png */; };
+		911BECC41D320F5D00F76534 /* Cupertino1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911BECC31D320F5D00F76534 /* Cupertino1.swift */; };
+		911BECC61D320F7D00F76534 /* Cupertino2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911BECC51D320F7D00F76534 /* Cupertino2.swift */; };
+		911BECC81D32113600F76534 /* FremontA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911BECC71D32113600F76534 /* FremontA.swift */; };
+		911BECCA1D32114200F76534 /* FremontB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911BECC91D32114200F76534 /* FremontB.swift */; };
+		911BECCC1D32115100F76534 /* MorganHill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911BECCB1D32115100F76534 /* MorganHill.swift */; };
+		911BECCE1D32115D00F76534 /* Saratoga1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911BECCD1D32115D00F76534 /* Saratoga1.swift */; };
+		911BECD01D32116700F76534 /* Saratoga2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911BECCF1D32116700F76534 /* Saratoga2.swift */; };
+		911BECD21D32134E00F76534 /* PaloAlto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911BECD11D32134E00F76534 /* PaloAlto.swift */; };
+		911BECD41D32136700F76534 /* SanCarlos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911BECD31D32136700F76534 /* SanCarlos.swift */; };
+		911BECD61D32137E00F76534 /* Evergreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911BECD51D32137E00F76534 /* Evergreen.swift */; };
+		911BECDB1D32167600F76534 /* fremontA.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 911BECD71D32167600F76534 /* fremontA.JPG */; };
+		911BECDD1D32167600F76534 /* cupertino1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 911BECD91D32167600F76534 /* cupertino1.jpg */; };
+		911BECDE1D32167600F76534 /* saratoga2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 911BECDA1D32167600F76534 /* saratoga2.jpg */; };
+		911BECE01D32179700F76534 /* berryessa.png in Resources */ = {isa = PBXBuildFile; fileRef = 911BECDF1D32179700F76534 /* berryessa.png */; };
+		911DFCFF1D3455DA00B52E71 /* summer.png in Resources */ = {isa = PBXBuildFile; fileRef = 911DFCFE1D3455DA00B52E71 /* summer.png */; };
+		911DFD031D3456D600B52E71 /* fall.png in Resources */ = {isa = PBXBuildFile; fileRef = 911DFD021D3456D600B52E71 /* fall.png */; };
+		911DFD051D3457B800B52E71 /* spring.png in Resources */ = {isa = PBXBuildFile; fileRef = 911DFD041D3457B800B52E71 /* spring.png */; };
+		911DFD071D34582100B52E71 /* winter.png in Resources */ = {isa = PBXBuildFile; fileRef = 911DFD061D34582100B52E71 /* winter.png */; };
+		9172BDF41D35DB40001C93A8 /* DOFavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9172BDF31D35DB40001C93A8 /* DOFavoriteButton.swift */; };
+		9172BDF61D35DB5E001C93A8 /* stars.png in Resources */ = {isa = PBXBuildFile; fileRef = 9172BDF51D35DB5E001C93A8 /* stars.png */; };
 		91765F381D2F49C8009C0555 /* LOGO.png in Resources */ = {isa = PBXBuildFile; fileRef = 91765F371D2F49C8009C0555 /* LOGO.png */; };
-		91765F3A1D2F5C58009C0555 /* almaden.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91765F391D2F5C58009C0555 /* almaden.jpg */; };
+		91765F3A1D2F5C58009C0555 /* saratoga1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91765F391D2F5C58009C0555 /* saratoga1.jpg */; };
 		91765F3C1D2F6E54009C0555 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 91765F3B1D2F6E54009C0555 /* facebook.png */; };
 		91765F401D2F6F04009C0555 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 91765F3F1D2F6F04009C0555 /* twitter.png */; };
 		91765F421D2F6F84009C0555 /* youtube.png in Resources */ = {isa = PBXBuildFile; fileRef = 91765F411D2F6F84009C0555 /* youtube.png */; };
 		91765F441D2F7053009C0555 /* instagram.png in Resources */ = {isa = PBXBuildFile; fileRef = 91765F431D2F7053009C0555 /* instagram.png */; };
-		91765F461D2F7EDD009C0555 /* snowflake_white16.png in Resources */ = {isa = PBXBuildFile; fileRef = 91765F451D2F7EDD009C0555 /* snowflake_white16.png */; };
+		91A4BD5F1D343DB7008F81FD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 91A4BD5E1D343DB7008F81FD /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +72,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A9E9184623D12BA7C89EF29 /* Pods-ROLCC YouthTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ROLCC YouthTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ROLCC YouthTests/Pods-ROLCC YouthTests.release.xcconfig"; sourceTree = "<group>"; };
+		4951F21CFCD2D405B14C8B54 /* Pods-ROLCC YouthUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ROLCC YouthUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ROLCC YouthUITests/Pods-ROLCC YouthUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4C44CE91AA25BFE0848B43FF /* Pods_ROLCC_Youth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ROLCC_Youth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F49328F435FF226AFF5C3FE /* Pods-ROLCC YouthTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ROLCC YouthTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ROLCC YouthTests/Pods-ROLCC YouthTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8DD87B060D490D541A8EB4EA /* Pods_ROLCC_YouthTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ROLCC_YouthTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		911233851D1B66A100A8B44B /* ROLCC Youth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ROLCC Youth.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		911233881D1B66A100A8B44B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9112338A1D1B66A100A8B44B /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
@@ -66,19 +93,42 @@
 		911233AC1D1B66A100A8B44B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		911233BA1D1B6F0100A8B44B /* CellGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellGroup.swift; sourceTree = "<group>"; };
 		911233BC1D1BB4AC00A8B44B /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
-		911233BE1D1BD1D100A8B44B /* Almaden.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Almaden.swift; sourceTree = "<group>"; };
 		911233C01D1BD2AE00A8B44B /* Berryessa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Berryessa.swift; sourceTree = "<group>"; };
 		911233C21D1BD42300A8B44B /* homeicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homeicon.png; sourceTree = "<group>"; };
 		911233C41D1BD54F00A8B44B /* calendaricon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendaricon.png; sourceTree = "<group>"; };
 		911233C81D1BD61600A8B44B /* groupicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = groupicon.png; sourceTree = "<group>"; };
 		911233CA1D1BD6CF00A8B44B /* contacticon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contacticon.png; sourceTree = "<group>"; };
+		911BECC31D320F5D00F76534 /* Cupertino1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cupertino1.swift; sourceTree = "<group>"; };
+		911BECC51D320F7D00F76534 /* Cupertino2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cupertino2.swift; sourceTree = "<group>"; };
+		911BECC71D32113600F76534 /* FremontA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FremontA.swift; sourceTree = "<group>"; };
+		911BECC91D32114200F76534 /* FremontB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FremontB.swift; sourceTree = "<group>"; };
+		911BECCB1D32115100F76534 /* MorganHill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MorganHill.swift; sourceTree = "<group>"; };
+		911BECCD1D32115D00F76534 /* Saratoga1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Saratoga1.swift; sourceTree = "<group>"; };
+		911BECCF1D32116700F76534 /* Saratoga2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Saratoga2.swift; sourceTree = "<group>"; };
+		911BECD11D32134E00F76534 /* PaloAlto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaloAlto.swift; sourceTree = "<group>"; };
+		911BECD31D32136700F76534 /* SanCarlos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SanCarlos.swift; sourceTree = "<group>"; };
+		911BECD51D32137E00F76534 /* Evergreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Evergreen.swift; sourceTree = "<group>"; };
+		911BECD71D32167600F76534 /* fremontA.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fremontA.JPG; sourceTree = "<group>"; };
+		911BECD91D32167600F76534 /* cupertino1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cupertino1.jpg; sourceTree = "<group>"; };
+		911BECDA1D32167600F76534 /* saratoga2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = saratoga2.jpg; sourceTree = "<group>"; };
+		911BECDF1D32179700F76534 /* berryessa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = berryessa.png; sourceTree = "<group>"; };
+		911DFCFE1D3455DA00B52E71 /* summer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = summer.png; sourceTree = "<group>"; };
+		911DFD021D3456D600B52E71 /* fall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fall.png; sourceTree = "<group>"; };
+		911DFD041D3457B800B52E71 /* spring.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spring.png; sourceTree = "<group>"; };
+		911DFD061D34582100B52E71 /* winter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = winter.png; sourceTree = "<group>"; };
+		9172BDF31D35DB40001C93A8 /* DOFavoriteButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DOFavoriteButton.swift; sourceTree = "<group>"; };
+		9172BDF51D35DB5E001C93A8 /* stars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stars.png; sourceTree = "<group>"; };
 		91765F371D2F49C8009C0555 /* LOGO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LOGO.png; sourceTree = "<group>"; };
-		91765F391D2F5C58009C0555 /* almaden.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = almaden.jpg; sourceTree = "<group>"; };
+		91765F391D2F5C58009C0555 /* saratoga1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = saratoga1.jpg; sourceTree = "<group>"; };
 		91765F3B1D2F6E54009C0555 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
 		91765F3F1D2F6F04009C0555 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
 		91765F411D2F6F84009C0555 /* youtube.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = youtube.png; sourceTree = "<group>"; };
 		91765F431D2F7053009C0555 /* instagram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = instagram.png; sourceTree = "<group>"; };
-		91765F451D2F7EDD009C0555 /* snowflake_white16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snowflake_white16.png; sourceTree = "<group>"; };
+		91A4BD5E1D343DB7008F81FD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BB0B656B5B276492E3D101F7 /* Pods-ROLCC Youth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ROLCC Youth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ROLCC Youth/Pods-ROLCC Youth.debug.xcconfig"; sourceTree = "<group>"; };
+		C2A1C667A2590EBB6FA91D31 /* Pods_ROLCC_YouthUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ROLCC_YouthUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E27590B5293D0FCC12DE0767 /* Pods-ROLCC Youth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ROLCC Youth.release.xcconfig"; path = "Pods/Target Support Files/Pods-ROLCC Youth/Pods-ROLCC Youth.release.xcconfig"; sourceTree = "<group>"; };
+		E784B9323C54AC3DE81F839E /* Pods-ROLCC YouthUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ROLCC YouthUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ROLCC YouthUITests/Pods-ROLCC YouthUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				486F4FBCE86DC31ED0B051DD /* Pods_ROLCC_Youth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CD1C3848CC369B62E047613 /* Pods_ROLCC_YouthTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,12 +152,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07AC326855CF21DF9ADB2CD0 /* Pods_ROLCC_YouthUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56C910E2C75DF0A7A4FD7A09 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BB0B656B5B276492E3D101F7 /* Pods-ROLCC Youth.debug.xcconfig */,
+				E27590B5293D0FCC12DE0767 /* Pods-ROLCC Youth.release.xcconfig */,
+				7F49328F435FF226AFF5C3FE /* Pods-ROLCC YouthTests.debug.xcconfig */,
+				0A9E9184623D12BA7C89EF29 /* Pods-ROLCC YouthTests.release.xcconfig */,
+				4951F21CFCD2D405B14C8B54 /* Pods-ROLCC YouthUITests.debug.xcconfig */,
+				E784B9323C54AC3DE81F839E /* Pods-ROLCC YouthUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8CB967D8277779A4FA838961 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C44CE91AA25BFE0848B43FF /* Pods_ROLCC_Youth.framework */,
+				8DD87B060D490D541A8EB4EA /* Pods_ROLCC_YouthTests.framework */,
+				C2A1C667A2590EBB6FA91D31 /* Pods_ROLCC_YouthUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9112337C1D1B66A100A8B44B = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +189,8 @@
 				9112339E1D1B66A100A8B44B /* ROLCC YouthTests */,
 				911233A91D1B66A100A8B44B /* ROLCC YouthUITests */,
 				911233861D1B66A100A8B44B /* Products */,
+				56C910E2C75DF0A7A4FD7A09 /* Pods */,
+				8CB967D8277779A4FA838961 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,11 +213,25 @@
 				911233BA1D1B6F0100A8B44B /* CellGroup.swift */,
 				911233BC1D1BB4AC00A8B44B /* Contact.swift */,
 				9112338E1D1B66A100A8B44B /* Main.storyboard */,
-				911233BE1D1BD1D100A8B44B /* Almaden.swift */,
 				911233C01D1BD2AE00A8B44B /* Berryessa.swift */,
+				911BECC31D320F5D00F76534 /* Cupertino1.swift */,
+				911BECC51D320F7D00F76534 /* Cupertino2.swift */,
+				911BECD51D32137E00F76534 /* Evergreen.swift */,
+				911BECC71D32113600F76534 /* FremontA.swift */,
+				911BECC91D32114200F76534 /* FremontB.swift */,
+				911BECCB1D32115100F76534 /* MorganHill.swift */,
+				911BECD11D32134E00F76534 /* PaloAlto.swift */,
+				911BECD31D32136700F76534 /* SanCarlos.swift */,
+				911BECCD1D32115D00F76534 /* Saratoga1.swift */,
+				911BECCF1D32116700F76534 /* Saratoga2.swift */,
+				9172BDF31D35DB40001C93A8 /* DOFavoriteButton.swift */,
 				911233911D1B66A100A8B44B /* Assets.xcassets */,
 				911233931D1B66A100A8B44B /* LaunchScreen.storyboard */,
-				91765F451D2F7EDD009C0555 /* snowflake_white16.png */,
+				9172BDF51D35DB5E001C93A8 /* stars.png */,
+				911DFCFE1D3455DA00B52E71 /* summer.png */,
+				911DFD021D3456D600B52E71 /* fall.png */,
+				911DFD041D3457B800B52E71 /* spring.png */,
+				911DFD061D34582100B52E71 /* winter.png */,
 				911233C21D1BD42300A8B44B /* homeicon.png */,
 				911233C41D1BD54F00A8B44B /* calendaricon.png */,
 				911233C81D1BD61600A8B44B /* groupicon.png */,
@@ -149,8 +241,13 @@
 				91765F411D2F6F84009C0555 /* youtube.png */,
 				91765F431D2F7053009C0555 /* instagram.png */,
 				91765F3F1D2F6F04009C0555 /* twitter.png */,
-				91765F391D2F5C58009C0555 /* almaden.jpg */,
+				91765F391D2F5C58009C0555 /* saratoga1.jpg */,
+				911BECD71D32167600F76534 /* fremontA.JPG */,
+				911BECDF1D32179700F76534 /* berryessa.png */,
+				911BECD91D32167600F76534 /* cupertino1.jpg */,
+				911BECDA1D32167600F76534 /* saratoga2.jpg */,
 				911233961D1B66A100A8B44B /* Info.plist */,
+				91A4BD5E1D343DB7008F81FD /* GoogleService-Info.plist */,
 			);
 			path = "ROLCC Youth";
 			sourceTree = "<group>";
@@ -180,9 +277,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 911233AF1D1B66A100A8B44B /* Build configuration list for PBXNativeTarget "ROLCC Youth" */;
 			buildPhases = (
+				2A4C7C06D831D15D08CA084E /* [CP] Check Pods Manifest.lock */,
 				911233811D1B66A100A8B44B /* Sources */,
 				911233821D1B66A100A8B44B /* Frameworks */,
 				911233831D1B66A100A8B44B /* Resources */,
+				0EBC0541D0E62AEB0B887222 /* [CP] Embed Pods Frameworks */,
+				99CDFAEB3A47FCE9E5DF54FA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -197,9 +297,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 911233B21D1B66A100A8B44B /* Build configuration list for PBXNativeTarget "ROLCC YouthTests" */;
 			buildPhases = (
+				886966B2320E7A7B5916739D /* [CP] Check Pods Manifest.lock */,
 				911233971D1B66A100A8B44B /* Sources */,
 				911233981D1B66A100A8B44B /* Frameworks */,
 				911233991D1B66A100A8B44B /* Resources */,
+				BCE95A482816C1060D528B90 /* [CP] Embed Pods Frameworks */,
+				57D7F57E46BB9133A1A14D0A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -215,9 +318,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 911233B51D1B66A100A8B44B /* Build configuration list for PBXNativeTarget "ROLCC YouthUITests" */;
 			buildPhases = (
+				FEDEC7EFE75EE0B2584DD6FF /* [CP] Check Pods Manifest.lock */,
 				911233A21D1B66A100A8B44B /* Sources */,
 				911233A31D1B66A100A8B44B /* Frameworks */,
 				911233A41D1B66A100A8B44B /* Resources */,
+				394AD775C5C0121F1C3AC1B3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -279,16 +384,25 @@
 			files = (
 				911233951D1B66A100A8B44B /* LaunchScreen.storyboard in Resources */,
 				911233C51D1BD54F00A8B44B /* calendaricon.png in Resources */,
+				911DFD051D3457B800B52E71 /* spring.png in Resources */,
+				911DFCFF1D3455DA00B52E71 /* summer.png in Resources */,
+				9172BDF61D35DB5E001C93A8 /* stars.png in Resources */,
 				911233C31D1BD42300A8B44B /* homeicon.png in Resources */,
 				91765F421D2F6F84009C0555 /* youtube.png in Resources */,
+				911BECE01D32179700F76534 /* berryessa.png in Resources */,
 				911233921D1B66A100A8B44B /* Assets.xcassets in Resources */,
 				91765F381D2F49C8009C0555 /* LOGO.png in Resources */,
+				911BECDB1D32167600F76534 /* fremontA.JPG in Resources */,
 				91765F441D2F7053009C0555 /* instagram.png in Resources */,
 				911233CB1D1BD6CF00A8B44B /* contacticon.png in Resources */,
-				91765F3A1D2F5C58009C0555 /* almaden.jpg in Resources */,
+				911DFD031D3456D600B52E71 /* fall.png in Resources */,
+				911DFD071D34582100B52E71 /* winter.png in Resources */,
+				91765F3A1D2F5C58009C0555 /* saratoga1.jpg in Resources */,
+				91A4BD5F1D343DB7008F81FD /* GoogleService-Info.plist in Resources */,
+				911BECDE1D32167600F76534 /* saratoga2.jpg in Resources */,
 				91765F3C1D2F6E54009C0555 /* facebook.png in Resources */,
 				91765F401D2F6F04009C0555 /* twitter.png in Resources */,
-				91765F461D2F7EDD009C0555 /* snowflake_white16.png in Resources */,
+				911BECDD1D32167600F76534 /* cupertino1.jpg in Resources */,
 				911233C91D1BD61600A8B44B /* groupicon.png in Resources */,
 				911233901D1B66A100A8B44B /* Main.storyboard in Resources */,
 			);
@@ -310,18 +424,151 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0EBC0541D0E62AEB0B887222 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ROLCC Youth/Pods-ROLCC Youth-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2A4C7C06D831D15D08CA084E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		394AD775C5C0121F1C3AC1B3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ROLCC YouthUITests/Pods-ROLCC YouthUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		57D7F57E46BB9133A1A14D0A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ROLCC YouthTests/Pods-ROLCC YouthTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		886966B2320E7A7B5916739D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		99CDFAEB3A47FCE9E5DF54FA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ROLCC Youth/Pods-ROLCC Youth-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BCE95A482816C1060D528B90 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ROLCC YouthTests/Pods-ROLCC YouthTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FEDEC7EFE75EE0B2584DD6FF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		911233811D1B66A100A8B44B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				911BECD41D32136700F76534 /* SanCarlos.swift in Sources */,
+				911BECCC1D32115100F76534 /* MorganHill.swift in Sources */,
 				911233BD1D1BB4AD00A8B44B /* Contact.swift in Sources */,
+				911BECCA1D32114200F76534 /* FremontB.swift in Sources */,
 				911233C11D1BD2AE00A8B44B /* Berryessa.swift in Sources */,
 				911233BB1D1B6F0100A8B44B /* CellGroup.swift in Sources */,
-				911233BF1D1BD1D100A8B44B /* Almaden.swift in Sources */,
+				911BECD21D32134E00F76534 /* PaloAlto.swift in Sources */,
+				911BECC61D320F7D00F76534 /* Cupertino2.swift in Sources */,
+				911BECD01D32116700F76534 /* Saratoga2.swift in Sources */,
+				911BECCE1D32115D00F76534 /* Saratoga1.swift in Sources */,
 				9112338D1D1B66A100A8B44B /* Calendar.swift in Sources */,
+				911BECD61D32137E00F76534 /* Evergreen.swift in Sources */,
+				911BECC41D320F5D00F76534 /* Cupertino1.swift in Sources */,
 				911233891D1B66A100A8B44B /* AppDelegate.swift in Sources */,
 				9112338B1D1B66A100A8B44B /* Home.swift in Sources */,
+				911BECC81D32113600F76534 /* FremontA.swift in Sources */,
+				9172BDF41D35DB40001C93A8 /* DOFavoriteButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +710,7 @@
 		};
 		911233B01D1B66A100A8B44B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB0B656B5B276492E3D101F7 /* Pods-ROLCC Youth.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "ROLCC Youth/Info.plist";
@@ -476,6 +724,7 @@
 		};
 		911233B11D1B66A100A8B44B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E27590B5293D0FCC12DE0767 /* Pods-ROLCC Youth.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "ROLCC Youth/Info.plist";
@@ -489,6 +738,7 @@
 		};
 		911233B31D1B66A100A8B44B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F49328F435FF226AFF5C3FE /* Pods-ROLCC YouthTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "ROLCC YouthTests/Info.plist";
@@ -501,6 +751,7 @@
 		};
 		911233B41D1B66A100A8B44B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A9E9184623D12BA7C89EF29 /* Pods-ROLCC YouthTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "ROLCC YouthTests/Info.plist";
@@ -513,6 +764,7 @@
 		};
 		911233B61D1B66A100A8B44B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4951F21CFCD2D405B14C8B54 /* Pods-ROLCC YouthUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "ROLCC YouthUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -524,6 +776,7 @@
 		};
 		911233B71D1B66A100A8B44B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E784B9323C54AC3DE81F839E /* Pods-ROLCC YouthUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "ROLCC YouthUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

@@ -1,0 +1,988 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		07EC9850B61A2EB1DDE46D07D2479F1A /* Pods-ROLCC YouthTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 569AC818DD7BC6B1F080FDA2C4E7C030 /* Pods-ROLCC YouthTests-dummy.m */; };
+		4D1B87614863CA447C842E5FE1074D83 /* Pods-ROLCC YouthUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EC4F0A6F62A289349345163A02BF9F87 /* Pods-ROLCC YouthUITests-dummy.m */; };
+		4E9510367DA7E1F84CF95D2881BF105B /* Pods-ROLCC Youth-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F50582EF6022C236A0DB40C1120D5B2C /* Pods-ROLCC Youth-dummy.m */; };
+		5A1F81A9C0B84AD912D6A3E16F36C42C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */; };
+		63D0D7F658E72C6729C57CE018C0F2D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
+		7A99845E6FF2CB70C0AE32B884A6690A /* like.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A7EFA33609B544050440E2A7C5D75FD /* like.png */; };
+		7AC1CDAA03820640A5DCD84140C40D21 /* smile.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E401A6876FBE6C718A48583EE1BA35A /* smile.png */; };
+		93BFD34AF519CE346E47291DF9A6A0EA /* Pods-ROLCC YouthUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 70C6A27D8F66BB4FC51EA1F49EF5054D /* Pods-ROLCC YouthUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A0EF848EFC73A09939C7046BA3E31B06 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = F10340B4068956AE005EA5E571CE72C4 /* heart.png */; };
+		BB7099530FDC1E8188D6AB07BBA92523 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
+		BEACF6BC01CA7FEBE0B6D71A04950965 /* DOFavoriteButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9243450308476E34A9959B6A35821F /* DOFavoriteButton-dummy.m */; };
+		CB54F93C5474511C1BF1186DD4FF2BA7 /* Pods-ROLCC Youth-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F7F6937BA45460FC765950DF3BC998E /* Pods-ROLCC Youth-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D0FB7C311D149467BD24DF792F1BCDCF /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = B7A9731E461385E9E4A9B98443F0D9D3 /* star.png */; };
+		D736E83B30D0C0C65301E070EBA84EF2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
+		E994912106A46E237F0C68994F7D03D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
+		EE3B13A0A396A7FC237DFA4F350A52F3 /* DOFavoriteButton-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 694627D6BC235D740C520F538DF9920F /* DOFavoriteButton-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F0E27F98637611F9B60683C002927BA4 /* DOFavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3CD7052600CFCD8FBEC9F4CA24CF86 /* DOFavoriteButton.swift */; };
+		FDFE24AD824F4812C8B06784C8EA5DD4 /* Pods-ROLCC YouthTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FB3BD2BB10319158EA8E556CB3D861E0 /* Pods-ROLCC YouthTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2F4B553BEE0261E1C7F5026A49ABF00A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 805D4E75C1BB0ABF8B1DF1FECAAB4B65;
+			remoteInfo = DOFavoriteButton;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00707EC345B58121ECD3BBAC5A1BCF55 /* Pods-ROLCC Youth.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-ROLCC Youth.modulemap"; sourceTree = "<group>"; };
+		0128A7DF37D376306960750E7390A79F /* Pods-ROLCC YouthUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ROLCC YouthUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		03E25DE03D54D83D253ED8F821FE2374 /* FirebaseDatabase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseDatabase.framework; path = Frameworks/FirebaseDatabase.framework; sourceTree = "<group>"; };
+		0BE4527E5BEB4DCB1E1D9B078974EC01 /* Pods-ROLCC Youth-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ROLCC Youth-acknowledgements.markdown"; sourceTree = "<group>"; };
+		177EE8D614259B0772A8708671EF6045 /* Pods-ROLCC YouthTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ROLCC YouthTests-resources.sh"; sourceTree = "<group>"; };
+		1815256268B8DB3F75E66876D1C75EEB /* Pods-ROLCC Youth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ROLCC Youth.release.xcconfig"; sourceTree = "<group>"; };
+		1E401A6876FBE6C718A48583EE1BA35A /* smile.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = smile.png; path = DOFavoriteButton/smile.png; sourceTree = "<group>"; };
+		1EA6ABD529E5BEDAEBA935EE43B488FD /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Frameworks/GoogleUtilities.framework; sourceTree = "<group>"; };
+		24DBD833923E5B58269C2C00A5F0F0EF /* Pods_ROLCC_YouthUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ROLCC_YouthUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		250A5615266656E83D3DE9CAE5B6858F /* Pods-ROLCC YouthUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-ROLCC YouthUITests.modulemap"; sourceTree = "<group>"; };
+		310C8B052A8BF54042EB687D30F0DE77 /* Pods-ROLCC YouthTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ROLCC YouthTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3BE8903FEDE6E48B8D7672E23C51576E /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Headers/Firebase.h; sourceTree = "<group>"; };
+		3D2B31F73D0DC6A99C6383D3A3DF8224 /* Pods-ROLCC YouthUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ROLCC YouthUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5027FE43C73A627A99D4FB1586FF9870 /* DOFavoriteButton.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = DOFavoriteButton.modulemap; sourceTree = "<group>"; };
+		569AC818DD7BC6B1F080FDA2C4E7C030 /* Pods-ROLCC YouthTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ROLCC YouthTests-dummy.m"; sourceTree = "<group>"; };
+		5977D54B0E4978217C92ECBF0E08ACF2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5ADFB676A94234D09E3F260347AEC173 /* Pods-ROLCC YouthTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ROLCC YouthTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		5B21F1CA3B3A08A204B8C1274258B78F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C86C8BEE5E85452A630731DC8728DBE /* Pods-ROLCC YouthUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ROLCC YouthUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		607DE107B775489342C7739086F17FDF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		628A178F35DCEB8EB94DB048B19F6132 /* Pods-ROLCC Youth-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ROLCC Youth-acknowledgements.plist"; sourceTree = "<group>"; };
+		65C79D35B48604E7CAF9E0D45C86AEEA /* DOFavoriteButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DOFavoriteButton-prefix.pch"; sourceTree = "<group>"; };
+		67F7E84198339810AE5D3EBEFA4BFA63 /* Pods-ROLCC Youth-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ROLCC Youth-resources.sh"; sourceTree = "<group>"; };
+		694627D6BC235D740C520F538DF9920F /* DOFavoriteButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DOFavoriteButton-umbrella.h"; sourceTree = "<group>"; };
+		6C7A56DCF7D30403145737FF47572D6E /* Pods-ROLCC YouthTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-ROLCC YouthTests.modulemap"; sourceTree = "<group>"; };
+		6F7F6937BA45460FC765950DF3BC998E /* Pods-ROLCC Youth-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ROLCC Youth-umbrella.h"; sourceTree = "<group>"; };
+		6F9243450308476E34A9959B6A35821F /* DOFavoriteButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DOFavoriteButton-dummy.m"; sourceTree = "<group>"; };
+		70C6A27D8F66BB4FC51EA1F49EF5054D /* Pods-ROLCC YouthUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ROLCC YouthUITests-umbrella.h"; sourceTree = "<group>"; };
+		794F4EF63A143167C527C1E6A76E6793 /* Pods-ROLCC YouthUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ROLCC YouthUITests-frameworks.sh"; sourceTree = "<group>"; };
+		7A801EBCDC6592678762C2F6CC3A29EF /* Pods_ROLCC_Youth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ROLCC_Youth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EC628E06782B79BACC21A87334D69AF /* Pods-ROLCC YouthTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ROLCC YouthTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		81B56DD813516633B757F1E33C62C0AE /* Pods-ROLCC Youth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ROLCC Youth.debug.xcconfig"; sourceTree = "<group>"; };
+		87F2DA15F66E95801E8D2906C56677E8 /* Pods_ROLCC_YouthTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ROLCC_YouthTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DF444A15F33EFD769D67679ED089047 /* DOFavoriteButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DOFavoriteButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9A7EFA33609B544050440E2A7C5D75FD /* like.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = like.png; path = DOFavoriteButton/like.png; sourceTree = "<group>"; };
+		A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		A2E357D2FFBA246FEFFDA8336382A479 /* Pods-ROLCC YouthUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ROLCC YouthUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		A914D5875D611765377CCB5C0EE693C8 /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Frameworks/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
+		AC5063FEE461806939C08D087E0BC79B /* FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID.h; path = Headers/Public/FIRInstanceID.h; sourceTree = "<group>"; };
+		B7A9731E461385E9E4A9B98443F0D9D3 /* star.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = star.png; path = DOFavoriteButton/star.png; sourceTree = "<group>"; };
+		BEF2C67072AB3380CF6C613207743C03 /* Pods-ROLCC Youth-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ROLCC Youth-frameworks.sh"; sourceTree = "<group>"; };
+		C3A850CCB5C0180CB5C5273695EC5577 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7351061EFA1514C27A1CAE0C5827272 /* Pods-ROLCC YouthTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ROLCC YouthTests-frameworks.sh"; sourceTree = "<group>"; };
+		CA4DE0859D65C150E7B0EA8E992A445E /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleInterchangeUtilities.framework; path = Frameworks/GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
+		D462F9E11288B63E778402D8BD4B67BD /* Pods-ROLCC YouthUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ROLCC YouthUITests-resources.sh"; sourceTree = "<group>"; };
+		D6E0E50109BBDE1D79D85E6F89E4FBFA /* Pods-ROLCC YouthTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ROLCC YouthTests.release.xcconfig"; sourceTree = "<group>"; };
+		D890477A38E130D0AC4111534A9A9DF6 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		E30C1C72704DB2DC51E583C9B3ABD90E /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		EC4F0A6F62A289349345163A02BF9F87 /* Pods-ROLCC YouthUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ROLCC YouthUITests-dummy.m"; sourceTree = "<group>"; };
+		ED3CD7052600CFCD8FBEC9F4CA24CF86 /* DOFavoriteButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DOFavoriteButton.swift; path = DOFavoriteButton/DOFavoriteButton.swift; sourceTree = "<group>"; };
+		F10340B4068956AE005EA5E571CE72C4 /* heart.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = heart.png; path = DOFavoriteButton/heart.png; sourceTree = "<group>"; };
+		F50582EF6022C236A0DB40C1120D5B2C /* Pods-ROLCC Youth-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ROLCC Youth-dummy.m"; sourceTree = "<group>"; };
+		F56713940F7E455DC58AFD8EB7242251 /* DOFavoriteButton.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DOFavoriteButton.xcconfig; sourceTree = "<group>"; };
+		FB3BD2BB10319158EA8E556CB3D861E0 /* Pods-ROLCC YouthTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ROLCC YouthTests-umbrella.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4C0A895C95D98FF123C18E4ADE5AF2F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E994912106A46E237F0C68994F7D03D9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E1DFCCCDBBAE3F03F8A1D6CF7341A8D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB7099530FDC1E8188D6AB07BBA92523 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C8DC9D2F567A88019CF312CFE95776C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63D0D7F658E72C6729C57CE018C0F2D0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D59F86BD42BBB8CAECC3B00B4A49D576 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D736E83B30D0C0C65301E070EBA84EF2 /* Foundation.framework in Frameworks */,
+				5A1F81A9C0B84AD912D6A3E16F36C42C /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0EC6158CA6AF4C342E3FBC4FA39BB0F2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A914D5875D611765377CCB5C0EE693C8 /* GoogleSymbolUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3B0323877520EBBC4E235008E9BE05D5 /* DOFavoriteButton */ = {
+			isa = PBXGroup;
+			children = (
+				ED3CD7052600CFCD8FBEC9F4CA24CF86 /* DOFavoriteButton.swift */,
+				98C84DFD2AE3FA5774CBFC7A53C6A82A /* Resources */,
+				418D32F2AA07AE6EFB89D9D34BCFFC86 /* Support Files */,
+			);
+			path = DOFavoriteButton;
+			sourceTree = "<group>";
+		};
+		418D32F2AA07AE6EFB89D9D34BCFFC86 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5027FE43C73A627A99D4FB1586FF9870 /* DOFavoriteButton.modulemap */,
+				F56713940F7E455DC58AFD8EB7242251 /* DOFavoriteButton.xcconfig */,
+				6F9243450308476E34A9959B6A35821F /* DOFavoriteButton-dummy.m */,
+				65C79D35B48604E7CAF9E0D45C86AEEA /* DOFavoriteButton-prefix.pch */,
+				694627D6BC235D740C520F538DF9920F /* DOFavoriteButton-umbrella.h */,
+				607DE107B775489342C7739086F17FDF /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/DOFavoriteButton";
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F302CD3B306AF1ED96B9AF31FCDBC26C /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4D41CAD25932591BE9689659EEB3CF39 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8DF444A15F33EFD769D67679ED089047 /* DOFavoriteButton.framework */,
+				7A801EBCDC6592678762C2F6CC3A29EF /* Pods_ROLCC_Youth.framework */,
+				87F2DA15F66E95801E8D2906C56677E8 /* Pods_ROLCC_YouthTests.framework */,
+				24DBD833923E5B58269C2C00A5F0F0EF /* Pods_ROLCC_YouthUITests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5337E176658445FE1AA8694BE2DC6555 /* Pods-ROLCC YouthTests */ = {
+			isa = PBXGroup;
+			children = (
+				C3A850CCB5C0180CB5C5273695EC5577 /* Info.plist */,
+				6C7A56DCF7D30403145737FF47572D6E /* Pods-ROLCC YouthTests.modulemap */,
+				5ADFB676A94234D09E3F260347AEC173 /* Pods-ROLCC YouthTests-acknowledgements.markdown */,
+				7EC628E06782B79BACC21A87334D69AF /* Pods-ROLCC YouthTests-acknowledgements.plist */,
+				569AC818DD7BC6B1F080FDA2C4E7C030 /* Pods-ROLCC YouthTests-dummy.m */,
+				C7351061EFA1514C27A1CAE0C5827272 /* Pods-ROLCC YouthTests-frameworks.sh */,
+				177EE8D614259B0772A8708671EF6045 /* Pods-ROLCC YouthTests-resources.sh */,
+				FB3BD2BB10319158EA8E556CB3D861E0 /* Pods-ROLCC YouthTests-umbrella.h */,
+				310C8B052A8BF54042EB687D30F0DE77 /* Pods-ROLCC YouthTests.debug.xcconfig */,
+				D6E0E50109BBDE1D79D85E6F89E4FBFA /* Pods-ROLCC YouthTests.release.xcconfig */,
+			);
+			name = "Pods-ROLCC YouthTests";
+			path = "Target Support Files/Pods-ROLCC YouthTests";
+			sourceTree = "<group>";
+		};
+		73DE7967AFF3CFCD0C8B62DBB9DF209F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E30C1C72704DB2DC51E583C9B3ABD90E /* FirebaseAnalytics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		77343C5B1900BED0110ECF23591B8A82 /* Pods-ROLCC Youth */ = {
+			isa = PBXGroup;
+			children = (
+				5B21F1CA3B3A08A204B8C1274258B78F /* Info.plist */,
+				00707EC345B58121ECD3BBAC5A1BCF55 /* Pods-ROLCC Youth.modulemap */,
+				0BE4527E5BEB4DCB1E1D9B078974EC01 /* Pods-ROLCC Youth-acknowledgements.markdown */,
+				628A178F35DCEB8EB94DB048B19F6132 /* Pods-ROLCC Youth-acknowledgements.plist */,
+				F50582EF6022C236A0DB40C1120D5B2C /* Pods-ROLCC Youth-dummy.m */,
+				BEF2C67072AB3380CF6C613207743C03 /* Pods-ROLCC Youth-frameworks.sh */,
+				67F7E84198339810AE5D3EBEFA4BFA63 /* Pods-ROLCC Youth-resources.sh */,
+				6F7F6937BA45460FC765950DF3BC998E /* Pods-ROLCC Youth-umbrella.h */,
+				81B56DD813516633B757F1E33C62C0AE /* Pods-ROLCC Youth.debug.xcconfig */,
+				1815256268B8DB3F75E66876D1C75EEB /* Pods-ROLCC Youth.release.xcconfig */,
+			);
+			name = "Pods-ROLCC Youth";
+			path = "Target Support Files/Pods-ROLCC Youth";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				C4FCBC8519B339DFAEC0CDF0D72B70C1 /* Pods */,
+				4D41CAD25932591BE9689659EEB3CF39 /* Products */,
+				8239B25FA7DA566D343F29103583185D /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		7E8E8843BFC2515EF4AC025AABC2D05A /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				3BE8903FEDE6E48B8D7672E23C51576E /* Firebase.h */,
+			);
+			name = Analytics;
+			sourceTree = "<group>";
+		};
+		8239B25FA7DA566D343F29103583185D /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				77343C5B1900BED0110ECF23591B8A82 /* Pods-ROLCC Youth */,
+				5337E176658445FE1AA8694BE2DC6555 /* Pods-ROLCC YouthTests */,
+				96802FA21F6BBEE9C7B2070237B8CA75 /* Pods-ROLCC YouthUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		877DEF4F5847BC47D74B86DBC82CFFCD /* GoogleUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				A462B66D049E6BFE90487A2CEBC69C0C /* Frameworks */,
+			);
+			path = GoogleUtilities;
+			sourceTree = "<group>";
+		};
+		930D00EF794B4E7E58BEDA9BDAD577C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				03E25DE03D54D83D253ED8F821FE2374 /* FirebaseDatabase.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		96802FA21F6BBEE9C7B2070237B8CA75 /* Pods-ROLCC YouthUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5977D54B0E4978217C92ECBF0E08ACF2 /* Info.plist */,
+				250A5615266656E83D3DE9CAE5B6858F /* Pods-ROLCC YouthUITests.modulemap */,
+				0128A7DF37D376306960750E7390A79F /* Pods-ROLCC YouthUITests-acknowledgements.markdown */,
+				A2E357D2FFBA246FEFFDA8336382A479 /* Pods-ROLCC YouthUITests-acknowledgements.plist */,
+				EC4F0A6F62A289349345163A02BF9F87 /* Pods-ROLCC YouthUITests-dummy.m */,
+				794F4EF63A143167C527C1E6A76E6793 /* Pods-ROLCC YouthUITests-frameworks.sh */,
+				D462F9E11288B63E778402D8BD4B67BD /* Pods-ROLCC YouthUITests-resources.sh */,
+				70C6A27D8F66BB4FC51EA1F49EF5054D /* Pods-ROLCC YouthUITests-umbrella.h */,
+				5C86C8BEE5E85452A630731DC8728DBE /* Pods-ROLCC YouthUITests.debug.xcconfig */,
+				3D2B31F73D0DC6A99C6383D3A3DF8224 /* Pods-ROLCC YouthUITests.release.xcconfig */,
+			);
+			name = "Pods-ROLCC YouthUITests";
+			path = "Target Support Files/Pods-ROLCC YouthUITests";
+			sourceTree = "<group>";
+		};
+		98C84DFD2AE3FA5774CBFC7A53C6A82A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F10340B4068956AE005EA5E571CE72C4 /* heart.png */,
+				9A7EFA33609B544050440E2A7C5D75FD /* like.png */,
+				1E401A6876FBE6C718A48583EE1BA35A /* smile.png */,
+				B7A9731E461385E9E4A9B98443F0D9D3 /* star.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		A462B66D049E6BFE90487A2CEBC69C0C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1EA6ABD529E5BEDAEBA935EE43B488FD /* GoogleUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B193F7E9A3CE7A24665D7410D95683EE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D890477A38E130D0AC4111534A9A9DF6 /* FirebaseInstanceID.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BAD448708B28A59DD3544B31C8626FCA /* FirebaseDatabase */ = {
+			isa = PBXGroup;
+			children = (
+				930D00EF794B4E7E58BEDA9BDAD577C5 /* Frameworks */,
+			);
+			path = FirebaseDatabase;
+			sourceTree = "<group>";
+		};
+		BC78DAB46255D15C78D791BA9A6022AE /* FirebaseInstanceID */ = {
+			isa = PBXGroup;
+			children = (
+				AC5063FEE461806939C08D087E0BC79B /* FIRInstanceID.h */,
+				B193F7E9A3CE7A24665D7410D95683EE /* Frameworks */,
+			);
+			path = FirebaseInstanceID;
+			sourceTree = "<group>";
+		};
+		BDCC41FD93EE20212BB4C5B362A18BC7 /* GoogleInterchangeUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				EE4F6C43726AF1ECE15AE54B2DADE236 /* Frameworks */,
+			);
+			path = GoogleInterchangeUtilities;
+			sourceTree = "<group>";
+		};
+		C4FCBC8519B339DFAEC0CDF0D72B70C1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3B0323877520EBBC4E235008E9BE05D5 /* DOFavoriteButton */,
+				CB2EEAF7001EB95C3BADF0915667C33F /* Firebase */,
+				E747F85A0A67EC7D2057E0B78DA87705 /* FirebaseAnalytics */,
+				BAD448708B28A59DD3544B31C8626FCA /* FirebaseDatabase */,
+				BC78DAB46255D15C78D791BA9A6022AE /* FirebaseInstanceID */,
+				BDCC41FD93EE20212BB4C5B362A18BC7 /* GoogleInterchangeUtilities */,
+				EC1CE16FB269AEDB0C4C59E0E576EA63 /* GoogleSymbolUtilities */,
+				877DEF4F5847BC47D74B86DBC82CFFCD /* GoogleUtilities */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CB2EEAF7001EB95C3BADF0915667C33F /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				7E8E8843BFC2515EF4AC025AABC2D05A /* Analytics */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		E747F85A0A67EC7D2057E0B78DA87705 /* FirebaseAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				73DE7967AFF3CFCD0C8B62DBB9DF209F /* Frameworks */,
+			);
+			path = FirebaseAnalytics;
+			sourceTree = "<group>";
+		};
+		EC1CE16FB269AEDB0C4C59E0E576EA63 /* GoogleSymbolUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				0EC6158CA6AF4C342E3FBC4FA39BB0F2 /* Frameworks */,
+			);
+			path = GoogleSymbolUtilities;
+			sourceTree = "<group>";
+		};
+		EE4F6C43726AF1ECE15AE54B2DADE236 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CA4DE0859D65C150E7B0EA8E992A445E /* GoogleInterchangeUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F302CD3B306AF1ED96B9AF31FCDBC26C /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */,
+				E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1F6AE840341DC514B858D17CEBD1407A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDFE24AD824F4812C8B06784C8EA5DD4 /* Pods-ROLCC YouthTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5EDEFB39EA5F68F0495B1DB4371B70A0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE3B13A0A396A7FC237DFA4F350A52F3 /* DOFavoriteButton-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F811849E24335A94699542AE5FE4F817 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93BFD34AF519CE346E47291DF9A6A0EA /* Pods-ROLCC YouthUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF40D9D74AA755179475370975AAC4E1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB54F93C5474511C1BF1186DD4FF2BA7 /* Pods-ROLCC Youth-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		07964E609B55FEA46CB73E1B28BDCE63 /* Pods-ROLCC Youth */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC9F4ACBD4C6A1DC4757EEB73B618CB6 /* Build configuration list for PBXNativeTarget "Pods-ROLCC Youth" */;
+			buildPhases = (
+				FB884D3260B63F3574DB569F62157A2F /* Sources */,
+				8E1DFCCCDBBAE3F03F8A1D6CF7341A8D /* Frameworks */,
+				FF40D9D74AA755179475370975AAC4E1 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A642B7FFBAA19039988322BBA3FE1A97 /* PBXTargetDependency */,
+			);
+			name = "Pods-ROLCC Youth";
+			productName = "Pods-ROLCC Youth";
+			productReference = 7A801EBCDC6592678762C2F6CC3A29EF /* Pods_ROLCC_Youth.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		64241E66228A309A9F931907BF2A45C9 /* Pods-ROLCC YouthTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F95F94C4483698E926C7526D8DD7D80C /* Build configuration list for PBXNativeTarget "Pods-ROLCC YouthTests" */;
+			buildPhases = (
+				DDDED80F2431207E7986FC06F980916E /* Sources */,
+				4C0A895C95D98FF123C18E4ADE5AF2F0 /* Frameworks */,
+				1F6AE840341DC514B858D17CEBD1407A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-ROLCC YouthTests";
+			productName = "Pods-ROLCC YouthTests";
+			productReference = 87F2DA15F66E95801E8D2906C56677E8 /* Pods_ROLCC_YouthTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		805D4E75C1BB0ABF8B1DF1FECAAB4B65 /* DOFavoriteButton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30249E7BB2DF6ED53F8C929652EB898A /* Build configuration list for PBXNativeTarget "DOFavoriteButton" */;
+			buildPhases = (
+				5B34F53E1BE962FE84FA0886AE20B1BF /* Sources */,
+				D59F86BD42BBB8CAECC3B00B4A49D576 /* Frameworks */,
+				308F90828F98EB9DDA009849B74AB3FC /* Resources */,
+				5EDEFB39EA5F68F0495B1DB4371B70A0 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DOFavoriteButton;
+			productName = DOFavoriteButton;
+			productReference = 8DF444A15F33EFD769D67679ED089047 /* DOFavoriteButton.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D11606CFC1C364A97192F0DA8F5739DF /* Pods-ROLCC YouthUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0CCE6EE782EB79BE560F9926D1B9B8E9 /* Build configuration list for PBXNativeTarget "Pods-ROLCC YouthUITests" */;
+			buildPhases = (
+				44399084F09B1FB7AA75F2A4C8DB4049 /* Sources */,
+				C8DC9D2F567A88019CF312CFE95776C7 /* Frameworks */,
+				F811849E24335A94699542AE5FE4F817 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-ROLCC YouthUITests";
+			productName = "Pods-ROLCC YouthUITests";
+			productReference = 24DBD833923E5B58269C2C00A5F0F0EF /* Pods_ROLCC_YouthUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 4D41CAD25932591BE9689659EEB3CF39 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				805D4E75C1BB0ABF8B1DF1FECAAB4B65 /* DOFavoriteButton */,
+				07964E609B55FEA46CB73E1B28BDCE63 /* Pods-ROLCC Youth */,
+				64241E66228A309A9F931907BF2A45C9 /* Pods-ROLCC YouthTests */,
+				D11606CFC1C364A97192F0DA8F5739DF /* Pods-ROLCC YouthUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		308F90828F98EB9DDA009849B74AB3FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0EF848EFC73A09939C7046BA3E31B06 /* heart.png in Resources */,
+				7A99845E6FF2CB70C0AE32B884A6690A /* like.png in Resources */,
+				7AC1CDAA03820640A5DCD84140C40D21 /* smile.png in Resources */,
+				D0FB7C311D149467BD24DF792F1BCDCF /* star.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		44399084F09B1FB7AA75F2A4C8DB4049 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D1B87614863CA447C842E5FE1074D83 /* Pods-ROLCC YouthUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B34F53E1BE962FE84FA0886AE20B1BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEACF6BC01CA7FEBE0B6D71A04950965 /* DOFavoriteButton-dummy.m in Sources */,
+				F0E27F98637611F9B60683C002927BA4 /* DOFavoriteButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDDED80F2431207E7986FC06F980916E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07EC9850B61A2EB1DDE46D07D2479F1A /* Pods-ROLCC YouthTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB884D3260B63F3574DB569F62157A2F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E9510367DA7E1F84CF95D2881BF105B /* Pods-ROLCC Youth-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A642B7FFBAA19039988322BBA3FE1A97 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DOFavoriteButton;
+			target = 805D4E75C1BB0ABF8B1DF1FECAAB4B65 /* DOFavoriteButton */;
+			targetProxy = 2F4B553BEE0261E1C7F5026A49ABF00A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		228003884462B76D7FDABC0C54C278E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81B56DD813516633B757F1E33C62C0AE /* Pods-ROLCC Youth.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ROLCC Youth/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ROLCC Youth/Pods-ROLCC Youth.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ROLCC_Youth;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2BEF40983A9984D1A012CF6406A9697A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1815256268B8DB3F75E66876D1C75EEB /* Pods-ROLCC Youth.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ROLCC Youth/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ROLCC Youth/Pods-ROLCC Youth.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ROLCC_Youth;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		47BEF9D903506B003EA5C2B249729489 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		5CB41289C77910708B19B53F72838BD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 310C8B052A8BF54042EB687D30F0DE77 /* Pods-ROLCC YouthTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ROLCC YouthTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ROLCC YouthTests/Pods-ROLCC YouthTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ROLCC_YouthTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6622EA8587E12D36C6AD406EEF2C3A9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F56713940F7E455DC58AFD8EB7242251 /* DOFavoriteButton.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/DOFavoriteButton/DOFavoriteButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DOFavoriteButton/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/DOFavoriteButton/DOFavoriteButton.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = DOFavoriteButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		802BD9B1DFDB28492413FA35054A614C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C86C8BEE5E85452A630731DC8728DBE /* Pods-ROLCC YouthUITests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ROLCC YouthUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ROLCC YouthUITests/Pods-ROLCC YouthUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ROLCC_YouthUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A1E9ADC6F24B85C071EBC562DC678877 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F56713940F7E455DC58AFD8EB7242251 /* DOFavoriteButton.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/DOFavoriteButton/DOFavoriteButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DOFavoriteButton/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/DOFavoriteButton/DOFavoriteButton.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = DOFavoriteButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		AAF678CED40D3499169D10F63CA0719E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B17FD52FC3B800A390745FE7FC96587E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D2B31F73D0DC6A99C6383D3A3DF8224 /* Pods-ROLCC YouthUITests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ROLCC YouthUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ROLCC YouthUITests/Pods-ROLCC YouthUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ROLCC_YouthUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B19E7F2BD476D8DD0987455447800578 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6E0E50109BBDE1D79D85E6F89E4FBFA /* Pods-ROLCC YouthTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ROLCC YouthTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ROLCC YouthTests/Pods-ROLCC YouthTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ROLCC_YouthTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0CCE6EE782EB79BE560F9926D1B9B8E9 /* Build configuration list for PBXNativeTarget "Pods-ROLCC YouthUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				802BD9B1DFDB28492413FA35054A614C /* Debug */,
+				B17FD52FC3B800A390745FE7FC96587E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47BEF9D903506B003EA5C2B249729489 /* Debug */,
+				AAF678CED40D3499169D10F63CA0719E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30249E7BB2DF6ED53F8C929652EB898A /* Build configuration list for PBXNativeTarget "DOFavoriteButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6622EA8587E12D36C6AD406EEF2C3A9A /* Debug */,
+				A1E9ADC6F24B85C071EBC562DC678877 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC9F4ACBD4C6A1DC4757EEB73B618CB6 /* Build configuration list for PBXNativeTarget "Pods-ROLCC Youth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				228003884462B76D7FDABC0C54C278E6 /* Debug */,
+				2BEF40983A9984D1A012CF6406A9697A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F95F94C4483698E926C7526D8DD7D80C /* Build configuration list for PBXNativeTarget "Pods-ROLCC YouthTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CB41289C77910708B19B53F72838BD0 /* Debug */,
+				B19E7F2BD476D8DD0987455447800578 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
