@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -408,51 +409,97 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="BERRYESSA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orA-Uy-Y5Q">
-                                <rect key="frame" x="166" y="28" width="269" height="82"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BERRYESSA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orA-Uy-Y5Q">
+                                <rect key="frame" x="209" y="40" width="182" height="36"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="MEETING TIME: Saturday @ 7:30PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Bq-TV-lBV">
-                                <rect key="frame" x="136" y="370" width="328" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MEETING TIME: Saturday @ 7:30PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Bq-TV-lBV">
+                                <rect key="frame" x="152" y="447" width="295" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="CELL LEADER: Michelle Moi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMQ-Jx-Obp">
-                                <rect key="frame" x="163" y="402" width="275" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CELL LEADER: Michelle Moi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMQ-Jx-Obp">
+                                <rect key="frame" x="185" y="488" width="230" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="EMAIL: moi.michelle18@gmail.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Mi-3p-GbG">
-                                <rect key="frame" x="143" y="434" width="314" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMAIL: moi.michelle18@gmail.com" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Mi-3p-GbG">
+                                <rect key="frame" x="159" y="529" width="282" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="berryessa.png" translatesAutoresizingMaskIntoConstraints="NO" id="DW5-Ev-WEv">
-                                <rect key="frame" x="124" y="110" width="352" height="225"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2pj-Gb-PJc">
+                                <rect key="frame" x="20" y="76" width="560" height="371"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Berryessa" translatesAutoresizingMaskIntoConstraints="NO" id="DW5-Ev-WEv">
+                                        <rect key="frame" x="28" y="24" width="504" height="322"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="322" id="DqP-W3-Mb1"/>
+                                            <constraint firstAttribute="width" secondItem="DW5-Ev-WEv" secondAttribute="height" multiplier="352:225" id="EhY-lS-g7d"/>
+                                            <constraint firstAttribute="width" constant="504" id="hfn-fM-tYy"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="EhY-lS-g7d"/>
+                                            </mask>
+                                        </variation>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="DW5-Ev-WEv" secondAttribute="height" multiplier="352:225" id="EhY-lS-g7d"/>
+                                    <constraint firstItem="DW5-Ev-WEv" firstAttribute="width" secondItem="2pj-Gb-PJc" secondAttribute="width" multiplier="0.9" id="2yU-M4-2wa"/>
+                                    <constraint firstItem="DW5-Ev-WEv" firstAttribute="centerX" secondItem="2pj-Gb-PJc" secondAttribute="centerX" id="PRL-Um-ofG"/>
+                                    <constraint firstItem="DW5-Ev-WEv" firstAttribute="centerY" secondItem="2pj-Gb-PJc" secondAttribute="centerY" id="S0w-qx-YBp"/>
+                                    <constraint firstItem="DW5-Ev-WEv" firstAttribute="height" secondItem="2pj-Gb-PJc" secondAttribute="height" multiplier="0.8" id="Smg-aC-2FP"/>
+                                    <constraint firstItem="DW5-Ev-WEv" firstAttribute="height" relation="lessThanOrEqual" secondItem="2pj-Gb-PJc" secondAttribute="height" multiplier="0.9" priority="200" id="Vxm-FU-1Qe"/>
+                                    <constraint firstItem="DW5-Ev-WEv" firstAttribute="width" relation="lessThanOrEqual" secondItem="2pj-Gb-PJc" secondAttribute="width" multiplier="0.9" priority="200" id="aYp-YJ-wxF"/>
                                 </constraints>
-                            </imageView>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="2yU-M4-2wa"/>
+                                        <exclude reference="Smg-aC-2FP"/>
+                                        <exclude reference="Vxm-FU-1Qe"/>
+                                        <exclude reference="aYp-YJ-wxF"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="orA-Uy-Y5Q" firstAttribute="top" secondItem="bJg-CI-ZNV" secondAttribute="bottom" constant="20" id="2dt-W2-20a"/>
                             <constraint firstItem="orA-Uy-Y5Q" firstAttribute="centerX" secondItem="Q27-oY-sfL" secondAttribute="centerX" id="4nN-yx-ITK"/>
                             <constraint firstItem="6Bq-TV-lBV" firstAttribute="centerX" secondItem="Q27-oY-sfL" secondAttribute="centerX" id="AlL-fc-vyg"/>
                             <constraint firstItem="HMQ-Jx-Obp" firstAttribute="centerX" secondItem="Q27-oY-sfL" secondAttribute="centerX" id="Bqe-XG-Rv5"/>
-                            <constraint firstItem="DW5-Ev-WEv" firstAttribute="centerX" secondItem="Q27-oY-sfL" secondAttribute="centerX" id="LgB-fV-vOa"/>
+                            <constraint firstItem="2pj-Gb-PJc" firstAttribute="top" secondItem="orA-Uy-Y5Q" secondAttribute="bottom" id="CBq-wE-vRe"/>
+                            <constraint firstItem="2pj-Gb-PJc" firstAttribute="leading" secondItem="Q27-oY-sfL" secondAttribute="leadingMargin" id="Lr8-fE-h7j"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="7Mi-3p-GbG" secondAttribute="bottom" constant="50" id="OPk-Zy-p3O"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2pj-Gb-PJc" secondAttribute="trailing" id="ULb-cs-S0D"/>
                             <constraint firstItem="7Mi-3p-GbG" firstAttribute="top" secondItem="HMQ-Jx-Obp" secondAttribute="bottom" constant="20" id="cfo-bj-vS3"/>
                             <constraint firstItem="HMQ-Jx-Obp" firstAttribute="top" secondItem="6Bq-TV-lBV" secondAttribute="bottom" constant="20" id="dKH-B4-FIU"/>
+                            <constraint firstItem="SG3-aK-mkq" firstAttribute="top" secondItem="7Mi-3p-GbG" secondAttribute="bottom" id="ddI-18-qdk"/>
                             <constraint firstItem="7Mi-3p-GbG" firstAttribute="centerX" secondItem="Q27-oY-sfL" secondAttribute="centerX" id="lhW-ww-Rer"/>
-                            <constraint firstItem="DW5-Ev-WEv" firstAttribute="width" secondItem="Q27-oY-sfL" secondAttribute="width" multiplier="0.9" id="tQ0-Iy-pal"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2pj-Gb-PJc" secondAttribute="trailing" id="qdI-A5-Ygm"/>
+                            <constraint firstItem="6Bq-TV-lBV" firstAttribute="top" secondItem="2pj-Gb-PJc" secondAttribute="bottom" id="zDt-Uy-CCs"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ULb-cs-S0D"/>
+                                <exclude reference="ddI-18-qdk"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
+                        <outlet property="groupPicture" destination="DW5-Ev-WEv" id="cxD-XS-SAq"/>
+                        <outlet property="imageHeightConstraint" destination="DqP-W3-Mb1" id="674-hr-7hk"/>
+                        <outlet property="imagePaddingView" destination="2pj-Gb-PJc" id="duo-6f-2t6"/>
+                        <outlet property="imageWidthConstraint" destination="hfn-fM-tYy" id="LfH-d3-8Yi"/>
                         <outlet property="nameHeader" destination="orA-Uy-Y5Q" id="iOg-7D-ncO"/>
+                        <outlet property="pictureRatioConstraint" destination="EhY-lS-g7d" id="aE6-gG-VFj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TrV-m2-It3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -721,8 +768,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Berryessa" width="1136" height="731"/>
         <image name="LOGO.png" width="1800" height="1749"/>
-        <image name="berryessa.png" width="1136" height="731"/>
         <image name="calendaricon.png" width="28" height="28"/>
         <image name="contacticon.png" width="35" height="35"/>
         <image name="facebook.png" width="500" height="500"/>

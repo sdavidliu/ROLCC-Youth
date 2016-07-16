@@ -15,6 +15,12 @@ class Berryessa: UIViewController {
     var cellText = "Berryessa"
     
     @IBOutlet private var nameHeader : UILabel!
+    @IBOutlet private var groupPicture : UIImageView!
+    @IBOutlet private var imagePaddingView: UIView!
+    @IBOutlet private var pictureRatioConstraint : NSLayoutConstraint!
+    
+    @IBOutlet private var imageWidthConstraint : NSLayoutConstraint!
+    @IBOutlet private var imageHeightConstraint : NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +29,22 @@ class Berryessa: UIViewController {
         self.view.addSubview(button)
         
         button.addTarget(self, action: #selector(Berryessa.tapped), forControlEvents: .TouchUpInside)
+        
+        let groupImg : UIImage! = UIImage(named: cellText)
+        
+        let originalImgWidth = groupImg.size.width
+        let originalImgHeight = groupImg.size.height
+        
+        let imgWidth = 0.85 * UIScreen.mainScreen().bounds.width
+        
+        let ratio = imgWidth / originalImgWidth
+        
+        let imgHeight = ratio * originalImgHeight
+        
+        imageWidthConstraint.constant = imgWidth
+        imageHeightConstraint.constant = imgHeight
+        
+        groupPicture.image = groupImg
     }
     
     func tapped(sender: DOFavoriteButton) {
@@ -40,6 +62,7 @@ class Berryessa: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         nameHeader.text = cellText
+        
     }
     
     override func viewDidAppear(animated: Bool) {
