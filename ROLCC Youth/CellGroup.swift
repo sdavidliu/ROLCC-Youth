@@ -12,7 +12,7 @@ class CellGroup: UIPageViewController, UIPageViewControllerDelegate, UIPageViewC
     
     var destinationViewControllers : [UIViewController] = []
     
-    private let numCellGroups = 10
+    private let numCellGroups = 11
     private var realIndex = 0
     
     private let cellArray = ["Berryessa", "Cupertino 1", "Cupertino 2", "Evergreen", "Fremont A", "Fremont B", "Morgan Hill", "Palo Alto", "San Carlos", "Saratoga 1", "Saratoga 2"]
@@ -20,6 +20,11 @@ class CellGroup: UIPageViewController, UIPageViewControllerDelegate, UIPageViewC
     var berryessaView : Berryessa!
     var cupertino1View : Berryessa!
     var evergreenView : Berryessa!
+    
+    private var lastIndex = 0
+    var tempLastIndex = 0
+    
+    private var isPositiveMotion = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,6 +98,70 @@ class CellGroup: UIPageViewController, UIPageViewControllerDelegate, UIPageViewC
         return destinationViewControllers[index]
     }
     
+    func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        
+        if(completed){
+            lastIndex = tempLastIndex
+            if(isPositiveMotion){
+                realIndex += 1
+            }else{
+                realIndex -= 1
+            }
+        }
+    }
+    
+    func pageViewController(pageViewController: UIPageViewController, willTransitionToViewControllers pendingViewControllers: [UIViewController]) {
+        
+        let index = destinationViewControllers.indexOf(pendingViewControllers[0])! as Int!
+        
+        var tempIndex = realIndex
+        
+        if(index - lastIndex == 1 || index - lastIndex == -2){
+            isPositiveMotion = true
+            tempIndex += 1
+        }else{
+            isPositiveMotion = false
+            tempIndex -= 1
+        }
+        
+        if(tempIndex >= numCellGroups){
+            tempIndex = numCellGroups - 1
+        }
+        
+        tempLastIndex = index
+        
+        if(realIndex < numCellGroups && realIndex >= 0){
+            if(pendingViewControllers[0] == berryessaView){
+                berryessaView.setCellGroup(cellArray[tempIndex])
+                
+                if(tempIndex > 0){
+                    evergreenView.setCellGroup(cellArray[tempIndex - 1])
+                }
+                if(tempIndex < numCellGroups - 1){
+                    cupertino1View.setCellGroup(cellArray[tempIndex + 1])
+                }
+            }else if(pendingViewControllers[0] == cupertino1View){
+                cupertino1View.setCellGroup(cellArray[tempIndex])
+                
+                if(tempIndex > 0){
+                    berryessaView.setCellGroup(cellArray[tempIndex - 1])
+                }
+                if(tempIndex < numCellGroups - 1){
+                    evergreenView.setCellGroup(cellArray[tempIndex + 1])
+                }
+            }else if(pendingViewControllers[0] == evergreenView){
+                evergreenView.setCellGroup(cellArray[tempIndex])
+                
+                if(tempIndex > 0){
+                    cupertino1View.setCellGroup(cellArray[tempIndex - 1])
+                }
+                if(tempIndex < numCellGroups - 1){
+                    berryessaView.setCellGroup(cellArray[tempIndex + 1])
+                }
+            }
+        }
+    }
+    
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         
         var index = destinationViewControllers.indexOf(viewController)! as Int
@@ -107,17 +176,7 @@ class CellGroup: UIPageViewController, UIPageViewControllerDelegate, UIPageViewC
             index = 2
         }
         
-        realIndex -= 1
-        
-        if(index % 2 == 0){
-            berryessaView.setCellGroup(cellArray[realIndex])
-        }else if(index % 3 == 1){
-            cupertino1View.setCellGroup(cellArray[realIndex])
-        }else{
-            evergreenView.setCellGroup(cellArray[realIndex])
-        }
-        
-        if realIndex == numCellGroups {
+        if realIndex == numCellGroups - 1 {
             return nil
         }
         
@@ -133,26 +192,16 @@ class CellGroup: UIPageViewController, UIPageViewControllerDelegate, UIPageViewC
         }
         
         index += 1
-        realIndex += 1
         
-        if realIndex == numCellGroups {
+        if realIndex == numCellGroups - 1{
             return nil
-        }
-        
-        if(index % 3 == 0){
-            berryessaView.setCellGroup(cellArray[realIndex])
-        }else if(index % 3 == 1){
-            cupertino1View.setCellGroup(cellArray[realIndex])
-        }else{
-            evergreenView.setCellGroup(cellArray[realIndex])
         }
         
         return self.viewControllerAtIndex(index % 3)
     }
     
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return numCellGroups
-        //return destinationViewControllers.count
+        return numCellGroups - 1
         
     }
     
