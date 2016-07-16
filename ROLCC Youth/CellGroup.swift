@@ -17,9 +17,9 @@ class CellGroup: UIPageViewController, UIPageViewControllerDelegate, UIPageViewC
     
     private let cellArray = ["Berryessa", "Cupertino 1", "Cupertino 2", "Evergreen", "Fremont A", "Fremont B", "Morgan Hill", "Palo Alto", "San Carlos", "Saratoga 1", "Saratoga 2"]
     
-    var berryessaView : Berryessa!
-    var cupertino1View : Berryessa!
-    var evergreenView : Berryessa!
+    var cellView0 : Berryessa!
+    var cellView1 : Berryessa!
+    var cellView2 : Berryessa!
     
     private var lastIndex = 0
     var tempLastIndex = 0
@@ -34,16 +34,16 @@ class CellGroup: UIPageViewController, UIPageViewControllerDelegate, UIPageViewC
         self.delegate = self
         self.dataSource = self
         
-        berryessaView = storyboard?.instantiateViewControllerWithIdentifier("Berryessa") as! Berryessa
-        berryessaView.setCellGroup(cellArray[0])
+        cellView0 = storyboard?.instantiateViewControllerWithIdentifier("Berryessa") as! Berryessa
+        cellView0.setCellGroup(cellArray[0])
         
-        cupertino1View = storyboard?.instantiateViewControllerWithIdentifier("Berryessa") as! Berryessa
-        cupertino1View.setCellGroup(cellArray[1])
+        cellView1 = storyboard?.instantiateViewControllerWithIdentifier("Berryessa") as! Berryessa
+        cellView1.setCellGroup(cellArray[1])
         
-        evergreenView = storyboard?.instantiateViewControllerWithIdentifier("Berryessa") as! Berryessa
-        evergreenView.setCellGroup(cellArray[2])
+        cellView2 = storyboard?.instantiateViewControllerWithIdentifier("Berryessa") as! Berryessa
+        cellView2.setCellGroup(cellArray[2])
         
-        destinationViewControllers = [berryessaView, cupertino1View, evergreenView]
+        destinationViewControllers = [cellView0, cellView1, cellView2]
         
         let defaults = NSUserDefaults.standardUserDefaults()
         
@@ -59,11 +59,11 @@ class CellGroup: UIPageViewController, UIPageViewControllerDelegate, UIPageViewC
         let startingViewController = self.viewControllerAtIndex(x % 3)
         
         if(x % 3 == 0){
-            berryessaView.setCellGroup(cellArray[x])
+            cellView0.setCellGroup(cellArray[x])
         }else if(x % 3 == 1){
-            cupertino1View.setCellGroup(cellArray[x])
+            cellView1.setCellGroup(cellArray[x])
         }else{
-            evergreenView.setCellGroup(cellArray[x])
+            cellView2.setCellGroup(cellArray[x])
         }
         
         let viewControllers: NSArray = [startingViewController]
@@ -116,32 +116,32 @@ class CellGroup: UIPageViewController, UIPageViewControllerDelegate, UIPageViewC
         tempLastIndex = index
         
         if(realIndex < numCellGroups && realIndex >= 0){
-            if(pendingViewControllers[0] == berryessaView){
-                berryessaView.setCellGroup(cellArray[tempIndex])
+            if(pendingViewControllers[0] == cellView0){
+                cellView0.setCellGroup(cellArray[tempIndex])
                 
                 if(tempIndex > 0){
-                    evergreenView.setCellGroup(cellArray[tempIndex - 1])
+                    cellView2.setCellGroup(cellArray[tempIndex - 1])
                 }
                 if(tempIndex < numCellGroups - 1){
-                    cupertino1View.setCellGroup(cellArray[tempIndex + 1])
+                    cellView1.setCellGroup(cellArray[tempIndex + 1])
                 }
-            }else if(pendingViewControllers[0] == cupertino1View){
-                cupertino1View.setCellGroup(cellArray[tempIndex])
+            }else if(pendingViewControllers[0] == cellView1){
+                cellView1.setCellGroup(cellArray[tempIndex])
                 
                 if(tempIndex > 0){
-                    berryessaView.setCellGroup(cellArray[tempIndex - 1])
+                    cellView0.setCellGroup(cellArray[tempIndex - 1])
                 }
                 if(tempIndex < numCellGroups - 1){
-                    evergreenView.setCellGroup(cellArray[tempIndex + 1])
+                    cellView2.setCellGroup(cellArray[tempIndex + 1])
                 }
-            }else if(pendingViewControllers[0] == evergreenView){
-                evergreenView.setCellGroup(cellArray[tempIndex])
+            }else if(pendingViewControllers[0] == cellView2){
+                cellView2.setCellGroup(cellArray[tempIndex])
                 
                 if(tempIndex > 0){
-                    cupertino1View.setCellGroup(cellArray[tempIndex - 1])
+                    cellView1.setCellGroup(cellArray[tempIndex - 1])
                 }
                 if(tempIndex < numCellGroups - 1){
-                    berryessaView.setCellGroup(cellArray[tempIndex + 1])
+                    cellView0.setCellGroup(cellArray[tempIndex + 1])
                 }
             }
         }
