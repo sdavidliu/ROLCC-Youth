@@ -34,53 +34,38 @@ class CellGroup: UIPageViewController, UIPageViewControllerDelegate, UIPageViewC
         self.delegate = self
         self.dataSource = self
         
-        //let almadenView = storyboard?.instantiateViewControllerWithIdentifier("Almaden") as! Almaden
         berryessaView = storyboard?.instantiateViewControllerWithIdentifier("Berryessa") as! Berryessa
-        cupertino1View = storyboard?.instantiateViewControllerWithIdentifier("Berryessa") as! Berryessa
-        evergreenView = storyboard?.instantiateViewControllerWithIdentifier("Berryessa") as! Berryessa
-//        let cupertino2View = storyboard?.instantiateViewControllerWithIdentifier("Cupertino2") as! Cupertino2
-//        let evergreenView = storyboard?.instantiateViewControllerWithIdentifier("Evergreen") as! Evergreen
-//        let fremontAView = storyboard?.instantiateViewControllerWithIdentifier("FremontA") as! FremontA
-//        let fremontBView = storyboard?.instantiateViewControllerWithIdentifier("FremontB") as! FremontB
-//        let morganHillView = storyboard?.instantiateViewControllerWithIdentifier("MorganHill") as! MorganHill
-//        let paloAltoView = storyboard?.instantiateViewControllerWithIdentifier("PaloAlto") as! PaloAlto
-//        let sanCarlosView = storyboard?.instantiateViewControllerWithIdentifier("SanCarlos") as! SanCarlos
-//        let saratoga1View = storyboard?.instantiateViewControllerWithIdentifier("Saratoga1") as! Saratoga1
-//        let saratoga2View = storyboard?.instantiateViewControllerWithIdentifier("Saratoga2") as! Saratoga2
+        berryessaView.setCellGroup(cellArray[0])
         
-        //destinationViewControllers = [berryessaView, cupertino1View, cupertino2View, evergreenView, fremontAView, fremontBView, morganHillView, paloAltoView, sanCarlosView, saratoga1View, saratoga2View]
+        cupertino1View = storyboard?.instantiateViewControllerWithIdentifier("Berryessa") as! Berryessa
+        cupertino1View.setCellGroup(cellArray[1])
+        
+        evergreenView = storyboard?.instantiateViewControllerWithIdentifier("Berryessa") as! Berryessa
+        evergreenView.setCellGroup(cellArray[2])
         
         destinationViewControllers = [berryessaView, cupertino1View, evergreenView]
         
         let defaults = NSUserDefaults.standardUserDefaults()
+        
         var x = 0
-        if (defaults.stringForKey("Favorite") == "Berryessa"){
-            x = 0
-        }else if (defaults.stringForKey("Favorite") == "Cupertino1"){
-            x = 1
-        }else if (defaults.stringForKey("Favorite") == "Cupertino2"){
-            x = 2
-        }else if (defaults.stringForKey("Favorite") == "Evergreen"){
-            x = 3
-        }else if (defaults.stringForKey("Favorite") == "FremontA"){
-            x = 4
-        }else if (defaults.stringForKey("Favorite") == "FremontB"){
-            x = 5
-        }else if (defaults.stringForKey("Favorite") == "MorganHill"){
-            x = 6
-        }else if (defaults.stringForKey("Favorite") == "PaloAlto"){
-            x = 7
-        }else if (defaults.stringForKey("Favorite") == "SanCarlos"){
-            x = 8
-        }else if (defaults.stringForKey("Favorite") == "Saratoga1"){
-            x = 9
-        }else if (defaults.stringForKey("Favorite") == "Saratoga2"){
-            x = 10
+        
+        if(defaults.stringForKey("Favorite") != nil){
+            x = cellArray.indexOf(defaults.stringForKey("Favorite")!)!
         }
         
         realIndex = x
+        lastIndex = realIndex % 3
         
-        let startingViewController = self.viewControllerAtIndex(x)
+        let startingViewController = self.viewControllerAtIndex(x % 3)
+        
+        if(x % 3 == 0){
+            berryessaView.setCellGroup(cellArray[x])
+        }else if(x % 3 == 1){
+            cupertino1View.setCellGroup(cellArray[x])
+        }else{
+            evergreenView.setCellGroup(cellArray[x])
+        }
+        
         let viewControllers: NSArray = [startingViewController]
         
         self.setViewControllers(viewControllers as? [UIViewController], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: {(done: Bool) in})

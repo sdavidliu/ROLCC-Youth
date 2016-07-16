@@ -33,7 +33,7 @@ class Berryessa: UIViewController {
             // select with animation
             sender.select()
             let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setValue("Berryessa", forKey: "Favorite")
+            defaults.setValue(cellText, forKey: "Favorite")
             defaults.synchronize()
         }
     }
@@ -45,7 +45,7 @@ class Berryessa: UIViewController {
     override func viewDidAppear(animated: Bool) {
         let defaults = NSUserDefaults.standardUserDefaults()
         
-        if (defaults.stringForKey("Favorite") == "Berryessa"){
+        if (defaults.stringForKey("Favorite") == cellText){
             if (button.selected == false){
                 button.select()
             }
