@@ -25,7 +25,7 @@ class Berryessa: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        button = DOFavoriteButton(frame: CGRectMake(UIScreen.mainScreen().bounds.width - 50, 20, 50, 50), image: UIImage(named: "stars.png"))
+        button = DOFavoriteButton(frame: CGRectMake(UIScreen.mainScreen().bounds.width - 70, 84, 50, 50), image: UIImage(named: "stars.png"))
         self.view.addSubview(button)
         
         button.addTarget(self, action: #selector(Berryessa.tapped), forControlEvents: .TouchUpInside)

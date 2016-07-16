@@ -31,7 +31,6 @@ class Calendar: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let ref = FIRDatabase.database().reference().child("events_list")
         ref.observeEventType(.Value, withBlock: { snapshot in
             for event in snapshot.children.allObjects {
-                NSLog(event.key)
                 self.events.append(event.key)
             }
             
