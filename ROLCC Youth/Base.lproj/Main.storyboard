@@ -20,20 +20,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcn-8m-SXu">
-                                <rect key="frame" x="20" y="34" width="560" height="100"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="80"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="85w-Rh-kNF" userLabel="Header View">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sqs-f5-ITs">
+                                        <rect key="frame" x="270" y="30" width="60.5" height="31"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="22"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Sqs-f5-ITs" firstAttribute="centerX" secondItem="85w-Rh-kNF" secondAttribute="centerX" id="8we-Jj-9gh"/>
+                                    <constraint firstAttribute="height" constant="70" id="LMA-RG-TQs"/>
+                                    <constraint firstItem="Sqs-f5-ITs" firstAttribute="centerY" secondItem="85w-Rh-kNF" secondAttribute="centerY" id="LMb-DS-y81"/>
+                                    <constraint firstItem="Sqs-f5-ITs" firstAttribute="centerY" secondItem="85w-Rh-kNF" secondAttribute="centerY" constant="10" id="Zov-nq-SZv"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="70" id="eg9-ll-kcT"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="tbu-wr-ay6"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="LMb-DS-y81"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcn-8m-SXu">
+                                <rect key="frame" x="183" y="111" width="234" height="72"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="60"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="    Days            Hours         Minutes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yc1-tG-uQa">
-                                <rect key="frame" x="135" y="120" width="331" height="44"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="  Days       Hours    Minutes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yc1-tG-uQa">
+                                <rect key="frame" x="182" y="182" width="237" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Time to Service:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCR-ob-xaW">
-                                <rect key="frame" x="238" y="26" width="124" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time to Service:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCR-ob-xaW">
+                                <rect key="frame" x="238" y="90" width="124" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -51,13 +76,26 @@
                         <constraints>
                             <constraint firstItem="eCR-ob-xaW" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="0aR-ha-ygW"/>
                             <constraint firstItem="rcn-8m-SXu" firstAttribute="top" secondItem="eCR-ob-xaW" secondAttribute="bottom" id="6Ps-nQ-gfs"/>
+                            <constraint firstItem="Cqn-f2-CjQ" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="7er-IW-ryG"/>
                             <constraint firstItem="rcn-8m-SXu" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="8DO-Ro-vUJ"/>
-                            <constraint firstItem="eCR-ob-xaW" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="20" id="CsU-Pr-LNS"/>
+                            <constraint firstItem="eCR-ob-xaW" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="100" id="CsU-Pr-LNS"/>
                             <constraint firstItem="yc1-tG-uQa" firstAttribute="top" secondItem="rcn-8m-SXu" secondAttribute="bottom" id="DxO-LN-RyG"/>
                             <constraint firstItem="Cqn-f2-CjQ" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="I3w-l8-mda"/>
+                            <constraint firstItem="85w-Rh-kNF" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-20" id="eNx-Ji-vhN"/>
+                            <constraint firstItem="eCR-ob-xaW" firstAttribute="top" secondItem="85w-Rh-kNF" secondAttribute="bottom" constant="20" id="ezf-K3-GbW"/>
+                            <constraint firstItem="Cqn-f2-CjQ" firstAttribute="top" secondItem="yc1-tG-uQa" secondAttribute="bottom" constant="30" id="fYa-qW-6dm"/>
                             <constraint firstItem="yc1-tG-uQa" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="lra-TY-Mah"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="85w-Rh-kNF" secondAttribute="trailing" constant="-20" id="okQ-HQ-0fB"/>
+                            <constraint firstItem="85w-Rh-kNF" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="topMargin" id="s1F-xd-HUY"/>
                             <constraint firstItem="Cqn-f2-CjQ" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="uzb-Kb-MSy"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="CsU-Pr-LNS"/>
+                                <exclude reference="I3w-l8-mda"/>
+                                <exclude reference="fYa-qW-6dm"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="homeicon.png" selectedImage="homeicon.png" id="acW-dT-cKf"/>
                     <connections>
