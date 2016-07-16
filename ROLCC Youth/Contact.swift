@@ -126,14 +126,13 @@ class Contact: UIViewController {
     
     func phoneChurch(sender: UIButton!){
         let number = "4082600257"
-        let url = NSURL(string: "tel://\(number)")
-        UIApplication.sharedApplication().openURL(url!)
+        
+        callNumber(number)
     }
     
     func faxChurch(sender: UIButton!){
         let number = "4087488877"
-        let url = NSURL(string: "tel://\(number)")
-        UIApplication.sharedApplication().openURL(url!)
+        callNumber(number)
     }
     
     func emailChurch(sender: UIButton!){
@@ -145,6 +144,18 @@ class Contact: UIViewController {
     func websiteChurch(sender: UIButton!){
         let url = NSURL(string: "http://www.rolcc.net/")
         UIApplication.sharedApplication().openURL(url!)
+    }
+    
+    func callNumber(number : String){
+        let alertController = UIAlertController(title: number, message:
+            "Are you sure you want to call " + number + "?", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default,handler: nil))
+        alertController.addAction(UIAlertAction(title: "Call", style: UIAlertActionStyle.Default,handler: { action in
+            let url = NSURL(string: "tel://\(number)")
+            UIApplication.sharedApplication().openURL(url!)
+        }))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
