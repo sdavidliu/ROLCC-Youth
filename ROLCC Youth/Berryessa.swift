@@ -12,6 +12,10 @@ class Berryessa: UIViewController {
     
     var button = DOFavoriteButton()
     
+    var cellText = "Berryessa"
+    
+    @IBOutlet private var nameHeader : UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,6 +38,10 @@ class Berryessa: UIViewController {
         }
     }
     
+    override func viewWillAppear(animated: Bool) {
+        nameHeader.text = cellText
+    }
+    
     override func viewDidAppear(animated: Bool) {
         let defaults = NSUserDefaults.standardUserDefaults()
         
@@ -51,6 +59,9 @@ class Berryessa: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func setCellGroup(name : String){
+        cellText = name
+    }
 
     /*
     // MARK: - Navigation
