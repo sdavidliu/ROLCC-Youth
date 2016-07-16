@@ -42,13 +42,9 @@ class Home: UIViewController {
         let ref = FIRDatabase.database().reference()
         ref.observeEventType(.Value, withBlock: { snapshot in
             
-            let s = snapshot.value!.objectForKey("home")! as! String
+            let homeScreenKeys = snapshot.value!.objectForKey("homescreen")!
             
-            let Str = s.componentsSeparatedByString(",")
-            
-            for part in Str {
-                self.array1.append(part)
-            }
+            self.array1 = [homeScreenKeys.objectForKey("sermon")! as! String, homeScreenKeys.objectForKey("worship")! as! String, homeScreenKeys.objectForKey("announcements")! as! String]
             
             self.showInfo()
             
