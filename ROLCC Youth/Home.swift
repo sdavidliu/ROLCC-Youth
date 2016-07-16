@@ -15,6 +15,10 @@ class Home: UIViewController {
     @IBOutlet weak var bottomLabel: UILabel!
     @IBOutlet weak var youthLogo: UIButton!
     
+    @IBOutlet weak var sermonLabel : UILabel!
+    @IBOutlet weak var worshipLabel : UILabel!
+    @IBOutlet weak var announcementsLabel : UILabel!
+    
     var count = 0
     var weekday = 0
     var hours = 0
@@ -31,13 +35,13 @@ class Home: UIViewController {
         
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         
-        let thisWeek = UILabel(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 30))
+        /*let thisWeek = UILabel(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 30))
         thisWeek.text = "This Week:"
         thisWeek.center = CGPoint(x: screenWidth/2, y: 400)
         thisWeek.textAlignment = NSTextAlignment.Center
         thisWeek.font = UIFont(name: "Avenir-Medium", size: 20)
         thisWeek.textColor = UIColor.whiteColor()
-        self.view.addSubview(thisWeek)
+        self.view.addSubview(thisWeek)*/
         
         let ref = FIRDatabase.database().reference()
         ref.observeEventType(.Value, withBlock: { snapshot in
@@ -59,30 +63,9 @@ class Home: UIViewController {
     }
     
     func showInfo(){
-        
-        let preacher = UILabel(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 30))
-        preacher.text = "Sermon: " + String(array1[0])
-        preacher.center = CGPoint(x: screenWidth/2, y: 440)
-        preacher.textAlignment = NSTextAlignment.Center
-        preacher.font = UIFont(name: "Avenir", size: 15)
-        preacher.textColor = UIColor.whiteColor()
-        self.view.addSubview(preacher)
-        
-        let worship = UILabel(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 30))
-        worship.text = "Worship: " + String(array1[1])
-        worship.center = CGPoint(x: screenWidth/2, y: 460)
-        worship.textAlignment = NSTextAlignment.Center
-        worship.font = UIFont(name: "Avenir", size: 15)
-        worship.textColor = UIColor.whiteColor()
-        self.view.addSubview(worship)
-        
-        let announcements = UILabel(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 30))
-        announcements.text = "Announcements: " + String(array1[2])
-        announcements.center = CGPoint(x: screenWidth/2, y: 480)
-        announcements.textAlignment = NSTextAlignment.Center
-        announcements.font = UIFont(name: "Avenir", size: 15)
-        announcements.textColor = UIColor.whiteColor()
-        self.view.addSubview(announcements)
+        sermonLabel.text = "Sermon: " + array1[0]
+        worshipLabel.text = "Worship: " + array1[1]
+        announcementsLabel.text = "Announcements: " + array1[2]
         
         youthLogo.addTarget(self, action: #selector(test), forControlEvents: .TouchUpInside)
     }
