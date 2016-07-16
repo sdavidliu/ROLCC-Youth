@@ -28,15 +28,11 @@ class Calendar: UIViewController, UITableViewDataSource, UITableViewDelegate {
         tableView.delegate = self
         tableView.dataSource = self
         
-        let ref = FIRDatabase.database().reference()
+        let ref = FIRDatabase.database().reference().child("events_list")
         ref.observeEventType(.Value, withBlock: { snapshot in
-            
-            let s = snapshot.value!.objectForKey("events")! as! String
-            
-            let Str = s.componentsSeparatedByString(",")
-            
-            for part in Str {
-                self.events.append(part)
+            for event in snapshot.children.allObjects {
+                NSLog(event.key)
+                self.events.append(event.key)
             }
             
             self.tableView.reloadData()
@@ -73,16 +69,9 @@ class Calendar: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let row = indexPath.row
         
         var details = [String]()
-        let ref = FIRDatabase.database().reference()
+        let ref = FIRDatabase.database().reference().child("events_list").child(events[row])
         ref.observeEventType(.Value, withBlock: { snapshot in
-            
-            let s = snapshot.value!.objectForKey(self.events[row])! as! String
-            
-            let Str = s.componentsSeparatedByString(",")
-            
-            for part in Str {
-                details.append(part)
-            }
+            details = [snapshot.value!.objectForKey("date")! as! String, snapshot.value!.objectForKey("time")! as! String, snapshot.value!.objectForKey("location")! as! String, snapshot.value!.objectForKey("description")! as! String]
             
             let alertController = UIAlertController(title: self.events[row], message:
                 "Date: " + details[0] + "\nTime: " + details[1] + "\nLocation: " + details[2] + "\nDescription: " + details[3], preferredStyle: UIAlertControllerStyle.Alert)
