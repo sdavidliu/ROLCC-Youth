@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -89,7 +90,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OQb-MQ-Ss8" id="a1s-Qa-Ubo">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -408,48 +409,80 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="BERRYESSA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orA-Uy-Y5Q">
-                                <rect key="frame" x="166" y="28" width="269" height="82"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BERRYESSA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orA-Uy-Y5Q">
+                                <rect key="frame" x="209" y="28" width="182" height="36"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="MEETING TIME: Saturday @ 7:30PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Bq-TV-lBV">
-                                <rect key="frame" x="136" y="370" width="328" height="24"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="CELL LEADER: Michelle Moi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMQ-Jx-Obp">
-                                <rect key="frame" x="163" y="402" width="275" height="24"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="EMAIL: moi.michelle18@gmail.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Mi-3p-GbG">
-                                <rect key="frame" x="143" y="434" width="314" height="24"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="berryessa.png" translatesAutoresizingMaskIntoConstraints="NO" id="DW5-Ev-WEv">
-                                <rect key="frame" x="124" y="110" width="352" height="225"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="berryessa.png" translatesAutoresizingMaskIntoConstraints="NO" id="DW5-Ev-WEv">
+                                <rect key="frame" x="30" y="104" width="540" height="345"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="DW5-Ev-WEv" secondAttribute="height" multiplier="352:225" id="EhY-lS-g7d"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="660-AN-5bo">
+                                <rect key="frame" x="40" y="454" width="520" height="116"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MEETING TIME: Saturday @ 7:30PM" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Bq-TV-lBV">
+                                        <rect key="frame" x="113" y="8" width="295" height="21"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="CELL LEADER: Michelle Moi" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMQ-Jx-Obp">
+                                        <rect key="frame" x="146" y="49" width="230" height="21"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="EMAIL: moi.michelle18@gmail.com" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Mi-3p-GbG">
+                                        <rect key="frame" x="120" y="90" width="282" height="21"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7Mi-3p-GbG" secondAttribute="trailing" id="3Ci-dt-R4d"/>
+                                    <constraint firstItem="HMQ-Jx-Obp" firstAttribute="top" secondItem="6Bq-TV-lBV" secondAttribute="bottom" constant="20" id="81R-Rq-A4b"/>
+                                    <constraint firstAttribute="bottom" secondItem="7Mi-3p-GbG" secondAttribute="bottom" constant="5" id="9pa-CR-z3k"/>
+                                    <constraint firstItem="HMQ-Jx-Obp" firstAttribute="centerX" secondItem="660-AN-5bo" secondAttribute="centerX" id="ESU-43-bXC"/>
+                                    <constraint firstItem="7Mi-3p-GbG" firstAttribute="top" secondItem="HMQ-Jx-Obp" secondAttribute="bottom" constant="20" id="c4a-Nr-xSR"/>
+                                    <constraint firstItem="6Bq-TV-lBV" firstAttribute="centerX" secondItem="660-AN-5bo" secondAttribute="centerX" id="geG-Oq-zxf"/>
+                                    <constraint firstItem="7Mi-3p-GbG" firstAttribute="centerX" secondItem="660-AN-5bo" secondAttribute="centerX" id="hHi-M8-yZ3"/>
+                                    <constraint firstItem="6Bq-TV-lBV" firstAttribute="top" secondItem="660-AN-5bo" secondAttribute="top" constant="8" id="knx-Gb-zEj"/>
+                                    <constraint firstItem="7Mi-3p-GbG" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="660-AN-5bo" secondAttribute="leading" id="wHY-cc-iaD"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="3Ci-dt-R4d"/>
+                                        <exclude reference="wHY-cc-iaD"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="orA-Uy-Y5Q" firstAttribute="centerX" secondItem="Q27-oY-sfL" secondAttribute="centerX" id="4nN-yx-ITK"/>
-                            <constraint firstItem="6Bq-TV-lBV" firstAttribute="centerX" secondItem="Q27-oY-sfL" secondAttribute="centerX" id="AlL-fc-vyg"/>
-                            <constraint firstItem="HMQ-Jx-Obp" firstAttribute="centerX" secondItem="Q27-oY-sfL" secondAttribute="centerX" id="Bqe-XG-Rv5"/>
+                            <constraint firstItem="660-AN-5bo" firstAttribute="centerX" secondItem="Q27-oY-sfL" secondAttribute="centerX" id="7oh-yH-S14"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="660-AN-5bo" secondAttribute="trailing" constant="20" id="HPH-as-6JU"/>
                             <constraint firstItem="DW5-Ev-WEv" firstAttribute="centerX" secondItem="Q27-oY-sfL" secondAttribute="centerX" id="LgB-fV-vOa"/>
-                            <constraint firstItem="7Mi-3p-GbG" firstAttribute="top" secondItem="HMQ-Jx-Obp" secondAttribute="bottom" constant="20" id="cfo-bj-vS3"/>
-                            <constraint firstItem="HMQ-Jx-Obp" firstAttribute="top" secondItem="6Bq-TV-lBV" secondAttribute="bottom" constant="20" id="dKH-B4-FIU"/>
-                            <constraint firstItem="7Mi-3p-GbG" firstAttribute="centerX" secondItem="Q27-oY-sfL" secondAttribute="centerX" id="lhW-ww-Rer"/>
+                            <constraint firstItem="DW5-Ev-WEv" firstAttribute="top" secondItem="orA-Uy-Y5Q" secondAttribute="bottom" constant="40" id="OgG-Ve-2TT"/>
+                            <constraint firstItem="orA-Uy-Y5Q" firstAttribute="centerY" secondItem="Q27-oY-sfL" secondAttribute="centerY" id="kzV-k0-Afa"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="660-AN-5bo" secondAttribute="trailing" id="qU0-NU-F0Q"/>
+                            <constraint firstItem="orA-Uy-Y5Q" firstAttribute="top" secondItem="bJg-CI-ZNV" secondAttribute="bottom" constant="8" id="sr4-0Y-PpL"/>
                             <constraint firstItem="DW5-Ev-WEv" firstAttribute="width" secondItem="Q27-oY-sfL" secondAttribute="width" multiplier="0.9" id="tQ0-Iy-pal"/>
+                            <constraint firstItem="660-AN-5bo" firstAttribute="leading" secondItem="Q27-oY-sfL" secondAttribute="leadingMargin" constant="20" id="xGi-mZ-njM"/>
+                            <constraint firstItem="SG3-aK-mkq" firstAttribute="top" secondItem="660-AN-5bo" secondAttribute="bottom" constant="30" id="yD1-ei-kTd"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="kzV-k0-Afa"/>
+                                <exclude reference="qU0-NU-F0Q"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TrV-m2-It3" userLabel="First Responder" sceneMemberID="firstResponder"/>
