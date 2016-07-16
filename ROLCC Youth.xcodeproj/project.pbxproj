@@ -21,10 +21,6 @@
 		911233BB1D1B6F0100A8B44B /* CellGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911233BA1D1B6F0100A8B44B /* CellGroup.swift */; };
 		911233BD1D1BB4AD00A8B44B /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911233BC1D1BB4AC00A8B44B /* Contact.swift */; };
 		911233C11D1BD2AE00A8B44B /* Berryessa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911233C01D1BD2AE00A8B44B /* Berryessa.swift */; };
-		911233C31D1BD42300A8B44B /* homeicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 911233C21D1BD42300A8B44B /* homeicon.png */; };
-		911233C51D1BD54F00A8B44B /* calendaricon.png in Resources */ = {isa = PBXBuildFile; fileRef = 911233C41D1BD54F00A8B44B /* calendaricon.png */; };
-		911233C91D1BD61600A8B44B /* groupicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 911233C81D1BD61600A8B44B /* groupicon.png */; };
-		911233CB1D1BD6CF00A8B44B /* contacticon.png in Resources */ = {isa = PBXBuildFile; fileRef = 911233CA1D1BD6CF00A8B44B /* contacticon.png */; };
 		911BECC41D320F5D00F76534 /* Cupertino1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911BECC31D320F5D00F76534 /* Cupertino1.swift */; };
 		911BECC61D320F7D00F76534 /* Cupertino2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911BECC51D320F7D00F76534 /* Cupertino2.swift */; };
 		911BECC81D32113600F76534 /* FremontA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911BECC71D32113600F76534 /* FremontA.swift */; };
@@ -35,22 +31,7 @@
 		911BECD21D32134E00F76534 /* PaloAlto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911BECD11D32134E00F76534 /* PaloAlto.swift */; };
 		911BECD41D32136700F76534 /* SanCarlos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911BECD31D32136700F76534 /* SanCarlos.swift */; };
 		911BECD61D32137E00F76534 /* Evergreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911BECD51D32137E00F76534 /* Evergreen.swift */; };
-		911BECDB1D32167600F76534 /* fremontA.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 911BECD71D32167600F76534 /* fremontA.JPG */; };
-		911BECDD1D32167600F76534 /* cupertino1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 911BECD91D32167600F76534 /* cupertino1.jpg */; };
-		911BECDE1D32167600F76534 /* saratoga2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 911BECDA1D32167600F76534 /* saratoga2.jpg */; };
-		911BECE01D32179700F76534 /* berryessa.png in Resources */ = {isa = PBXBuildFile; fileRef = 911BECDF1D32179700F76534 /* berryessa.png */; };
-		911DFCFF1D3455DA00B52E71 /* summer.png in Resources */ = {isa = PBXBuildFile; fileRef = 911DFCFE1D3455DA00B52E71 /* summer.png */; };
-		911DFD031D3456D600B52E71 /* fall.png in Resources */ = {isa = PBXBuildFile; fileRef = 911DFD021D3456D600B52E71 /* fall.png */; };
-		911DFD051D3457B800B52E71 /* spring.png in Resources */ = {isa = PBXBuildFile; fileRef = 911DFD041D3457B800B52E71 /* spring.png */; };
-		911DFD071D34582100B52E71 /* winter.png in Resources */ = {isa = PBXBuildFile; fileRef = 911DFD061D34582100B52E71 /* winter.png */; };
 		9172BDF41D35DB40001C93A8 /* DOFavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9172BDF31D35DB40001C93A8 /* DOFavoriteButton.swift */; };
-		9172BDF61D35DB5E001C93A8 /* stars.png in Resources */ = {isa = PBXBuildFile; fileRef = 9172BDF51D35DB5E001C93A8 /* stars.png */; };
-		91765F381D2F49C8009C0555 /* LOGO.png in Resources */ = {isa = PBXBuildFile; fileRef = 91765F371D2F49C8009C0555 /* LOGO.png */; };
-		91765F3A1D2F5C58009C0555 /* saratoga1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91765F391D2F5C58009C0555 /* saratoga1.jpg */; };
-		91765F3C1D2F6E54009C0555 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 91765F3B1D2F6E54009C0555 /* facebook.png */; };
-		91765F401D2F6F04009C0555 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 91765F3F1D2F6F04009C0555 /* twitter.png */; };
-		91765F421D2F6F84009C0555 /* youtube.png in Resources */ = {isa = PBXBuildFile; fileRef = 91765F411D2F6F84009C0555 /* youtube.png */; };
-		91765F441D2F7053009C0555 /* instagram.png in Resources */ = {isa = PBXBuildFile; fileRef = 91765F431D2F7053009C0555 /* instagram.png */; };
 		91A4BD5F1D343DB7008F81FD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 91A4BD5E1D343DB7008F81FD /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -94,10 +75,6 @@
 		911233BA1D1B6F0100A8B44B /* CellGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellGroup.swift; sourceTree = "<group>"; };
 		911233BC1D1BB4AC00A8B44B /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		911233C01D1BD2AE00A8B44B /* Berryessa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Berryessa.swift; sourceTree = "<group>"; };
-		911233C21D1BD42300A8B44B /* homeicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homeicon.png; sourceTree = "<group>"; };
-		911233C41D1BD54F00A8B44B /* calendaricon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendaricon.png; sourceTree = "<group>"; };
-		911233C81D1BD61600A8B44B /* groupicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = groupicon.png; sourceTree = "<group>"; };
-		911233CA1D1BD6CF00A8B44B /* contacticon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contacticon.png; sourceTree = "<group>"; };
 		911BECC31D320F5D00F76534 /* Cupertino1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cupertino1.swift; sourceTree = "<group>"; };
 		911BECC51D320F7D00F76534 /* Cupertino2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cupertino2.swift; sourceTree = "<group>"; };
 		911BECC71D32113600F76534 /* FremontA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FremontA.swift; sourceTree = "<group>"; };
@@ -108,22 +85,7 @@
 		911BECD11D32134E00F76534 /* PaloAlto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaloAlto.swift; sourceTree = "<group>"; };
 		911BECD31D32136700F76534 /* SanCarlos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SanCarlos.swift; sourceTree = "<group>"; };
 		911BECD51D32137E00F76534 /* Evergreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Evergreen.swift; sourceTree = "<group>"; };
-		911BECD71D32167600F76534 /* fremontA.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fremontA.JPG; sourceTree = "<group>"; };
-		911BECD91D32167600F76534 /* cupertino1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cupertino1.jpg; sourceTree = "<group>"; };
-		911BECDA1D32167600F76534 /* saratoga2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = saratoga2.jpg; sourceTree = "<group>"; };
-		911BECDF1D32179700F76534 /* berryessa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = berryessa.png; sourceTree = "<group>"; };
-		911DFCFE1D3455DA00B52E71 /* summer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = summer.png; sourceTree = "<group>"; };
-		911DFD021D3456D600B52E71 /* fall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fall.png; sourceTree = "<group>"; };
-		911DFD041D3457B800B52E71 /* spring.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spring.png; sourceTree = "<group>"; };
-		911DFD061D34582100B52E71 /* winter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = winter.png; sourceTree = "<group>"; };
 		9172BDF31D35DB40001C93A8 /* DOFavoriteButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DOFavoriteButton.swift; sourceTree = "<group>"; };
-		9172BDF51D35DB5E001C93A8 /* stars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stars.png; sourceTree = "<group>"; };
-		91765F371D2F49C8009C0555 /* LOGO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LOGO.png; sourceTree = "<group>"; };
-		91765F391D2F5C58009C0555 /* saratoga1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = saratoga1.jpg; sourceTree = "<group>"; };
-		91765F3B1D2F6E54009C0555 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
-		91765F3F1D2F6F04009C0555 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
-		91765F411D2F6F84009C0555 /* youtube.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = youtube.png; sourceTree = "<group>"; };
-		91765F431D2F7053009C0555 /* instagram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = instagram.png; sourceTree = "<group>"; };
 		91A4BD5E1D343DB7008F81FD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BB0B656B5B276492E3D101F7 /* Pods-ROLCC Youth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ROLCC Youth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ROLCC Youth/Pods-ROLCC Youth.debug.xcconfig"; sourceTree = "<group>"; };
 		C2A1C667A2590EBB6FA91D31 /* Pods_ROLCC_YouthUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ROLCC_YouthUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -227,25 +189,6 @@
 				9172BDF31D35DB40001C93A8 /* DOFavoriteButton.swift */,
 				911233911D1B66A100A8B44B /* Assets.xcassets */,
 				911233931D1B66A100A8B44B /* LaunchScreen.storyboard */,
-				9172BDF51D35DB5E001C93A8 /* stars.png */,
-				911DFCFE1D3455DA00B52E71 /* summer.png */,
-				911DFD021D3456D600B52E71 /* fall.png */,
-				911DFD041D3457B800B52E71 /* spring.png */,
-				911DFD061D34582100B52E71 /* winter.png */,
-				911233C21D1BD42300A8B44B /* homeicon.png */,
-				911233C41D1BD54F00A8B44B /* calendaricon.png */,
-				911233C81D1BD61600A8B44B /* groupicon.png */,
-				911233CA1D1BD6CF00A8B44B /* contacticon.png */,
-				91765F371D2F49C8009C0555 /* LOGO.png */,
-				91765F3B1D2F6E54009C0555 /* facebook.png */,
-				91765F411D2F6F84009C0555 /* youtube.png */,
-				91765F431D2F7053009C0555 /* instagram.png */,
-				91765F3F1D2F6F04009C0555 /* twitter.png */,
-				91765F391D2F5C58009C0555 /* saratoga1.jpg */,
-				911BECD71D32167600F76534 /* fremontA.JPG */,
-				911BECDF1D32179700F76534 /* berryessa.png */,
-				911BECD91D32167600F76534 /* cupertino1.jpg */,
-				911BECDA1D32167600F76534 /* saratoga2.jpg */,
 				911233961D1B66A100A8B44B /* Info.plist */,
 				91A4BD5E1D343DB7008F81FD /* GoogleService-Info.plist */,
 			);
@@ -384,27 +327,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				911233951D1B66A100A8B44B /* LaunchScreen.storyboard in Resources */,
-				911233C51D1BD54F00A8B44B /* calendaricon.png in Resources */,
-				911DFD051D3457B800B52E71 /* spring.png in Resources */,
-				911DFCFF1D3455DA00B52E71 /* summer.png in Resources */,
-				9172BDF61D35DB5E001C93A8 /* stars.png in Resources */,
-				911233C31D1BD42300A8B44B /* homeicon.png in Resources */,
-				91765F421D2F6F84009C0555 /* youtube.png in Resources */,
-				911BECE01D32179700F76534 /* berryessa.png in Resources */,
 				911233921D1B66A100A8B44B /* Assets.xcassets in Resources */,
-				91765F381D2F49C8009C0555 /* LOGO.png in Resources */,
-				911BECDB1D32167600F76534 /* fremontA.JPG in Resources */,
-				91765F441D2F7053009C0555 /* instagram.png in Resources */,
-				911233CB1D1BD6CF00A8B44B /* contacticon.png in Resources */,
-				911DFD031D3456D600B52E71 /* fall.png in Resources */,
-				911DFD071D34582100B52E71 /* winter.png in Resources */,
-				91765F3A1D2F5C58009C0555 /* saratoga1.jpg in Resources */,
 				91A4BD5F1D343DB7008F81FD /* GoogleService-Info.plist in Resources */,
-				911BECDE1D32167600F76534 /* saratoga2.jpg in Resources */,
-				91765F3C1D2F6E54009C0555 /* facebook.png in Resources */,
-				91765F401D2F6F04009C0555 /* twitter.png in Resources */,
-				911BECDD1D32167600F76534 /* cupertino1.jpg in Resources */,
-				911233C91D1BD61600A8B44B /* groupicon.png in Resources */,
 				911233901D1B66A100A8B44B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
