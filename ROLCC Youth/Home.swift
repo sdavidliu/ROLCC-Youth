@@ -29,14 +29,14 @@ class Home: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        UIApplication.sharedApplication().statusBarStyle = .Default
         
-        let thisWeek = UILabel(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 30))
+        let thisWeek = UILabel(frame: CGRect(x: 10, y: 0, width: screenWidth - 20, height: 30))
         thisWeek.text = "This Week:"
-        thisWeek.center = CGPoint(x: screenWidth/2, y: 400)
-        thisWeek.textAlignment = NSTextAlignment.Center
+        thisWeek.center = CGPoint(x: screenWidth/2, y: screenHeight - 200)
+        thisWeek.textAlignment = NSTextAlignment.Left
         thisWeek.font = UIFont(name: "Avenir-Medium", size: 20)
-        thisWeek.textColor = UIColor.whiteColor()
+        //thisWeek.textColor = UIColor.whiteColor()
         self.view.addSubview(thisWeek)
         
         let ref = FIRDatabase.database().reference()
@@ -64,28 +64,28 @@ class Home: UIViewController {
     
     func showInfo(){
         
-        let preacher = UILabel(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 30))
+        let preacher = UILabel(frame: CGRect(x: 10, y: 0, width: screenWidth - 20, height: 30))
         preacher.text = "Sermon: " + String(array1[0])
-        preacher.center = CGPoint(x: screenWidth/2, y: 440)
-        preacher.textAlignment = NSTextAlignment.Center
+        preacher.center = CGPoint(x: screenWidth/2, y: screenHeight - 160)
+        preacher.textAlignment = NSTextAlignment.Left
         preacher.font = UIFont(name: "Avenir", size: 15)
-        preacher.textColor = UIColor.whiteColor()
+        //preacher.textColor = UIColor.whiteColor()
         self.view.addSubview(preacher)
         
-        let worship = UILabel(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 30))
+        let worship = UILabel(frame: CGRect(x: 10, y: 0, width: screenWidth - 20, height: 30))
         worship.text = "Worship: " + String(array1[1])
-        worship.center = CGPoint(x: screenWidth/2, y: 460)
-        worship.textAlignment = NSTextAlignment.Center
+        worship.center = CGPoint(x: screenWidth/2, y: screenHeight - 140)
+        worship.textAlignment = NSTextAlignment.Left
         worship.font = UIFont(name: "Avenir", size: 15)
-        worship.textColor = UIColor.whiteColor()
+        //worship.textColor = UIColor.whiteColor()
         self.view.addSubview(worship)
         
-        let announcements = UILabel(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 30))
+        let announcements = UILabel(frame: CGRect(x: 10, y: 0, width: screenWidth - 20, height: 30))
         announcements.text = "Announcements: " + String(array1[2])
-        announcements.center = CGPoint(x: screenWidth/2, y: 480)
-        announcements.textAlignment = NSTextAlignment.Center
+        announcements.center = CGPoint(x: screenWidth/2, y: screenHeight - 120)
+        announcements.textAlignment = NSTextAlignment.Left
         announcements.font = UIFont(name: "Avenir", size: 15)
-        announcements.textColor = UIColor.whiteColor()
+        //announcements.textColor = UIColor.whiteColor()
         self.view.addSubview(announcements)
         
         youthLogo.addTarget(self, action: #selector(test), forControlEvents: .TouchUpInside)

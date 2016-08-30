@@ -31,7 +31,7 @@ class Contact: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        //UIApplication.sharedApplication().statusBarStyle = .LightContent
         
         youthEmail.addTarget(self, action: #selector(emailYouth), forControlEvents: .TouchUpInside)
         youthWebsite.addTarget(self, action: #selector(websiteYouth), forControlEvents: .TouchUpInside)

@@ -19,11 +19,11 @@ class Calendar: UIViewController, UITableViewDataSource, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        //UIApplication.sharedApplication().statusBarStyle = .LightContent
         
         tableView.frame = CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.height)
         tableView.backgroundColor = UIColor.clearColor()
-        tableView.separatorColor = UIColor.whiteColor()
+        //tableView.separatorColor = UIColor.whiteColor()
         tableView.rowHeight = 50
         tableView.delegate = self
         tableView.dataSource = self
@@ -58,7 +58,7 @@ class Calendar: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath)
         
-        cell.textLabel?.textColor = UIColor.whiteColor()
+        //cell.textLabel?.textColor = UIColor.whiteColor()
         cell.textLabel?.font = UIFont(name: (cell.textLabel!.font?.fontName)!, size: 20)
         
         let row = indexPath.row
