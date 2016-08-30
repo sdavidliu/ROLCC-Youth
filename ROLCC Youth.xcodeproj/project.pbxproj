@@ -52,6 +52,7 @@
 		91765F421D2F6F84009C0555 /* youtube.png in Resources */ = {isa = PBXBuildFile; fileRef = 91765F411D2F6F84009C0555 /* youtube.png */; };
 		91765F441D2F7053009C0555 /* instagram.png in Resources */ = {isa = PBXBuildFile; fileRef = 91765F431D2F7053009C0555 /* instagram.png */; };
 		91A4BD5F1D343DB7008F81FD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 91A4BD5E1D343DB7008F81FD /* GoogleService-Info.plist */; };
+		91E5E7771D75739E00A2FD32 /* RPCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E5E7761D75739E00A2FD32 /* RPCircularProgress.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +126,7 @@
 		91765F411D2F6F84009C0555 /* youtube.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = youtube.png; sourceTree = "<group>"; };
 		91765F431D2F7053009C0555 /* instagram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = instagram.png; sourceTree = "<group>"; };
 		91A4BD5E1D343DB7008F81FD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		91E5E7761D75739E00A2FD32 /* RPCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RPCircularProgress.swift; sourceTree = "<group>"; };
 		BB0B656B5B276492E3D101F7 /* Pods-ROLCC Youth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ROLCC Youth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ROLCC Youth/Pods-ROLCC Youth.debug.xcconfig"; sourceTree = "<group>"; };
 		C2A1C667A2590EBB6FA91D31 /* Pods_ROLCC_YouthUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ROLCC_YouthUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E27590B5293D0FCC12DE0767 /* Pods-ROLCC Youth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ROLCC Youth.release.xcconfig"; path = "Pods/Target Support Files/Pods-ROLCC Youth/Pods-ROLCC Youth.release.xcconfig"; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				911BECCD1D32115D00F76534 /* Saratoga1.swift */,
 				911BECCF1D32116700F76534 /* Saratoga2.swift */,
 				9172BDF31D35DB40001C93A8 /* DOFavoriteButton.swift */,
+				91E5E7761D75739E00A2FD32 /* RPCircularProgress.swift */,
 				911233911D1B66A100A8B44B /* Assets.xcassets */,
 				911233931D1B66A100A8B44B /* LaunchScreen.storyboard */,
 				9172BDF51D35DB5E001C93A8 /* stars.png */,
@@ -560,6 +563,7 @@
 				911233C11D1BD2AE00A8B44B /* Berryessa.swift in Sources */,
 				911233BB1D1B6F0100A8B44B /* CellGroup.swift in Sources */,
 				911BECD21D32134E00F76534 /* PaloAlto.swift in Sources */,
+				91E5E7771D75739E00A2FD32 /* RPCircularProgress.swift in Sources */,
 				911BECC61D320F7D00F76534 /* Cupertino2.swift in Sources */,
 				911BECD01D32116700F76534 /* Saratoga2.swift in Sources */,
 				911BECCE1D32115D00F76534 /* Saratoga1.swift in Sources */,

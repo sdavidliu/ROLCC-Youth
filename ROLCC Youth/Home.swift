@@ -8,10 +8,13 @@
 
 import UIKit
 import Firebase
+import SnapKit
 
 class Home: UIViewController {
     
-    @IBOutlet weak var countdownTimer: UILabel!
+    @IBOutlet weak var daysLabel: UILabel!
+    @IBOutlet weak var hoursLabel: UILabel!
+    @IBOutlet weak var minutesLabel: UILabel!
     @IBOutlet weak var bottomLabel: UILabel!
     @IBOutlet weak var youthLogo: UIButton!
     
@@ -25,18 +28,53 @@ class Home: UIViewController {
     var animating = false
     var animationTimer = NSTimer()
     var array1 = [String]()
+    var daysProgress = RPCircularProgress()
+    var hoursProgress = RPCircularProgress()
+    var minutesProgress = RPCircularProgress()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         UIApplication.sharedApplication().statusBarStyle = .Default
         
+        //navigationItem.titleView = UIImageView(image: UIImage(named: "LOGO.png"))
+        
+        let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 60))
+        let navigationItem = UINavigationItem()
+        //navBar.backgroundColor = UIColor.whiteColor()
+        //navBar.backgroundColor = UIColor(red: 237/255, green: 237/255, blue: 237/255, alpha: 1.0)
+        navigationItem.title = "Home"
+        navBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Avenir-Light", size: 15.0)!];
+        navBar.items = [navigationItem]
+        self.view.addSubview(navBar)
+        
+        daysProgress.trackTintColor = UIColor.init(red: 226 / 255, green: 74 / 255, blue: 144 / 255, alpha: 0.3)
+        daysProgress.progressTintColor = UIColor.init(red: 226 / 255, green: 74 / 255, blue: 144 / 255, alpha: 1)
+        daysProgress.thicknessRatio = 0.3
+        daysProgress.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
+        daysProgress.center = CGPoint(x: screenWidth/2 - 100, y: 135)
+        self.view.addSubview(daysProgress)
+        
+        hoursProgress.trackTintColor = UIColor.init(red: 74 / 255, green: 144 / 255, blue: 226 / 255, alpha: 0.3)
+        hoursProgress.progressTintColor = UIColor.init(red: 74 / 255, green: 144 / 255, blue: 226 / 255, alpha: 1)
+        hoursProgress.thicknessRatio = 0.3
+        hoursProgress.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
+        hoursProgress.center = CGPoint(x: screenWidth/2, y: 135)
+        self.view.addSubview(hoursProgress)
+        
+        minutesProgress.trackTintColor = UIColor.init(red: 144 / 255, green: 226 / 255, blue: 74 / 255, alpha: 0.3)
+        minutesProgress.progressTintColor = UIColor.init(red: 144 / 255, green: 226 / 255, blue: 74 / 255, alpha: 1)
+        minutesProgress.thicknessRatio = 0.3
+        minutesProgress.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
+        minutesProgress.center = CGPoint(x: screenWidth/2 + 100, y: 135)
+        self.view.addSubview(minutesProgress)
+        
         let thisWeek = UILabel(frame: CGRect(x: 10, y: 0, width: screenWidth - 20, height: 30))
         thisWeek.text = "This Week:"
         thisWeek.center = CGPoint(x: screenWidth/2, y: screenHeight - 200)
         thisWeek.textAlignment = NSTextAlignment.Left
         thisWeek.font = UIFont(name: "Avenir-Medium", size: 20)
-        //thisWeek.textColor = UIColor.whiteColor()
+        thisWeek.textColor = UIColor.whiteColor()
         self.view.addSubview(thisWeek)
         
         let ref = FIRDatabase.database().reference()
@@ -51,6 +89,7 @@ class Home: UIViewController {
             }
             
             self.showInfo()
+            
             
             }, withCancelBlock: { error in
                 print(error.description)
@@ -69,7 +108,7 @@ class Home: UIViewController {
         preacher.center = CGPoint(x: screenWidth/2, y: screenHeight - 160)
         preacher.textAlignment = NSTextAlignment.Left
         preacher.font = UIFont(name: "Avenir", size: 15)
-        //preacher.textColor = UIColor.whiteColor()
+        preacher.textColor = UIColor.whiteColor()
         self.view.addSubview(preacher)
         
         let worship = UILabel(frame: CGRect(x: 10, y: 0, width: screenWidth - 20, height: 30))
@@ -77,7 +116,7 @@ class Home: UIViewController {
         worship.center = CGPoint(x: screenWidth/2, y: screenHeight - 140)
         worship.textAlignment = NSTextAlignment.Left
         worship.font = UIFont(name: "Avenir", size: 15)
-        //worship.textColor = UIColor.whiteColor()
+        worship.textColor = UIColor.whiteColor()
         self.view.addSubview(worship)
         
         let announcements = UILabel(frame: CGRect(x: 10, y: 0, width: screenWidth - 20, height: 30))
@@ -85,7 +124,7 @@ class Home: UIViewController {
         announcements.center = CGPoint(x: screenWidth/2, y: screenHeight - 120)
         announcements.textAlignment = NSTextAlignment.Left
         announcements.font = UIFont(name: "Avenir", size: 15)
-        //announcements.textColor = UIColor.whiteColor()
+        announcements.textColor = UIColor.whiteColor()
         self.view.addSubview(announcements)
         
         youthLogo.addTarget(self, action: #selector(test), forControlEvents: .TouchUpInside)
@@ -161,9 +200,14 @@ class Home: UIViewController {
         weekday = 7 - currentWeekday
         
         if (currentWeekday == 1 && currentHour >= 9 && currentMin >= 45){
-            countdownTimer.text = "0:00:00"
+            daysLabel.text = "0"
+            daysProgress.updateProgress(0.0, initialDelay: 0.4, duration: 3)
+            hoursLabel.text = "0"
+            minutesLabel.text = "0"
         }else{
-            countdownTimer.text = String(format: "%02d", weekday) + ":" + String(format: "%02d", hours) + ":" + String(format: "%02d", minutes)
+            daysLabel.text = String(weekday)
+            hoursLabel.text = String(hours)
+            minutesLabel.text = String(minutes)
         }
         
     }
@@ -178,10 +222,17 @@ class Home: UIViewController {
         }
     }
     
+    override func viewDidAppear(animated: Bool) {
+        daysProgress.updateProgress(CGFloat(weekday)/7.0, initialDelay: 0.4, duration: 3)
+        hoursProgress.updateProgress(CGFloat(hours)/24.0, initialDelay: 0.4, duration: 3)
+        minutesProgress.updateProgress(CGFloat(minutes)/60.0, initialDelay: 0.4, duration: 3)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
     
 }
+
 
