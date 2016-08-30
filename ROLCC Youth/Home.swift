@@ -11,10 +11,13 @@ import Firebase
 
 class Home: UIViewController {
     
+    @IBOutlet weak var timeToService: UILabel!
+    
     @IBOutlet weak var countdownTimer: UILabel!
     @IBOutlet weak var bottomLabel: UILabel!
     @IBOutlet weak var youthLogo: UIButton!
     
+    @IBOutlet weak var thisWeekLabel : UILabel!
     @IBOutlet weak var sermonLabel : UILabel!
     @IBOutlet weak var worshipLabel : UILabel!
     @IBOutlet weak var announcementsLabel : UILabel!
@@ -33,15 +36,26 @@ class Home: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        UIApplication.sharedApplication().statusBarStyle = .Default
         
-        /*let thisWeek = UILabel(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 30))
-        thisWeek.text = "This Week:"
-        thisWeek.center = CGPoint(x: screenWidth/2, y: 400)
-        thisWeek.textAlignment = NSTextAlignment.Center
-        thisWeek.font = UIFont(name: "Avenir-Medium", size: 20)
-        thisWeek.textColor = UIColor.whiteColor()
-        self.view.addSubview(thisWeek)*/
+        var textColor : UIColor!
+        
+        if(Constants.theme == 0){
+            textColor = UIColor.whiteColor()
+            view.backgroundColor = Constants.darkGrayColor
+        }else{
+            textColor = UIColor.blackColor()
+            view.backgroundColor = UIColor.whiteColor()
+        }
+        
+        sermonLabel.textColor = textColor
+        worshipLabel.textColor = textColor
+        announcementsLabel.textColor = textColor
+        countdownTimer.textColor = textColor
+        bottomLabel.textColor = textColor
+        timeToService.textColor = textColor
+        thisWeekLabel.textColor = textColor
+        
         
         let ref = FIRDatabase.database().reference()
         ref.observeEventType(.Value, withBlock: { snapshot in

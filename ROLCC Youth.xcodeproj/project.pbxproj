@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		07AC326855CF21DF9ADB2CD0 /* Pods_ROLCC_YouthUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2A1C667A2590EBB6FA91D31 /* Pods_ROLCC_YouthUITests.framework */; };
 		486F4FBCE86DC31ED0B051DD /* Pods_ROLCC_Youth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C44CE91AA25BFE0848B43FF /* Pods_ROLCC_Youth.framework */; };
+		7C79D8B71D3B1257009B888E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79D8B61D3B1257009B888E /* Constants.swift */; };
 		7CD1C3848CC369B62E047613 /* Pods_ROLCC_YouthTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DD87B060D490D541A8EB4EA /* Pods_ROLCC_YouthTests.framework */; };
 		911233891D1B66A100A8B44B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911233881D1B66A100A8B44B /* AppDelegate.swift */; };
 		9112338B1D1B66A100A8B44B /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9112338A1D1B66A100A8B44B /* Home.swift */; };
@@ -56,6 +57,7 @@
 		0A9E9184623D12BA7C89EF29 /* Pods-ROLCC YouthTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ROLCC YouthTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ROLCC YouthTests/Pods-ROLCC YouthTests.release.xcconfig"; sourceTree = "<group>"; };
 		4951F21CFCD2D405B14C8B54 /* Pods-ROLCC YouthUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ROLCC YouthUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ROLCC YouthUITests/Pods-ROLCC YouthUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4C44CE91AA25BFE0848B43FF /* Pods_ROLCC_Youth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ROLCC_Youth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C79D8B61D3B1257009B888E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7F49328F435FF226AFF5C3FE /* Pods-ROLCC YouthTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ROLCC YouthTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ROLCC YouthTests/Pods-ROLCC YouthTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8DD87B060D490D541A8EB4EA /* Pods_ROLCC_YouthTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ROLCC_YouthTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		911233851D1B66A100A8B44B /* ROLCC Youth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ROLCC Youth.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,6 +193,7 @@
 				911233931D1B66A100A8B44B /* LaunchScreen.storyboard */,
 				911233961D1B66A100A8B44B /* Info.plist */,
 				91A4BD5E1D343DB7008F81FD /* GoogleService-Info.plist */,
+				7C79D8B61D3B1257009B888E /* Constants.swift */,
 			);
 			path = "ROLCC Youth";
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				9112338B1D1B66A100A8B44B /* Home.swift in Sources */,
 				911BECC81D32113600F76534 /* FremontA.swift in Sources */,
 				9172BDF41D35DB40001C93A8 /* DOFavoriteButton.swift in Sources */,
+				7C79D8B71D3B1257009B888E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

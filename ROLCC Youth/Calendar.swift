@@ -19,7 +19,17 @@ class Calendar: UIViewController, UITableViewDataSource, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        UIApplication.sharedApplication().statusBarStyle = .Default
+        
+        var textColor : UIColor!
+        
+        if(Constants.theme == 0){
+            textColor = UIColor.whiteColor()
+            view.backgroundColor = Constants.darkGrayColor
+        }else{
+            textColor = UIColor.blackColor()
+            view.backgroundColor = UIColor.whiteColor()
+        }
         
         tableView.frame = CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.height)
         tableView.backgroundColor = UIColor.clearColor()

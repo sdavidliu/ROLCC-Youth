@@ -22,8 +22,27 @@ class Berryessa: UIViewController {
     @IBOutlet private var imageWidthConstraint : NSLayoutConstraint!
     @IBOutlet private var imageHeightConstraint : NSLayoutConstraint!
     
+    @IBOutlet private var meetingTimeLabel : UILabel!
+    @IBOutlet private var emailLabel : UILabel!
+    @IBOutlet private var cellLeaderLabel : UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var textColor : UIColor!
+        
+        if(Constants.theme == 0){
+            textColor = UIColor.whiteColor()
+            view.backgroundColor = Constants.darkGrayColor
+        }else{
+            textColor = UIColor.blackColor()
+            view.backgroundColor = UIColor.whiteColor()
+        }
+        
+        nameHeader.textColor = textColor
+        meetingTimeLabel.textColor = textColor
+        emailLabel.textColor = textColor
+        cellLeaderLabel.textColor = textColor
         
         button = DOFavoriteButton(frame: CGRectMake(UIScreen.mainScreen().bounds.width - 70, 84, 50, 50), image: UIImage(named: "stars.png"))
         self.view.addSubview(button)

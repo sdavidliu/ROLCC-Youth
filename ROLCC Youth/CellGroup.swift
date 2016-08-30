@@ -29,7 +29,17 @@ class CellGroup: UIPageViewController, UIPageViewControllerDelegate, UIPageViewC
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        UIApplication.sharedApplication().statusBarStyle = .Default
+        
+        var textColor : UIColor!
+        
+        if(Constants.theme == 0){
+            textColor = UIColor.whiteColor()
+            view.backgroundColor = Constants.darkGrayColor
+        }else{
+            textColor = UIColor.blackColor()
+            view.backgroundColor = UIColor.whiteColor()
+        }
         
         self.delegate = self
         self.dataSource = self

@@ -30,7 +30,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="Sqs-f5-ITs" firstAttribute="centerX" secondItem="85w-Rh-kNF" secondAttribute="centerX" id="8we-Jj-9gh"/>
                                     <constraint firstAttribute="height" constant="70" id="LMA-RG-TQs"/>
@@ -171,6 +171,8 @@
                         <outlet property="bottomLabel" destination="yc1-tG-uQa" id="cZb-Q6-SuK"/>
                         <outlet property="countdownTimer" destination="rcn-8m-SXu" id="aH1-tz-K7r"/>
                         <outlet property="sermonLabel" destination="Fv6-sV-vF5" id="m7X-1G-meB"/>
+                        <outlet property="thisWeekLabel" destination="JOH-GB-CLA" id="vkD-Hg-pX7"/>
+                        <outlet property="timeToService" destination="eCR-ob-xaW" id="nZR-6r-S0m"/>
                         <outlet property="worshipLabel" destination="VUn-GH-Gvs" id="yMh-qS-g7D"/>
                         <outlet property="youthLogo" destination="Cqn-f2-CjQ" id="fIn-Fy-RC5"/>
                     </connections>
@@ -201,7 +203,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.58823529411764708" green="0.58823529411764708" blue="0.58823529411764708" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="i3m-eL-sB5" firstAttribute="centerY" secondItem="pXc-ag-hQ1" secondAttribute="centerY" id="8oz-dS-gjG"/>
                                     <constraint firstItem="i3m-eL-sB5" firstAttribute="centerY" secondItem="pXc-ag-hQ1" secondAttribute="centerY" constant="10" id="B3L-F8-WC3"/>
@@ -278,14 +280,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i3W-xr-uqW" userLabel="Header View">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Contact" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hbq-er-5Oe">
-                                        <rect key="frame" x="143" y="30" width="89" height="31"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hbq-er-5Oe">
+                                        <rect key="frame" x="148" y="30" width="79.5" height="31"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="22"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="Hbq-er-5Oe" firstAttribute="centerY" secondItem="i3W-xr-uqW" secondAttribute="centerY" constant="10" id="EEy-3W-FH6"/>
                                     <constraint firstItem="Hbq-er-5Oe" firstAttribute="centerY" secondItem="i3W-xr-uqW" secondAttribute="centerY" id="fmf-vt-USb"/>
@@ -529,13 +531,34 @@
                         <outlet property="churchFax" destination="uIx-OU-FFV" id="S8E-Dq-SFk"/>
                         <outlet property="churchPhone" destination="FRA-GA-WpM" id="GC0-Y4-OL9"/>
                         <outlet property="churchWebsite" destination="Jjt-oj-HDs" id="67z-HD-Iec"/>
+                        <outlet property="emailLabel" destination="zM1-du-hME" id="JfO-94-pK4"/>
                         <outlet property="facebook" destination="6ec-Im-h1f" id="NeN-W7-GRX"/>
                         <outlet property="instagram" destination="ahh-Vt-eVF" id="ymm-4P-n53"/>
                         <outlet property="jessicaLiao" destination="yuk-tA-ZPH" id="RVh-iv-1hH"/>
                         <outlet property="jimyLiu" destination="3mL-kI-2IH" id="mda-I9-Rm8"/>
                         <outlet property="justineShann" destination="tf4-0Q-FQ1" id="tMk-Kh-fIQ"/>
+                        <outlet property="mainEmailLabel" destination="15p-G7-6ra" id="AgX-aT-S12"/>
+                        <outlet property="mainFaxLabel" destination="4E2-d2-XpA" id="AIn-FQ-bNj"/>
+                        <outlet property="mainPhoneLabel" destination="z3p-am-bWc" id="RTv-i1-ykj"/>
+                        <outlet property="mainWebLabel" destination="XSU-1l-fah" id="Nab-yN-Da0"/>
                         <outlet property="pastorRichard" destination="qqi-4Q-dat" id="kYe-rJ-v80"/>
+                        <outlet property="person1" destination="A6D-T4-vb9" id="VLt-U0-h92"/>
+                        <outlet property="person2" destination="dUi-sT-eOi" id="VXc-DE-9EE"/>
+                        <outlet property="person3" destination="uRK-eL-6e6" id="UZH-hp-dGp"/>
+                        <outlet property="person4" destination="i06-Ko-74A" id="dRu-gD-3zD"/>
+                        <outlet property="person5" destination="wMr-yY-9df" id="RQw-Vq-dPp"/>
+                        <outlet property="person6" destination="bce-Ib-Gjv" id="66Q-dl-Xn9"/>
+                        <outlet property="position1" destination="Ivp-cc-ZT7" id="dlZ-Ez-SRl"/>
+                        <outlet property="position2" destination="r1B-3y-VxV" id="5rc-s1-neK"/>
+                        <outlet property="position3" destination="fad-DZ-sWN" id="cwR-eF-8Wm"/>
+                        <outlet property="position4" destination="H4X-9L-3O1" id="CUE-vd-jo8"/>
+                        <outlet property="position5" destination="hRc-Xh-QKH" id="vtj-Xu-Nln"/>
+                        <outlet property="position6" destination="bOk-06-44B" id="rAi-Kn-bSi"/>
+                        <outlet property="rolTitle" destination="uFt-eh-WKF" id="36M-nf-4FT"/>
+                        <outlet property="rolccYouthTitle" destination="5yv-aA-yWX" id="xc6-wV-Zio"/>
+                        <outlet property="socialMediaLabel" destination="6ec-G0-kAn" id="d7Z-h3-GpP"/>
                         <outlet property="twitter" destination="gBI-Ag-VqK" id="BZ2-VT-fnn"/>
+                        <outlet property="websiteLabel" destination="VoH-Gk-aS3" id="CfM-8q-FRu"/>
                         <outlet property="youthEmail" destination="8g1-BP-ss8" id="PJW-NQ-GrA"/>
                         <outlet property="youthWebsite" destination="Oba-tv-ibp" id="WIL-7E-lzt"/>
                         <outlet property="youtube" destination="XWg-yY-1gi" id="Zes-XE-nBr"/>
@@ -647,7 +670,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="8mN-hN-kTq"/>
                                     <constraint firstItem="eof-Mn-mvj" firstAttribute="centerY" secondItem="ZSR-OF-h5d" secondAttribute="centerY" constant="10" id="AnY-lk-lro"/>
@@ -692,10 +715,13 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="cellLeaderLabel" destination="HMQ-Jx-Obp" id="Zxg-5l-crE"/>
+                        <outlet property="emailLabel" destination="7Mi-3p-GbG" id="Z9A-dd-sja"/>
                         <outlet property="groupPicture" destination="DW5-Ev-WEv" id="cxD-XS-SAq"/>
                         <outlet property="imageHeightConstraint" destination="DqP-W3-Mb1" id="674-hr-7hk"/>
                         <outlet property="imagePaddingView" destination="2pj-Gb-PJc" id="duo-6f-2t6"/>
                         <outlet property="imageWidthConstraint" destination="hfn-fM-tYy" id="LfH-d3-8Yi"/>
+                        <outlet property="meetingTimeLabel" destination="6Bq-TV-lBV" id="X8f-8M-542"/>
                         <outlet property="nameHeader" destination="orA-Uy-Y5Q" id="iOg-7D-ncO"/>
                         <outlet property="pictureRatioConstraint" destination="EhY-lS-g7d" id="aE6-gG-VFj"/>
                     </connections>

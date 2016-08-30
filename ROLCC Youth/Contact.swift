@@ -28,10 +28,71 @@ class Contact: UIViewController {
     @IBOutlet weak var churchEmail: UIButton!
     @IBOutlet weak var churchWebsite: UIButton!
     
+    @IBOutlet weak var rolccYouthTitle : UILabel!
+    @IBOutlet weak var rolTitle : UILabel!
+    @IBOutlet weak var emailLabel : UILabel!
+    @IBOutlet weak var websiteLabel : UILabel!
+    
+    @IBOutlet weak var position1: UILabel!
+    @IBOutlet weak var position2 : UILabel!
+    @IBOutlet weak var position3 : UILabel!
+    @IBOutlet weak var position4 : UILabel!
+    @IBOutlet weak var position5 : UILabel!
+    @IBOutlet weak var position6 : UILabel!
+    
+    @IBOutlet weak var person1 : UILabel!
+    @IBOutlet weak var person2 : UILabel!
+    @IBOutlet weak var person3 : UILabel!
+    @IBOutlet weak var person4 : UILabel!
+    @IBOutlet weak var person5 : UILabel!
+    @IBOutlet weak var person6 : UILabel!
+    
+    @IBOutlet weak var socialMediaLabel : UILabel!
+    @IBOutlet weak var mainPhoneLabel : UILabel!
+    @IBOutlet weak var mainFaxLabel : UILabel!
+    @IBOutlet weak var mainEmailLabel : UILabel!
+    @IBOutlet weak var mainWebLabel : UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        UIApplication.sharedApplication().statusBarStyle = .Default
+        
+        var textColor : UIColor!
+        
+        if(Constants.theme == 0){
+            textColor = UIColor.whiteColor()
+            view.backgroundColor = Constants.darkGrayColor
+        }else{
+            textColor = UIColor.blackColor()
+            view.backgroundColor = UIColor.whiteColor()
+        }
+        
+        rolccYouthTitle.textColor = textColor
+        rolTitle.textColor = textColor
+        position1.textColor = textColor
+        position2.textColor = textColor
+        position3.textColor = textColor
+        position4.textColor = textColor
+        position5.textColor = textColor
+        position6.textColor = textColor
+        person1.textColor = textColor
+        person2.textColor = textColor
+        person3.textColor = textColor
+        person4.textColor = textColor
+        person5.textColor = textColor
+        person6.textColor = textColor
+        
+        socialMediaLabel.textColor = textColor
+        emailLabel.textColor = textColor
+        websiteLabel.textColor = textColor
+        
+        mainFaxLabel.textColor = textColor
+        mainWebLabel.textColor = textColor
+        mainPhoneLabel.textColor = textColor
+        mainEmailLabel.textColor = textColor
+        
         
         youthEmail.addTarget(self, action: #selector(emailYouth), forControlEvents: .TouchUpInside)
         youthWebsite.addTarget(self, action: #selector(websiteYouth), forControlEvents: .TouchUpInside)
