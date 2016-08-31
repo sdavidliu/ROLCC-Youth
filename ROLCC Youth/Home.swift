@@ -51,22 +51,22 @@ class Home: UIViewController {
         daysProgress.trackTintColor = UIColor.init(red: 226 / 255, green: 74 / 255, blue: 144 / 255, alpha: 0.3)
         daysProgress.progressTintColor = UIColor.init(red: 226 / 255, green: 74 / 255, blue: 144 / 255, alpha: 1)
         daysProgress.thicknessRatio = 0.3
-        daysProgress.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
-        daysProgress.center = CGPoint(x: screenWidth/2 - 100, y: 135)
+        daysProgress.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        daysProgress.center = CGPoint(x: screenWidth/2 - 100, y: 150)
         self.view.addSubview(daysProgress)
         
         hoursProgress.trackTintColor = UIColor.init(red: 74 / 255, green: 144 / 255, blue: 226 / 255, alpha: 0.3)
         hoursProgress.progressTintColor = UIColor.init(red: 74 / 255, green: 144 / 255, blue: 226 / 255, alpha: 1)
         hoursProgress.thicknessRatio = 0.3
-        hoursProgress.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
-        hoursProgress.center = CGPoint(x: screenWidth/2, y: 135)
+        hoursProgress.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        hoursProgress.center = CGPoint(x: screenWidth/2, y: 150)
         self.view.addSubview(hoursProgress)
         
         minutesProgress.trackTintColor = UIColor.init(red: 144 / 255, green: 226 / 255, blue: 74 / 255, alpha: 0.3)
         minutesProgress.progressTintColor = UIColor.init(red: 144 / 255, green: 226 / 255, blue: 74 / 255, alpha: 1)
         minutesProgress.thicknessRatio = 0.3
-        minutesProgress.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
-        minutesProgress.center = CGPoint(x: screenWidth/2 + 100, y: 135)
+        minutesProgress.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        minutesProgress.center = CGPoint(x: screenWidth/2 + 100, y: 150)
         self.view.addSubview(minutesProgress)
         
         let thisWeek = UILabel(frame: CGRect(x: 10, y: 0, width: screenWidth - 20, height: 30))
@@ -189,6 +189,10 @@ class Home: UIViewController {
         let currentHour = components.hour
         let currentMin = components.minute
         
+        let oldMinutes = minutes
+        let oldHours = hours
+        let oldWeekday = weekday
+        
         minutes = 45 - currentMin
         if (minutes < 0){
             minutes += 60
@@ -209,7 +213,16 @@ class Home: UIViewController {
             hoursLabel.text = String(hours)
             minutesLabel.text = String(minutes)
         }
-        
+
+        if (oldMinutes != minutes){
+            minutesProgress.updateProgress(CGFloat(60 - minutes)/60.0, initialDelay: 0.4, duration: 3)
+        }
+        if (oldHours != hours){
+            hoursProgress.updateProgress(CGFloat(24 - hours)/24.0, initialDelay: 0.4, duration: 3)
+        }
+        if (oldWeekday != weekday){
+            daysProgress.updateProgress(CGFloat(7 - weekday)/7.0, initialDelay: 0.4, duration: 3)
+        }
     }
     
     func runAnimation(){
@@ -220,12 +233,6 @@ class Home: UIViewController {
             count = 0
             animationTimer.invalidate()
         }
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        daysProgress.updateProgress(CGFloat(weekday)/7.0, initialDelay: 0.4, duration: 3)
-        hoursProgress.updateProgress(CGFloat(hours)/24.0, initialDelay: 0.4, duration: 3)
-        minutesProgress.updateProgress(CGFloat(minutes)/60.0, initialDelay: 0.4, duration: 3)
     }
     
     override func didReceiveMemoryWarning() {
