@@ -28,10 +28,20 @@ class Contact: UIViewController {
     @IBOutlet weak var churchEmail: UIButton!
     @IBOutlet weak var churchWebsite: UIButton!
     
+    let screenWidth = UIScreen.mainScreen().bounds.width
+    let screenHeight = UIScreen.mainScreen().bounds.height
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //UIApplication.sharedApplication().statusBarStyle = .LightContent
+        
+        let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 60))
+        let navigationItem = UINavigationItem()
+        navigationItem.title = "Contact"
+        navBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Avenir-Light", size: 15.0)!];
+        navBar.items = [navigationItem]
+        self.view.addSubview(navBar)
         
         youthEmail.addTarget(self, action: #selector(emailYouth), forControlEvents: .TouchUpInside)
         youthWebsite.addTarget(self, action: #selector(websiteYouth), forControlEvents: .TouchUpInside)

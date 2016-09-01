@@ -11,6 +11,8 @@ import UIKit
 class CellGroup: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     
     var destinationViewControllers : [UIViewController] = []
+    let screenWidth = UIScreen.mainScreen().bounds.width
+    let screenHeight = UIScreen.mainScreen().bounds.height
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +21,13 @@ class CellGroup: UIPageViewController, UIPageViewControllerDelegate, UIPageViewC
         
         self.delegate = self
         self.dataSource = self
+        
+        let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 60))
+        let navigationItem = UINavigationItem()
+        navigationItem.title = "Cell Groups"
+        navBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Avenir-Light", size: 15.0)!];
+        navBar.items = [navigationItem]
+        self.view.addSubview(navBar)
         
         //let almadenView = storyboard?.instantiateViewControllerWithIdentifier("Almaden") as! Almaden
         let berryessaView = storyboard?.instantiateViewControllerWithIdentifier("Berryessa") as! Berryessa

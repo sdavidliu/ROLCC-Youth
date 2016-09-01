@@ -41,8 +41,6 @@ class Home: UIViewController {
         
         let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 60))
         let navigationItem = UINavigationItem()
-        //navBar.backgroundColor = UIColor.whiteColor()
-        //navBar.backgroundColor = UIColor(red: 237/255, green: 237/255, blue: 237/255, alpha: 1.0)
         navigationItem.title = "Home"
         navBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Avenir-Light", size: 15.0)!];
         navBar.items = [navigationItem]
@@ -71,9 +69,9 @@ class Home: UIViewController {
         
         let thisWeek = UILabel(frame: CGRect(x: 10, y: 0, width: screenWidth - 20, height: 30))
         thisWeek.text = "This Week:"
-        thisWeek.center = CGPoint(x: screenWidth/2, y: screenHeight - 200)
-        thisWeek.textAlignment = NSTextAlignment.Left
-        thisWeek.font = UIFont(name: "Avenir-Medium", size: 20)
+        thisWeek.center = CGPoint(x: screenWidth/2, y: screenHeight - 150)
+        thisWeek.textAlignment = NSTextAlignment.Center
+        thisWeek.font = UIFont(name: "Avenir", size: 20)
         thisWeek.textColor = UIColor.whiteColor()
         self.view.addSubview(thisWeek)
         
@@ -105,25 +103,25 @@ class Home: UIViewController {
         
         let preacher = UILabel(frame: CGRect(x: 10, y: 0, width: screenWidth - 20, height: 30))
         preacher.text = "Sermon: " + String(array1[0])
-        preacher.center = CGPoint(x: screenWidth/2, y: screenHeight - 160)
-        preacher.textAlignment = NSTextAlignment.Left
-        preacher.font = UIFont(name: "Avenir", size: 15)
+        preacher.center = CGPoint(x: screenWidth/2, y: screenHeight - 120)
+        preacher.textAlignment = NSTextAlignment.Center
+        preacher.font = UIFont(name: "Avenir-Light", size: 15)
         preacher.textColor = UIColor.whiteColor()
         self.view.addSubview(preacher)
         
         let worship = UILabel(frame: CGRect(x: 10, y: 0, width: screenWidth - 20, height: 30))
         worship.text = "Worship: " + String(array1[1])
-        worship.center = CGPoint(x: screenWidth/2, y: screenHeight - 140)
-        worship.textAlignment = NSTextAlignment.Left
-        worship.font = UIFont(name: "Avenir", size: 15)
+        worship.center = CGPoint(x: screenWidth/2, y: screenHeight - 100)
+        worship.textAlignment = NSTextAlignment.Center
+        worship.font = UIFont(name: "Avenir-Light", size: 15)
         worship.textColor = UIColor.whiteColor()
         self.view.addSubview(worship)
         
         let announcements = UILabel(frame: CGRect(x: 10, y: 0, width: screenWidth - 20, height: 30))
         announcements.text = "Announcements: " + String(array1[2])
-        announcements.center = CGPoint(x: screenWidth/2, y: screenHeight - 120)
-        announcements.textAlignment = NSTextAlignment.Left
-        announcements.font = UIFont(name: "Avenir", size: 15)
+        announcements.center = CGPoint(x: screenWidth/2, y: screenHeight - 80)
+        announcements.textAlignment = NSTextAlignment.Center
+        announcements.font = UIFont(name: "Avenir-Light", size: 15)
         announcements.textColor = UIColor.whiteColor()
         self.view.addSubview(announcements)
         
