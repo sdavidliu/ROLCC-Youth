@@ -2,6 +2,7 @@
 platform :ios, '8.0'
 pod 'Firebase'
 pod 'Firebase/Database'
+pod 'Firebase/Storage'
 pod 'DOFavoriteButton'
 pod 'SnapKit'
 pod 'Auk', '~> 2.1'

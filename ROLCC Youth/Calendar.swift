@@ -14,13 +14,14 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
     
     let screenWidth = UIScreen.mainScreen().bounds.width
     let screenHeight = UIScreen.mainScreen().bounds.height
-    let images = ["wnw.jpg", "divergent.jpeg", "cellleader.jpg"]
+    //let images = ["wnw.jpg", "divergent.jpeg", "cellleader.jpg"]
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageLabel: UILabel!
     
     var events = [String]()
+    var images = [UIImage]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,18 +37,28 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
         navBar.items = [navigationItem]
         self.view.addSubview(navBar)
         
+        let loading = RPCircularProgress()
+        loading.trackTintColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 255 / 255, alpha: 0.3)
+        loading.progressTintColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 255 / 255, alpha: 1)
+        loading.thicknessRatio = 0.1
+        loading.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        loading.center = CGPoint(x: screenWidth/2, y: 150)
+        loading.enableIndeterminate()
+        self.view.addSubview(loading)
+        self.view.sendSubviewToBack(loading)
+        
         scrollView.delegate = self
         scrollView.auk.settings.placeholderImage = UIImage(named: "LOGO.png")
         scrollView.auk.settings.errorImage = UIImage(named: "LOGO.png")
         scrollView.auk.settings.pageControl.visible = false
         scrollView.auk.settings.showsHorizontalScrollIndicator = true
         scrollView.auk.settings.contentMode = .ScaleAspectFill
-        
+        /*
         for i in images{
-            scrollView.auk.show(image: UIImage(named: i)!)
+            scrollView.auk.show(image: i)
         }
         
-        scrollView.auk.startAutoScroll(delaySeconds: 3)
+        scrollView.auk.startAutoScroll(delaySeconds: 3)*/
         
         let ref = FIRDatabase.database().reference()
         ref.observeEventType(.Value, withBlock: { snapshot in
@@ -60,7 +71,7 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
                 self.events.append(part)
             }
             
-            self.imageLabel.text = self.events[self.scrollView.auk.currentPageIndex!]
+            self.imageLabel.text = self.events[0]
             
             self.tableView.reloadData()
             
@@ -84,11 +95,6 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
     
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        /*
-        print(scrollView.auk.currentPageIndex!)
-        if (imageLabel.text != events[scrollView.auk.currentPageIndex!]){
-            imageLabel.text = events[scrollView.auk.currentPageIndex!]
-        }*/
         if let imageIndex = scrollView.auk.currentPageIndex{
             if (imageLabel.text != events[imageIndex]){
                 imageLabel.text = events[imageIndex]
@@ -103,11 +109,6 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! ArtistTableViewCell
-        
-        //let artist = artists[indexPath.row]
-        //cell.eventLabel.text = artist.bio
-        //cell.imageLabel.image = artist.image
-        //cell.dateLabel.text = artist.name
         
         cell.backgroundColor = UIColor.clearColor()
         
@@ -135,6 +136,20 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
             }
             
             cell.dateLabel.text = month + "\n" + day
+            
+            let url = NSURL(string: details[4])
+            NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: { (data, response, error) in
+                if error != nil {
+                    print(error)
+                    return
+                }
+                
+                dispatch_async(dispatch_get_main_queue(), {
+                    let test = UIImage(data: data!)
+                    self.scrollView.auk.show(image: test!)
+                    self.scrollView.auk.startAutoScroll(delaySeconds: 3)
+                })
+            }).resume()
             
             }, withCancelBlock: { error in
                 print(error.description)
