@@ -22,13 +22,14 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
     
     var events = [String]()
     var images = [UIImage]()
+    var imagesURL = [NSURL]()
+    var finalImages = [UIImage?](count:3, repeatedValue: nil)
+    var imagesDone = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         UIApplication.sharedApplication().statusBarStyle = .Default
-        
-        //navigationItem.titleView = UIImageView(image: UIImage(named: "LOGO.png"))
         
         let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 60))
         let navigationItem = UINavigationItem()
@@ -53,12 +54,6 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
         scrollView.auk.settings.pageControl.visible = false
         scrollView.auk.settings.showsHorizontalScrollIndicator = true
         scrollView.auk.settings.contentMode = .ScaleAspectFill
-        /*
-        for i in images{
-            scrollView.auk.show(image: i)
-        }
-        
-        scrollView.auk.startAutoScroll(delaySeconds: 3)*/
         
         let ref = FIRDatabase.database().reference()
         ref.observeEventType(.Value, withBlock: { snapshot in
@@ -87,17 +82,13 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
         
     }
     
-    private func showInitialImage() {
-        if let image = UIImage(named: "facebook.png") {
-            scrollView.auk.show(image: image)
-        }
-    }
-    
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
         if let imageIndex = scrollView.auk.currentPageIndex{
-            if (imageLabel.text != events[imageIndex]){
-                imageLabel.text = events[imageIndex]
+            if (imageIndex < events.count){
+                if (imageLabel.text != events[imageIndex]){
+                    imageLabel.text = events[imageIndex]
+                }
             }
         }
         tableView.delegate = self
@@ -137,25 +128,42 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
             
             cell.dateLabel.text = month + "\n" + day
             
-            let url = NSURL(string: details[4])
-            NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: { (data, response, error) in
-                if error != nil {
-                    print(error)
-                    return
-                }
+            if (self.imagesDone == false){
+            
+                let url = NSURL(string: details[4])
+                self.imagesURL.append(url!)            
                 
-                dispatch_async(dispatch_get_main_queue(), {
-                    let test = UIImage(data: data!)
-                    self.scrollView.auk.show(image: test!)
-                    self.scrollView.auk.startAutoScroll(delaySeconds: 3)
-                })
-            }).resume()
+                NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: { (data, response, error) in
+                    if error != nil {
+                        print(error)
+                        return
+                    }
+                    dispatch_async(dispatch_get_main_queue(), {
+                        let test = UIImage(data: data!)
+                        self.finalImages[row] = test
+                        var allImages = false
+                        for i in 0..<self.finalImages.count{
+                            if (self.finalImages[i] == nil){
+                                break
+                            }else if (i == self.finalImages.count - 1){
+                                allImages = true
+                            }
+                        }
+                        if (allImages == true){
+                            for i in self.finalImages{
+                                self.scrollView.auk.show(image: i!)
+                                self.scrollView.auk.startAutoScroll(delaySeconds: 3)
+                            }
+                            self.imagesDone = true
+                        }
+                    })
+                }).resume()
+            }
             
             }, withCancelBlock: { error in
                 print(error.description)
         })
         
-        //cell.dateLabel.text = month + "\n" + day
         cell.eventLabel.text = events[indexPath.row]
         
         cell.eventLabel.textColor = UIColor.whiteColor()
@@ -169,6 +177,8 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        scrollView.auk.startAutoScroll(delaySeconds: 3)
+        
         let row = indexPath.row
         
         var details = [String]()
@@ -196,12 +206,6 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
     
     override func viewDidAppear(animated: Bool) {
         scrollView.auk.startAutoScroll(delaySeconds: 3)
-        
-        NSNotificationCenter.defaultCenter().addObserverForName(UIContentSizeCategoryDidChangeNotification,
-                                                                object: nil,
-                                                                queue: NSOperationQueue.mainQueue()) {
-                                                                    [weak self] _ in self?.tableView.reloadData()
-        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -209,107 +213,3 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
     }
 }
 
-/*
-class Calendar: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
-    @IBOutlet weak var tableView: UITableView!
-    
-    let textCellIdentifier = "TextCell"
-    var events = [String]()
-    let screenWidth = UIScreen.mainScreen().bounds.width
-    let screenHeight = UIScreen.mainScreen().bounds.height
-    let navBarHeight = CGFloat(60.0)
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        //UIApplication.sharedApplication().statusBarStyle = .LightContent
-        
-        let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: screenWidth, height: navBarHeight))
-        let navigationItem = UINavigationItem()
-        navigationItem.title = "Events"
-        navBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Avenir-Light", size: 15.0)!];
-        navBar.items = [navigationItem]
-        self.view.addSubview(navBar)
-        
-        tableView.frame = CGRect(x: 0, y: navBarHeight, width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.height - navBarHeight)
-        tableView.backgroundColor = UIColor.clearColor()
-        tableView.separatorColor = UIColor.whiteColor()
-        tableView.rowHeight = 50
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-        let ref = FIRDatabase.database().reference()
-        ref.observeEventType(.Value, withBlock: { snapshot in
-            
-            let s = snapshot.value!.objectForKey("events")! as! String
-            
-            let Str = s.componentsSeparatedByString(",")
-            
-            for part in Str {
-                self.events.append(part)
-            }
-            
-            self.tableView.reloadData()
-            
-            }, withCancelBlock: { error in
-                print(error.description)
-        })
-        
-    }
-    
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return events.count
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath)
-        
-        cell.textLabel?.textColor = UIColor.whiteColor()
-        cell.textLabel?.font = UIFont(name: (cell.textLabel!.font?.fontName)!, size: 20)
-        
-        let row = indexPath.row
-        cell.textLabel?.text = events[row]
-        
-        return cell
-    }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
-        let row = indexPath.row
-        
-        var details = [String]()
-        let ref = FIRDatabase.database().reference()
-        ref.observeEventType(.Value, withBlock: { snapshot in
-            
-            let s = snapshot.value!.objectForKey(self.events[row])! as! String
-            
-            let Str = s.componentsSeparatedByString(",")
-            
-            for part in Str {
-                details.append(part)
-            }
-            
-            let alertController = UIAlertController(title: self.events[row], message:
-                "Date: " + details[0] + "\nTime: " + details[1] + "\nLocation: " + details[2] + "\nDescription: " + details[3], preferredStyle: UIAlertControllerStyle.Alert)
-            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
-            
-            self.presentViewController(alertController, animated: true, completion: nil)
-            
-            }, withCancelBlock: { error in
-                print(error.description)
-        })
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
-
-}
-*/

@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,34 +19,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO.png" translatesAutoresizingMaskIntoConstraints="NO" id="1iS-Nu-MtI">
-                                <rect key="frame" x="225" y="225" width="150" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="G2g-Wp-6KN"/>
-                                    <constraint firstAttribute="height" constant="150" id="hgq-b7-1b5"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Version 1.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1QK-Mp-k2G">
                                 <rect key="frame" x="178" y="393" width="245" height="68"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="ROLCC Youth App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCi-4s-ca4">
                                 <rect key="frame" x="78" y="120" width="444" height="92"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="LOGO.png" translatesAutoresizingMaskIntoConstraints="NO" id="IQS-nW-8wB">
+                                <rect key="frame" x="200" y="200" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="IQS-nW-8wB" secondAttribute="height" multiplier="1:1" id="wDO-Ed-4Uw"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="1iS-Nu-MtI" firstAttribute="top" secondItem="WCi-4s-ca4" secondAttribute="bottom" constant="20" id="DnF-bq-EkE"/>
+                            <constraint firstItem="IQS-nW-8wB" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1ni-pp-2CW"/>
+                            <constraint firstItem="IQS-nW-8wB" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.5" id="3VR-hZ-b7q"/>
                             <constraint firstItem="WCi-4s-ca4" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Ezh-cS-Y0J"/>
-                            <constraint firstItem="1iS-Nu-MtI" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ORt-f8-g8W"/>
-                            <constraint firstItem="1QK-Mp-k2G" firstAttribute="top" secondItem="1iS-Nu-MtI" secondAttribute="bottom" constant="20" id="hdQ-Hu-ftv"/>
+                            <constraint firstItem="1QK-Mp-k2G" firstAttribute="top" secondItem="IQS-nW-8wB" secondAttribute="bottom" constant="10" id="SHd-hE-jJH"/>
+                            <constraint firstItem="IQS-nW-8wB" firstAttribute="top" secondItem="WCi-4s-ca4" secondAttribute="bottom" constant="10" id="Y8M-qq-unM"/>
+                            <constraint firstItem="IQS-nW-8wB" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="30" id="gul-Ug-UsW"/>
                             <constraint firstItem="1QK-Mp-k2G" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="nY8-Ap-8fe"/>
-                            <constraint firstItem="1iS-Nu-MtI" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="snR-xe-qyd"/>
                         </constraints>
                     </view>
                 </viewController>

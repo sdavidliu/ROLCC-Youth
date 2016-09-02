@@ -156,7 +156,7 @@ class Home: UIViewController {
                 emitterCell.contents = UIImage(named: "fall.png")!.CGImage
             }
             emitterCell.birthRate = 8
-            emitterCell.lifetime = 15
+            emitterCell.lifetime = 10
             emitterCell.yAcceleration = 20.0
             emitterCell.xAcceleration = 1.0
             //    emitterCell.velocity = 20.0

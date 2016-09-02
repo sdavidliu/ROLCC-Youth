@@ -62,11 +62,10 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cqn-f2-CjQ">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cqn-f2-CjQ">
                                 <rect key="frame" x="225" y="234" width="150" height="150"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="1DQ-69-oYt"/>
-                                    <constraint firstAttribute="height" constant="150" id="rww-Za-59U"/>
+                                    <constraint firstAttribute="width" secondItem="Cqn-f2-CjQ" secondAttribute="height" multiplier="1:1" id="yZ8-8S-baz"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="LOGO.png"/>
                             </button>
@@ -76,10 +75,12 @@
                             <constraint firstItem="Cqn-f2-CjQ" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="4jM-Xv-SC7"/>
                             <constraint firstItem="yc1-tG-uQa" firstAttribute="centerX" secondItem="Elx-3L-pLb" secondAttribute="centerX" id="7ZN-1J-nmU"/>
                             <constraint firstItem="eCR-ob-xaW" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="AYN-zF-ace"/>
+                            <constraint firstItem="Cqn-f2-CjQ" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" constant="30" id="LAs-bp-bTv"/>
                             <constraint firstItem="3Y8-d7-fG9" firstAttribute="centerX" secondItem="Elx-3L-pLb" secondAttribute="centerX" constant="100" id="MAe-CG-7OO"/>
                             <constraint firstItem="Elx-3L-pLb" firstAttribute="centerX" secondItem="aNk-Ev-whJ" secondAttribute="centerX" constant="100" id="Tx4-mD-KHd"/>
                             <constraint firstItem="EbU-FM-oRB" firstAttribute="centerX" secondItem="aNk-Ev-whJ" secondAttribute="centerX" id="Ugq-Rk-uVw"/>
                             <constraint firstItem="Elx-3L-pLb" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="XPk-AG-BFx"/>
+                            <constraint firstItem="Cqn-f2-CjQ" firstAttribute="width" secondItem="tsR-hK-woN" secondAttribute="width" multiplier="0.5" id="p0f-1x-mfp"/>
                             <constraint firstItem="yjn-y2-kRa" firstAttribute="centerX" secondItem="3Y8-d7-fG9" secondAttribute="centerX" id="s22-XB-yKz"/>
                         </constraints>
                     </view>
@@ -133,13 +134,13 @@
                                                         <constraint firstAttribute="height" constant="50" id="yEB-La-qan"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Event" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ksr-E6-zOf">
                                                     <rect key="frame" x="66" y="8" width="260" height="50"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
