@@ -15,7 +15,7 @@ class Cupertino1: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        button = DOFavoriteButton(frame: CGRectMake(UIScreen.mainScreen().bounds.width - 50, 20, 50, 50), image: UIImage(named: "stars.png"))
+        button = DOFavoriteButton(frame: CGRectMake(UIScreen.mainScreen().bounds.width - 50, 60, 50, 50), image: UIImage(named: "stars.png"))
         self.view.addSubview(button)
         
         button.addTarget(self, action: #selector(Cupertino1.tapped), forControlEvents: .TouchUpInside)
@@ -29,6 +29,7 @@ class Cupertino1: UIViewController {
             // select with animation
             sender.select()
             let defaults = NSUserDefaults.standardUserDefaults()
+            
             defaults.setValue("Cupertino1", forKey: "Favorite")
             defaults.synchronize()
         }

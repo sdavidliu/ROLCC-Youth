@@ -136,15 +136,23 @@ class Contact: UIViewController {
     
     func phoneChurch(sender: UIButton!){
         let number = "4082600257"
-        let url = NSURL(string: "tel://\(number)")
-        callNumber(number)
-        UIApplication.sharedApplication().openURL(url!)
+        let alertController = UIAlertController(title: "(408) 260-0257", message:
+            "Are you sure you want to call\n(408) 260-0257?", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default,handler: nil))
+        alertController.addAction(UIAlertAction(title: "Call", style: UIAlertActionStyle.Default,handler: { action in
+            let url = NSURL(string: "tel://\(number)")
+            UIApplication.sharedApplication().openURL(url!)
+        }))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
     
     func faxChurch(sender: UIButton!){
-        let number = "4087488877"
-        let url = NSURL(string: "tel://\(number)")
-        UIApplication.sharedApplication().openURL(url!)
+        _ = "4087488877"
+        let alertController = UIAlertController(title: "(408) 748-8877", message:
+            "This is a fax number...", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.Default,handler: nil))
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
     
     func emailChurch(sender: UIButton!){
@@ -160,20 +168,6 @@ class Contact: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-    func callNumber(number : String){
-        let alertController = UIAlertController(title: number, message:
-            "Are you sure you want to call " + number + "?", preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default,handler: nil))
-        alertController.addAction(UIAlertAction(title: "Call", style: UIAlertActionStyle.Default,handler: { action in
-            let url = NSURL(string: "tel://\(number)")
-            UIApplication.sharedApplication().openURL(url!)
-        }))
-        
-        self.presentViewController(alertController, animated: true, completion: nil)
-    }
-    
     
 }

@@ -15,7 +15,7 @@ class Saratoga1: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        button = DOFavoriteButton(frame: CGRectMake(UIScreen.mainScreen().bounds.width - 50, 20, 50, 50), image: UIImage(named: "stars.png"))
+        button = DOFavoriteButton(frame: CGRectMake(UIScreen.mainScreen().bounds.width - 50, 60, 50, 50), image: UIImage(named: "stars.png"))
         self.view.addSubview(button)
         
         button.addTarget(self, action: #selector(Saratoga1.tapped), forControlEvents: .TouchUpInside)

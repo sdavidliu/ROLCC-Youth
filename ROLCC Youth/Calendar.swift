@@ -152,7 +152,7 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
                         if (allImages == true){
                             for i in self.finalImages{
                                 self.scrollView.auk.show(image: i!)
-                                self.scrollView.auk.startAutoScroll(delaySeconds: 3)
+                                self.scrollView.auk.startAutoScroll(delaySeconds: 5)
                             }
                             self.imagesDone = true
                         }
@@ -177,7 +177,7 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        scrollView.auk.startAutoScroll(delaySeconds: 3)
+        scrollView.auk.startAutoScroll(delaySeconds: 5)
         
         let row = indexPath.row
         
@@ -205,7 +205,7 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
     }
     
     override func viewDidAppear(animated: Bool) {
-        scrollView.auk.startAutoScroll(delaySeconds: 3)
+        scrollView.auk.startAutoScroll(delaySeconds: 5)
     }
     
     override func didReceiveMemoryWarning() {

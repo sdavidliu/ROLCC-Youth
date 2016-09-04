@@ -19,6 +19,8 @@ class Berryessa: UIViewController {
         self.view.addSubview(button)
         
         button.addTarget(self, action: #selector(Berryessa.tapped), forControlEvents: .TouchUpInside)
+        
+        
     }
     
     func tapped(sender: DOFavoriteButton) {
@@ -29,6 +31,7 @@ class Berryessa: UIViewController {
             // select with animation
             sender.select()
             let defaults = NSUserDefaults.standardUserDefaults()
+            
             defaults.setValue("Berryessa", forKey: "Favorite")
             defaults.synchronize()
         }
