@@ -74,7 +74,6 @@ class Videos: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         selectedVideoIndex = indexPath.row
         let url = NSURL(string: "https://www.youtube.com/watch?v=" + (videosArray[selectedVideoIndex]["videoID"] as! String))
-        print(url)
         UIApplication.sharedApplication().openURL(url!)
     }
     

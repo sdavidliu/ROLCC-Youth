@@ -201,25 +201,32 @@ class Home: UIViewController {
         }
         weekday = 7 - currentWeekday
         
-        if (currentWeekday == 1 && currentHour >= 9 && currentMin >= 45){
+        if (currentWeekday == 1 && (currentHour >= 10) || (currentHour == 9 && currentMin >= 45)){
             daysLabel.text = "0"
-            daysProgress.updateProgress(0.0, initialDelay: 0.4, duration: 3)
             hoursLabel.text = "0"
             minutesLabel.text = "0"
+            if (oldMinutes != minutes){
+                minutesProgress.updateProgress(0, initialDelay: 0.4, duration: 3)
+            }
+            if (oldHours != hours){
+                hoursProgress.updateProgress(0, initialDelay: 0.4, duration: 3)
+            }
+            if (oldWeekday != weekday){
+                daysProgress.updateProgress(0, initialDelay: 0.4, duration: 3)
+            }
         }else{
             daysLabel.text = String(weekday)
             hoursLabel.text = String(hours)
             minutesLabel.text = String(minutes)
-        }
-
-        if (oldMinutes != minutes){
-            minutesProgress.updateProgress(CGFloat(60 - minutes)/60.0, initialDelay: 0.4, duration: 3)
-        }
-        if (oldHours != hours){
-            hoursProgress.updateProgress(CGFloat(24 - hours)/24.0, initialDelay: 0.4, duration: 3)
-        }
-        if (oldWeekday != weekday){
-            daysProgress.updateProgress(CGFloat(7 - weekday)/7.0, initialDelay: 0.4, duration: 3)
+            if (oldMinutes != minutes){
+                minutesProgress.updateProgress(CGFloat(60 - minutes)/60.0, initialDelay: 0.4, duration: 3)
+            }
+            if (oldHours != hours){
+                hoursProgress.updateProgress(CGFloat(24 - hours)/24.0, initialDelay: 0.4, duration: 3)
+            }
+            if (oldWeekday != weekday){
+                daysProgress.updateProgress(CGFloat(6 - weekday)/6.0, initialDelay: 0.4, duration: 3)
+            }
         }
     }
     
