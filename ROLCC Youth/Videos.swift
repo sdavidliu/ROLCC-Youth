@@ -24,21 +24,40 @@ class Videos: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 60))
+        let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 64))
         let navigationItem = UINavigationItem()
         navigationItem.title = "Latest Videos"
         navBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Avenir-Light", size: 15.0)!];
         navBar.items = [navigationItem]
         self.view.addSubview(navBar)
         
-        tableView.backgroundColor = UIColor.clearColor()
-        tableView.separatorColor = UIColor.whiteColor()
-        tableView.rowHeight = 120
-        tableView.allowsSelection = true
-        tableView.delegate = self
-        tableView.dataSource = self
+        if (Reachability.isConnectedToNetwork() == true){
         
-        getChannelDetails()
+            tableView.backgroundColor = UIColor.clearColor()
+            tableView.separatorColor = UIColor.whiteColor()
+            tableView.rowHeight = 120
+            tableView.allowsSelection = true
+            tableView.delegate = self
+            tableView.dataSource = self
+            
+            getChannelDetails()
+        }else{
+            tableView.hidden = true
+            
+            let error = UIImageView(image: UIImage(named: "sadface2.png"))
+            error.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+            error.center = CGPoint(x: screenWidth/2, y: screenHeight/2)
+            self.view.addSubview(error)
+            
+            let errorMessage = UILabel()
+            errorMessage.text = "No internet connection"
+            errorMessage.font = UIFont(name: "Avenir-Light", size: 15.0)
+            errorMessage.textColor = UIColor(red: 21/255, green: 21/255, blue: 21/255, alpha: 1.0)
+            errorMessage.frame = CGRect(x: 0, y: 0, width: screenWidth, height: 20.0)
+            errorMessage.textAlignment = NSTextAlignment.Center
+            errorMessage.center = CGPoint(x: screenWidth/2, y: screenHeight/2 + 40)
+            self.view.addSubview(errorMessage)
+        }
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {

@@ -34,9 +34,7 @@ class Contact: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //UIApplication.sharedApplication().statusBarStyle = .LightContent
-        
-        let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 60))
+        let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 64))
         let navigationItem = UINavigationItem()
         navigationItem.title = "Contact"
         navBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Avenir-Light", size: 15.0)!];

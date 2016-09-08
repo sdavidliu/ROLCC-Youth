@@ -17,19 +17,12 @@ class CellGroup: UIPageViewController, UIPageViewControllerDelegate, UIPageViewC
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //UIApplication.sharedApplication().statusBarStyle = .LightContent
-        
         self.delegate = self
         self.dataSource = self
         
-        let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 60))
-        let navigationItem = UINavigationItem()
-        navigationItem.title = "Cell Groups"
-        navBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Avenir-Light", size: 15.0)!];
-        navBar.items = [navigationItem]
-        self.view.addSubview(navBar)
+        self.title = "Cell Group"
+        self.navigationController!.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Avenir-Light", size: 15)!]
         
-        //let almadenView = storyboard?.instantiateViewControllerWithIdentifier("Almaden") as! Almaden
         let berryessaView = storyboard?.instantiateViewControllerWithIdentifier("Berryessa") as! Berryessa
         let cupertino1View = storyboard?.instantiateViewControllerWithIdentifier("Cupertino1") as! Cupertino1
         let cupertino2View = storyboard?.instantiateViewControllerWithIdentifier("Cupertino2") as! Cupertino2
@@ -46,27 +39,27 @@ class CellGroup: UIPageViewController, UIPageViewControllerDelegate, UIPageViewC
         
         let defaults = NSUserDefaults.standardUserDefaults()
         var x = 0
-        if (defaults.stringForKey("Favorite") == "Berryessa"){
+        if (defaults.stringForKey("CellGroup") == "Berryessa"){
             x = 0
-        }else if (defaults.stringForKey("Favorite") == "Cupertino1"){
+        }else if (defaults.stringForKey("CellGroup") == "Cupertino1"){
             x = 1
-        }else if (defaults.stringForKey("Favorite") == "Cupertino2"){
+        }else if (defaults.stringForKey("CellGroup") == "Cupertino2"){
             x = 2
-        }else if (defaults.stringForKey("Favorite") == "Evergreen"){
+        }else if (defaults.stringForKey("CellGroup") == "Evergreen"){
             x = 3
-        }else if (defaults.stringForKey("Favorite") == "FremontA"){
+        }else if (defaults.stringForKey("CellGroup") == "FremontA"){
             x = 4
-        }else if (defaults.stringForKey("Favorite") == "FremontB"){
+        }else if (defaults.stringForKey("CellGroup") == "FremontB"){
             x = 5
-        }else if (defaults.stringForKey("Favorite") == "MorganHill"){
+        }else if (defaults.stringForKey("CellGroup") == "MorganHill"){
             x = 6
-        }else if (defaults.stringForKey("Favorite") == "PaloAlto"){
+        }else if (defaults.stringForKey("CellGroup") == "PaloAlto"){
             x = 7
-        }else if (defaults.stringForKey("Favorite") == "SanCarlos"){
+        }else if (defaults.stringForKey("CellGroup") == "SanCarlos"){
             x = 8
-        }else if (defaults.stringForKey("Favorite") == "Saratoga1"){
+        }else if (defaults.stringForKey("CellGroup") == "Saratoga1"){
             x = 9
-        }else if (defaults.stringForKey("Favorite") == "Saratoga2"){
+        }else if (defaults.stringForKey("CellGroup") == "Saratoga2"){
             x = 10
         }
         

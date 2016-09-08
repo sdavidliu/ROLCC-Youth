@@ -37,9 +37,7 @@ class Home: UIViewController {
         
         UIApplication.sharedApplication().statusBarStyle = .Default
         
-        //navigationItem.titleView = UIImageView(image: UIImage(named: "LOGO.png"))
-        
-        let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 60))
+        let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 64))
         let navigationItem = UINavigationItem()
         navigationItem.title = "Home"
         navBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Avenir-Light", size: 15.0)!];
@@ -67,31 +65,34 @@ class Home: UIViewController {
         minutesProgress.center = CGPoint(x: screenWidth/2 + 100, y: 150)
         self.view.addSubview(minutesProgress)
         
-        let thisWeek = UILabel(frame: CGRect(x: 10, y: 0, width: screenWidth - 20, height: 30))
-        thisWeek.text = "This Week:"
-        thisWeek.center = CGPoint(x: screenWidth/2, y: screenHeight - 150)
-        thisWeek.textAlignment = NSTextAlignment.Center
-        thisWeek.font = UIFont(name: "Avenir", size: 20)
-        thisWeek.textColor = UIColor.whiteColor()
-        self.view.addSubview(thisWeek)
+        if (Reachability.isConnectedToNetwork() == true){
+            
+            let thisWeek = UILabel(frame: CGRect(x: 10, y: 0, width: screenWidth - 20, height: 30))
+            thisWeek.text = "This Week:"
+            thisWeek.center = CGPoint(x: screenWidth/2, y: screenHeight - 150)
+            thisWeek.textAlignment = NSTextAlignment.Center
+            thisWeek.font = UIFont(name: "Avenir", size: 20)
+            thisWeek.textColor = UIColor.whiteColor()
+            self.view.addSubview(thisWeek)
         
-        let ref = FIRDatabase.database().reference()
-        ref.observeEventType(.Value, withBlock: { snapshot in
-            
-            let s = snapshot.value!.objectForKey("home")! as! String
-            
-            let Str = s.componentsSeparatedByString(",")
-            
-            for part in Str {
-                self.array1.append(part)
-            }
-            
-            self.showInfo()
-            
-            
-            }, withCancelBlock: { error in
-                print(error.description)
-        })
+            let ref = FIRDatabase.database().reference()
+            ref.observeEventType(.Value, withBlock: { snapshot in
+                
+                let s = snapshot.value!.objectForKey("home")! as! String
+                
+                let Str = s.componentsSeparatedByString(",")
+                
+                for part in Str {
+                    self.array1.append(part)
+                }
+                
+                self.showInfo()
+                
+                
+                }, withCancelBlock: { error in
+                    print(error.description)
+            })
+        }
         
         update()
         
@@ -156,7 +157,7 @@ class Home: UIViewController {
                 emitterCell.contents = UIImage(named: "fall.png")!.CGImage
             }
             emitterCell.birthRate = 8
-            emitterCell.lifetime = 10
+            emitterCell.lifetime = 15
             emitterCell.yAcceleration = 20.0
             emitterCell.xAcceleration = 1.0
             //    emitterCell.velocity = 20.0
@@ -232,7 +233,7 @@ class Home: UIViewController {
     
     func runAnimation(){
         count += 1
-        if (count > 15){
+        if (count > 5){
             emitter.birthRate = 0
             animating = false
             count = 0

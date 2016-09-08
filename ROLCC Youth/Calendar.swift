@@ -14,16 +14,14 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
     
     let screenWidth = UIScreen.mainScreen().bounds.width
     let screenHeight = UIScreen.mainScreen().bounds.height
-    //let images = ["wnw.jpg", "divergent.jpeg", "cellleader.jpg"]
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageLabel: UILabel!
     
     var events = [String]()
-    var images = [UIImage]()
     var imagesURL = [NSURL]()
-    var finalImages = [UIImage?](count:3, repeatedValue: nil)
+    var finalImages = [UIImage?]()
     var imagesDone = false
     
     override func viewDidLoad() {
@@ -31,54 +29,75 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
         
         UIApplication.sharedApplication().statusBarStyle = .Default
         
-        let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 60))
+        let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 64))
         let navigationItem = UINavigationItem()
         navigationItem.title = "Events"
         navBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Avenir-Light", size: 15.0)!];
         navBar.items = [navigationItem]
         self.view.addSubview(navBar)
         
-        let loading = RPCircularProgress()
-        loading.trackTintColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 255 / 255, alpha: 0.3)
-        loading.progressTintColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 255 / 255, alpha: 1)
-        loading.thicknessRatio = 0.1
-        loading.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-        loading.center = CGPoint(x: screenWidth/2, y: 150)
-        loading.enableIndeterminate()
-        self.view.addSubview(loading)
-        self.view.sendSubviewToBack(loading)
+        if (Reachability.isConnectedToNetwork() == true){
         
-        scrollView.delegate = self
-        scrollView.auk.settings.placeholderImage = UIImage(named: "LOGO.png")
-        scrollView.auk.settings.errorImage = UIImage(named: "LOGO.png")
-        scrollView.auk.settings.pageControl.visible = false
-        scrollView.auk.settings.showsHorizontalScrollIndicator = true
-        scrollView.auk.settings.contentMode = .ScaleAspectFill
-        
-        let ref = FIRDatabase.database().reference()
-        ref.observeEventType(.Value, withBlock: { snapshot in
+            let loading = RPCircularProgress()
+            loading.trackTintColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 255 / 255, alpha: 0.3)
+            loading.progressTintColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 255 / 255, alpha: 1)
+            loading.thicknessRatio = 0.1
+            loading.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+            loading.center = CGPoint(x: screenWidth/2, y: 150)
+            loading.enableIndeterminate()
+            self.view.addSubview(loading)
+            self.view.sendSubviewToBack(loading)
             
-            let s = snapshot.value!.objectForKey("events")! as! String
+            scrollView.delegate = self
+            scrollView.auk.settings.placeholderImage = UIImage(named: "LOGO.png")
+            scrollView.auk.settings.errorImage = UIImage(named: "LOGO.png")
+            scrollView.auk.settings.pageControl.visible = false
+            scrollView.auk.settings.showsHorizontalScrollIndicator = true
+            scrollView.auk.settings.contentMode = .ScaleAspectFill
             
-            let Str = s.componentsSeparatedByString(",")
+            let ref = FIRDatabase.database().reference()
+            ref.observeEventType(.Value, withBlock: { snapshot in
+                
+                let s = snapshot.value!.objectForKey("events")! as! String
+                
+                let Str = s.componentsSeparatedByString(",")
+                
+                for part in Str {
+                    self.events.append(part)
+                }
+                
+                self.imageLabel.text = self.events[0]
+                
+                self.tableView.reloadData()
+                
+                self.finalImages = [UIImage?](count:self.events.count, repeatedValue: nil)
+                
+                }, withCancelBlock: { error in
+                    print(error.description)
+            })
             
-            for part in Str {
-                self.events.append(part)
-            }
+            tableView.backgroundColor = UIColor.clearColor()
+            tableView.separatorColor = UIColor.whiteColor()
+            tableView.rowHeight = 70
+            tableView.allowsSelection = true
+            tableView.delegate = self
+        }else{
+            tableView.hidden = true
             
-            self.imageLabel.text = self.events[0]
+            let error = UIImageView(image: UIImage(named: "sadface2.png"))
+            error.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+            error.center = CGPoint(x: screenWidth/2, y: screenHeight/2)
+            self.view.addSubview(error)
             
-            self.tableView.reloadData()
-            
-            }, withCancelBlock: { error in
-                print(error.description)
-        })
-        
-        tableView.backgroundColor = UIColor.clearColor()
-        tableView.separatorColor = UIColor.whiteColor()
-        tableView.rowHeight = 70
-        tableView.allowsSelection = true
-        tableView.delegate = self
+            let errorMessage = UILabel()
+            errorMessage.text = "No internet connection"
+            errorMessage.font = UIFont(name: "Avenir-Light", size: 15.0)
+            errorMessage.textColor = UIColor(red: 21/255, green: 21/255, blue: 21/255, alpha: 1.0)
+            errorMessage.frame = CGRect(x: 0, y: 0, width: screenWidth, height: 20.0)
+            errorMessage.textAlignment = NSTextAlignment.Center
+            errorMessage.center = CGPoint(x: screenWidth/2, y: screenHeight/2 + 40)
+            self.view.addSubview(errorMessage)
+        }
         
     }
     
@@ -92,6 +111,7 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
             }
         }
         tableView.delegate = self
+        scrollView.auk.startAutoScroll(delaySeconds: 5)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -202,10 +222,6 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
             }, withCancelBlock: { error in
                 print(error.description)
         })
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        scrollView.auk.startAutoScroll(delaySeconds: 5)
     }
     
     override func didReceiveMemoryWarning() {
