@@ -8,16 +8,20 @@
 
 import UIKit
 
-class Contact: UIViewController {
+class Contact: UIViewController, UIScrollViewDelegate {
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var youthEmail: UIButton!
     @IBOutlet weak var youthWebsite: UIButton!
+    @IBOutlet weak var youthPhone: UIButton!
     @IBOutlet weak var pastorRichard: UIButton!
     @IBOutlet weak var andrewTai: UIButton!
     @IBOutlet weak var justineShann: UIButton!
     @IBOutlet weak var chiTran: UIButton!
     @IBOutlet weak var jessicaLiao: UIButton!
     @IBOutlet weak var jimyLiu: UIButton!
+    @IBOutlet weak var margieChoa: UIButton!
+    @IBOutlet weak var cynthiaChu: UIButton!
     @IBOutlet weak var facebook: UIButton!
     @IBOutlet weak var youtube: UIButton!
     @IBOutlet weak var instagram: UIButton!
@@ -41,14 +45,22 @@ class Contact: UIViewController {
         navBar.items = [navigationItem]
         self.view.addSubview(navBar)
         
+        scrollView.delegate = self
+        scrollView.scrollEnabled = true
+        scrollView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight - 400)
+        scrollView.contentSize = CGSizeMake(screenWidth, 550)
+        
         youthEmail.addTarget(self, action: #selector(emailYouth), forControlEvents: .TouchUpInside)
         youthWebsite.addTarget(self, action: #selector(websiteYouth), forControlEvents: .TouchUpInside)
+        youthPhone.addTarget(self, action: #selector(phoneChurch), forControlEvents: .TouchUpInside)
         pastorRichard.addTarget(self, action: #selector(emailRichard), forControlEvents: .TouchUpInside)
         andrewTai.addTarget(self, action: #selector(emailAndrew), forControlEvents: .TouchUpInside)
         justineShann.addTarget(self, action: #selector(emailJustine), forControlEvents: .TouchUpInside)
         chiTran.addTarget(self, action: #selector(emailChi), forControlEvents: .TouchUpInside)
         jessicaLiao.addTarget(self, action: #selector(emailJessica), forControlEvents: .TouchUpInside)
         jimyLiu.addTarget(self, action: #selector(emailJimy), forControlEvents: .TouchUpInside)
+        margieChoa.addTarget(self, action: #selector(emailMargie), forControlEvents: .TouchUpInside)
+        cynthiaChu.addTarget(self, action: #selector(emailCynthia), forControlEvents: .TouchUpInside)
         facebook.addTarget(self, action: #selector(goFacebook), forControlEvents: .TouchUpInside)
         youtube.addTarget(self, action: #selector(goYoutube), forControlEvents: .TouchUpInside)
         instagram.addTarget(self, action: #selector(goInstagram), forControlEvents: .TouchUpInside)
@@ -103,6 +115,18 @@ class Contact: UIViewController {
     
     func emailJimy(sender: UIButton!){
         let email = "jimy.liu@gmail.com"
+        let url = NSURL(string: "mailto:\(email)")
+        UIApplication.sharedApplication().openURL(url!)
+    }
+    
+    func emailMargie(sender: UIButton!){
+        let email = "margaret.choa@rolcc.net"
+        let url = NSURL(string: "mailto:\(email)")
+        UIApplication.sharedApplication().openURL(url!)
+    }
+    
+    func emailCynthia(sender: UIButton!){
+        let email = "oinkoinkchu@gmail.com"
         let url = NSURL(string: "mailto:\(email)")
         UIApplication.sharedApplication().openURL(url!)
     }

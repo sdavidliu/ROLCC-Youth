@@ -13,25 +13,35 @@ class SelectCellGroup: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var berryessa: UIButton!
     @IBOutlet weak var cupertino1: UIButton!
     @IBOutlet weak var cupertino2: UIButton!
+    @IBOutlet weak var cupertinoJH: UIButton!
     @IBOutlet weak var evergreen: UIButton!
     @IBOutlet weak var fremontA: UIButton!
     @IBOutlet weak var fremontB: UIButton!
+    @IBOutlet weak var fremontJH: UIButton!
     @IBOutlet weak var morganHill: UIButton!
     @IBOutlet weak var paloAlto: UIButton!
+    @IBOutlet weak var paloAltoJH: UIButton!
     @IBOutlet weak var sanCarlos: UIButton!
     @IBOutlet weak var saratoga1: UIButton!
     @IBOutlet weak var saratoga2: UIButton!
+    @IBOutlet weak var saratogaJH: UIButton!
+    @IBOutlet weak var sunnyvaleJH: UIButton!
     @IBOutlet weak var berryessaStar: DOFavoriteButton!
     @IBOutlet weak var cupertino1Star: DOFavoriteButton!
     @IBOutlet weak var cupertino2Star: DOFavoriteButton!
+    @IBOutlet weak var cupertinoJHStar: DOFavoriteButton!
     @IBOutlet weak var evergreenStar: DOFavoriteButton!
     @IBOutlet weak var fremontAStar: DOFavoriteButton!
     @IBOutlet weak var fremontBStar: DOFavoriteButton!
+    @IBOutlet weak var fremontJHStar: DOFavoriteButton!
     @IBOutlet weak var morganHillStar: DOFavoriteButton!
     @IBOutlet weak var paloAltoStar: DOFavoriteButton!
+    @IBOutlet weak var paloAltoJHStar: DOFavoriteButton!
     @IBOutlet weak var sanCarlosStar: DOFavoriteButton!
     @IBOutlet weak var saratoga1Star: DOFavoriteButton!
     @IBOutlet weak var saratoga2Star: DOFavoriteButton!
+    @IBOutlet weak var saratogaJHStar: DOFavoriteButton!
+    @IBOutlet weak var sunnyvaleJHStar: DOFavoriteButton!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var label: UILabel!
     
@@ -61,26 +71,36 @@ class SelectCellGroup: UIViewController, UIScrollViewDelegate {
         berryessa.addTarget(self, action: #selector(berryessaAction), forControlEvents: .TouchUpInside)
         cupertino1.addTarget(self, action: #selector(cupertino1Action), forControlEvents: .TouchUpInside)
         cupertino2.addTarget(self, action: #selector(cupertino2Action), forControlEvents: .TouchUpInside)
+        cupertinoJH.addTarget(self, action: #selector(cupertinoJHAction), forControlEvents: .TouchUpInside)
         evergreen.addTarget(self, action: #selector(evergreenAction), forControlEvents: .TouchUpInside)
         fremontA.addTarget(self, action: #selector(fremontAAction), forControlEvents: .TouchUpInside)
         fremontB.addTarget(self, action: #selector(fremontBAction), forControlEvents: .TouchUpInside)
+        fremontJH.addTarget(self, action: #selector(fremontJHAction), forControlEvents: .TouchUpInside)
         morganHill.addTarget(self, action: #selector(morganHillAction), forControlEvents: .TouchUpInside)
         paloAlto.addTarget(self, action: #selector(paloAltoAction), forControlEvents: .TouchUpInside)
+        paloAltoJH.addTarget(self, action: #selector(paloAltoJHAction), forControlEvents: .TouchUpInside)
         sanCarlos.addTarget(self, action: #selector(sanCarlosAction), forControlEvents: .TouchUpInside)
         saratoga1.addTarget(self, action: #selector(saratoga1Action), forControlEvents: .TouchUpInside)
         saratoga2.addTarget(self, action: #selector(saratoga2Action), forControlEvents: .TouchUpInside)
+        saratogaJH.addTarget(self, action: #selector(saratogaJHAction), forControlEvents: .TouchUpInside)
+        sunnyvaleJH.addTarget(self, action: #selector(sunnyvaleJHAction), forControlEvents: .TouchUpInside)
         
         berryessaStar.addTarget(self, action: #selector(berryessaTapped), forControlEvents: .TouchUpInside)
         cupertino1Star.addTarget(self, action: #selector(cupertino1Tapped), forControlEvents: .TouchUpInside)
         cupertino2Star.addTarget(self, action: #selector(cupertino2Tapped), forControlEvents: .TouchUpInside)
+        cupertinoJHStar.addTarget(self, action: #selector(cupertinoJHTapped), forControlEvents: .TouchUpInside)
         evergreenStar.addTarget(self, action: #selector(evergreenTapped), forControlEvents: .TouchUpInside)
         fremontAStar.addTarget(self, action: #selector(fremontATapped), forControlEvents: .TouchUpInside)
         fremontBStar.addTarget(self, action: #selector(fremontBTapped), forControlEvents: .TouchUpInside)
+        fremontJHStar.addTarget(self, action: #selector(fremontJHTapped), forControlEvents: .TouchUpInside)
         morganHillStar.addTarget(self, action: #selector(morganHillTapped), forControlEvents: .TouchUpInside)
         paloAltoStar.addTarget(self, action: #selector(paloAltoTapped), forControlEvents: .TouchUpInside)
+        paloAltoJHStar.addTarget(self, action: #selector(paloAltoJHTapped), forControlEvents: .TouchUpInside)
         sanCarlosStar.addTarget(self, action: #selector(sanCarlosTapped), forControlEvents: .TouchUpInside)
         saratoga1Star.addTarget(self, action: #selector(saratoga1Tapped), forControlEvents: .TouchUpInside)
         saratoga2Star.addTarget(self, action: #selector(saratoga2Tapped), forControlEvents: .TouchUpInside)
+        saratogaJHStar.addTarget(self, action: #selector(saratogaJHTapped), forControlEvents: .TouchUpInside)
+        sunnyvaleJHStar.addTarget(self, action: #selector(sunnyvaleJHTapped), forControlEvents: .TouchUpInside)
         
         let defaults = NSUserDefaults.standardUserDefaults()
         let favorite = defaults.stringForKey("Favorite")
@@ -90,22 +110,32 @@ class SelectCellGroup: UIViewController, UIScrollViewDelegate {
             cupertino1Star.select()
         }else if (favorite == "Cupertino2"){
             cupertino2Star.select()
+        }else if (favorite == "CupertinoJH"){
+            cupertinoJHStar.select()
         }else if (favorite == "Evergreen"){
             evergreenStar.select()
         }else if (favorite == "FremontA"){
             fremontAStar.select()
         }else if (favorite == "FremontB"){
             fremontBStar.select()
+        }else if (favorite == "FremontJH"){
+            fremontJHStar.select()
         }else if (favorite == "MorganHill"){
             morganHillStar.select()
         }else if (favorite == "PaloAlto"){
             paloAltoStar.select()
+        }else if (favorite == "PaloAltoJH"){
+            paloAltoJHStar.select()
         }else if (favorite == "SanCarlos"){
             sanCarlosStar.select()
         }else if (favorite == "Saratoga1"){
             saratoga1Star.select()
         }else if (favorite == "Saratoga2"){
             saratoga2Star.select()
+        }else if (favorite == "SaratogaJH"){
+            saratogaJHStar.select()
+        }else if (favorite == "SunnyvaleJH"){
+            sunnyvaleJHStar.select()
         }
         
     }
@@ -128,6 +158,12 @@ class SelectCellGroup: UIViewController, UIScrollViewDelegate {
         defaults.synchronize()
     }
     
+    func cupertinoJHAction(sender: UIButton!) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setValue("CupertinoJH", forKey: "CellGroup")
+        defaults.synchronize()
+    }
+    
     func evergreenAction(sender: UIButton!) {
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setValue("Evergreen", forKey: "CellGroup")
@@ -146,6 +182,12 @@ class SelectCellGroup: UIViewController, UIScrollViewDelegate {
         defaults.synchronize()
     }
     
+    func fremontJHAction(sender: UIButton!) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setValue("FremontJH", forKey: "CellGroup")
+        defaults.synchronize()
+    }
+    
     func morganHillAction(sender: UIButton!) {
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setValue("MorganHill", forKey: "CellGroup")
@@ -155,6 +197,12 @@ class SelectCellGroup: UIViewController, UIScrollViewDelegate {
     func paloAltoAction(sender: UIButton!) {
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setValue("PaloAlto", forKey: "CellGroup")
+        defaults.synchronize()
+    }
+    
+    func paloAltoJHAction(sender: UIButton!) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setValue("PaloAltoJH", forKey: "CellGroup")
         defaults.synchronize()
     }
     
@@ -176,6 +224,18 @@ class SelectCellGroup: UIViewController, UIScrollViewDelegate {
         defaults.synchronize()
     }
     
+    func saratogaJHAction(sender: UIButton!) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setValue("SaratogaJH", forKey: "CellGroup")
+        defaults.synchronize()
+    }
+    
+    func sunnyvaleJHAction(sender: UIButton!) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setValue("SunnyvaleJH", forKey: "CellGroup")
+        defaults.synchronize()
+    }
+    
     func berryessaTapped(sender: DOFavoriteButton) {
         if sender.selected {
             sender.deselect()
@@ -186,14 +246,19 @@ class SelectCellGroup: UIViewController, UIScrollViewDelegate {
             sender.select()
             cupertino1Star.deselect()
             cupertino2Star.deselect()
+            cupertinoJHStar.deselect()
             evergreenStar.deselect()
             fremontAStar.deselect()
             fremontBStar.deselect()
+            fremontJHStar.deselect()
             morganHillStar.deselect()
             paloAltoStar.deselect()
+            paloAltoJHStar.deselect()
             sanCarlosStar.deselect()
             saratoga1Star.deselect()
             saratoga2Star.deselect()
+            saratogaJHStar.deselect()
+            sunnyvaleJHStar.deselect()
             let defaults = NSUserDefaults.standardUserDefaults()
             defaults.setValue("Berryessa", forKey: "Favorite")
             defaults.synchronize()
@@ -210,14 +275,19 @@ class SelectCellGroup: UIViewController, UIScrollViewDelegate {
             sender.select()
             berryessaStar.deselect()
             cupertino2Star.deselect()
+            cupertinoJHStar.deselect()
             evergreenStar.deselect()
             fremontAStar.deselect()
             fremontBStar.deselect()
+            fremontJHStar.deselect()
             morganHillStar.deselect()
             paloAltoStar.deselect()
+            paloAltoJHStar.deselect()
             sanCarlosStar.deselect()
             saratoga1Star.deselect()
             saratoga2Star.deselect()
+            saratogaJHStar.deselect()
+            sunnyvaleJHStar.deselect()
             let defaults = NSUserDefaults.standardUserDefaults()
             defaults.setValue("Cupertino1", forKey: "Favorite")
             defaults.synchronize()
@@ -234,16 +304,50 @@ class SelectCellGroup: UIViewController, UIScrollViewDelegate {
             sender.select()
             berryessaStar.deselect()
             cupertino1Star.deselect()
+            cupertinoJHStar.deselect()
             evergreenStar.deselect()
             fremontAStar.deselect()
             fremontBStar.deselect()
+            fremontJHStar.deselect()
             morganHillStar.deselect()
             paloAltoStar.deselect()
+            paloAltoJHStar.deselect()
             sanCarlosStar.deselect()
             saratoga1Star.deselect()
             saratoga2Star.deselect()
+            saratogaJHStar.deselect()
+            sunnyvaleJHStar.deselect()
             let defaults = NSUserDefaults.standardUserDefaults()
             defaults.setValue("Cupertino2", forKey: "Favorite")
+            defaults.synchronize()
+        }
+    }
+    
+    func cupertinoJHTapped(sender: DOFavoriteButton) {
+        if sender.selected {
+            sender.deselect()
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setValue(nil, forKey: "Favorite")
+            defaults.synchronize()
+        } else {
+            sender.select()
+            berryessaStar.deselect()
+            cupertino1Star.deselect()
+            cupertino2Star.deselect()
+            evergreenStar.deselect()
+            fremontAStar.deselect()
+            fremontBStar.deselect()
+            fremontJHStar.deselect()
+            morganHillStar.deselect()
+            paloAltoStar.deselect()
+            paloAltoJHStar.deselect()
+            sanCarlosStar.deselect()
+            saratoga1Star.deselect()
+            saratoga2Star.deselect()
+            saratogaJHStar.deselect()
+            sunnyvaleJHStar.deselect()
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setValue("CupertinoJH", forKey: "Favorite")
             defaults.synchronize()
         }
     }
@@ -259,13 +363,18 @@ class SelectCellGroup: UIViewController, UIScrollViewDelegate {
             berryessaStar.deselect()
             cupertino1Star.deselect()
             cupertino2Star.deselect()
+            cupertinoJHStar.deselect()
             fremontAStar.deselect()
             fremontBStar.deselect()
+            fremontJHStar.deselect()
             morganHillStar.deselect()
             paloAltoStar.deselect()
+            paloAltoJHStar.deselect()
             sanCarlosStar.deselect()
             saratoga1Star.deselect()
             saratoga2Star.deselect()
+            saratogaJHStar.deselect()
+            sunnyvaleJHStar.deselect()
             let defaults = NSUserDefaults.standardUserDefaults()
             defaults.setValue("Evergreen", forKey: "Favorite")
             defaults.synchronize()
@@ -283,13 +392,18 @@ class SelectCellGroup: UIViewController, UIScrollViewDelegate {
             berryessaStar.deselect()
             cupertino1Star.deselect()
             cupertino2Star.deselect()
+            cupertinoJHStar.deselect()
             evergreenStar.deselect()
             fremontBStar.deselect()
+            fremontJHStar.deselect()
             morganHillStar.deselect()
             paloAltoStar.deselect()
+            paloAltoJHStar.deselect()
             sanCarlosStar.deselect()
             saratoga1Star.deselect()
             saratoga2Star.deselect()
+            saratogaJHStar.deselect()
+            sunnyvaleJHStar.deselect()
             let defaults = NSUserDefaults.standardUserDefaults()
             defaults.setValue("FremontA", forKey: "Favorite")
             defaults.synchronize()
@@ -307,15 +421,49 @@ class SelectCellGroup: UIViewController, UIScrollViewDelegate {
             berryessaStar.deselect()
             cupertino1Star.deselect()
             cupertino2Star.deselect()
+            cupertinoJHStar.deselect()
             evergreenStar.deselect()
             fremontAStar.deselect()
+            fremontJHStar.deselect()
             morganHillStar.deselect()
             paloAltoStar.deselect()
+            paloAltoJHStar.deselect()
             sanCarlosStar.deselect()
             saratoga1Star.deselect()
             saratoga2Star.deselect()
+            saratogaJHStar.deselect()
+            sunnyvaleJHStar.deselect()
             let defaults = NSUserDefaults.standardUserDefaults()
             defaults.setValue("FremontB", forKey: "Favorite")
+            defaults.synchronize()
+        }
+    }
+    
+    func fremontJHTapped(sender: DOFavoriteButton) {
+        if sender.selected {
+            sender.deselect()
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setValue(nil, forKey: "Favorite")
+            defaults.synchronize()
+        } else {
+            sender.select()
+            berryessaStar.deselect()
+            cupertino1Star.deselect()
+            cupertino2Star.deselect()
+            cupertinoJHStar.deselect()
+            evergreenStar.deselect()
+            fremontAStar.deselect()
+            fremontBStar.deselect()
+            morganHillStar.deselect()
+            paloAltoStar.deselect()
+            paloAltoJHStar.deselect()
+            sanCarlosStar.deselect()
+            saratoga1Star.deselect()
+            saratoga2Star.deselect()
+            saratogaJHStar.deselect()
+            sunnyvaleJHStar.deselect()
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setValue("FremontJH", forKey: "Favorite")
             defaults.synchronize()
         }
     }
@@ -331,13 +479,18 @@ class SelectCellGroup: UIViewController, UIScrollViewDelegate {
             berryessaStar.deselect()
             cupertino1Star.deselect()
             cupertino2Star.deselect()
+            cupertinoJHStar.deselect()
             evergreenStar.deselect()
             fremontAStar.deselect()
             fremontBStar.deselect()
+            fremontJHStar.deselect()
             paloAltoStar.deselect()
+            paloAltoJHStar.deselect()
             sanCarlosStar.deselect()
             saratoga1Star.deselect()
             saratoga2Star.deselect()
+            saratogaJHStar.deselect()
+            sunnyvaleJHStar.deselect()
             let defaults = NSUserDefaults.standardUserDefaults()
             defaults.setValue("MorganHill", forKey: "Favorite")
             defaults.synchronize()
@@ -355,15 +508,49 @@ class SelectCellGroup: UIViewController, UIScrollViewDelegate {
             berryessaStar.deselect()
             cupertino1Star.deselect()
             cupertino2Star.deselect()
+            cupertinoJHStar.deselect()
             evergreenStar.deselect()
             fremontAStar.deselect()
             fremontBStar.deselect()
+            fremontJHStar.deselect()
             morganHillStar.deselect()
+            paloAltoJHStar.deselect()
             sanCarlosStar.deselect()
             saratoga1Star.deselect()
             saratoga2Star.deselect()
+            saratogaJHStar.deselect()
+            sunnyvaleJHStar.deselect()
             let defaults = NSUserDefaults.standardUserDefaults()
             defaults.setValue("PaloAlto", forKey: "Favorite")
+            defaults.synchronize()
+        }
+    }
+    
+    func paloAltoJHTapped(sender: DOFavoriteButton) {
+        if sender.selected {
+            sender.deselect()
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setValue(nil, forKey: "Favorite")
+            defaults.synchronize()
+        } else {
+            sender.select()
+            berryessaStar.deselect()
+            cupertino1Star.deselect()
+            cupertino2Star.deselect()
+            cupertinoJHStar.deselect()
+            evergreenStar.deselect()
+            fremontAStar.deselect()
+            fremontBStar.deselect()
+            fremontJHStar.deselect()
+            morganHillStar.deselect()
+            paloAltoStar.deselect()
+            sanCarlosStar.deselect()
+            saratoga1Star.deselect()
+            saratoga2Star.deselect()
+            saratogaJHStar.deselect()
+            sunnyvaleJHStar.deselect()
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setValue("PaloAltoJH", forKey: "Favorite")
             defaults.synchronize()
         }
     }
@@ -379,13 +566,18 @@ class SelectCellGroup: UIViewController, UIScrollViewDelegate {
             berryessaStar.deselect()
             cupertino1Star.deselect()
             cupertino2Star.deselect()
+            cupertinoJHStar.deselect()
             evergreenStar.deselect()
             fremontAStar.deselect()
             fremontBStar.deselect()
+            fremontJHStar.deselect()
             morganHillStar.deselect()
             paloAltoStar.deselect()
+            paloAltoJHStar.deselect()
             saratoga1Star.deselect()
             saratoga2Star.deselect()
+            saratogaJHStar.deselect()
+            sunnyvaleJHStar.deselect()
             let defaults = NSUserDefaults.standardUserDefaults()
             defaults.setValue("SanCarlos", forKey: "Favorite")
             defaults.synchronize()
@@ -403,13 +595,18 @@ class SelectCellGroup: UIViewController, UIScrollViewDelegate {
             berryessaStar.deselect()
             cupertino1Star.deselect()
             cupertino2Star.deselect()
+            cupertinoJHStar.deselect()
             evergreenStar.deselect()
             fremontAStar.deselect()
             fremontBStar.deselect()
+            fremontJHStar.deselect()
             morganHillStar.deselect()
             paloAltoStar.deselect()
+            paloAltoJHStar.deselect()
             sanCarlosStar.deselect()
             saratoga2Star.deselect()
+            saratogaJHStar.deselect()
+            sunnyvaleJHStar.deselect()
             let defaults = NSUserDefaults.standardUserDefaults()
             defaults.setValue("Saratoga1", forKey: "Favorite")
             defaults.synchronize()
@@ -427,15 +624,78 @@ class SelectCellGroup: UIViewController, UIScrollViewDelegate {
             berryessaStar.deselect()
             cupertino1Star.deselect()
             cupertino2Star.deselect()
+            cupertinoJHStar.deselect()
             evergreenStar.deselect()
             fremontAStar.deselect()
             fremontBStar.deselect()
+            fremontJHStar.deselect()
             morganHillStar.deselect()
             paloAltoStar.deselect()
+            paloAltoJHStar.deselect()
             sanCarlosStar.deselect()
             saratoga1Star.deselect()
+            saratogaJHStar.deselect()
+            sunnyvaleJHStar.deselect()
             let defaults = NSUserDefaults.standardUserDefaults()
             defaults.setValue("Saratoga2", forKey: "Favorite")
+            defaults.synchronize()
+        }
+    }
+    
+    func saratogaJHTapped(sender: DOFavoriteButton) {
+        if sender.selected {
+            sender.deselect()
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setValue(nil, forKey: "Favorite")
+            defaults.synchronize()
+        } else {
+            sender.select()
+            berryessaStar.deselect()
+            cupertino1Star.deselect()
+            cupertino2Star.deselect()
+            cupertinoJHStar.deselect()
+            evergreenStar.deselect()
+            fremontAStar.deselect()
+            fremontBStar.deselect()
+            fremontJHStar.deselect()
+            morganHillStar.deselect()
+            paloAltoStar.deselect()
+            paloAltoJHStar.deselect()
+            sanCarlosStar.deselect()
+            saratoga1Star.deselect()
+            saratoga2Star.deselect()
+            sunnyvaleJHStar.deselect()
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setValue("SaratogaJH", forKey: "Favorite")
+            defaults.synchronize()
+        }
+    }
+    
+    func sunnyvaleJHTapped(sender: DOFavoriteButton) {
+        if sender.selected {
+            sender.deselect()
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setValue(nil, forKey: "Favorite")
+            defaults.synchronize()
+        } else {
+            sender.select()
+            berryessaStar.deselect()
+            cupertino1Star.deselect()
+            cupertino2Star.deselect()
+            cupertinoJHStar.deselect()
+            evergreenStar.deselect()
+            fremontAStar.deselect()
+            fremontBStar.deselect()
+            fremontJHStar.deselect()
+            morganHillStar.deselect()
+            paloAltoStar.deselect()
+            paloAltoJHStar.deselect()
+            sanCarlosStar.deselect()
+            saratoga1Star.deselect()
+            saratoga2Star.deselect()
+            saratogaJHStar.deselect()
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setValue("SunnyvaleJH", forKey: "Favorite")
             defaults.synchronize()
         }
     }

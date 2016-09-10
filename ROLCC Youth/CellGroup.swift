@@ -26,16 +26,21 @@ class CellGroup: UIPageViewController, UIPageViewControllerDelegate, UIPageViewC
         let berryessaView = storyboard?.instantiateViewControllerWithIdentifier("Berryessa") as! Berryessa
         let cupertino1View = storyboard?.instantiateViewControllerWithIdentifier("Cupertino1") as! Cupertino1
         let cupertino2View = storyboard?.instantiateViewControllerWithIdentifier("Cupertino2") as! Cupertino2
+        let cupertinoJHView = storyboard?.instantiateViewControllerWithIdentifier("CupertinoJH") as! CupertinoJH
         let evergreenView = storyboard?.instantiateViewControllerWithIdentifier("Evergreen") as! Evergreen
         let fremontAView = storyboard?.instantiateViewControllerWithIdentifier("FremontA") as! FremontA
         let fremontBView = storyboard?.instantiateViewControllerWithIdentifier("FremontB") as! FremontB
+        let fremontJHView = storyboard?.instantiateViewControllerWithIdentifier("FremontJH") as! FremontJH
         let morganHillView = storyboard?.instantiateViewControllerWithIdentifier("MorganHill") as! MorganHill
         let paloAltoView = storyboard?.instantiateViewControllerWithIdentifier("PaloAlto") as! PaloAlto
+        let paloAltoJHView = storyboard?.instantiateViewControllerWithIdentifier("PaloAltoJH") as! PaloAltoJH
         let sanCarlosView = storyboard?.instantiateViewControllerWithIdentifier("SanCarlos") as! SanCarlos
         let saratoga1View = storyboard?.instantiateViewControllerWithIdentifier("Saratoga1") as! Saratoga1
         let saratoga2View = storyboard?.instantiateViewControllerWithIdentifier("Saratoga2") as! Saratoga2
+        let saratogaJHView = storyboard?.instantiateViewControllerWithIdentifier("SaratogaJH") as! SaratogaJH
+        let sunnyvaleJHView = storyboard?.instantiateViewControllerWithIdentifier("SunnyvaleJH") as! SunnyvaleJH
         
-        destinationViewControllers = [berryessaView, cupertino1View, cupertino2View, evergreenView, fremontAView, fremontBView, morganHillView, paloAltoView, sanCarlosView, saratoga1View, saratoga2View]
+        destinationViewControllers = [berryessaView, cupertino1View, cupertino2View, cupertinoJHView, evergreenView, fremontAView, fremontBView, fremontJHView, morganHillView, paloAltoView, paloAltoJHView, sanCarlosView, saratoga1View, saratoga2View, saratogaJHView, sunnyvaleJHView]
         
         let defaults = NSUserDefaults.standardUserDefaults()
         var x = 0
@@ -45,22 +50,32 @@ class CellGroup: UIPageViewController, UIPageViewControllerDelegate, UIPageViewC
             x = 1
         }else if (defaults.stringForKey("CellGroup") == "Cupertino2"){
             x = 2
-        }else if (defaults.stringForKey("CellGroup") == "Evergreen"){
+        }else if (defaults.stringForKey("CellGroup") == "CupertinoJH"){
             x = 3
-        }else if (defaults.stringForKey("CellGroup") == "FremontA"){
+        }else if (defaults.stringForKey("CellGroup") == "Evergreen"){
             x = 4
-        }else if (defaults.stringForKey("CellGroup") == "FremontB"){
+        }else if (defaults.stringForKey("CellGroup") == "FremontA"){
             x = 5
-        }else if (defaults.stringForKey("CellGroup") == "MorganHill"){
+        }else if (defaults.stringForKey("CellGroup") == "FremontB"){
             x = 6
-        }else if (defaults.stringForKey("CellGroup") == "PaloAlto"){
+        }else if (defaults.stringForKey("CellGroup") == "FremontJH"){
             x = 7
-        }else if (defaults.stringForKey("CellGroup") == "SanCarlos"){
+        }else if (defaults.stringForKey("CellGroup") == "MorganHill"){
             x = 8
-        }else if (defaults.stringForKey("CellGroup") == "Saratoga1"){
+        }else if (defaults.stringForKey("CellGroup") == "PaloAlto"){
             x = 9
-        }else if (defaults.stringForKey("CellGroup") == "Saratoga2"){
+        }else if (defaults.stringForKey("CellGroup") == "PaloAltoJH"){
             x = 10
+        }else if (defaults.stringForKey("CellGroup") == "SanCarlos"){
+            x = 11
+        }else if (defaults.stringForKey("CellGroup") == "Saratoga1"){
+            x = 12
+        }else if (defaults.stringForKey("CellGroup") == "Saratoga2"){
+            x = 13
+        }else if (defaults.stringForKey("CellGroup") == "SaratogaJH"){
+            x = 14
+        }else if (defaults.stringForKey("CellGroup") == "SunnyvaleJH"){
+            x = 15
         }
         
         let startingViewController = self.viewControllerAtIndex(x)

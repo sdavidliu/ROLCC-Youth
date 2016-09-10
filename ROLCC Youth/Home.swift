@@ -44,36 +44,54 @@ class Home: UIViewController {
         navBar.items = [navigationItem]
         self.view.addSubview(navBar)
         
+        let logoHeight = screenWidth*408/706
+        
         daysProgress.trackTintColor = UIColor.init(red: 226 / 255, green: 74 / 255, blue: 144 / 255, alpha: 0.3)
         daysProgress.progressTintColor = UIColor.init(red: 226 / 255, green: 74 / 255, blue: 144 / 255, alpha: 1)
         daysProgress.thicknessRatio = 0.3
         daysProgress.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-        daysProgress.center = CGPoint(x: screenWidth/2 - 100, y: 150)
+        daysProgress.center = CGPoint(x: screenWidth/2 - 100, y: logoHeight + 155)
         self.view.addSubview(daysProgress)
         
         hoursProgress.trackTintColor = UIColor.init(red: 74 / 255, green: 144 / 255, blue: 226 / 255, alpha: 0.3)
         hoursProgress.progressTintColor = UIColor.init(red: 74 / 255, green: 144 / 255, blue: 226 / 255, alpha: 1)
         hoursProgress.thicknessRatio = 0.3
         hoursProgress.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-        hoursProgress.center = CGPoint(x: screenWidth/2, y: 150)
+        hoursProgress.center = CGPoint(x: screenWidth/2, y: logoHeight + 155)
         self.view.addSubview(hoursProgress)
         
         minutesProgress.trackTintColor = UIColor.init(red: 144 / 255, green: 226 / 255, blue: 74 / 255, alpha: 0.3)
         minutesProgress.progressTintColor = UIColor.init(red: 144 / 255, green: 226 / 255, blue: 74 / 255, alpha: 1)
         minutesProgress.thicknessRatio = 0.3
         minutesProgress.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-        minutesProgress.center = CGPoint(x: screenWidth/2 + 100, y: 150)
+        minutesProgress.center = CGPoint(x: screenWidth/2 + 100, y: logoHeight + 155)
         self.view.addSubview(minutesProgress)
         
         if (Reachability.isConnectedToNetwork() == true){
             
             let thisWeek = UILabel(frame: CGRect(x: 10, y: 0, width: screenWidth - 20, height: 30))
             thisWeek.text = "This Week:"
-            thisWeek.center = CGPoint(x: screenWidth/2, y: screenHeight - 150)
+            thisWeek.center = CGPoint(x: screenWidth/2, y: screenHeight - 135)
             thisWeek.textAlignment = NSTextAlignment.Center
             thisWeek.font = UIFont(name: "Avenir", size: 20)
             thisWeek.textColor = UIColor.whiteColor()
             self.view.addSubview(thisWeek)
+            
+            let highSchool = UILabel(frame: CGRect(x: 10, y: 0, width: screenWidth - 20, height: 30))
+            highSchool.text = "High School:"
+            highSchool.center = CGPoint(x: screenWidth/4, y: screenHeight - 110)
+            highSchool.textAlignment = NSTextAlignment.Center
+            highSchool.font = UIFont(name: "Avenir", size: 15)
+            highSchool.textColor = UIColor.whiteColor()
+            self.view.addSubview(highSchool)
+            
+            let juniorHigh = UILabel(frame: CGRect(x: 10, y: 0, width: screenWidth - 20, height: 30))
+            juniorHigh.text = "Junior High:"
+            juniorHigh.center = CGPoint(x: screenWidth*3/4, y: screenHeight - 110)
+            juniorHigh.textAlignment = NSTextAlignment.Center
+            juniorHigh.font = UIFont(name: "Avenir", size: 15)
+            juniorHigh.textColor = UIColor.whiteColor()
+            self.view.addSubview(juniorHigh)
         
             let ref = FIRDatabase.database().reference()
             ref.observeEventType(.Value, withBlock: { snapshot in
@@ -102,29 +120,37 @@ class Home: UIViewController {
     
     func showInfo(){
         
-        let preacher = UILabel(frame: CGRect(x: 10, y: 0, width: screenWidth - 20, height: 30))
-        preacher.text = "Sermon: " + String(array1[0])
-        preacher.center = CGPoint(x: screenWidth/2, y: screenHeight - 120)
-        preacher.textAlignment = NSTextAlignment.Center
-        preacher.font = UIFont(name: "Avenir-Light", size: 15)
-        preacher.textColor = UIColor.whiteColor()
-        self.view.addSubview(preacher)
+        let hsPreacher = UILabel(frame: CGRect(x: 10, y: 0, width: screenWidth - 20, height: 30))
+        hsPreacher.text = "Sermon: " + String(array1[0])
+        hsPreacher.center = CGPoint(x: screenWidth/4, y: screenHeight - 90)
+        hsPreacher.textAlignment = NSTextAlignment.Center
+        hsPreacher.font = UIFont(name: "Avenir-Light", size: 13)
+        hsPreacher.textColor = UIColor.whiteColor()
+        self.view.addSubview(hsPreacher)
         
-        let worship = UILabel(frame: CGRect(x: 10, y: 0, width: screenWidth - 20, height: 30))
-        worship.text = "Worship: " + String(array1[1])
-        worship.center = CGPoint(x: screenWidth/2, y: screenHeight - 100)
-        worship.textAlignment = NSTextAlignment.Center
-        worship.font = UIFont(name: "Avenir-Light", size: 15)
-        worship.textColor = UIColor.whiteColor()
-        self.view.addSubview(worship)
+        let hsWorship = UILabel(frame: CGRect(x: 10, y: 0, width: screenWidth - 20, height: 30))
+        hsWorship.text = "Worship: " + String(array1[1])
+        hsWorship.center = CGPoint(x: screenWidth/4, y: screenHeight - 70)
+        hsWorship.textAlignment = NSTextAlignment.Center
+        hsWorship.font = UIFont(name: "Avenir-Light", size: 13)
+        hsWorship.textColor = UIColor.whiteColor()
+        self.view.addSubview(hsWorship)
         
-        let announcements = UILabel(frame: CGRect(x: 10, y: 0, width: screenWidth - 20, height: 30))
-        announcements.text = "Announcements: " + String(array1[2])
-        announcements.center = CGPoint(x: screenWidth/2, y: screenHeight - 80)
-        announcements.textAlignment = NSTextAlignment.Center
-        announcements.font = UIFont(name: "Avenir-Light", size: 15)
-        announcements.textColor = UIColor.whiteColor()
-        self.view.addSubview(announcements)
+        let jhPreacher = UILabel(frame: CGRect(x: 10, y: 0, width: screenWidth - 20, height: 30))
+        jhPreacher.text = "Sermon: " + String(array1[2])
+        jhPreacher.center = CGPoint(x: screenWidth*3/4, y: screenHeight - 90)
+        jhPreacher.textAlignment = NSTextAlignment.Center
+        jhPreacher.font = UIFont(name: "Avenir-Light", size: 13)
+        jhPreacher.textColor = UIColor.whiteColor()
+        self.view.addSubview(jhPreacher)
+        
+        let jhWorship = UILabel(frame: CGRect(x: 10, y: 0, width: screenWidth - 20, height: 30))
+        jhWorship.text = "Worship: " + String(array1[3])
+        jhWorship.center = CGPoint(x: screenWidth*3/4, y: screenHeight - 70)
+        jhWorship.textAlignment = NSTextAlignment.Center
+        jhWorship.font = UIFont(name: "Avenir-Light", size: 13)
+        jhWorship.textColor = UIColor.whiteColor()
+        self.view.addSubview(jhWorship)
         
         youthLogo.addTarget(self, action: #selector(test), forControlEvents: .TouchUpInside)
     }
