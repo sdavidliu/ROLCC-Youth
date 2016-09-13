@@ -94,6 +94,8 @@ class Videos: UIViewController, UITableViewDelegate, UITableViewDataSource {
         selectedVideoIndex = indexPath.row
         let url = NSURL(string: "https://www.youtube.com/watch?v=" + (videosArray[selectedVideoIndex]["videoID"] as! String))
         UIApplication.sharedApplication().openURL(url!)
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     func performGetRequest(targetURL: NSURL!, completion: (data: NSData?, HTTPStatusCode: Int, error: NSError?) -> Void) {

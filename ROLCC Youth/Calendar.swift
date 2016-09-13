@@ -43,7 +43,7 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
             loading.progressTintColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 255 / 255, alpha: 1)
             loading.thicknessRatio = 0.1
             loading.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-            loading.center = CGPoint(x: screenWidth/2, y: 150)
+            loading.center = CGPoint(x: screenWidth/2, y: scrollView.center.y - 90)
             loading.enableIndeterminate()
             self.view.addSubview(loading)
             self.view.sendSubviewToBack(loading)

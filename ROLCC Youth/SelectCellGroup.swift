@@ -10,6 +10,42 @@ import UIKit
 
 class SelectCellGroup: UIViewController, UIScrollViewDelegate {
     
+    var modelName: String {
+        var systemInfo = utsname()
+        uname(&systemInfo)
+        let machineMirror = Mirror(reflecting: systemInfo.machine)
+        let identifier = machineMirror.children.reduce("") { identifier, element in
+            guard let value = element.value as? Int8 where value != 0 else { return identifier }
+            return identifier + String(UnicodeScalar(UInt8(value)))
+        }
+        
+        switch identifier {
+        case "iPod5,1":                                 return "iPod Touch 5"
+        case "iPod7,1":                                 return "iPod Touch 6"
+        case "iPhone3,1", "iPhone3,2", "iPhone3,3":     return "iPhone 4"
+        case "iPhone4,1":                               return "iPhone 4s"
+        case "iPhone5,1", "iPhone5,2":                  return "iPhone 5"
+        case "iPhone5,3", "iPhone5,4":                  return "iPhone 5c"
+        case "iPhone6,1", "iPhone6,2":                  return "iPhone 5s"
+        case "iPhone7,2":                               return "iPhone 6"
+        case "iPhone7,1":                               return "iPhone 6 Plus"
+        case "iPhone8,1":                               return "iPhone 6s"
+        case "iPhone8,2":                               return "iPhone 6s Plus"
+        case "iPhone8,4":                               return "iPhone SE"
+        case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4":return "iPad"
+        case "iPad3,1", "iPad3,2", "iPad3,3":           return "iPad"
+        case "iPad3,4", "iPad3,5", "iPad3,6":           return "iPad"
+        case "iPad4,1", "iPad4,2", "iPad4,3":           return "iPad"
+        case "iPad5,3", "iPad5,4":                      return "iPad"
+        case "iPad2,5", "iPad2,6", "iPad2,7":           return "iPad"
+        case "iPad4,4", "iPad4,5", "iPad4,6":           return "iPad"
+        case "iPad4,7", "iPad4,8", "iPad4,9":           return "iPad"
+        case "iPad5,1", "iPad5,2":                      return "iPad"
+        case "iPad6,3", "iPad6,4", "iPad6,7", "iPad6,8":return "iPad"
+        default:                                        return identifier
+        }
+    }
+    
     @IBOutlet weak var berryessa: UIButton!
     @IBOutlet weak var cupertino1: UIButton!
     @IBOutlet weak var cupertino2: UIButton!
@@ -45,10 +81,28 @@ class SelectCellGroup: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var label: UILabel!
     
+    @IBOutlet weak var berryessaToScrollView: NSLayoutConstraint!
+    @IBOutlet weak var cupertino1ToBerryessa: NSLayoutConstraint!
+    @IBOutlet weak var cupertino2ToCupertino1: NSLayoutConstraint!
+    @IBOutlet weak var cupertinoJHToCupertino2: NSLayoutConstraint!
+    @IBOutlet weak var evergreenToCupertinoJH: NSLayoutConstraint!
+    @IBOutlet weak var fremontAToEvergreen: NSLayoutConstraint!
+    @IBOutlet weak var fremontBToFremontA: NSLayoutConstraint!
+    @IBOutlet weak var fremontJHToFremontB: NSLayoutConstraint!
+    @IBOutlet weak var morganHillToScrollView: NSLayoutConstraint!
+    @IBOutlet weak var paloAltoToMorganHill: NSLayoutConstraint!
+    @IBOutlet weak var paloAltoJHToPaloAlto: NSLayoutConstraint!
+    @IBOutlet weak var sanCarlosToPaloAltoJH: NSLayoutConstraint!
+    @IBOutlet weak var saratoga1ToSanCarlos: NSLayoutConstraint!
+    @IBOutlet weak var saratoga2ToSaratoga1: NSLayoutConstraint!
+    @IBOutlet weak var saratogaJHToSaratoga2: NSLayoutConstraint!
+    @IBOutlet weak var sunnyvaleJHToSaratogaJH: NSLayoutConstraint!
+    
+    
     let screenWidth = UIScreen.mainScreen().bounds.width
     let screenHeight = UIScreen.mainScreen().bounds.height
-    let images = ["berryessa.png", "cupertino1.png", "fremontB.png", "saratoga1.png", "saratoga2.png"]
-    let labels = ["Berryessa", "Cupertino 1", "Fremont B", "Saratoga 1", "Saratoga 2"]
+    let images = ["berryessa.png", "cupertino1.png", "cupertino2.png", "cupertinoJH.png", "evergreen.png", "fremontA.png", "fremontB.png", "fremontJH.png", "morganHill.png", "paloAlto.png", "paloAltoJH.png", "sanCarlos.png", "saratoga1.png", "saratoga2.png", "saratogaJH.png", "sunnyvaleJH.png"]
+    let labels = ["Berryessa", "Cupertino 1", "Cupertino 2", "Cupertino JH", "Evergreen", "Fremont A", "Fremont B", "Fremont JH", "Morgan Hill", "Palo Alto", "Palo Alto JH", "San Carlos", "Saratoga 1", "Saratoga 2", "Saratoga JH", "Sunnyvale JH"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -136,6 +190,59 @@ class SelectCellGroup: UIViewController, UIScrollViewDelegate {
             saratogaJHStar.select()
         }else if (favorite == "SunnyvaleJH"){
             sunnyvaleJHStar.select()
+        }
+        
+        if (modelName == "iPhone 5" || modelName == "iPhone 5c" || modelName == "iPhone 5s" || modelName == "iPhone 6" || modelName == "iPhone 6s"){
+            berryessaToScrollView.constant = 0
+            cupertino1ToBerryessa.constant = -8
+            cupertino2ToCupertino1.constant = -8
+            cupertinoJHToCupertino2.constant = -8
+            evergreenToCupertinoJH.constant = -8
+            fremontAToEvergreen.constant = -8
+            fremontBToFremontA.constant = -8
+            fremontJHToFremontB.constant = -8
+            morganHillToScrollView.constant = 0
+            paloAltoToMorganHill.constant = -8
+            paloAltoJHToPaloAlto.constant = -8
+            sanCarlosToPaloAltoJH.constant = -8
+            saratoga1ToSanCarlos.constant = -8
+            saratoga2ToSaratoga1.constant = -8
+            saratogaJHToSaratoga2.constant = -8
+            sunnyvaleJHToSaratogaJH.constant = -8
+        }else if (modelName == "iPhone 4" || modelName == "iPhone 4s"){
+            berryessaToScrollView.constant = -5
+            cupertino1ToBerryessa.constant = -10
+            cupertino2ToCupertino1.constant = -10
+            cupertinoJHToCupertino2.constant = -10
+            evergreenToCupertinoJH.constant = -10
+            fremontAToEvergreen.constant = -10
+            fremontBToFremontA.constant = -10
+            fremontJHToFremontB.constant = -10
+            morganHillToScrollView.constant = -5
+            paloAltoToMorganHill.constant = -10
+            paloAltoJHToPaloAlto.constant = -10
+            sanCarlosToPaloAltoJH.constant = -10
+            saratoga1ToSanCarlos.constant = -10
+            saratoga2ToSaratoga1.constant = -10
+            saratogaJHToSaratoga2.constant = -10
+            sunnyvaleJHToSaratogaJH.constant = -10
+        }else{
+            berryessaToScrollView.constant = 5
+            cupertino1ToBerryessa.constant = 5
+            cupertino2ToCupertino1.constant = 5
+            cupertinoJHToCupertino2.constant = 5
+            evergreenToCupertinoJH.constant = 5
+            fremontAToEvergreen.constant = 5
+            fremontBToFremontA.constant = 5
+            fremontJHToFremontB.constant = 5
+            morganHillToScrollView.constant = 5
+            paloAltoToMorganHill.constant = 5
+            paloAltoJHToPaloAlto.constant = 5
+            sanCarlosToPaloAltoJH.constant = 5
+            saratoga1ToSanCarlos.constant = 5
+            saratoga2ToSaratoga1.constant = 5
+            saratogaJHToSaratoga2.constant = 5
+            sunnyvaleJHToSaratogaJH.constant = 5
         }
         
     }

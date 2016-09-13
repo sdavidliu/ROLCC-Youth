@@ -28,9 +28,10 @@ class Home: UIViewController {
     var animating = false
     var animationTimer = NSTimer()
     var array1 = [String]()
-    var daysProgress = RPCircularProgress()
-    var hoursProgress = RPCircularProgress()
-    var minutesProgress = RPCircularProgress()
+    var updatedToZero = false
+    @IBOutlet weak var daysProgress: RPCircularProgress!
+    @IBOutlet weak var hoursProgress: RPCircularProgress!
+    @IBOutlet weak var minutesProgress: RPCircularProgress!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,36 +45,25 @@ class Home: UIViewController {
         navBar.items = [navigationItem]
         self.view.addSubview(navBar)
         
-        let logoHeight = screenWidth*408/706
-        
         daysProgress.trackTintColor = UIColor.init(red: 226 / 255, green: 74 / 255, blue: 144 / 255, alpha: 0.3)
         daysProgress.progressTintColor = UIColor.init(red: 226 / 255, green: 74 / 255, blue: 144 / 255, alpha: 1)
         daysProgress.thicknessRatio = 0.3
-        daysProgress.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-        daysProgress.center = CGPoint(x: screenWidth/2 - 100, y: logoHeight + 155)
-        self.view.addSubview(daysProgress)
         
         hoursProgress.trackTintColor = UIColor.init(red: 74 / 255, green: 144 / 255, blue: 226 / 255, alpha: 0.3)
         hoursProgress.progressTintColor = UIColor.init(red: 74 / 255, green: 144 / 255, blue: 226 / 255, alpha: 1)
         hoursProgress.thicknessRatio = 0.3
-        hoursProgress.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-        hoursProgress.center = CGPoint(x: screenWidth/2, y: logoHeight + 155)
-        self.view.addSubview(hoursProgress)
         
         minutesProgress.trackTintColor = UIColor.init(red: 144 / 255, green: 226 / 255, blue: 74 / 255, alpha: 0.3)
         minutesProgress.progressTintColor = UIColor.init(red: 144 / 255, green: 226 / 255, blue: 74 / 255, alpha: 1)
         minutesProgress.thicknessRatio = 0.3
-        minutesProgress.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-        minutesProgress.center = CGPoint(x: screenWidth/2 + 100, y: logoHeight + 155)
-        self.view.addSubview(minutesProgress)
         
         if (Reachability.isConnectedToNetwork() == true){
             
             let thisWeek = UILabel(frame: CGRect(x: 10, y: 0, width: screenWidth - 20, height: 30))
             thisWeek.text = "This Week:"
-            thisWeek.center = CGPoint(x: screenWidth/2, y: screenHeight - 135)
+            thisWeek.center = CGPoint(x: screenWidth/2, y: screenHeight - 130)
             thisWeek.textAlignment = NSTextAlignment.Center
-            thisWeek.font = UIFont(name: "Avenir", size: 20)
+            thisWeek.font = UIFont(name: "Avenir", size: 18)
             thisWeek.textColor = UIColor.whiteColor()
             self.view.addSubview(thisWeek)
             
@@ -221,25 +211,53 @@ class Home: UIViewController {
         minutes = 45 - currentMin
         if (minutes < 0){
             minutes += 60
+            hours = 8 - currentHour
+            if (hours < 0){
+                hours += 24
+                weekday = 1 - currentWeekday
+                if (weekday < 0){
+                    weekday += 6
+                }
+            }else{
+                
+                weekday = 1 - currentWeekday
+                if (weekday < 0){
+                    weekday += 7
+                }
+            }
+        }else{
+            hours = 9 - currentHour
+            if (hours < 0){
+                hours += 24
+                weekday = 1 - currentWeekday
+                if (weekday < 0){
+                    weekday += 6
+                }
+            }else{
+                weekday = 1 - currentWeekday
+                if (weekday < 0){
+                    weekday += 7
+                }
+            }
         }
-        hours = 9 - currentHour
-        if (hours < 0){
-            hours += 24
-        }
-        weekday = 7 - currentWeekday
         
-        if (currentWeekday == 1 && (currentHour >= 10) || (currentHour == 9 && currentMin >= 45)){
+        if (currentWeekday == 1 && ((currentHour >= 10) || (currentHour == 9 && currentMin >= 45))){
             daysLabel.text = "0"
             hoursLabel.text = "0"
             minutesLabel.text = "0"
+            
             if (oldMinutes != minutes){
-                minutesProgress.updateProgress(0, initialDelay: 0.4, duration: 3)
+                minutesProgress.updateProgress(1, initialDelay: 0.4, duration: 3)
             }
             if (oldHours != hours){
-                hoursProgress.updateProgress(0, initialDelay: 0.4, duration: 3)
+                hoursProgress.updateProgress(1, initialDelay: 0.4, duration: 3)
             }
             if (oldWeekday != weekday){
-                daysProgress.updateProgress(0, initialDelay: 0.4, duration: 3)
+                daysProgress.updateProgress(1, initialDelay: 0.4, duration: 3)
+            }
+            if (updatedToZero == false){
+                daysProgress.updateProgress(1, initialDelay: 0.4, duration: 3)
+                updatedToZero = true
             }
         }else{
             daysLabel.text = String(weekday)
