@@ -219,7 +219,6 @@ class Home: UIViewController {
                     weekday += 6
                 }
             }else{
-                
                 weekday = 1 - currentWeekday
                 if (weekday < 0){
                     weekday += 7
