@@ -15,16 +15,16 @@ class SanCarlos: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        button = DOFavoriteButton(frame: CGRectMake(UIScreen.mainScreen().bounds.width - 50, 65, 50, 50), image: UIImage(named: "stars.png"))
+        button = DOFavoriteButton(frame: CGRect(x: UIScreen.main.bounds.width - 50, y: 65, width: 50, height: 50), image: UIImage(named: "stars.png"))
         self.view.addSubview(button)
         
     }
     
-    override func viewDidAppear(animated: Bool) {
-        let defaults = NSUserDefaults.standardUserDefaults()
+    override func viewDidAppear(_ animated: Bool) {
+        let defaults = UserDefaults.standard
         
-        if (defaults.stringForKey("Favorite") == "SanCarlos"){
-            if (button.selected == false){
+        if (defaults.string(forKey: "Favorite") == "SanCarlos"){
+            if (button.isSelected == false){
                 button.select()
             }
         }else{

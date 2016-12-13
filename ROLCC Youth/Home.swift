@@ -22,21 +22,21 @@ class Home: UIViewController {
     var weekday = 0
     var hours = 0
     var minutes = 0
-    let screenWidth = UIScreen.mainScreen().bounds.width
-    let screenHeight = UIScreen.mainScreen().bounds.height
+    let screenWidth = UIScreen.main.bounds.width
+    let screenHeight = UIScreen.main.bounds.height
     let emitter = CAEmitterLayer()
     var animating = false
-    var animationTimer = NSTimer()
+    var animationTimer = Timer()
     var array1 = [String]()
     var updatedToZero = false
-    @IBOutlet weak var daysProgress: RPCircularProgress!
-    @IBOutlet weak var hoursProgress: RPCircularProgress!
-    @IBOutlet weak var minutesProgress: RPCircularProgress!
+    //@IBOutlet weak var daysProgress: RPCircularProgress!
+    //@IBOutlet weak var hoursProgress: RPCircularProgress!
+    //@IBOutlet weak var minutesProgress: RPCircularProgress!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UIApplication.sharedApplication().statusBarStyle = .Default
+        UIApplication.shared.statusBarStyle = .default
         
         let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 64))
         let navigationItem = UINavigationItem()
@@ -44,7 +44,7 @@ class Home: UIViewController {
         navBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Avenir-Light", size: 15.0)!];
         navBar.items = [navigationItem]
         self.view.addSubview(navBar)
-        
+        /*
         daysProgress.trackTintColor = UIColor.init(red: 226 / 255, green: 74 / 255, blue: 144 / 255, alpha: 0.3)
         daysProgress.progressTintColor = UIColor.init(red: 226 / 255, green: 74 / 255, blue: 144 / 255, alpha: 1)
         daysProgress.thicknessRatio = 0.3
@@ -56,39 +56,39 @@ class Home: UIViewController {
         minutesProgress.trackTintColor = UIColor.init(red: 144 / 255, green: 226 / 255, blue: 74 / 255, alpha: 0.3)
         minutesProgress.progressTintColor = UIColor.init(red: 144 / 255, green: 226 / 255, blue: 74 / 255, alpha: 1)
         minutesProgress.thicknessRatio = 0.3
-        
+        */
         if (Reachability.isConnectedToNetwork() == true){
             
             let thisWeek = UILabel(frame: CGRect(x: 10, y: 0, width: screenWidth - 20, height: 30))
             thisWeek.text = "This Week:"
             thisWeek.center = CGPoint(x: screenWidth/2, y: screenHeight - 130)
-            thisWeek.textAlignment = NSTextAlignment.Center
+            thisWeek.textAlignment = NSTextAlignment.center
             thisWeek.font = UIFont(name: "Avenir", size: 18)
-            thisWeek.textColor = UIColor.whiteColor()
+            thisWeek.textColor = UIColor.white
             self.view.addSubview(thisWeek)
             
             let highSchool = UILabel(frame: CGRect(x: 10, y: 0, width: screenWidth - 20, height: 30))
             highSchool.text = "High School:"
             highSchool.center = CGPoint(x: screenWidth/4, y: screenHeight - 110)
-            highSchool.textAlignment = NSTextAlignment.Center
+            highSchool.textAlignment = NSTextAlignment.center
             highSchool.font = UIFont(name: "Avenir", size: 15)
-            highSchool.textColor = UIColor.whiteColor()
+            highSchool.textColor = UIColor.white
             self.view.addSubview(highSchool)
             
             let juniorHigh = UILabel(frame: CGRect(x: 10, y: 0, width: screenWidth - 20, height: 30))
             juniorHigh.text = "Junior High:"
             juniorHigh.center = CGPoint(x: screenWidth*3/4, y: screenHeight - 110)
-            juniorHigh.textAlignment = NSTextAlignment.Center
+            juniorHigh.textAlignment = NSTextAlignment.center
             juniorHigh.font = UIFont(name: "Avenir", size: 15)
-            juniorHigh.textColor = UIColor.whiteColor()
+            juniorHigh.textColor = UIColor.white
             self.view.addSubview(juniorHigh)
         
             let ref = FIRDatabase.database().reference()
-            ref.observeEventType(.Value, withBlock: { snapshot in
+            ref.observe(.value, with: { snapshot in
                 
-                let s = snapshot.value!.objectForKey("home")! as! String
+                let s = (snapshot.value! as AnyObject).object(forKey: "home")! as! String
                 
-                let Str = s.componentsSeparatedByString(",")
+                let Str = s.components(separatedBy: ",")
                 
                 for part in Str {
                     self.array1.append(part)
@@ -97,14 +97,15 @@ class Home: UIViewController {
                 self.showInfo()
                 
                 
-                }, withCancelBlock: { error in
-                    print(error.description)
+            }, withCancel: {
+                (error:Error) -> Void in
+                print(error.localizedDescription)
             })
         }
         
         update()
         
-        _ = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(UIMenuController.update), userInfo: nil, repeats: true)
+        _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(UIMenuController.update), userInfo: nil, repeats: true)
         
     }
     
@@ -113,39 +114,39 @@ class Home: UIViewController {
         let hsPreacher = UILabel(frame: CGRect(x: 10, y: 0, width: screenWidth - 20, height: 30))
         hsPreacher.text = "Sermon: " + String(array1[0])
         hsPreacher.center = CGPoint(x: screenWidth/4, y: screenHeight - 90)
-        hsPreacher.textAlignment = NSTextAlignment.Center
+        hsPreacher.textAlignment = NSTextAlignment.center
         hsPreacher.font = UIFont(name: "Avenir-Light", size: 13)
-        hsPreacher.textColor = UIColor.whiteColor()
+        hsPreacher.textColor = UIColor.white
         self.view.addSubview(hsPreacher)
         
         let hsWorship = UILabel(frame: CGRect(x: 10, y: 0, width: screenWidth - 20, height: 30))
         hsWorship.text = "Worship: " + String(array1[1])
         hsWorship.center = CGPoint(x: screenWidth/4, y: screenHeight - 70)
-        hsWorship.textAlignment = NSTextAlignment.Center
+        hsWorship.textAlignment = NSTextAlignment.center
         hsWorship.font = UIFont(name: "Avenir-Light", size: 13)
-        hsWorship.textColor = UIColor.whiteColor()
+        hsWorship.textColor = UIColor.white
         self.view.addSubview(hsWorship)
         
         let jhPreacher = UILabel(frame: CGRect(x: 10, y: 0, width: screenWidth - 20, height: 30))
         jhPreacher.text = "Sermon: " + String(array1[2])
         jhPreacher.center = CGPoint(x: screenWidth*3/4, y: screenHeight - 90)
-        jhPreacher.textAlignment = NSTextAlignment.Center
+        jhPreacher.textAlignment = NSTextAlignment.center
         jhPreacher.font = UIFont(name: "Avenir-Light", size: 13)
-        jhPreacher.textColor = UIColor.whiteColor()
+        jhPreacher.textColor = UIColor.white
         self.view.addSubview(jhPreacher)
         
         let jhWorship = UILabel(frame: CGRect(x: 10, y: 0, width: screenWidth - 20, height: 30))
         jhWorship.text = "Worship: " + String(array1[3])
         jhWorship.center = CGPoint(x: screenWidth*3/4, y: screenHeight - 70)
-        jhWorship.textAlignment = NSTextAlignment.Center
+        jhWorship.textAlignment = NSTextAlignment.center
         jhWorship.font = UIFont(name: "Avenir-Light", size: 13)
-        jhWorship.textColor = UIColor.whiteColor()
+        jhWorship.textColor = UIColor.white
         self.view.addSubview(jhWorship)
         
-        youthLogo.addTarget(self, action: #selector(test), forControlEvents: .TouchUpInside)
+        youthLogo.addTarget(self, action: #selector(test), for: .touchUpInside)
     }
     
-    func test(sender: UIButton!){
+    func test(_ sender: UIButton!){
         if (animating == false){
             animating = true
             
@@ -159,18 +160,18 @@ class Home: UIViewController {
             emitter.emitterSize = rect.size
             
             let emitterCell = CAEmitterCell()
-            let date = NSDate()
-            let calendar = NSCalendar.currentCalendar()
-            let components = calendar.components([.Month], fromDate: date)
+            let date = Date()
+            let calendar = Foundation.Calendar.current
+            let components = (calendar as NSCalendar).components([.month], from: date)
             let month = components.month
             if (month == 12 || month == 1 || month == 2){
-                emitterCell.contents = UIImage(named: "winter.png")!.CGImage
+                emitterCell.contents = UIImage(named: "winter.png")!.cgImage
             }else if (month == 3 || month == 4 || month == 5){
-                emitterCell.contents = UIImage(named: "spring.png")!.CGImage
+                emitterCell.contents = UIImage(named: "spring.png")!.cgImage
             }else if (month == 6 || month == 7 || month == 8){
-                emitterCell.contents = UIImage(named: "summer.png")!.CGImage
+                emitterCell.contents = UIImage(named: "summer.png")!.cgImage
             }else{
-                emitterCell.contents = UIImage(named: "fall.png")!.CGImage
+                emitterCell.contents = UIImage(named: "fall.png")!.cgImage
             }
             emitterCell.birthRate = 8
             emitterCell.lifetime = 15
@@ -191,15 +192,15 @@ class Home: UIViewController {
             
             emitter.emitterCells = [emitterCell]
             
-            animationTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(runAnimation), userInfo: nil, repeats: true)
+            animationTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(runAnimation), userInfo: nil, repeats: true)
         }
     }
     
     func update() {
         
-        let date = NSDate()
-        let calendar = NSCalendar.currentCalendar()
-        let components = calendar.components([.Weekday, .Hour, .Minute], fromDate: date)
+        let date = Date()
+        let calendar = Foundation.Calendar.current
+        let components = (calendar as NSCalendar).components([.weekday, .hour, .minute], from: date)
         let currentWeekday = components.weekday
         let currentHour = components.hour
         let currentMin = components.minute
@@ -208,39 +209,39 @@ class Home: UIViewController {
         let oldHours = hours
         let oldWeekday = weekday
         
-        minutes = 45 - currentMin
+        minutes = 45 - currentMin!
         if (minutes < 0){
             minutes += 60
-            hours = 8 - currentHour
+            hours = 8 - currentHour!
             if (hours < 0){
                 hours += 24
-                weekday = 1 - currentWeekday
+                weekday = 1 - currentWeekday!
                 if (weekday < 0){
                     weekday += 6
                 }
             }else{
-                weekday = 1 - currentWeekday
+                weekday = 1 - currentWeekday!
                 if (weekday < 0){
                     weekday += 7
                 }
             }
         }else{
-            hours = 9 - currentHour
+            hours = 9 - currentHour!
             if (hours < 0){
                 hours += 24
-                weekday = 1 - currentWeekday
+                weekday = 1 - currentWeekday!
                 if (weekday < 0){
                     weekday += 6
                 }
             }else{
-                weekday = 1 - currentWeekday
+                weekday = 1 - currentWeekday!
                 if (weekday < 0){
                     weekday += 7
                 }
             }
         }
-        
-        if (currentWeekday == 1 && ((currentHour >= 10) || (currentHour == 9 && currentMin >= 45))){
+        /*
+        if (currentWeekday! == 1 && ((currentHour! >= 10) || (currentHour! == 9 && currentMin! >= 45))){
             daysLabel.text = "0"
             hoursLabel.text = "0"
             minutesLabel.text = "0"
@@ -271,7 +272,7 @@ class Home: UIViewController {
             if (oldWeekday != weekday){
                 daysProgress.updateProgress(CGFloat(6 - weekday)/6.0, initialDelay: 0.4, duration: 3)
             }
-        }
+        }*/
     }
     
     func runAnimation(){

@@ -32,8 +32,8 @@ class Contact: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var churchEmail: UIButton!
     @IBOutlet weak var churchWebsite: UIButton!
     
-    let screenWidth = UIScreen.mainScreen().bounds.width
-    let screenHeight = UIScreen.mainScreen().bounds.height
+    let screenWidth = UIScreen.main.bounds.width
+    let screenHeight = UIScreen.main.bounds.height
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,146 +46,146 @@ class Contact: UIViewController, UIScrollViewDelegate {
         self.view.addSubview(navBar)
         
         scrollView.delegate = self
-        scrollView.scrollEnabled = true
+        scrollView.isScrollEnabled = true
         scrollView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight - 400)
-        scrollView.contentSize = CGSizeMake(screenWidth, 550)
+        scrollView.contentSize = CGSize(width: screenWidth, height: 550)
         
-        youthEmail.addTarget(self, action: #selector(emailYouth), forControlEvents: .TouchUpInside)
-        youthWebsite.addTarget(self, action: #selector(websiteYouth), forControlEvents: .TouchUpInside)
-        youthPhone.addTarget(self, action: #selector(phoneChurch), forControlEvents: .TouchUpInside)
-        pastorRichard.addTarget(self, action: #selector(emailRichard), forControlEvents: .TouchUpInside)
-        andrewTai.addTarget(self, action: #selector(emailAndrew), forControlEvents: .TouchUpInside)
-        justineShann.addTarget(self, action: #selector(emailJustine), forControlEvents: .TouchUpInside)
-        chiTran.addTarget(self, action: #selector(emailChi), forControlEvents: .TouchUpInside)
-        jessicaLiao.addTarget(self, action: #selector(emailJessica), forControlEvents: .TouchUpInside)
-        jimyLiu.addTarget(self, action: #selector(emailJimy), forControlEvents: .TouchUpInside)
-        margieChoa.addTarget(self, action: #selector(emailMargie), forControlEvents: .TouchUpInside)
-        cynthiaChu.addTarget(self, action: #selector(emailCynthia), forControlEvents: .TouchUpInside)
-        facebook.addTarget(self, action: #selector(goFacebook), forControlEvents: .TouchUpInside)
-        youtube.addTarget(self, action: #selector(goYoutube), forControlEvents: .TouchUpInside)
-        instagram.addTarget(self, action: #selector(goInstagram), forControlEvents: .TouchUpInside)
-        twitter.addTarget(self, action: #selector(goTwitter), forControlEvents: .TouchUpInside)
-        churchAddress.addTarget(self, action: #selector(addressChurch), forControlEvents: .TouchUpInside)
-        churchPhone.addTarget(self, action: #selector(phoneChurch), forControlEvents: .TouchUpInside)
-        churchFax.addTarget(self, action: #selector(faxChurch), forControlEvents: .TouchUpInside)
-        churchEmail.addTarget(self, action: #selector(emailChurch), forControlEvents: .TouchUpInside)
-        churchWebsite.addTarget(self, action: #selector(websiteChurch), forControlEvents: .TouchUpInside)
+        youthEmail.addTarget(self, action: #selector(emailYouth), for: .touchUpInside)
+        youthWebsite.addTarget(self, action: #selector(websiteYouth), for: .touchUpInside)
+        youthPhone.addTarget(self, action: #selector(phoneChurch), for: .touchUpInside)
+        pastorRichard.addTarget(self, action: #selector(emailRichard), for: .touchUpInside)
+        andrewTai.addTarget(self, action: #selector(emailAndrew), for: .touchUpInside)
+        justineShann.addTarget(self, action: #selector(emailJustine), for: .touchUpInside)
+        chiTran.addTarget(self, action: #selector(emailChi), for: .touchUpInside)
+        jessicaLiao.addTarget(self, action: #selector(emailJessica), for: .touchUpInside)
+        jimyLiu.addTarget(self, action: #selector(emailJimy), for: .touchUpInside)
+        margieChoa.addTarget(self, action: #selector(emailMargie), for: .touchUpInside)
+        cynthiaChu.addTarget(self, action: #selector(emailCynthia), for: .touchUpInside)
+        facebook.addTarget(self, action: #selector(goFacebook), for: .touchUpInside)
+        youtube.addTarget(self, action: #selector(goYoutube), for: .touchUpInside)
+        instagram.addTarget(self, action: #selector(goInstagram), for: .touchUpInside)
+        twitter.addTarget(self, action: #selector(goTwitter), for: .touchUpInside)
+        churchAddress.addTarget(self, action: #selector(addressChurch), for: .touchUpInside)
+        churchPhone.addTarget(self, action: #selector(phoneChurch), for: .touchUpInside)
+        churchFax.addTarget(self, action: #selector(faxChurch), for: .touchUpInside)
+        churchEmail.addTarget(self, action: #selector(emailChurch), for: .touchUpInside)
+        churchWebsite.addTarget(self, action: #selector(websiteChurch), for: .touchUpInside)
     }
     
-    func emailYouth(sender: UIButton!){
+    func emailYouth(_ sender: UIButton!){
         let email = "rolccyouth@gmail.com"
-        let url = NSURL(string: "mailto:\(email)")
-        UIApplication.sharedApplication().openURL(url!)
+        let url = URL(string: "mailto:\(email)")
+        UIApplication.shared.openURL(url!)
     }
     
-    func websiteYouth(sender: UIButton!){
-        let url = NSURL(string: "http://www.rolccyouth.com/")
-        UIApplication.sharedApplication().openURL(url!)
+    func websiteYouth(_ sender: UIButton!){
+        let url = URL(string: "http://www.rolccyouth.com/")
+        UIApplication.shared.openURL(url!)
     }
     
-    func emailRichard(sender: UIButton!){
+    func emailRichard(_ sender: UIButton!){
         let email = "richard.shang@rolcc.net"
-        let url = NSURL(string: "mailto:\(email)")
-        UIApplication.sharedApplication().openURL(url!)
+        let url = URL(string: "mailto:\(email)")
+        UIApplication.shared.openURL(url!)
     }
     
-    func emailAndrew(sender: UIButton!){
+    func emailAndrew(_ sender: UIButton!){
         let email = "andrew.tai@rolcc.net"
-        let url = NSURL(string: "mailto:\(email)")
-        UIApplication.sharedApplication().openURL(url!)
+        let url = URL(string: "mailto:\(email)")
+        UIApplication.shared.openURL(url!)
     }
     
-    func emailJustine(sender: UIButton!){
+    func emailJustine(_ sender: UIButton!){
         let email = "justine.shann@rolcc.net"
-        let url = NSURL(string: "mailto:\(email)")
-        UIApplication.sharedApplication().openURL(url!)
+        let url = URL(string: "mailto:\(email)")
+        UIApplication.shared.openURL(url!)
     }
     
-    func emailChi(sender: UIButton!){
+    func emailChi(_ sender: UIButton!){
         let email = "chi.tran@rolcc.net"
-        let url = NSURL(string: "mailto:\(email)")
-        UIApplication.sharedApplication().openURL(url!)
+        let url = URL(string: "mailto:\(email)")
+        UIApplication.shared.openURL(url!)
     }
     
-    func emailJessica(sender: UIButton!){
+    func emailJessica(_ sender: UIButton!){
         let email = "jessica.liao@rolcc.net"
-        let url = NSURL(string: "mailto:\(email)")
-        UIApplication.sharedApplication().openURL(url!)
+        let url = URL(string: "mailto:\(email)")
+        UIApplication.shared.openURL(url!)
     }
     
-    func emailJimy(sender: UIButton!){
+    func emailJimy(_ sender: UIButton!){
         let email = "jimy.liu@gmail.com"
-        let url = NSURL(string: "mailto:\(email)")
-        UIApplication.sharedApplication().openURL(url!)
+        let url = URL(string: "mailto:\(email)")
+        UIApplication.shared.openURL(url!)
     }
     
-    func emailMargie(sender: UIButton!){
+    func emailMargie(_ sender: UIButton!){
         let email = "margaret.choa@rolcc.net"
-        let url = NSURL(string: "mailto:\(email)")
-        UIApplication.sharedApplication().openURL(url!)
+        let url = URL(string: "mailto:\(email)")
+        UIApplication.shared.openURL(url!)
     }
     
-    func emailCynthia(sender: UIButton!){
+    func emailCynthia(_ sender: UIButton!){
         let email = "oinkoinkchu@gmail.com"
-        let url = NSURL(string: "mailto:\(email)")
-        UIApplication.sharedApplication().openURL(url!)
+        let url = URL(string: "mailto:\(email)")
+        UIApplication.shared.openURL(url!)
     }
     
-    func goFacebook(sender: UIButton!){
-        let url = NSURL(string: "https://www.facebook.com/youth.rolcc/")
-        UIApplication.sharedApplication().openURL(url!)
+    func goFacebook(_ sender: UIButton!){
+        let url = URL(string: "https://www.facebook.com/youth.rolcc/")
+        UIApplication.shared.openURL(url!)
     }
     
-    func goYoutube(sender: UIButton!){
-        let url = NSURL(string: "https://www.youtube.com/user/rolccyouth/")
-        UIApplication.sharedApplication().openURL(url!)
+    func goYoutube(_ sender: UIButton!){
+        let url = URL(string: "https://www.youtube.com/user/rolccyouth/")
+        UIApplication.shared.openURL(url!)
     }
     
-    func goInstagram(sender: UIButton!){
-        let url = NSURL(string: "https://www.instagram.com/rolccyouth/")
-        UIApplication.sharedApplication().openURL(url!)
+    func goInstagram(_ sender: UIButton!){
+        let url = URL(string: "https://www.instagram.com/rolccyouth/")
+        UIApplication.shared.openURL(url!)
     }
     
-    func goTwitter(sender: UIButton!){
-        let url = NSURL(string: "https://twitter.com/rolccyouth")
-        UIApplication.sharedApplication().openURL(url!)
+    func goTwitter(_ sender: UIButton!){
+        let url = URL(string: "https://twitter.com/rolccyouth")
+        UIApplication.shared.openURL(url!)
     }
     
-    func addressChurch(sender: UIButton!){
-        let url = NSURL(string: "https://maps.apple.com/maps?address=1177%20Laurelwood%20Rd,%20Santa%20Clara,%20CA%20%2095054,%20United%20States&ll=37.379769,-121.952881&q=1177%20Laurelwood%20Rd,%20Santa%20Clara,%20CA%20%2095054,%20United%20States")
-        UIApplication.sharedApplication().openURL(url!)
+    func addressChurch(_ sender: UIButton!){
+        let url = URL(string: "https://maps.apple.com/maps?address=1177%20Laurelwood%20Rd,%20Santa%20Clara,%20CA%20%2095054,%20United%20States&ll=37.379769,-121.952881&q=1177%20Laurelwood%20Rd,%20Santa%20Clara,%20CA%20%2095054,%20United%20States")
+        UIApplication.shared.openURL(url!)
     }
     
-    func phoneChurch(sender: UIButton!){
+    func phoneChurch(_ sender: UIButton!){
         let number = "4082600257"
         let alertController = UIAlertController(title: "(408) 260-0257", message:
-            "Are you sure you want to call\n(408) 260-0257?", preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default,handler: nil))
-        alertController.addAction(UIAlertAction(title: "Call", style: UIAlertActionStyle.Default,handler: { action in
-            let url = NSURL(string: "tel://\(number)")
-            UIApplication.sharedApplication().openURL(url!)
+            "Are you sure you want to call\n(408) 260-0257?", preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default,handler: nil))
+        alertController.addAction(UIAlertAction(title: "Call", style: UIAlertActionStyle.default,handler: { action in
+            let url = URL(string: "tel://\(number)")
+            UIApplication.shared.openURL(url!)
         }))
         
-        self.presentViewController(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil)
     }
     
-    func faxChurch(sender: UIButton!){
+    func faxChurch(_ sender: UIButton!){
         _ = "4087488877"
         let alertController = UIAlertController(title: "(408) 748-8877", message:
-            "This is a fax number...", preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.Default,handler: nil))
-        self.presentViewController(alertController, animated: true, completion: nil)
+            "This is a fax number...", preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.default,handler: nil))
+        self.present(alertController, animated: true, completion: nil)
     }
     
-    func emailChurch(sender: UIButton!){
+    func emailChurch(_ sender: UIButton!){
         let email = "office@rolcc.net"
-        let url = NSURL(string: "mailto:\(email)")
-        UIApplication.sharedApplication().openURL(url!)
+        let url = URL(string: "mailto:\(email)")
+        UIApplication.shared.openURL(url!)
     }
     
-    func websiteChurch(sender: UIButton!){
-        let url = NSURL(string: "http://www.rolcc.net/")
-        UIApplication.sharedApplication().openURL(url!)
+    func websiteChurch(_ sender: UIButton!){
+        let url = URL(string: "http://www.rolcc.net/")
+        UIApplication.shared.openURL(url!)
     }
     
     override func didReceiveMemoryWarning() {

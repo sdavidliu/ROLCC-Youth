@@ -2,8 +2,8 @@
 //  ROLCC_YouthTests.swift
 //  ROLCC YouthTests
 //
-//  Created by Jimy Liu Mini on 6/22/16.
-//  Copyright © 2016 Dave&Joe. All rights reserved.
+//  Created by David Liu on 12/12/16.
+//  Copyright © 2016 David Liu. All rights reserved.
 //
 
 import XCTest
@@ -28,7 +28,7 @@ class ROLCC_YouthTests: XCTestCase {
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measureBlock {
+        self.measure {
             // Put the code you want to measure the time of here.
         }
     }

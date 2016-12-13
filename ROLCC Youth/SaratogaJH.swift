@@ -15,16 +15,16 @@ class SaratogaJH: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        button = DOFavoriteButton(frame: CGRectMake(UIScreen.mainScreen().bounds.width - 50, 60, 55, 50), image: UIImage(named: "stars.png"))
+        button = DOFavoriteButton(frame: CGRect(x: UIScreen.main.bounds.width - 50, y: 60, width: 55, height: 50), image: UIImage(named: "stars.png"))
         self.view.addSubview(button)
         
     }
     
-    override func viewDidAppear(animated: Bool) {
-        let defaults = NSUserDefaults.standardUserDefaults()
+    override func viewDidAppear(_ animated: Bool) {
+        let defaults = UserDefaults.standard
         
-        if (defaults.stringForKey("Favorite") == "SaratogaJH"){
-            if (button.selected == false){
+        if (defaults.string(forKey: "Favorite") == "SaratogaJH"){
+            if (button.isSelected == false){
                 button.select()
             }
         }else{

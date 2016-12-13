@@ -12,22 +12,22 @@ import Auk
 
 class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource {
     
-    let screenWidth = UIScreen.mainScreen().bounds.width
-    let screenHeight = UIScreen.mainScreen().bounds.height
+    let screenWidth = UIScreen.main.bounds.width
+    let screenHeight = UIScreen.main.bounds.height
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageLabel: UILabel!
     
     var events = [String]()
-    var imagesURL = [NSURL]()
+    var imagesURL = [URL]()
     var finalImages = [UIImage?]()
     var imagesDone = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UIApplication.sharedApplication().statusBarStyle = .Default
+        UIApplication.shared.statusBarStyle = .default
         
         let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 64))
         let navigationItem = UINavigationItem()
@@ -37,7 +37,7 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
         self.view.addSubview(navBar)
         
         if (Reachability.isConnectedToNetwork() == true){
-        
+        /*
             let loading = RPCircularProgress()
             loading.trackTintColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 255 / 255, alpha: 0.3)
             loading.progressTintColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 255 / 255, alpha: 1)
@@ -46,21 +46,21 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
             loading.center = CGPoint(x: screenWidth/2, y: scrollView.center.y - 90)
             loading.enableIndeterminate()
             self.view.addSubview(loading)
-            self.view.sendSubviewToBack(loading)
+            self.view.sendSubview(toBack: loading)*/
             
             scrollView.delegate = self
             scrollView.auk.settings.placeholderImage = UIImage(named: "LOGO.png")
             scrollView.auk.settings.errorImage = UIImage(named: "LOGO.png")
             scrollView.auk.settings.pageControl.visible = false
             scrollView.auk.settings.showsHorizontalScrollIndicator = true
-            scrollView.auk.settings.contentMode = .ScaleAspectFill
+            scrollView.auk.settings.contentMode = .scaleAspectFill
             
             let ref = FIRDatabase.database().reference()
-            ref.observeEventType(.Value, withBlock: { snapshot in
+            ref.observe(.value, with: { snapshot in
                 
-                let s = snapshot.value!.objectForKey("events")! as! String
+                let s = (snapshot.value! as AnyObject).object(forKey: "events")! as! String
                 
-                let Str = s.componentsSeparatedByString(",")
+                let Str = s.components(separatedBy: ",")
                 
                 for part in Str {
                     self.events.append(part)
@@ -70,19 +70,20 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
                 
                 self.tableView.reloadData()
                 
-                self.finalImages = [UIImage?](count:self.events.count, repeatedValue: nil)
+                self.finalImages = [UIImage?](repeating: nil, count: self.events.count)
                 
-                }, withCancelBlock: { error in
-                    print(error.description)
+            }, withCancel: {
+                (error:Error) -> Void in
+                print(error.localizedDescription)
             })
             
-            tableView.backgroundColor = UIColor.clearColor()
-            tableView.separatorColor = UIColor.whiteColor()
+            tableView.backgroundColor = UIColor.clear
+            tableView.separatorColor = UIColor.white
             tableView.rowHeight = 70
             tableView.allowsSelection = true
             tableView.delegate = self
         }else{
-            tableView.hidden = true
+            tableView.isHidden = true
             
             let error = UIImageView(image: UIImage(named: "sadface2.png"))
             error.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
@@ -94,7 +95,7 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
             errorMessage.font = UIFont(name: "Avenir-Light", size: 15.0)
             errorMessage.textColor = UIColor(red: 21/255, green: 21/255, blue: 21/255, alpha: 1.0)
             errorMessage.frame = CGRect(x: 0, y: 0, width: screenWidth, height: 20.0)
-            errorMessage.textAlignment = NSTextAlignment.Center
+            errorMessage.textAlignment = NSTextAlignment.center
             errorMessage.center = CGPoint(x: screenWidth/2, y: screenHeight/2 + 40)
             self.view.addSubview(errorMessage)
         }
@@ -102,7 +103,7 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
     }
     
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if let imageIndex = scrollView.auk.currentPageIndex{
             if (imageIndex < events.count){
                 if (imageLabel.text != events[imageIndex]){
@@ -114,51 +115,51 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
         scrollView.auk.startAutoScroll(delaySeconds: 5)
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return events.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! ArtistTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ArtistTableViewCell
         
-        cell.backgroundColor = UIColor.clearColor()
+        cell.backgroundColor = UIColor.clear
         
         let row = indexPath.row
         
         var details = [String]()
         let ref = FIRDatabase.database().reference()
-        ref.observeEventType(.Value, withBlock: { snapshot in
+        ref.observe(.value, with: { snapshot in
             
-            let s = snapshot.value!.objectForKey(self.events[row])! as! String
+            let s = (snapshot.value! as AnyObject).object(forKey: self.events[row])! as! String
             
-            let Str = s.componentsSeparatedByString(",")
+            let Str = s.components(separatedBy: ",")
             
             for part in Str {
                 details.append(part)
             }
             
             let date = details[0]
-            let monthIndex = date.startIndex.advancedBy(3)
-            let month = date.substringToIndex(monthIndex)
-            let dayRange = date.endIndex.advancedBy(-4)..<date.endIndex.advancedBy(-2)
-            var day = date.substringWithRange(dayRange)
-            if (day.substringToIndex(day.startIndex.advancedBy(1)) == " "){
-                day = "0" + day.substringFromIndex(day.endIndex.advancedBy(-1))
+            let monthIndex = date.characters.index(date.startIndex, offsetBy: 3)
+            let month = date.substring(to: monthIndex)
+            let dayRange = date.characters.index(date.endIndex, offsetBy: -4)..<date.characters.index(date.endIndex, offsetBy: -2)
+            var day = date.substring(with: dayRange)
+            if (day.substring(to: day.characters.index(day.startIndex, offsetBy: 1)) == " "){
+                day = "0" + day.substring(from: day.characters.index(day.endIndex, offsetBy: -1))
             }
             
             cell.dateLabel.text = month + "\n" + day
             
             if (self.imagesDone == false){
             
-                let url = NSURL(string: details[4])
+                let url = URL(string: details[4])
                 self.imagesURL.append(url!)            
                 
-                NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: { (data, response, error) in
+                URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
                     if error != nil {
-                        print(error)
+                        //print(error)
                         return
                     }
-                    dispatch_async(dispatch_get_main_queue(), {
+                    DispatchQueue.main.async(execute: {
                         let test = UIImage(data: data!)
                         self.finalImages[row] = test
                         var allImages = false
@@ -180,47 +181,49 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
                 }).resume()
             }
             
-            }, withCancelBlock: { error in
-                print(error.description)
+        }, withCancel: {
+            (error:Error) -> Void in
+            print(error.localizedDescription)
         })
         
         cell.eventLabel.text = events[indexPath.row]
         
-        cell.eventLabel.textColor = UIColor.whiteColor()
-        cell.dateLabel.backgroundColor = UIColor.grayColor()
-        cell.dateLabel.textColor = UIColor.whiteColor()
-        cell.dateLabel.textAlignment = .Center
+        cell.eventLabel.textColor = UIColor.white
+        cell.dateLabel.backgroundColor = UIColor.gray
+        cell.dateLabel.textColor = UIColor.white
+        cell.dateLabel.textAlignment = .center
         
-        cell.selectionStyle = .None
+        cell.selectionStyle = .none
         
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         scrollView.auk.startAutoScroll(delaySeconds: 5)
         
         let row = indexPath.row
         
         var details = [String]()
         let ref = FIRDatabase.database().reference()
-        ref.observeEventType(.Value, withBlock: { snapshot in
+        ref.observe(.value, with: { snapshot in
             
-            let s = snapshot.value!.objectForKey(self.events[row])! as! String
+            let s = (snapshot.value! as AnyObject).object(forKey: self.events[row])! as! String
             
-            let Str = s.componentsSeparatedByString(",")
+            let Str = s.components(separatedBy: ",")
             
             for part in Str {
                 details.append(part)
             }
             
             let alertController = UIAlertController(title: self.events[row], message:
-                "Date: " + details[0] + "\nTime: " + details[1] + "\nLocation: " + details[2] + "\nDescription: " + details[3], preferredStyle: UIAlertControllerStyle.Alert)
-            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+                "Date: " + details[0] + "\nTime: " + details[1] + "\nLocation: " + details[2] + "\nDescription: " + details[3], preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
             
-            self.presentViewController(alertController, animated: true, completion: nil)
+            self.present(alertController, animated: true, completion: nil)
             
-            }, withCancelBlock: { error in
-                print(error.description)
+        }, withCancel: {
+            (error:Error) -> Void in
+            print(error.localizedDescription)
         })
     }
     

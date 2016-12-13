@@ -1,17 +1,17 @@
-# Uncomment this line to define a global platform for your project
-platform :ios, '8.0'
-pod 'Firebase'
-pod 'Firebase/Database'
-pod 'Firebase/Storage'
-pod 'DOFavoriteButton'
-pod 'SnapKit'
-pod 'Auk', '~> 2.1'
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
 
 target 'ROLCC Youth' do
-  # Comment this line if you're not using Swift and don't want to use dynamic frameworks
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
   # Pods for ROLCC Youth
+  pod 'RAMAnimatedTabBarController', "~> 2.0.13"
+  pod 'Firebase'
+  pod 'Firebase/Database'
+  pod 'Firebase/Storage'
+  pod 'SnapKit'
+  pod 'Auk', '~> 7.0'
 
   target 'ROLCC YouthTests' do
     inherit! :search_paths

@@ -2,8 +2,8 @@
 //  ROLCC_YouthUITests.swift
 //  ROLCC YouthUITests
 //
-//  Created by Jimy Liu Mini on 6/22/16.
-//  Copyright © 2016 Dave&Joe. All rights reserved.
+//  Created by David Liu on 12/12/16.
+//  Copyright © 2016 David Liu. All rights reserved.
 //
 
 import XCTest

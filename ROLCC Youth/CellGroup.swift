@@ -11,8 +11,8 @@ import UIKit
 class CellGroup: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     
     var destinationViewControllers : [UIViewController] = []
-    let screenWidth = UIScreen.mainScreen().bounds.width
-    let screenHeight = UIScreen.mainScreen().bounds.height
+    let screenWidth = UIScreen.main.bounds.width
+    let screenHeight = UIScreen.main.bounds.height
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,68 +23,68 @@ class CellGroup: UIPageViewController, UIPageViewControllerDelegate, UIPageViewC
         self.title = "Cell Group"
         self.navigationController!.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Avenir-Light", size: 15)!]
         
-        let berryessaView = storyboard?.instantiateViewControllerWithIdentifier("Berryessa") as! Berryessa
-        let cupertino1View = storyboard?.instantiateViewControllerWithIdentifier("Cupertino1") as! Cupertino1
-        let cupertino2View = storyboard?.instantiateViewControllerWithIdentifier("Cupertino2") as! Cupertino2
-        let cupertinoJHView = storyboard?.instantiateViewControllerWithIdentifier("CupertinoJH") as! CupertinoJH
-        let evergreenView = storyboard?.instantiateViewControllerWithIdentifier("Evergreen") as! Evergreen
-        let fremontAView = storyboard?.instantiateViewControllerWithIdentifier("FremontA") as! FremontA
-        let fremontBView = storyboard?.instantiateViewControllerWithIdentifier("FremontB") as! FremontB
-        let fremontJHView = storyboard?.instantiateViewControllerWithIdentifier("FremontJH") as! FremontJH
-        let morganHillView = storyboard?.instantiateViewControllerWithIdentifier("MorganHill") as! MorganHill
-        let paloAltoView = storyboard?.instantiateViewControllerWithIdentifier("PaloAlto") as! PaloAlto
-        let paloAltoJHView = storyboard?.instantiateViewControllerWithIdentifier("PaloAltoJH") as! PaloAltoJH
-        let sanCarlosView = storyboard?.instantiateViewControllerWithIdentifier("SanCarlos") as! SanCarlos
-        let saratoga1View = storyboard?.instantiateViewControllerWithIdentifier("Saratoga1") as! Saratoga1
-        let saratoga2View = storyboard?.instantiateViewControllerWithIdentifier("Saratoga2") as! Saratoga2
-        let saratogaJHView = storyboard?.instantiateViewControllerWithIdentifier("SaratogaJH") as! SaratogaJH
-        let sunnyvaleJHView = storyboard?.instantiateViewControllerWithIdentifier("SunnyvaleJH") as! SunnyvaleJH
+        let berryessaView = storyboard?.instantiateViewController(withIdentifier: "Berryessa") as! Berryessa
+        let cupertino1View = storyboard?.instantiateViewController(withIdentifier: "Cupertino1") as! Cupertino1
+        let cupertino2View = storyboard?.instantiateViewController(withIdentifier: "Cupertino2") as! Cupertino2
+        let cupertinoJHView = storyboard?.instantiateViewController(withIdentifier: "CupertinoJH") as! CupertinoJH
+        let evergreenView = storyboard?.instantiateViewController(withIdentifier: "Evergreen") as! Evergreen
+        let fremontAView = storyboard?.instantiateViewController(withIdentifier: "FremontA") as! FremontA
+        let fremontBView = storyboard?.instantiateViewController(withIdentifier: "FremontB") as! FremontB
+        let fremontJHView = storyboard?.instantiateViewController(withIdentifier: "FremontJH") as! FremontJH
+        let morganHillView = storyboard?.instantiateViewController(withIdentifier: "MorganHill") as! MorganHill
+        let paloAltoView = storyboard?.instantiateViewController(withIdentifier: "PaloAlto") as! PaloAlto
+        let paloAltoJHView = storyboard?.instantiateViewController(withIdentifier: "PaloAltoJH") as! PaloAltoJH
+        let sanCarlosView = storyboard?.instantiateViewController(withIdentifier: "SanCarlos") as! SanCarlos
+        let saratoga1View = storyboard?.instantiateViewController(withIdentifier: "Saratoga1") as! Saratoga1
+        let saratoga2View = storyboard?.instantiateViewController(withIdentifier: "Saratoga2") as! Saratoga2
+        let saratogaJHView = storyboard?.instantiateViewController(withIdentifier: "SaratogaJH") as! SaratogaJH
+        let sunnyvaleJHView = storyboard?.instantiateViewController(withIdentifier: "SunnyvaleJH") as! SunnyvaleJH
         
         destinationViewControllers = [berryessaView, cupertino1View, cupertino2View, cupertinoJHView, evergreenView, fremontAView, fremontBView, fremontJHView, morganHillView, paloAltoView, paloAltoJHView, sanCarlosView, saratoga1View, saratoga2View, saratogaJHView, sunnyvaleJHView]
         
-        let defaults = NSUserDefaults.standardUserDefaults()
+        let defaults = UserDefaults.standard
         var x = 0
-        if (defaults.stringForKey("CellGroup") == "Berryessa"){
+        if (defaults.string(forKey: "CellGroup") == "Berryessa"){
             x = 0
-        }else if (defaults.stringForKey("CellGroup") == "Cupertino1"){
+        }else if (defaults.string(forKey: "CellGroup") == "Cupertino1"){
             x = 1
-        }else if (defaults.stringForKey("CellGroup") == "Cupertino2"){
+        }else if (defaults.string(forKey: "CellGroup") == "Cupertino2"){
             x = 2
-        }else if (defaults.stringForKey("CellGroup") == "CupertinoJH"){
+        }else if (defaults.string(forKey: "CellGroup") == "CupertinoJH"){
             x = 3
-        }else if (defaults.stringForKey("CellGroup") == "Evergreen"){
+        }else if (defaults.string(forKey: "CellGroup") == "Evergreen"){
             x = 4
-        }else if (defaults.stringForKey("CellGroup") == "FremontA"){
+        }else if (defaults.string(forKey: "CellGroup") == "FremontA"){
             x = 5
-        }else if (defaults.stringForKey("CellGroup") == "FremontB"){
+        }else if (defaults.string(forKey: "CellGroup") == "FremontB"){
             x = 6
-        }else if (defaults.stringForKey("CellGroup") == "FremontJH"){
+        }else if (defaults.string(forKey: "CellGroup") == "FremontJH"){
             x = 7
-        }else if (defaults.stringForKey("CellGroup") == "MorganHill"){
+        }else if (defaults.string(forKey: "CellGroup") == "MorganHill"){
             x = 8
-        }else if (defaults.stringForKey("CellGroup") == "PaloAlto"){
+        }else if (defaults.string(forKey: "CellGroup") == "PaloAlto"){
             x = 9
-        }else if (defaults.stringForKey("CellGroup") == "PaloAltoJH"){
+        }else if (defaults.string(forKey: "CellGroup") == "PaloAltoJH"){
             x = 10
-        }else if (defaults.stringForKey("CellGroup") == "SanCarlos"){
+        }else if (defaults.string(forKey: "CellGroup") == "SanCarlos"){
             x = 11
-        }else if (defaults.stringForKey("CellGroup") == "Saratoga1"){
+        }else if (defaults.string(forKey: "CellGroup") == "Saratoga1"){
             x = 12
-        }else if (defaults.stringForKey("CellGroup") == "Saratoga2"){
+        }else if (defaults.string(forKey: "CellGroup") == "Saratoga2"){
             x = 13
-        }else if (defaults.stringForKey("CellGroup") == "SaratogaJH"){
+        }else if (defaults.string(forKey: "CellGroup") == "SaratogaJH"){
             x = 14
-        }else if (defaults.stringForKey("CellGroup") == "SunnyvaleJH"){
+        }else if (defaults.string(forKey: "CellGroup") == "SunnyvaleJH"){
             x = 15
         }
         
         let startingViewController = self.viewControllerAtIndex(x)
         let viewControllers: NSArray = [startingViewController]
         
-        self.setViewControllers(viewControllers as? [UIViewController], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: {(done: Bool) in})
+        self.setViewControllers(viewControllers as? [UIViewController], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: {(done: Bool) in})
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
     
@@ -92,13 +92,13 @@ class CellGroup: UIPageViewController, UIPageViewControllerDelegate, UIPageViewC
         super.didReceiveMemoryWarning()
     }
     
-    func viewControllerAtIndex(index:NSInteger) -> UIViewController {
+    func viewControllerAtIndex(_ index:NSInteger) -> UIViewController {
         return destinationViewControllers[index]
     }
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
-        var index = destinationViewControllers.indexOf(viewController)! as Int
+        var index = destinationViewControllers.index(of: viewController)! as Int
         
         if (index == 0) || (index == NSNotFound) {
             return nil
@@ -112,9 +112,9 @@ class CellGroup: UIPageViewController, UIPageViewControllerDelegate, UIPageViewC
         return self.viewControllerAtIndex(index)
     }
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
-        var index = destinationViewControllers.indexOf(viewController)! as Int
+        var index = destinationViewControllers.index(of: viewController)! as Int
         
         if index == NSNotFound {
             return nil
@@ -128,12 +128,12 @@ class CellGroup: UIPageViewController, UIPageViewControllerDelegate, UIPageViewC
         return self.viewControllerAtIndex(index)
     }
     
-    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
+    func presentationCount(for pageViewController: UIPageViewController) -> Int {
         return destinationViewControllers.count
         
     }
     
-    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
+    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
         return 0
     }
     
