@@ -303,6 +303,7 @@ open class RAMAnimatedTabBarController: UITabBarController {
       container.backgroundColor = (items as [RAMAnimatedTabBarItem])[index].bgDefaultColor
       
       container.addSubview(icon)
+      //change to -15 if want to move up
       createConstraints(icon, container: container, size: itemImage.size, yOffset: -5 - item.yOffSet)
       
       container.addSubview(textLabel)

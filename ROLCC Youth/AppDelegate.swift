@@ -13,7 +13,7 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var pagesPresenter: PageViewControllerPresenter!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -23,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         pageControl.currentPageIndicatorTintColor = UIColor.black
         pageControl.backgroundColor = UIColor.white
         FIRApp.configure()
+        
+        self.pagesPresenter = PageViewControllerPresenter(window: window!)
         
         return true
     }

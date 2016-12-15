@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2659" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2659" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Tfu-gg-sge">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -120,7 +119,11 @@
                             <constraint firstItem="vKJ-xv-ysJ" firstAttribute="width" secondItem="tsR-hK-woN" secondAttribute="width" id="wpI-98-yFd"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="homeicon.png" selectedImage="homeicon.png" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="homeicon.png" selectedImage="homeicon.png" id="acW-dT-cKf" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <connections>
+                            <outlet property="animation" destination="80h-ri-oyY" id="020-1s-paw"/>
+                        </connections>
+                    </tabBarItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="800"/>
                     <connections>
@@ -132,13 +135,14 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+                <customObject id="80h-ri-oyY" customClass="RAMBounceAnimation" customModule="RAMAnimatedTabBarController"/>
             </objects>
             <point key="canvasLocation" x="762" y="-1109"/>
         </scene>
         <!--Events-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="8rJ-Kc-sve" customClass="Calendar" customModule="ROLCC_Youth" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EventsViewController" automaticallyAdjustsScrollViewInsets="NO" id="8rJ-Kc-sve" customClass="Calendar" customModule="ROLCC_Youth" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -218,7 +222,11 @@
                             <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="ZDu-h4-tu5" secondAttribute="bottom" id="vr5-f1-Msv"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Events" image="calendaricon.png" selectedImage="calendaricon.png" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Events" image="calendaricon.png" selectedImage="calendaricon.png" id="cPa-gy-q4n" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <connections>
+                            <outlet property="animation" destination="V9Y-F7-NvK" id="3o3-kI-0fL"/>
+                        </connections>
+                    </tabBarItem>
                     <connections>
                         <outlet property="imageLabel" destination="eZm-G5-t7O" id="BLs-5u-NMy"/>
                         <outlet property="scrollView" destination="04W-sL-xcC" id="bP7-vQ-VAb"/>
@@ -226,6 +234,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
+                <customObject id="V9Y-F7-NvK" customClass="RAMFlipLeftTransitionItemAnimations" customModule="RAMAnimatedTabBarController"/>
             </objects>
             <point key="canvasLocation" x="774" y="-342"/>
         </scene>
@@ -233,17 +242,22 @@
         <scene sceneID="jrB-DB-p1d">
             <objects>
                 <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="fmt-18-EyY" customClass="CellGroup" customModule="ROLCC_Youth" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Cell Group" image="groupicon.png" selectedImage="groupicon.png" id="u0L-Xs-xFZ"/>
+                    <tabBarItem key="tabBarItem" title="Cell Group" image="groupicon.png" selectedImage="groupicon.png" id="u0L-Xs-xFZ" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <connections>
+                            <outlet property="animation" destination="9F0-q5-OwB" id="I8A-Vu-Omb"/>
+                        </connections>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" id="hrb-Ir-A3D"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vIr-SL-wDC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="9F0-q5-OwB" customClass="RAMLeftRotationAnimation" customModule="RAMAnimatedTabBarController"/>
             </objects>
             <point key="canvasLocation" x="1534" y="357"/>
         </scene>
         <!--Select-->
         <scene sceneID="F6P-HT-1lB">
             <objects>
-                <viewController id="4O7-DZ-GLM" userLabel="Select" customClass="SelectCellGroup" customModule="ROLCC_Youth" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CellGroupViewController" id="4O7-DZ-GLM" userLabel="Select" customClass="SelectCellGroup" customModule="ROLCC_Youth" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LYY-O6-wyq"/>
                         <viewControllerLayoutGuide type="bottom" id="UBK-OQ-k5P"/>
@@ -577,7 +591,7 @@
                             <constraint firstItem="X8n-8C-Eb1" firstAttribute="top" secondItem="fNF-uF-gQ8" secondAttribute="bottom" id="z6V-QD-g6b"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Cell Group" image="groupicon.png" id="qfv-hn-Mg6"/>
+                    <tabBarItem key="tabBarItem" title="Cell Group" image="groupicon.png" id="qfv-hn-Mg6" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController"/>
                     <navigationItem key="navigationItem" title="Select Cell Group" id="fxN-il-XOH">
                         <barButtonItem key="backBarButtonItem" title="Back" id="fhe-Ii-BqF"/>
                     </navigationItem>
@@ -635,13 +649,14 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w7Z-zx-ilS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="YN4-Dn-N9U" customClass="RAMLeftRotationAnimation" customModule="RAMAnimatedTabBarController"/>
             </objects>
             <point key="canvasLocation" x="800" y="701"/>
         </scene>
         <!--Contact-->
         <scene sceneID="cBO-Dt-hsv">
             <objects>
-                <viewController id="lOq-Ag-NIs" customClass="Contact" customModule="ROLCC_Youth" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContactViewController" id="lOq-Ag-NIs" customClass="Contact" customModule="ROLCC_Youth" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2f4-eQ-UDI"/>
                         <viewControllerLayoutGuide type="bottom" id="Buo-Od-CUH"/>
@@ -997,7 +1012,11 @@
                             <constraint firstItem="taK-en-4gM" firstAttribute="height" secondItem="8Qe-Ww-dPl" secondAttribute="height" constant="-113" id="wjX-Lm-a2I"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Contact" image="contacticon.png" selectedImage="contacticon.png" id="B0V-z5-Iwo"/>
+                    <tabBarItem key="tabBarItem" title="Contact" image="contacticon.png" selectedImage="contacticon.png" id="B0V-z5-Iwo" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <connections>
+                            <outlet property="animation" destination="dm4-fS-iZX" id="D7m-JB-VYW"/>
+                        </connections>
+                    </tabBarItem>
                     <connections>
                         <outlet property="andrewTai" destination="YD9-YE-hUz" id="tTY-OY-BzS"/>
                         <outlet property="chiTran" destination="98u-1J-j9V" id="HuP-fp-jUM"/>
@@ -1023,14 +1042,19 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9dn-pf-Zle" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="dm4-fS-iZX" customClass="RAMTransitionItemAnimations" customModule="RAMAnimatedTabBarController"/>
             </objects>
             <point key="canvasLocation" x="112.5" y="1652.5"/>
         </scene>
         <!--Cell Group-->
         <scene sceneID="Aq8-4L-mkU">
             <objects>
-                <navigationController id="lf1-mP-Qf3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Cell Group" image="groupicon.png" id="49F-bt-46r"/>
+                <navigationController storyboardIdentifier="CellGroupNav" id="lf1-mP-Qf3" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Cell Group" image="groupicon.png" id="49F-bt-46r" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <connections>
+                            <outlet property="animation" destination="X0V-Iu-HTn" id="vVp-Iw-kiw"/>
+                        </connections>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="da8-AL-Ofv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1040,13 +1064,14 @@
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7bE-k0-HEJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="X0V-Iu-HTn" customClass="RAMLeftRotationAnimation" customModule="RAMAnimatedTabBarController"/>
             </objects>
-            <point key="canvasLocation" x="678" y="1528"/>
+            <point key="canvasLocation" x="913" y="1533"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Animated Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" customClass="RAMAnimatedTabBarController" customModule="RAMAnimatedTabBarController" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -1054,7 +1079,7 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="aBe-MG-tqh"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="lf1-mP-Qf3" kind="relationship" relationship="viewControllers" id="5E5-KJ-EOz"/>
                         <segue destination="UPP-ZL-nj8" kind="relationship" relationship="viewControllers" id="KiQ-Cs-K1G"/>
@@ -1068,7 +1093,7 @@
         <!--Videos-->
         <scene sceneID="oJI-tR-1bL">
             <objects>
-                <viewController id="UPP-ZL-nj8" customClass="Videos" customModule="ROLCC_Youth" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VideosViewController" id="UPP-ZL-nj8" customClass="Videos" customModule="ROLCC_Youth" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qP1-Uv-tLl"/>
                         <viewControllerLayoutGuide type="bottom" id="7LN-qf-DIQ"/>
@@ -1125,12 +1150,23 @@
                             <constraint firstItem="osS-qR-kku" firstAttribute="leading" secondItem="xRv-q6-TlK" secondAttribute="leadingMargin" constant="-20" id="ze4-ZY-voW"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Videos" image="videosicon.png" selectedImage="videosicon.png" id="bSo-JW-qIp"/>
+                    <tabBarItem key="tabBarItem" title="Videos" image="videosicon.png" selectedImage="videosicon.png" id="bSo-JW-qIp" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <connections>
+                            <outlet property="animation" destination="2ae-4N-Wc2" id="2rB-J7-KYx"/>
+                        </connections>
+                    </tabBarItem>
                     <connections>
                         <outlet property="tableView" destination="osS-qR-kku" id="bni-QY-EGF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mcs-hl-GtE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="2ae-4N-Wc2" customClass="RAMFumeAnimation" customModule="RAMAnimatedTabBarController">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="textSelectedColor">
+                            <color key="value" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="0.0" y="918"/>
         </scene>
@@ -2537,8 +2573,214 @@
             </objects>
             <point key="canvasLocation" x="2954" y="2189"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="M27-uH-WN8">
+            <objects>
+                <viewController storyboardIdentifier="testing" id="Tfu-gg-sge" customClass="ViewController" customModule="ROLCC_Youth" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0jW-Xy-hpo"/>
+                        <viewControllerLayoutGuide type="bottom" id="htY-bi-fiQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4G6-Gx-llA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="r66-vX-BqD">
+                                <rect key="frame" x="134" y="237" width="108" height="134"/>
+                                <subviews>
+                                    <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO.png" translatesAutoresizingMaskIntoConstraints="NO" id="Yzx-v4-uMr">
+                                        <rect key="frame" x="14" y="0.0" width="80" height="79"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Yzx-v4-uMr" secondAttribute="height" multiplier="1:1" constant="1" id="f75-OI-yqY"/>
+                                            <constraint firstAttribute="width" constant="80" id="xth-qQ-udA"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FxL-43-fx2">
+                                        <rect key="frame" x="33" y="79" width="42.5" height="21"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="180/300" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PL9-sQ-QGZ">
+                                        <rect key="frame" x="0.0" y="100" width="108" height="34"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="Pwk-v1-R3g">
+                                <rect key="frame" x="20" y="607" width="335" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQA-oz-rik">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="30"/>
+                                        <state key="normal" title="PODCASTS"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5UV-7p-NRI">
+                                        <rect key="frame" x="265" y="0.0" width="70" height="30"/>
+                                        <state key="normal" title="CONTACT"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wHG-CO-d1s">
+                                <rect key="frame" x="16" y="52" width="30" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="menuButton.png"/>
+                                <connections>
+                                    <action selector="showMenuAction:" destination="Tfu-gg-sge" eventType="touchUpInside" id="P2k-hy-t8t"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="htY-bi-fiQ" firstAttribute="top" secondItem="Pwk-v1-R3g" secondAttribute="bottom" constant="30" id="5dh-MK-Aul"/>
+                            <constraint firstItem="Pwk-v1-R3g" firstAttribute="width" secondItem="4G6-Gx-llA" secondAttribute="width" constant="-40" id="8G9-Js-aUZ"/>
+                            <constraint firstItem="r66-vX-BqD" firstAttribute="centerX" secondItem="4G6-Gx-llA" secondAttribute="centerX" id="bA5-32-dpS"/>
+                            <constraint firstItem="r66-vX-BqD" firstAttribute="centerY" secondItem="4G6-Gx-llA" secondAttribute="centerY" constant="-30" id="nPM-hv-MG6"/>
+                            <constraint firstItem="Pwk-v1-R3g" firstAttribute="centerX" secondItem="4G6-Gx-llA" secondAttribute="centerX" id="rkl-Rr-v2v"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" image="homeicon.png" selectedImage="homeicon.png" id="GnR-ib-VsM" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController"/>
+                    <connections>
+                        <outlet property="dayLabel" destination="FxL-43-fx2" id="1fH-GM-iod"/>
+                        <outlet property="heartImageView" destination="Yzx-v4-uMr" id="0Rl-Ab-wrG"/>
+                        <outlet property="heartRateLabel" destination="PL9-sQ-QGZ" id="y6F-qd-mcR"/>
+                        <outlet property="imageLogo" destination="Yzx-v4-uMr" id="Hpu-gn-zBM"/>
+                        <outlet property="menuButton" destination="wHG-CO-d1s" id="Grz-aH-6td"/>
+                        <outlet property="moreInfoButton" destination="NQA-oz-rik" id="XZy-FC-a9Q"/>
+                        <outlet property="settingsButton" destination="5UV-7p-NRI" id="2ds-fF-Wmj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EFv-vi-Cxk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1354.4000000000001" y="-0.44977511244377816"/>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="sHc-EL-gY7">
+            <objects>
+                <viewController storyboardIdentifier="MenuViewController" modalPresentationStyle="currentContext" id="8fN-Wx-3N6" customClass="MenuViewController" customModule="ROLCC_Youth" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SQj-Ip-DnW"/>
+                        <viewControllerLayoutGuide type="bottom" id="SWJ-AV-KCG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qCf-ha-eyX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y4m-s6-g48">
+                                <rect key="frame" x="150" y="175" width="300" height="250"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JsA-Ek-iWS">
+                                        <rect key="frame" x="54" y="202" width="200" height="40"/>
+                                        <accessibility key="accessibilityConfiguration" label="SETTINGS"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="DSr-8J-kcA"/>
+                                            <constraint firstAttribute="height" constant="40" id="XwP-b3-hWp"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <inset key="titleEdgeInsets" minX="50" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="CONTACT" image="ic_settings@3x.png">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="contactTapped:" destination="8fN-Wx-3N6" eventType="touchUpInside" id="c9a-bf-XDQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SVe-hK-wb8">
+                                        <rect key="frame" x="50" y="8" width="200" height="40"/>
+                                        <accessibility key="accessibilityConfiguration" label="PROFILE"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="2QM-Tv-a2v"/>
+                                            <constraint firstAttribute="width" constant="200" id="Ybw-kw-6Jq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <inset key="titleEdgeInsets" minX="50" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="EVENTS" image="ic_profile@3x.png">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="eventsTapped:" destination="8fN-Wx-3N6" eventType="touchUpInside" id="XBS-ay-ckn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHt-4z-Wid">
+                                        <rect key="frame" x="50" y="56" width="200" height="40"/>
+                                        <accessibility key="accessibilityConfiguration" label="FEED"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="PJU-Gn-Tgi"/>
+                                            <constraint firstAttribute="height" constant="40" id="kcx-VB-C7u"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <inset key="titleEdgeInsets" minX="50" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="CELL GROUP" image="ic_feed@3x.png">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cellGroupTapped:" destination="8fN-Wx-3N6" eventType="touchUpInside" id="0vh-an-DUn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="luZ-3J-LRC">
+                                        <rect key="frame" x="50" y="105" width="200" height="40"/>
+                                        <accessibility key="accessibilityConfiguration" label="ACTIVITY"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="U2J-fO-HKp"/>
+                                            <constraint firstAttribute="height" constant="40" id="m6H-ls-TW1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <inset key="titleEdgeInsets" minX="50" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="VIDEOS" image="ic_activity@3x.png">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="videosTapped:" destination="8fN-Wx-3N6" eventType="touchUpInside" id="gTI-xi-HpA"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="JsA-Ek-iWS" firstAttribute="centerX" secondItem="luZ-3J-LRC" secondAttribute="centerX" constant="4" id="07P-bg-Tfu"/>
+                                    <constraint firstItem="SVe-hK-wb8" firstAttribute="centerX" secondItem="MHt-4z-Wid" secondAttribute="centerX" id="3p3-Dd-P4h"/>
+                                    <constraint firstAttribute="bottom" secondItem="JsA-Ek-iWS" secondAttribute="bottom" constant="8" id="4A5-dP-JPe"/>
+                                    <constraint firstAttribute="centerX" secondItem="SVe-hK-wb8" secondAttribute="centerX" id="8UJ-sI-6NZ"/>
+                                    <constraint firstItem="luZ-3J-LRC" firstAttribute="centerX" secondItem="MHt-4z-Wid" secondAttribute="centerX" id="Mus-B4-gY6"/>
+                                    <constraint firstItem="SVe-hK-wb8" firstAttribute="top" secondItem="y4m-s6-g48" secondAttribute="top" constant="8" id="N45-ra-7b8"/>
+                                    <constraint firstAttribute="width" constant="300" id="Qft-b6-qUu"/>
+                                    <constraint firstAttribute="height" constant="250" id="f4e-yc-Zmk"/>
+                                    <constraint firstItem="luZ-3J-LRC" firstAttribute="top" secondItem="MHt-4z-Wid" secondAttribute="bottom" constant="9" id="oS8-cu-aQQ"/>
+                                    <constraint firstItem="MHt-4z-Wid" firstAttribute="top" secondItem="SVe-hK-wb8" secondAttribute="bottom" constant="8" id="oxH-l5-yxh"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MCf-aD-GfY">
+                                <rect key="frame" x="271" y="440" width="59" height="34"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <state key="normal" title="CLOSE">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeMenu:" destination="8fN-Wx-3N6" eventType="touchUpInside" id="Jfv-uv-svt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="y4m-s6-g48" secondAttribute="centerY" id="EwB-OI-zcJ"/>
+                            <constraint firstAttribute="centerX" secondItem="y4m-s6-g48" secondAttribute="centerX" id="VNy-8T-xso"/>
+                            <constraint firstItem="MCf-aD-GfY" firstAttribute="centerX" secondItem="qCf-ha-eyX" secondAttribute="centerX" id="edk-rg-qLR"/>
+                            <constraint firstItem="MCf-aD-GfY" firstAttribute="top" secondItem="y4m-s6-g48" secondAttribute="bottom" constant="15" id="veK-fa-bge"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cXZ-dC-MJb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-694" y="0.0"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="LOGO.png" width="1800" height="1749"/>
         <image name="berryessa.png" width="1136" height="731"/>
         <image name="calendaricon.png" width="28" height="28"/>
         <image name="contacticon.png" width="35" height="35"/>
@@ -2553,8 +2795,13 @@
         <image name="glorious.png" width="706" height="408"/>
         <image name="groupicon.png" width="30" height="30"/>
         <image name="homeicon.png" width="30" height="30"/>
+        <image name="ic_activity@3x.png" width="256" height="256"/>
+        <image name="ic_feed@3x.png" width="256" height="256"/>
+        <image name="ic_profile@3x.png" width="256" height="256"/>
+        <image name="ic_settings@3x.png" width="256" height="256"/>
         <image name="instagram.png" width="512" height="512"/>
         <image name="line.png" width="3000" height="200"/>
+        <image name="menuButton.png" width="128" height="128"/>
         <image name="morganHill.png" width="2048" height="1309"/>
         <image name="paloAlto.png" width="1094" height="699"/>
         <image name="paloAltoJH.png" width="1816" height="1161"/>

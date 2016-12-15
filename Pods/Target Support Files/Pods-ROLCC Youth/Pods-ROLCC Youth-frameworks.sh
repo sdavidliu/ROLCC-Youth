@@ -85,17 +85,23 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Auk/Auk.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/BouncyPageViewController/BouncyPageViewController.framework"
   install_framework "$BUILT_PRODUCTS_DIR/GTMSessionFetcher/GTMSessionFetcher.framework"
   install_framework "$BUILT_PRODUCTS_DIR/GoogleToolboxForMac/GoogleToolboxForMac.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/GuillotineMenu/GuillotineMenu.framework"
   install_framework "$BUILT_PRODUCTS_DIR/RAMAnimatedTabBarController/RAMAnimatedTabBarController.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/RBBAnimation/RBBAnimation.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SnapKit/SnapKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/moa/moa.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Auk/Auk.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/BouncyPageViewController/BouncyPageViewController.framework"
   install_framework "$BUILT_PRODUCTS_DIR/GTMSessionFetcher/GTMSessionFetcher.framework"
   install_framework "$BUILT_PRODUCTS_DIR/GoogleToolboxForMac/GoogleToolboxForMac.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/GuillotineMenu/GuillotineMenu.framework"
   install_framework "$BUILT_PRODUCTS_DIR/RAMAnimatedTabBarController/RAMAnimatedTabBarController.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/RBBAnimation/RBBAnimation.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SnapKit/SnapKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/moa/moa.framework"
 fi

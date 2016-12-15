@@ -9,12 +9,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>BouncyPageViewController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>GTMSessionFetcher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>GoogleToolboxForMac.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>GuillotineMenu.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -39,6 +49,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>RBBAnimation.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SnapKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -57,7 +72,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0EF0BDA5F482A092C0465B7372065660</key>
+		<key>073FEDD988A276234A3CBA11BD121AB0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,12 +92,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7707904462ABAA8D8FEA1E03C72F3CAA</key>
+		<key>36CF9E980954F1263E6C69DCF694F050</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BC5DB1C97378446FCE720A02B9EE368A</key>
+		<key>4FA779D56B822020B8AD298520EF92EE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7BDE4A0097B901ED452A26CD14A2C344</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>95F23E2CA64744EAD8DE0263F4024188</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -93,6 +118,11 @@
 			<true/>
 		</dict>
 		<key>C6DEFA22CCEEB5F1F1D43D157996301F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E5B7248F713D8453F4E8E1A596296223</key>
 		<dict>
 			<key>primary</key>
 			<true/>

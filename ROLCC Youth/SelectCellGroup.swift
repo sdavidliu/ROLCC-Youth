@@ -107,7 +107,7 @@ class SelectCellGroup: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController!.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Avenir-Light", size: 15)!]
+        //self.navigationController!.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Avenir-Light", size: 15)!]
         
         scrollView.delegate = self
         scrollView.auk.settings.placeholderImage = UIImage(named: "LOGO.png")

@@ -10,6 +10,14 @@
 		04209CE8E1180F4B150E1515 /* Pods_ROLCC_Youth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E8E3747AD261880A95E5E04 /* Pods_ROLCC_Youth.framework */; };
 		51B3C575B3C2E91C4502414D /* Pods_ROLCC_YouthTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F19E53C04EF78155790F0FB /* Pods_ROLCC_YouthTests.framework */; };
 		9807B9E214FDEB6D5DAD4883 /* Pods_ROLCC_YouthUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D7F33A117F4ED876C492C3 /* Pods_ROLCC_YouthUITests.framework */; };
+		E80797B51E00D83A00A16E72 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80797B41E00D83A00A16E72 /* MenuViewController.swift */; };
+		E81D3DDB1E00D99D00770E2B /* GuillotineMenuTransitionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81D3DDA1E00D99D00770E2B /* GuillotineMenuTransitionAnimation.swift */; };
+		E81D3DE11E00DBAD00770E2B /* ic_activity@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E81D3DDC1E00DBAD00770E2B /* ic_activity@3x.png */; };
+		E81D3DE21E00DBAD00770E2B /* ic_feed@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E81D3DDD1E00DBAD00770E2B /* ic_feed@3x.png */; };
+		E81D3DE31E00DBAD00770E2B /* ic_menuRotated@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E81D3DDE1E00DBAD00770E2B /* ic_menuRotated@3x.png */; };
+		E81D3DE41E00DBAD00770E2B /* ic_profile@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E81D3DDF1E00DBAD00770E2B /* ic_profile@3x.png */; };
+		E81D3DE51E00DBAD00770E2B /* ic_settings@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E81D3DE01E00DBAD00770E2B /* ic_settings@3x.png */; };
+		E81D3DE91E014B6800770E2B /* menubutton.png in Resources */ = {isa = PBXBuildFile; fileRef = E81D3DE81E014B6800770E2B /* menubutton.png */; };
 		E86AB0E71DFF39BD009E3076 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86AB0E61DFF39BD009E3076 /* AppDelegate.swift */; };
 		E86AB0E91DFF39BD009E3076 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86AB0E81DFF39BD009E3076 /* ViewController.swift */; };
 		E86AB0EC1DFF39BD009E3076 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E86AB0EA1DFF39BD009E3076 /* Main.storyboard */; };
@@ -83,7 +91,9 @@
 		E86AB1951DFF3A0E009E3076 /* SelectCellGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86AB17B1DFF3A0E009E3076 /* SelectCellGroup.swift */; };
 		E86AB1961DFF3A0E009E3076 /* SunnyvaleJH.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86AB17C1DFF3A0E009E3076 /* SunnyvaleJH.swift */; };
 		E86AB1971DFF3A0E009E3076 /* Videos.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86AB17D1DFF3A0E009E3076 /* Videos.swift */; };
+		E8751E131DFFCAD500327323 /* PageViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8751E121DFFCAD500327323 /* PageViewControllerPresenter.swift */; };
 		E8CB42881DFF3E79009D6791 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8CB42871DFF3E79009D6791 /* AdSupport.framework */; };
+		E8EB2D401E00CF5D00D55F2B /* jhlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = E8EB2D3F1E00CF5D00D55F2B /* jhlogo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +122,14 @@
 		802658D82055B099BFDB3BE8 /* Pods-ROLCC YouthTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ROLCC YouthTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ROLCC YouthTests/Pods-ROLCC YouthTests.release.xcconfig"; sourceTree = "<group>"; };
 		9314D8D2BF553CFDD4211A34 /* Pods-ROLCC YouthTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ROLCC YouthTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ROLCC YouthTests/Pods-ROLCC YouthTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A33F14E3FDEE138525953A42 /* Pods-ROLCC Youth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ROLCC Youth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ROLCC Youth/Pods-ROLCC Youth.debug.xcconfig"; sourceTree = "<group>"; };
+		E80797B41E00D83A00A16E72 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		E81D3DDA1E00D99D00770E2B /* GuillotineMenuTransitionAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuillotineMenuTransitionAnimation.swift; sourceTree = "<group>"; };
+		E81D3DDC1E00DBAD00770E2B /* ic_activity@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_activity@3x.png"; sourceTree = "<group>"; };
+		E81D3DDD1E00DBAD00770E2B /* ic_feed@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_feed@3x.png"; sourceTree = "<group>"; };
+		E81D3DDE1E00DBAD00770E2B /* ic_menuRotated@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_menuRotated@3x.png"; sourceTree = "<group>"; };
+		E81D3DDF1E00DBAD00770E2B /* ic_profile@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_profile@3x.png"; sourceTree = "<group>"; };
+		E81D3DE01E00DBAD00770E2B /* ic_settings@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_settings@3x.png"; sourceTree = "<group>"; };
+		E81D3DE81E014B6800770E2B /* menubutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menubutton.png; sourceTree = "<group>"; };
 		E86AB0E31DFF39BD009E3076 /* ROLCC Youth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ROLCC Youth.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E86AB0E61DFF39BD009E3076 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E86AB0E81DFF39BD009E3076 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -191,8 +209,10 @@
 		E86AB17B1DFF3A0E009E3076 /* SelectCellGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCellGroup.swift; sourceTree = "<group>"; };
 		E86AB17C1DFF3A0E009E3076 /* SunnyvaleJH.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SunnyvaleJH.swift; sourceTree = "<group>"; };
 		E86AB17D1DFF3A0E009E3076 /* Videos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Videos.swift; sourceTree = "<group>"; };
+		E8751E121DFFCAD500327323 /* PageViewControllerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewControllerPresenter.swift; sourceTree = "<group>"; };
 		E8CB42861DFF3DDC009D6791 /* ROLCC Youth.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ROLCC Youth.entitlements"; sourceTree = "<group>"; };
 		E8CB42871DFF3E79009D6791 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		E8EB2D3F1E00CF5D00D55F2B /* jhlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jhlogo.png; sourceTree = "<group>"; };
 		F630056E73607BF32BCA9752 /* Pods-ROLCC Youth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ROLCC Youth.release.xcconfig"; path = "Pods/Target Support Files/Pods-ROLCC Youth/Pods-ROLCC Youth.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -277,6 +297,9 @@
 				E8CB42861DFF3DDC009D6791 /* ROLCC Youth.entitlements */,
 				E86AB0E61DFF39BD009E3076 /* AppDelegate.swift */,
 				E86AB0E81DFF39BD009E3076 /* ViewController.swift */,
+				E8751E121DFFCAD500327323 /* PageViewControllerPresenter.swift */,
+				E80797B41E00D83A00A16E72 /* MenuViewController.swift */,
+				E81D3DDA1E00D99D00770E2B /* GuillotineMenuTransitionAnimation.swift */,
 				E86AB1641DFF3A0E009E3076 /* ArtistTableViewCell.swift */,
 				E86AB1651DFF3A0E009E3076 /* Berryessa.swift */,
 				E86AB1661DFF3A0E009E3076 /* Calendar.swift */,
@@ -325,6 +348,7 @@
 				E86AB1251DFF39E2009E3076 /* homeCover.jpg */,
 				E86AB1261DFF39E2009E3076 /* homeicon.png */,
 				E86AB1271DFF39E2009E3076 /* instagram.png */,
+				E8EB2D3F1E00CF5D00D55F2B /* jhlogo.png */,
 				E86AB1281DFF39E2009E3076 /* line.png */,
 				E86AB1291DFF39E2009E3076 /* LOGO.png */,
 				E86AB12A1DFF39E2009E3076 /* morganHill.png */,
@@ -345,6 +369,12 @@
 				E86AB1391DFF39E2009E3076 /* winter.png */,
 				E86AB13A1DFF39E2009E3076 /* wnw.jpg */,
 				E86AB13B1DFF39E2009E3076 /* youtube.png */,
+				E81D3DE81E014B6800770E2B /* menubutton.png */,
+				E81D3DDC1E00DBAD00770E2B /* ic_activity@3x.png */,
+				E81D3DDD1E00DBAD00770E2B /* ic_feed@3x.png */,
+				E81D3DDE1E00DBAD00770E2B /* ic_menuRotated@3x.png */,
+				E81D3DDF1E00DBAD00770E2B /* ic_profile@3x.png */,
+				E81D3DE01E00DBAD00770E2B /* ic_settings@3x.png */,
 				E86AB0EF1DFF39BD009E3076 /* LaunchScreen.storyboard */,
 				E86AB0F21DFF39BD009E3076 /* Info.plist */,
 			);
@@ -496,21 +526,26 @@
 				E86AB1571DFF39E2009E3076 /* sanCarlos.png in Resources */,
 				E86AB1631DFF39E2009E3076 /* youtube.png in Resources */,
 				E86AB1431DFF39E2009E3076 /* cupertinoJH.png in Resources */,
+				E81D3DE91E014B6800770E2B /* menubutton.png in Resources */,
 				E86AB1581DFF39E2009E3076 /* saratoga1.png in Resources */,
 				E86AB15B1DFF39E2009E3076 /* spring.png in Resources */,
+				E8EB2D401E00CF5D00D55F2B /* jhlogo.png in Resources */,
 				E86AB1421DFF39E2009E3076 /* cupertino2.png in Resources */,
 				E86AB15A1DFF39E2009E3076 /* saratogaJH.png in Resources */,
 				E86AB1531DFF39E2009E3076 /* paloAlto.png in Resources */,
 				E86AB13C1DFF39E2009E3076 /* berryessa.png in Resources */,
+				E81D3DE51E00DBAD00770E2B /* ic_settings@3x.png in Resources */,
 				E86AB15D1DFF39E2009E3076 /* summer.png in Resources */,
 				E86AB14B1DFF39E2009E3076 /* glorious.png in Resources */,
 				E86AB1551DFF39E2009E3076 /* sadface.png in Resources */,
 				E86AB1461DFF39E2009E3076 /* facebook.png in Resources */,
 				E86AB1411DFF39E2009E3076 /* cupertino1.png in Resources */,
 				E86AB1611DFF39E2009E3076 /* winter.png in Resources */,
+				E81D3DE11E00DBAD00770E2B /* ic_activity@3x.png in Resources */,
 				E86AB1511DFF39E2009E3076 /* LOGO.png in Resources */,
 				E86AB13D1DFF39E2009E3076 /* calendaricon.png in Resources */,
 				E86AB1621DFF39E2009E3076 /* wnw.jpg in Resources */,
+				E81D3DE31E00DBAD00770E2B /* ic_menuRotated@3x.png in Resources */,
 				E86AB1451DFF39E2009E3076 /* evergreen.png in Resources */,
 				E86AB1491DFF39E2009E3076 /* fremontB.png in Resources */,
 				E86AB13E1DFF39E2009E3076 /* cellleader.jpg in Resources */,
@@ -521,6 +556,7 @@
 				E86AB1401DFF39E2009E3076 /* cover.png in Resources */,
 				E86AB0F11DFF39BD009E3076 /* LaunchScreen.storyboard in Resources */,
 				E86AB14D1DFF39E2009E3076 /* homeCover.jpg in Resources */,
+				E81D3DE41E00DBAD00770E2B /* ic_profile@3x.png in Resources */,
 				E86AB1521DFF39E2009E3076 /* morganHill.png in Resources */,
 				E86AB13F1DFF39E2009E3076 /* contacticon.png in Resources */,
 				E86AB1481DFF39E2009E3076 /* fremontA.png in Resources */,
@@ -531,6 +567,7 @@
 				E86AB15E1DFF39E2009E3076 /* sunnyvaleJH.png in Resources */,
 				E86AB1441DFF39E2009E3076 /* divergent.jpeg in Resources */,
 				E86AB1601DFF39E2009E3076 /* videosicon.png in Resources */,
+				E81D3DE21E00DBAD00770E2B /* ic_feed@3x.png in Resources */,
 				E86AB0EC1DFF39BD009E3076 /* Main.storyboard in Resources */,
 				E86AB18B1DFF3A0E009E3076 /* GoogleService-Info.plist in Resources */,
 				E86AB1561DFF39E2009E3076 /* sadface2.png in Resources */,
@@ -701,10 +738,12 @@
 				E86AB1961DFF3A0E009E3076 /* SunnyvaleJH.swift in Sources */,
 				E86AB1871DFF3A0E009E3076 /* Evergreen.swift in Sources */,
 				E86AB17E1DFF3A0E009E3076 /* ArtistTableViewCell.swift in Sources */,
+				E8751E131DFFCAD500327323 /* PageViewControllerPresenter.swift in Sources */,
 				E86AB1951DFF3A0E009E3076 /* SelectCellGroup.swift in Sources */,
 				E86AB1911DFF3A0E009E3076 /* SanCarlos.swift in Sources */,
 				E86AB18F1DFF3A0E009E3076 /* PaloAltoJH.swift in Sources */,
 				E86AB1861DFF3A0E009E3076 /* DOFavoriteButton.swift in Sources */,
+				E80797B51E00D83A00A16E72 /* MenuViewController.swift in Sources */,
 				E86AB17F1DFF3A0E009E3076 /* Berryessa.swift in Sources */,
 				E86AB1941DFF3A0E009E3076 /* SaratogaJH.swift in Sources */,
 				E86AB1841DFF3A0E009E3076 /* Cupertino2.swift in Sources */,
@@ -713,6 +752,7 @@
 				E86AB1801DFF3A0E009E3076 /* Calendar.swift in Sources */,
 				E86AB1891DFF3A0E009E3076 /* FremontB.swift in Sources */,
 				E86AB1971DFF3A0E009E3076 /* Videos.swift in Sources */,
+				E81D3DDB1E00D99D00770E2B /* GuillotineMenuTransitionAnimation.swift in Sources */,
 				E86AB1881DFF3A0E009E3076 /* FremontA.swift in Sources */,
 				E86AB1831DFF3A0E009E3076 /* Cupertino1.swift in Sources */,
 				E86AB18E1DFF3A0E009E3076 /* PaloAlto.swift in Sources */,
@@ -880,7 +920,7 @@
 				CODE_SIGN_ENTITLEMENTS = "ROLCC Youth/ROLCC Youth.entitlements";
 				DEVELOPMENT_TEAM = 68RB738V9E;
 				INFOPLIST_FILE = "ROLCC Youth/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Dave-Joe.ROLCC-Youth";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -897,7 +937,7 @@
 				CODE_SIGN_ENTITLEMENTS = "ROLCC Youth/ROLCC Youth.entitlements";
 				DEVELOPMENT_TEAM = 68RB738V9E;
 				INFOPLIST_FILE = "ROLCC Youth/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Dave-Joe.ROLCC-Youth";
 				PRODUCT_NAME = "$(TARGET_NAME)";

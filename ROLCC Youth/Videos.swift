@@ -147,10 +147,7 @@ class Videos: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     //let firstDict = itemDict[0] as! NSDictionary
                     //print(firstDict.value(forKey: "contentDetails") as! NSArray)
                     desiredValuesDict.updateValue(((contentDict.value(forKey: "relatedPlaylists") as! NSArray).value(forKey: "uploads") as! AnyObject), forKey: "playlistID")
-                    
-                    print()
-                    let test = desiredValuesDict["playlistID"].debugDescription
-                    
+                                        
                     self.channelsDataArray.append(desiredValuesDict as NSDictionary)
                     
                     self.getVideosForChannelAtIndex(0)

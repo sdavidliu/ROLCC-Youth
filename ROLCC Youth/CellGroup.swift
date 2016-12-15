@@ -20,8 +20,8 @@ class CellGroup: UIPageViewController, UIPageViewControllerDelegate, UIPageViewC
         self.delegate = self
         self.dataSource = self
         
-        self.title = "Cell Group"
-        self.navigationController!.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Avenir-Light", size: 15)!]
+        //self.title = "Cell Group"
+        //self.navigationController!.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Avenir-Light", size: 15)!]
         
         let berryessaView = storyboard?.instantiateViewController(withIdentifier: "Berryessa") as! Berryessa
         let cupertino1View = storyboard?.instantiateViewController(withIdentifier: "Cupertino1") as! Cupertino1

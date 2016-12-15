@@ -1,6 +1,8 @@
 PODS:
   - Auk (7.0.1):
     - moa
+  - BouncyPageViewController (0.1.0):
+    - RBBAnimation (= 0.4.0)
   - Firebase (3.10.0):
     - Firebase/Core (= 3.10.0)
   - Firebase/Core (3.10.0):
@@ -34,20 +36,25 @@ PODS:
   - GoogleToolboxForMac/NSData+zlib (2.1.0):
     - GoogleToolboxForMac/Defines (= 2.1.0)
   - GTMSessionFetcher/Core (1.1.7)
+  - GuillotineMenu (3.0)
   - moa (8.0.2)
   - RAMAnimatedTabBarController (2.0.13)
+  - RBBAnimation (0.4.0)
   - SnapKit (3.0.2)
 
 DEPENDENCIES:
   - Auk (~> 7.0)
+  - BouncyPageViewController
   - Firebase
   - Firebase/Database
   - Firebase/Storage
+  - GuillotineMenu (~> 3.0)
   - RAMAnimatedTabBarController (~> 2.0.13)
   - SnapKit
 
 SPEC CHECKSUMS:
   Auk: 6f8c4e93427d0d02641263776dd3b66ae4050903
+  BouncyPageViewController: e62e46c88a200e1c8baf10fe1f0294fbddd75bc7
   Firebase: 387f37c7dca894a02708da9ff35ba147040eae9e
   FirebaseAnalytics: 9c67af0ebeb8d2146c9b4ea2616439affa947b58
   FirebaseCore: 1e383fdfe37b6b5d6ff88e84204bdee30276af0f
@@ -58,10 +65,12 @@ SPEC CHECKSUMS:
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
   GTMSessionFetcher: a1f8ed39e4fe21c68957daed472c7afbcdf29166
+  GuillotineMenu: 611ccb58ae092f2d929535377570ef25a7b5bc63
   moa: 73d2dd56fe838a31e255c64b7873d2c2fbc71076
   RAMAnimatedTabBarController: 2510f3b66954c3f77ea1042a35d34df8f5f3b604
+  RBBAnimation: 4b2d66f6d993febce63cd564da934985313b9c59
   SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
 
-PODFILE CHECKSUM: 7157a5d272a646e8619e6717a04760d070015e0f
+PODFILE CHECKSUM: ca5b880dd17c6379ff01dafd9fddc163d4b2542f
 
 COCOAPODS: 1.1.1
