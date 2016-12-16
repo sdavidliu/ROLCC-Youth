@@ -59,23 +59,49 @@ class MenuViewController: UIViewController, GuillotineMenu {
     }
     
     @IBAction func eventsTapped(_ sender: UIButton) {
-        let menuViewController = storyboard!.instantiateViewController(withIdentifier: "EventsViewController")
-        present(menuViewController, animated: true, completion: nil)
+        let defaults = UserDefaults.standard
+        if (defaults.string(forKey: "layer") == "events"){
+            presentingViewController!.dismiss(animated: true, completion: nil)
+        }else{
+            defaults.set("events", forKey: "layer")
+            defaults.synchronize()
+            print()
+            let menuViewController = storyboard!.instantiateViewController(withIdentifier: "EventsViewController")
+            present(menuViewController, animated: true, completion: nil)
+        }
     }
     
     @IBAction func cellGroupTapped(_ sender: UIButton) {
-        let menuViewController = storyboard!.instantiateViewController(withIdentifier: "CellGroupViewController")
-        present(menuViewController, animated: true, completion: nil)
+        let defaults = UserDefaults.standard
+        if (defaults.string(forKey: "layer") == "cellgroup"){
+            presentingViewController!.dismiss(animated: true, completion: nil)
+        }else{
+            defaults.set("cellgroup", forKey: "layer")
+            defaults.synchronize()
+            let menuViewController = storyboard!.instantiateViewController(withIdentifier: "CellGroupViewController")
+            present(menuViewController, animated: true, completion: nil)
+        }
     }
     
     @IBAction func videosTapped(_ sender: UIButton) {
-        let menuViewController = storyboard!.instantiateViewController(withIdentifier: "VideosViewController")
-        present(menuViewController, animated: true, completion: nil)
+        let defaults = UserDefaults.standard
+        if (defaults.string(forKey: "layer") == "videos"){
+            presentingViewController!.dismiss(animated: true, completion: nil)
+        }else{
+            defaults.set("videos", forKey: "layer")
+            defaults.synchronize()
+            let menuViewController = storyboard!.instantiateViewController(withIdentifier: "VideosViewController")
+            present(menuViewController, animated: true, completion: nil)
+        }
     }
     
-    @IBAction func contactTapped(_ sender: UIButton) {
-        let menuViewController = storyboard!.instantiateViewController(withIdentifier: "ContactViewController")
-        present(menuViewController, animated: true, completion: nil)
+    @IBAction func homeTapped(_ sender: UIButton) {
+        let defaults = UserDefaults.standard
+        if (defaults.string(forKey: "layer") != "home"){
+            self.presentingViewController!.presentingViewController!.presentingViewController!.dismiss(animated: true, completion: {})
+        }else{
+            presentingViewController!.dismiss(animated: true, completion: nil)
+        }
     }
     
     @IBAction func menuButtonTapped(_ sender: UIButton) {
@@ -94,6 +120,7 @@ extension MenuViewController: GuillotineAnimationDelegate {
     }
     func animatorDidFinishDismissal(_ animator: GuillotineTransitionAnimation) {
         print("menuDidFinishDismissal")
+        self.dismiss(animated: true, completion: nil)
     }
     
     func animatorWillStartPresentation(_ animator: GuillotineTransitionAnimation) {

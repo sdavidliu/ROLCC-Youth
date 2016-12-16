@@ -128,6 +128,7 @@ final class PageViewControllerPresenter: NSObject {
         pageViewController.heartRateLabel.text = index % 2 == 0 ? "9:45am" : "11:15am"
         return pageViewController
     }
+    
 }
 
 extension PageViewControllerPresenter: UIViewControllerTransitioningDelegate {

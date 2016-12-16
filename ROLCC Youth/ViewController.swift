@@ -65,9 +65,19 @@ class ViewController: UIViewController {
         present(menuViewController, animated: true, completion: nil)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        let defaults = UserDefaults.standard
+        defaults.set("home", forKey: "layer")
+        defaults.synchronize()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func unwindToMainMenu(segue: UIStoryboardSegue) {
+        
     }
     
 }

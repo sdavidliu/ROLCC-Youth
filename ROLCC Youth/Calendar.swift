@@ -23,6 +23,7 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
     var imagesURL = [URL]()
     var finalImages = [UIImage?]()
     var imagesDone = false
+    fileprivate lazy var presentationAnimator = GuillotineTransitionAnimation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +33,9 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
         let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 64))
         let navigationItem = UINavigationItem()
         navigationItem.title = "Events"
-        navBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Avenir-Light", size: 15.0)!];
+        navBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Avenir-Light", size: 15.0)!]
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named:"menubutton.png"), style: .plain, target: nil, action: #selector(showMenu))
+        navigationItem.leftBarButtonItem?.tintColor = UIColor.gray
         navBar.items = [navigationItem]
         self.view.addSubview(navBar)
         
@@ -102,6 +105,15 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
         
     }
     
+    func showMenu(){
+        let menuViewController = storyboard!.instantiateViewController(withIdentifier: "MenuViewController")
+        menuViewController.modalPresentationStyle = .custom
+        menuViewController.transitioningDelegate = self
+        
+        presentationAnimator.animationDelegate = menuViewController as? GuillotineAnimationDelegate
+        //presentationAnimator.supportView = navigationController!.navigationBar
+        present(menuViewController, animated: true, completion: nil)
+    }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if let imageIndex = scrollView.auk.currentPageIndex{
@@ -229,6 +241,19 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+}
+
+extension Calendar: UIViewControllerTransitioningDelegate {
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        presentationAnimator.mode = .presentation
+        return presentationAnimator
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        presentationAnimator.mode = .dismissal
+        return presentationAnimator
     }
 }
 

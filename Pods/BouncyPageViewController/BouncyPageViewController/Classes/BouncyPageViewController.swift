@@ -313,4 +313,5 @@ public class BouncyPageViewController: UIViewController, UIScrollViewDelegate {
     private func maxNumberOfPages() -> Int {
         return self.numberOfVisiblePages() + 2
     }
+    
 }

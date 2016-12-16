@@ -10,6 +10,7 @@ import UIKit
 
 class SelectCellGroup: UIViewController, UIScrollViewDelegate {
     
+    fileprivate lazy var presentationAnimator = GuillotineTransitionAnimation()
     var modelName: String {
         var systemInfo = utsname()
         uname(&systemInfo)
@@ -107,7 +108,14 @@ class SelectCellGroup: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //self.navigationController!.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Avenir-Light", size: 15)!]
+        let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 64))
+        let navigationItem = UINavigationItem()
+        navigationItem.title = "Cell Group"
+        navBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Avenir-Light", size: 15.0)!]
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named:"menubutton.png"), style: .plain, target: nil, action: #selector(showMenu))
+        navigationItem.leftBarButtonItem?.tintColor = UIColor.gray
+        navBar.items = [navigationItem]
+        self.view.addSubview(navBar)
         
         scrollView.delegate = self
         scrollView.auk.settings.placeholderImage = UIImage(named: "LOGO.png")
@@ -245,6 +253,15 @@ class SelectCellGroup: UIViewController, UIScrollViewDelegate {
             sunnyvaleJHToSaratogaJH.constant = 5
         }
         
+    }
+    
+    func showMenu(){
+        let menuViewController = storyboard!.instantiateViewController(withIdentifier: "MenuViewController")
+        menuViewController.modalPresentationStyle = .custom
+        menuViewController.transitioningDelegate = self
+        
+        presentationAnimator.animationDelegate = menuViewController as? GuillotineAnimationDelegate
+        present(menuViewController, animated: true, completion: nil)
     }
     
     func berryessaAction(_ sender: UIButton!) {
@@ -834,4 +851,17 @@ class SelectCellGroup: UIViewController, UIScrollViewDelegate {
     }
     */
 
+}
+
+extension SelectCellGroup: UIViewControllerTransitioningDelegate {
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        presentationAnimator.mode = .presentation
+        return presentationAnimator
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        presentationAnimator.mode = .dismissal
+        return presentationAnimator
+    }
 }

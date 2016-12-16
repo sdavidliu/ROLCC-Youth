@@ -20,6 +20,7 @@ class Videos: UIViewController, UITableViewDelegate, UITableViewDataSource {
     //var videosArray: [NSDictionary] = []
     var channelIndex = 0
     var selectedVideoIndex: Int!
+    fileprivate lazy var presentationAnimator = GuillotineTransitionAnimation()
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -29,7 +30,9 @@ class Videos: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 64))
         let navigationItem = UINavigationItem()
         navigationItem.title = "Latest Videos"
-        navBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Avenir-Light", size: 15.0)!];
+        navBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Avenir-Light", size: 15.0)!]
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named:"menubutton.png"), style: .plain, target: nil, action: #selector(showMenu))
+        navigationItem.leftBarButtonItem?.tintColor = UIColor.gray
         navBar.items = [navigationItem]
         self.view.addSubview(navBar)
         
@@ -60,6 +63,15 @@ class Videos: UIViewController, UITableViewDelegate, UITableViewDataSource {
             errorMessage.center = CGPoint(x: screenWidth/2, y: screenHeight/2 + 40)
             self.view.addSubview(errorMessage)
         }
+    }
+    
+    func showMenu(){
+        let menuViewController = storyboard!.instantiateViewController(withIdentifier: "MenuViewController")
+        menuViewController.modalPresentationStyle = .custom
+        menuViewController.transitioningDelegate = self
+        
+        presentationAnimator.animationDelegate = menuViewController as? GuillotineAnimationDelegate
+        present(menuViewController, animated: true, completion: nil)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -313,4 +325,17 @@ class Videos: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     */
 
+}
+
+extension Videos: UIViewControllerTransitioningDelegate {
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        presentationAnimator.mode = .presentation
+        return presentationAnimator
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        presentationAnimator.mode = .dismissal
+        return presentationAnimator
+    }
 }
