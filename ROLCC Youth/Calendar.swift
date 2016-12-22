@@ -9,6 +9,8 @@
 import UIKit
 import Firebase
 import Auk
+import CNPPopupController
+import NVActivityIndicatorView
 
 class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource {
     
@@ -24,6 +26,7 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
     var finalImages = [UIImage?]()
     var imagesDone = false
     fileprivate lazy var presentationAnimator = GuillotineTransitionAnimation()
+    var popupController:CNPPopupController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +53,11 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
             loading.enableIndeterminate()
             self.view.addSubview(loading)
             self.view.sendSubview(toBack: loading)*/
+            
+            let activityIndicatorView = NVActivityIndicatorView(frame: CGRect(x: screenWidth/2-25, y: 175, width: 50, height: 50), type: NVActivityIndicatorType.ballBeat)
+            activityIndicatorView.startAnimating()
+            self.view.addSubview(activityIndicatorView)
+            self.view.sendSubview(toBack: activityIndicatorView)
             
             scrollView.delegate = self
             scrollView.auk.settings.placeholderImage = UIImage(named: "LOGO.png")
@@ -227,11 +235,13 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
                 details.append(part)
             }
             
+            self.showPopupWithStyle(title: self.events[row], date: details[0], time: details[1], location: details[2], description: details[3])
+            /*
             let alertController = UIAlertController(title: self.events[row], message:
                 "Date: " + details[0] + "\nTime: " + details[1] + "\nLocation: " + details[2] + "\nDescription: " + details[3], preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
             
-            self.present(alertController, animated: true, completion: nil)
+            self.present(alertController, animated: true, completion: nil)*/
             
         }, withCancel: {
             (error:Error) -> Void in
@@ -239,12 +249,66 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
         })
     }
     
+    func showPopupWithStyle(title: String, date: String, time: String, location: String, description: String) {
+        
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineBreakMode = NSLineBreakMode.byWordWrapping
+        paragraphStyle.alignment = NSTextAlignment.center
+                
+        let title = NSAttributedString(string: title, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 28), NSForegroundColorAttributeName: UIColor.init(colorLiteralRed: 0.46, green: 0.8, blue: 1.0, alpha: 1.0), NSParagraphStyleAttributeName: paragraphStyle])
+        let lineOne = NSAttributedString(string: "Date: \(date)\nTime: \(time)\nLocation: \(location)", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16), NSParagraphStyleAttributeName: paragraphStyle])
+        let lineTwo = NSAttributedString(string: description, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 14), NSParagraphStyleAttributeName: paragraphStyle])
+        
+        let button = CNPPopupButton.init(frame: CGRect(x: 0, y: 0, width: 200, height: 60))
+        button.setTitleColor(UIColor.white, for: UIControlState())
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        button.setTitle("Done", for: UIControlState())
+        
+        button.backgroundColor = UIColor.init(colorLiteralRed: 0.46, green: 0.8, blue: 1.0, alpha: 1.0)
+        
+        button.layer.cornerRadius = 4;
+        button.selectionHandler = { (button) -> Void in
+            self.popupController?.dismiss(animated: true)
+            //print("Block for button: \(button.titleLabel?.text)")
+        }
+        
+        let titleLabel = UILabel()
+        titleLabel.numberOfLines = 0;
+        titleLabel.attributedText = title
+        
+        let lineOneLabel = UILabel()
+        lineOneLabel.numberOfLines = 0;
+        lineOneLabel.attributedText = lineOne;
+        
+        //let imageView = UIImageView.init(image: UIImage.init(named: "icon"))
+        
+        let lineTwoLabel = UILabel()
+        lineTwoLabel.numberOfLines = 0;
+        lineTwoLabel.attributedText = lineTwo;
+        
+        //let customView = UIView.init(frame: CGRect(x: 0, y: 0, width: 250, height: 55))
+        //customView.backgroundColor = UIColor.lightGray
+        
+        let popupController = CNPPopupController(contents:[titleLabel, lineOneLabel, lineTwoLabel, button])
+        popupController.theme = CNPPopupTheme.default()
+        popupController.theme.popupStyle = CNPPopupStyle.centered
+        popupController.delegate = self
+        self.popupController = popupController
+        popupController.present(animated: true)
+        
+        
+    }
+    
+    @IBAction func unwindToEvents(segue: UIStoryboardSegue) {
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 }
 
-extension Calendar: UIViewControllerTransitioningDelegate {
+extension Calendar: UIViewControllerTransitioningDelegate, CNPPopupControllerDelegate {
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         presentationAnimator.mode = .presentation
@@ -254,6 +318,14 @@ extension Calendar: UIViewControllerTransitioningDelegate {
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         presentationAnimator.mode = .dismissal
         return presentationAnimator
+    }
+    
+    func popupControllerWillDismiss(_ controller: CNPPopupController) {
+        //print("Popup controller will be dismissed")
+    }
+    
+    func popupControllerDidPresent(_ controller: CNPPopupController) {
+        //print("Popup controller presented")
     }
 }
 

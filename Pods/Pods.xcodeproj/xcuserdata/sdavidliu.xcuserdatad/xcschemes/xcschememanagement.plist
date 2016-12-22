@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>CNPPopupController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>GTMSessionFetcher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -25,6 +30,11 @@
 			<false/>
 		</dict>
 		<key>GuillotineMenu.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>NVActivityIndicatorView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -59,6 +69,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>expanding-collection.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>moa.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -68,6 +83,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>00103D6C821BE85971C563025527BA5D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>056B4ACA8C80850FFC348D7A9481D092</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,12 +112,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>36CF9E980954F1263E6C69DCF694F050</key>
+		<key>3EDFE4052B5DE7D509935AC0774CB135</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4FA779D56B822020B8AD298520EF92EE</key>
+		<key>45CADA83862F76C648BAEE47F5DA22AD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4C67514EA7D98658F641516ED8328206</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -107,7 +132,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>7F210683518EFEBA626B8E82B5B7674E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>95F23E2CA64744EAD8DE0263F4024188</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9D091B448E171FC14014B6B796F8BAC3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -118,11 +153,6 @@
 			<true/>
 		</dict>
 		<key>C6DEFA22CCEEB5F1F1D43D157996301F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E5B7248F713D8453F4E8E1A596296223</key>
 		<dict>
 			<key>primary</key>
 			<true/>

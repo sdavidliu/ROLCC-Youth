@@ -16,6 +16,9 @@ class MenuViewController: UIViewController, GuillotineMenu {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print(MyVariables.pages)
+        print(MyVariables.layer)
+        
         dismissButton = {
             let button = UIButton(frame: .zero)
             button.setImage(UIImage(named: "ic_menu"), for: .normal)
@@ -59,7 +62,9 @@ class MenuViewController: UIViewController, GuillotineMenu {
     }
     
     @IBAction func eventsTapped(_ sender: UIButton) {
+        /*
         let defaults = UserDefaults.standard
+        MyVariables.layer = "events"
         if (defaults.string(forKey: "layer") == "events"){
             presentingViewController!.dismiss(animated: true, completion: nil)
         }else{
@@ -68,10 +73,18 @@ class MenuViewController: UIViewController, GuillotineMenu {
             print()
             let menuViewController = storyboard!.instantiateViewController(withIdentifier: "EventsViewController")
             present(menuViewController, animated: true, completion: nil)
+        }*/
+        if (MyVariables.layer == "events"){
+            presentingViewController!.dismiss(animated: true, completion: nil)
+        }else{
+            MyVariables.layer = "events"
+            let menuViewController = storyboard!.instantiateViewController(withIdentifier: "EventsViewController")
+            present(menuViewController, animated: true, completion: nil)
         }
     }
     
     @IBAction func cellGroupTapped(_ sender: UIButton) {
+        /*
         let defaults = UserDefaults.standard
         if (defaults.string(forKey: "layer") == "cellgroup"){
             presentingViewController!.dismiss(animated: true, completion: nil)
@@ -80,32 +93,24 @@ class MenuViewController: UIViewController, GuillotineMenu {
             defaults.synchronize()
             let menuViewController = storyboard!.instantiateViewController(withIdentifier: "CellGroupViewController")
             present(menuViewController, animated: true, completion: nil)
-        }
-    }
-    
-    @IBAction func videosTapped(_ sender: UIButton) {
-        let defaults = UserDefaults.standard
-        if (defaults.string(forKey: "layer") == "videos"){
+        }*/
+        if (MyVariables.layer == "cellgroup"){
             presentingViewController!.dismiss(animated: true, completion: nil)
         }else{
-            defaults.set("videos", forKey: "layer")
-            defaults.synchronize()
-            let menuViewController = storyboard!.instantiateViewController(withIdentifier: "VideosViewController")
+            MyVariables.layer = "cellgroup"
+            let menuViewController = storyboard!.instantiateViewController(withIdentifier: "DemoViewController")
             present(menuViewController, animated: true, completion: nil)
         }
     }
     
-    @IBAction func homeTapped(_ sender: UIButton) {
-        let defaults = UserDefaults.standard
-        if (defaults.string(forKey: "layer") != "home"){
-            self.presentingViewController!.presentingViewController!.presentingViewController!.dismiss(animated: true, completion: {})
-        }else{
+    @IBAction func videosTapped(_ sender: UIButton) {
+        if (MyVariables.layer == "videos"){
             presentingViewController!.dismiss(animated: true, completion: nil)
+        }else{
+            MyVariables.layer = "videos"
+            let menuViewController = storyboard!.instantiateViewController(withIdentifier: "VideosViewController")
+            present(menuViewController, animated: true, completion: nil)
         }
-    }
-    
-    @IBAction func menuButtonTapped(_ sender: UIButton) {
-        presentingViewController!.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func closeMenu(_ sender: UIButton) {

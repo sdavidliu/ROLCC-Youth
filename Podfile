@@ -14,6 +14,9 @@ target 'ROLCC Youth' do
   pod 'Auk', '~> 7.0'
   pod ‘BouncyPageViewController’
   pod 'GuillotineMenu', '~> 3.0'
+  pod 'CNPPopupController'
+  pod 'NVActivityIndicatorView'
+  pod 'expanding-collection', '~> 1.0.3'
 
   target 'ROLCC YouthTests' do
     inherit! :search_paths

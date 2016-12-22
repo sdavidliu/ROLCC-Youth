@@ -834,6 +834,10 @@ class SelectCellGroup: UIViewController, UIScrollViewDelegate {
         }
         scrollView.auk.startAutoScroll(delaySeconds: 4.0)
     }
+    
+    @IBAction func unwindToCellGroup(segue: UIStoryboardSegue) {
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

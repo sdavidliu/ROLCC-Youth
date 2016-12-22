@@ -14,6 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var pagesPresenter: PageViewControllerPresenter!
+    struct Database {
+        static var cellGroups = Dictionary<String,Dictionary<String,String>>()
+        static var test = [String]()
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -23,6 +27,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         pageControl.currentPageIndicatorTintColor = UIColor.black
         pageControl.backgroundColor = UIColor.white
         FIRApp.configure()
+        
+        let ref = FIRDatabase.database().reference()
+        ref.observe(.value, with: { snapshot in
+            
+            let s = (snapshot.value! as AnyObject).object(forKey: "Cell Groups")! as! Dictionary<String,Dictionary<String,String>>
+            Database.cellGroups = s
+            
+            
+        }, withCancel: {
+            (error:Error) -> Void in
+            print(error.localizedDescription)
+        })
         
         self.pagesPresenter = PageViewControllerPresenter(window: window!)
         

@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import BouncyPageViewController
 import RAMAnimatedTabBarController
+import Firebase
 
 final class PageViewControllerPresenter: NSObject {
     final var pagesQueue = [UIViewController]()
@@ -35,24 +36,6 @@ final class PageViewControllerPresenter: NSObject {
         window.rootViewController = navigationController
     }
     
-    func showMenu(sender: UIBarButtonItem){
-        
-        print("hi")
-        //let menuViewController = storyboard!.instantiateViewController(withIdentifier: "MenuViewController")
-        let menuViewController = UIStoryboard(name: "main", bundle: nil).instantiateViewController(withIdentifier: "MenuViewController")
-        menuViewController.modalPresentationStyle = .custom
-        menuViewController.transitioningDelegate = self
-        
-        print("hello")
-        
-        presentationAnimator.animationDelegate = menuViewController as? GuillotineAnimationDelegate
-        //presentationAnimator.supportView = navigationController!.navigationBar
-        presentationAnimator.supportView = pageViewController.navigationController?.navigationBar
-        //presentationAnimator.presentButton = sender
-        //present(menuViewController, animated: true, completion: nil)
-        menuViewController.present(menuViewController, animated: true, completion: nil)
-    }
-    
     func pageViewControllerDidScroll(pageViewController: BouncyPageViewController, offset: CGFloat, progress: CGFloat) {
         for vc in pageViewController.visibleControllers() {
             let vc = (vc as! ViewController)
@@ -60,7 +43,6 @@ final class PageViewControllerPresenter: NSObject {
             
         }
         let firstVC = pageViewController.childViewControllers.first as! ViewController
-        let color = firstVC.tintColor
         //pageViewController.navigationItem.leftBarButtonItem!.tintColor = color
         //pageViewController.navigationItem.rightBarButtonItem!.tintColor = color
     }
@@ -112,20 +94,41 @@ final class PageViewControllerPresenter: NSObject {
         let firstColor = UIColor.white
         let secondColor = UIColor(red:78/255, green:178/255, blue:231/255, alpha:1.00)
         pageViewController.tintColor = index % 2 == 0 ?  secondColor : firstColor
-        /*
-        if index % 2 == 0{
-            pageViewController.menuButton.setImage(UIImage(named: "ic_menuRotated.png@3x.png"), for: .normal)
-        }else{
-            let origImage = UIImage(named: "ic_menuRotated.png@3x.png");
-            let tintedImage = origImage?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
-            pageViewController.menuButton.setImage(tintedImage, for: .normal)
-            pageViewController.menuButton.tintColor = UIColor(red:78/255, green:178/255, blue:231/255, alpha:1.00)
-            //pageViewController.menuButton.setImage(UIImage(named: "ic_menuRotated.png@3x"), for: .normal)
-        }*/
         pageViewController.view.backgroundColor = index % 2 == 0 ? firstColor : secondColor
         pageViewController.imageLogo.image = index % 2 == 0 ? UIImage(named: "LOGO.png") : UIImage(named: "jhlogo.png")
         pageViewController.dayLabel.text = index % 2 == 0 ? "Youth" : "Junior High"
         pageViewController.heartRateLabel.text = index % 2 == 0 ? "9:45am" : "11:15am"
+        //This only worked for the two function
+        /*
+        if (index % 2 == 0){
+            pageViewController.moreInfoButton.addTarget(pageViewController, action: #selector(pageViewController.one), for: .touchUpInside)
+        }else{
+            pageViewController.moreInfoButton.addTarget(pageViewController, action: #selector(pageViewController.two), for: .touchUpInside)
+        }*/
+        var array = [String]()
+        let ref = FIRDatabase.database().reference()
+        ref.observe(.value, with: { snapshot in
+            
+            let s = (snapshot.value! as AnyObject).object(forKey: "home")! as! String
+            
+            let Str = s.components(separatedBy: ",")
+            
+            for part in Str {
+                array.append(part)
+            }
+            
+            if (index % 2 == 0){
+                pageViewController.moreInfoButton.setTitle("SERMON: " + array[0].uppercased(), for: .normal)
+                pageViewController.settingsButton.setTitle("WORSHIP: " + array[1].uppercased(), for: .normal)
+            }else{
+                pageViewController.moreInfoButton.setTitle("SERMON: " + array[2].uppercased(), for: .normal)
+                pageViewController.settingsButton.setTitle("WORSHIP: " + array[3].uppercased(), for: .normal)
+            }
+            
+        }, withCancel: {
+            (error:Error) -> Void in
+            print(error.localizedDescription)
+        })
         return pageViewController
     }
     

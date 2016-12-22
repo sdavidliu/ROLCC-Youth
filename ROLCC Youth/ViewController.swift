@@ -6,6 +6,12 @@
 //  Copyright (c) 2016 Bohdan Orlov. All rights reserved.
 //
 
+/*
+ To Do:
+ - Change defaults to MyVariables
+ - 
+ */
+
 import UIKit
 
 class ViewController: UIViewController {
@@ -41,6 +47,7 @@ class ViewController: UIViewController {
         let tintedImage = origImage?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         menuButton.setImage(tintedImage, for: .normal)
         menuButton.tintColor = self.tintColor
+        print("HELLO")
     }
     
     @IBAction func showMenuAction(_ sender: UIButton) {
@@ -65,15 +72,17 @@ class ViewController: UIViewController {
         present(menuViewController, animated: true, completion: nil)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        let defaults = UserDefaults.standard
-        defaults.set("home", forKey: "layer")
-        defaults.synchronize()
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func one(){
+        print("one")
+    }
+    
+    func two(){
+        print("two")
     }
     
     @IBAction func unwindToMainMenu(segue: UIStoryboardSegue) {
