@@ -66,27 +66,10 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
             scrollView.auk.settings.showsHorizontalScrollIndicator = true
             scrollView.auk.settings.contentMode = .scaleAspectFill
             
-            let ref = FIRDatabase.database().reference()
-            ref.observe(.value, with: { snapshot in
-                
-                let s = (snapshot.value! as AnyObject).object(forKey: "events")! as! String
-                
-                let Str = s.components(separatedBy: ",")
-                
-                for part in Str {
-                    self.events.append(part)
-                }
-                
-                self.imageLabel.text = self.events[0]
-                
-                self.tableView.reloadData()
-                
-                self.finalImages = [UIImage?](repeating: nil, count: self.events.count)
-                
-            }, withCancel: {
-                (error:Error) -> Void in
-                print(error.localizedDescription)
-            })
+            events = AppDelegate.Database.eventsName.components(separatedBy: ",")
+            imageLabel.text = events[0]
+            //tableView.reloadData()
+            finalImages = [UIImage?](repeating: nil, count: events.count)
             
             tableView.backgroundColor = UIColor.clear
             tableView.separatorColor = UIColor.white
@@ -146,65 +129,51 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
         
         let row = indexPath.row
         
-        var details = [String]()
-        let ref = FIRDatabase.database().reference()
-        ref.observe(.value, with: { snapshot in
+        let detailsStr = AppDelegate.Database.eventsDict[events[row]]
+        let details = detailsStr?.components(separatedBy: ",")
+        let date = details?[0]
+        let monthIndex = date?.characters.index((date?.startIndex)!, offsetBy: 3)
+        let month = date?.substring(to: monthIndex!)
+        let startIndex = date?.index((date?.endIndex)!, offsetBy: -4)
+        let endIndex = date?.index((date?.endIndex)!, offsetBy: -3)
+        var day = date?[startIndex!...endIndex!]
+        if ((day?.substring(to: (day?.characters.index((day?.startIndex)!, offsetBy: 1))!))! == " "){
+            day = "0" + (day?.substring(from: (day?.characters.index((day?.endIndex)!, offsetBy: -1))!))!
+        }
+
+        cell.dateLabel.text = month! + "\n" + day!
+        
+        if (self.imagesDone == false){
             
-            let s = (snapshot.value! as AnyObject).object(forKey: self.events[row])! as! String
+            let url = URL(string: (details?[4])!)
+            self.imagesURL.append(url!)
             
-            let Str = s.components(separatedBy: ",")
-            
-            for part in Str {
-                details.append(part)
-            }
-            
-            let date = details[0]
-            let monthIndex = date.characters.index(date.startIndex, offsetBy: 3)
-            let month = date.substring(to: monthIndex)
-            let dayRange = date.characters.index(date.endIndex, offsetBy: -4)..<date.characters.index(date.endIndex, offsetBy: -2)
-            var day = date.substring(with: dayRange)
-            if (day.substring(to: day.characters.index(day.startIndex, offsetBy: 1)) == " "){
-                day = "0" + day.substring(from: day.characters.index(day.endIndex, offsetBy: -1))
-            }
-            
-            cell.dateLabel.text = month + "\n" + day
-            
-            if (self.imagesDone == false){
-            
-                let url = URL(string: details[4])
-                self.imagesURL.append(url!)            
-                
-                URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
-                    if error != nil {
-                        //print(error)
-                        return
+            URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
+                if error != nil {
+                    //print(error)
+                    return
+                }
+                DispatchQueue.main.async(execute: {
+                    let test = UIImage(data: data!)
+                    self.finalImages[row] = test
+                    var allImages = false
+                    for i in 0..<self.finalImages.count{
+                        if (self.finalImages[i] == nil){
+                            break
+                        }else if (i == self.finalImages.count - 1){
+                            allImages = true
+                        }
                     }
-                    DispatchQueue.main.async(execute: {
-                        let test = UIImage(data: data!)
-                        self.finalImages[row] = test
-                        var allImages = false
-                        for i in 0..<self.finalImages.count{
-                            if (self.finalImages[i] == nil){
-                                break
-                            }else if (i == self.finalImages.count - 1){
-                                allImages = true
-                            }
+                    if (allImages == true){
+                        for i in self.finalImages{
+                            self.scrollView.auk.show(image: i!)
+                            self.scrollView.auk.startAutoScroll(delaySeconds: 5)
                         }
-                        if (allImages == true){
-                            for i in self.finalImages{
-                                self.scrollView.auk.show(image: i!)
-                                self.scrollView.auk.startAutoScroll(delaySeconds: 5)
-                            }
-                            self.imagesDone = true
-                        }
-                    })
-                }).resume()
-            }
-            
-        }, withCancel: {
-            (error:Error) -> Void in
-            print(error.localizedDescription)
-        })
+                        self.imagesDone = true
+                    }
+                })
+            }).resume()
+        }
         
         cell.eventLabel.text = events[indexPath.row]
         
@@ -223,30 +192,11 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
         
         let row = indexPath.row
         
-        var details = [String]()
-        let ref = FIRDatabase.database().reference()
-        ref.observe(.value, with: { snapshot in
+        let detailsStr = AppDelegate.Database.eventsDict[events[row]]
+        let details = detailsStr?.components(separatedBy: ",")
             
-            let s = (snapshot.value! as AnyObject).object(forKey: self.events[row])! as! String
+        self.showPopupWithStyle(title: self.events[row], date: (details?[0])!, time: (details?[1])!, location: (details?[2])!, description: (details?[3])!)
             
-            let Str = s.components(separatedBy: ",")
-            
-            for part in Str {
-                details.append(part)
-            }
-            
-            self.showPopupWithStyle(title: self.events[row], date: details[0], time: details[1], location: details[2], description: details[3])
-            /*
-            let alertController = UIAlertController(title: self.events[row], message:
-                "Date: " + details[0] + "\nTime: " + details[1] + "\nLocation: " + details[2] + "\nDescription: " + details[3], preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
-            
-            self.present(alertController, animated: true, completion: nil)*/
-            
-        }, withCancel: {
-            (error:Error) -> Void in
-            print(error.localizedDescription)
-        })
     }
     
     func showPopupWithStyle(title: String, date: String, time: String, location: String, description: String) {

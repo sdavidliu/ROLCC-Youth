@@ -8,18 +8,15 @@
 
 /*
  To Do:
- - Change up cell group images
  - Change up cell leader pictures
  - MCM Header Animated
- - Reachability
- - Contact page errors
- - Podcast tableview
- - Delete all the cell group files
+ - Doesn't work when connected to cellular data (Reachability.swift)
+ - Podcast tableview cell
  - Delete all unessasary images
- - Decrease the sizes of some images
  - Delete unessasary comments
  - Get rid of unessasary pods
  - Fix weird bug after opening up videos
+ - Check with iPhone 7
  */
 
 import UIKit

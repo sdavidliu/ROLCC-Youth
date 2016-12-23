@@ -51,7 +51,7 @@ class PodcastPlayer: UIViewController, JukeboxDelegate {
             imageView.image = UIImage(named: "sermon.jpg")
         }
         
-        let rewindImage = UIImage(named: "rewindbutton.png");
+        let rewindImage = UIImage(named: "replaybutton.png");
         let rewindTinted = rewindImage?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         replayButton.setImage(rewindTinted, for: .normal)
         replayButton.tintColor = UIColor(red: 0/255, green: 128/255, blue: 255/255, alpha: 1.0)
@@ -91,7 +91,7 @@ class PodcastPlayer: UIViewController, JukeboxDelegate {
         
         let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 64))
         let navigationItem = UINavigationItem()
-        navigationItem.title = "Podcast"
+        navigationItem.title = podcastTitle
         navBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Avenir-Light", size: 15.0)!]
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: nil, action: #selector(dismissPlayer))
         navigationItem.leftBarButtonItem?.tintColor = UIColor.gray

@@ -12,12 +12,9 @@ class Videos: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
-    //let videos = []
     var apiKey = "AIzaSyChah6DZrpkqxV2rvQ66L__4CSrF21uydE"
     var channelsDataArray: [NSDictionary] = []
-    //var channelsDataArray: Array<Dictionary<NSObject, AnyObject>> = []
     var videosArray: Array<Dictionary<String, String>> = []
-    //var videosArray: [NSDictionary] = []
     var channelIndex = 0
     var selectedVideoIndex: Int!
     fileprivate lazy var presentationAnimator = GuillotineTransitionAnimation()
@@ -106,8 +103,9 @@ class Videos: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedVideoIndex = indexPath.row
-        //let url = URL(string: "https://www.youtube.com/watch?v=" + (videosArray[selectedVideoIndex]["videoID"] as! String))
-        //UIApplication.shared.openURL(url!)
+        
+        let url = URL(string: "https://www.youtube.com/watch?v=\(videosArray[selectedVideoIndex]["videoID"]!)")
+        UIApplication.shared.openURL(url!)
         
         tableView.deselectRow(at: indexPath, animated: true)
     }

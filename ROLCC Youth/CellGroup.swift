@@ -22,7 +22,7 @@ class CellGroup: UIPageViewController, UIPageViewControllerDelegate, UIPageViewC
         
         //self.title = "Cell Group"
         //self.navigationController!.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Avenir-Light", size: 15)!]
-        
+        /*
         let berryessaView = storyboard?.instantiateViewController(withIdentifier: "Berryessa") as! Berryessa
         let cupertino1View = storyboard?.instantiateViewController(withIdentifier: "Cupertino1") as! Cupertino1
         let cupertino2View = storyboard?.instantiateViewController(withIdentifier: "Cupertino2") as! Cupertino2
@@ -81,7 +81,7 @@ class CellGroup: UIPageViewController, UIPageViewControllerDelegate, UIPageViewC
         let startingViewController = self.viewControllerAtIndex(x)
         let viewControllers: NSArray = [startingViewController]
         
-        self.setViewControllers(viewControllers as? [UIViewController], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: {(done: Bool) in})
+        self.setViewControllers(viewControllers as? [UIViewController], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: {(done: Bool) in})*/
     }
     
     override func viewWillAppear(_ animated: Bool) {

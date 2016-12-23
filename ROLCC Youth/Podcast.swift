@@ -22,22 +22,40 @@ class Podcast: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 64))
         let navigationItem = UINavigationItem()
-        navigationItem.title = "Podcast"
+        navigationItem.title = "Recent Podcasts"
         navBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Avenir-Light", size: 15.0)!]
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named:"menubutton.png"), style: .plain, target: nil, action: #selector(showMenu))
         navigationItem.leftBarButtonItem?.tintColor = UIColor.gray
         navBar.items = [navigationItem]
         self.view.addSubview(navBar)
         
-        podcasts = AppDelegate.Database.podcastNames.components(separatedBy: ",")
-        
-        tableView.backgroundColor = UIColor.clear
-        tableView.separatorColor = UIColor.white
-        tableView.rowHeight = 70
-        tableView.allowsSelection = true
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.delegate = self
-        tableView.dataSource = self
+        if (Reachability.isConnectedToNetwork() == true){
+            podcasts = AppDelegate.Database.podcastNames.components(separatedBy: ",")
+            
+            tableView.backgroundColor = UIColor.clear
+            tableView.separatorColor = UIColor.white
+            tableView.rowHeight = 70
+            tableView.allowsSelection = true
+            tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+            tableView.delegate = self
+            tableView.dataSource = self
+        }else{
+            tableView.isHidden = true
+            
+            let error = UIImageView(image: UIImage(named: "sadface2.png"))
+            error.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+            error.center = CGPoint(x: screenWidth/2, y: screenHeight/2)
+            self.view.addSubview(error)
+            
+            let errorMessage = UILabel()
+            errorMessage.text = "No internet connection"
+            errorMessage.font = UIFont(name: "Avenir-Light", size: 15.0)
+            errorMessage.textColor = UIColor(red: 21/255, green: 21/255, blue: 21/255, alpha: 1.0)
+            errorMessage.frame = CGRect(x: 0, y: 0, width: screenWidth, height: 20.0)
+            errorMessage.textAlignment = NSTextAlignment.center
+            errorMessage.center = CGPoint(x: screenWidth/2, y: screenHeight/2 + 40)
+            self.view.addSubview(errorMessage)
+        }
     }
 
     func showMenu(){
@@ -60,7 +78,7 @@ class Podcast: UIViewController, UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.text = self.podcasts[indexPath.row]
         cell.textLabel?.textColor = UIColor.white
         cell.backgroundColor = UIColor.clear
-        cell.selectionStyle = .none
+        //cell.selectionStyle = .none
         
         return cell
     }
@@ -68,6 +86,7 @@ class Podcast: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let row = indexPath.row
+        tableView.deselectRow(at: indexPath, animated: true)
         let podcastPlayerViewController = storyboard!.instantiateViewController(withIdentifier: "PodcastPlayer") as! PodcastPlayer
         podcastPlayerViewController.url = AppDelegate.Database.podcastDict[podcasts[row]]!
         podcastPlayerViewController.podcastTitle = podcasts[row]

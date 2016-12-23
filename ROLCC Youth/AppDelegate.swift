@@ -18,12 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         static var cellGroups = Dictionary<String,Dictionary<String,String>>()
         static var podcastDict = Dictionary<String,String>()
         static var podcastNames = ""
+        static var eventsDict = Dictionary<String,String>()
+        static var eventsName = ""
         static var layer = "home"
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
+                
         let pageControl = UIPageControl.appearance()
         pageControl.pageIndicatorTintColor = UIColor.lightGray
         pageControl.currentPageIndicatorTintColor = UIColor.black
@@ -39,6 +41,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let p = (snapshot.value! as AnyObject).object(forKey: "Podcasts")! as! Dictionary<String,String>
             Database.podcastDict = p
             Database.podcastNames = p["Name"]!
+            
+            let e = (snapshot.value! as AnyObject).object(forKey: "Events")! as! Dictionary<String,String>
+            Database.eventsDict = e
+            Database.eventsName = e["Name"]!
+            
             
         }, withCancel: {
             (error:Error) -> Void in
