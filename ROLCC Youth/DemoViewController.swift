@@ -12,7 +12,7 @@ class DemoViewController: ExpandingViewController {
   
   typealias ItemInfo = (imageName: String, title: String)
   fileprivate var cellsIsOpen = [Bool]()
-  fileprivate let items: [ItemInfo] = [("berryessa", "Berryessa"),("cupertino1", "Cupertino 1"),("cupertino2", "Cupertino 2"),("cupertinoJH", "Cupertino JH"),("evergreen", "Evergreen"),("fremontA", "Fremont A"),("fremontB", "Fremont B"),("fremontJH", "Fremont JH"),("morganhill", "Morgan Hill"),("paloAlto", "Palo Alto"),("paloAltoJH", "Palo Alto JH"),("sancarlos", "San Carlos"),("saratoga1", "Saratoga 1"),("saratoga2", "Saratoga 2"),("saratogaJH", "Saratoga JH"),("sunnyvaleJH", "Sunnyvale JH")]
+  fileprivate let items: [ItemInfo] = [("berryessa", "Berryessa"),("cupertino1", "Cupertino 1"),("cupertino2", "Cupertino 2"),("cupertinoJH", "Cupertino JH"),("evergreen", "Evergreen"),("fremontA", "Fremont A"),("fremontB", "Fremont B"),("fremontJH", "Fremont JH"),("morganHill", "Morgan Hill"),("paloAlto", "Palo Alto"),("paloAltoJH", "Palo Alto JH"),("sanCarlos", "San Carlos"),("saratoga1", "Saratoga 1"),("saratoga2", "Saratoga 2"),("saratogaJH", "Saratoga JH"),("sunnyvaleJH", "Sunnyvale JH")]
     fileprivate lazy var presentationAnimator = GuillotineTransitionAnimation()
   
   @IBOutlet weak var pageLabel: UILabel!

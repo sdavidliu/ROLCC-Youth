@@ -54,7 +54,7 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
             self.view.addSubview(loading)
             self.view.sendSubview(toBack: loading)*/
             
-            let activityIndicatorView = NVActivityIndicatorView(frame: CGRect(x: screenWidth/2-25, y: 175, width: 50, height: 50), type: NVActivityIndicatorType.ballBeat)
+            let activityIndicatorView = NVActivityIndicatorView(frame: CGRect(x: screenWidth/2-25, y: 170, width: 50, height: 50), type: NVActivityIndicatorType.ballBeat)
             activityIndicatorView.startAnimating()
             self.view.addSubview(activityIndicatorView)
             self.view.sendSubview(toBack: activityIndicatorView)

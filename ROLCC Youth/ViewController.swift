@@ -8,8 +8,18 @@
 
 /*
  To Do:
- - Change defaults to MyVariables
- - 
+ - Change up cell group images
+ - Change up cell leader pictures
+ - MCM Header Animated
+ - Reachability
+ - Contact page errors
+ - Podcast tableview
+ - Delete all the cell group files
+ - Delete all unessasary images
+ - Decrease the sizes of some images
+ - Delete unessasary comments
+ - Get rid of unessasary pods
+ - Fix weird bug after opening up videos
  */
 
 import UIKit
@@ -47,7 +57,10 @@ class ViewController: UIViewController {
         let tintedImage = origImage?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         menuButton.setImage(tintedImage, for: .normal)
         menuButton.tintColor = self.tintColor
-        print("HELLO")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        AppDelegate.Database.layer = "home"
     }
     
     @IBAction func showMenuAction(_ sender: UIButton) {
@@ -75,14 +88,6 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func one(){
-        print("one")
-    }
-    
-    func two(){
-        print("two")
     }
     
     @IBAction func unwindToMainMenu(segue: UIStoryboardSegue) {

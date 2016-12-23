@@ -16,9 +16,6 @@ class MenuViewController: UIViewController, GuillotineMenu {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(MyVariables.pages)
-        print(MyVariables.layer)
-        
         dismissButton = {
             let button = UIButton(frame: .zero)
             button.setImage(UIImage(named: "ic_menu"), for: .normal)
@@ -58,62 +55,62 @@ class MenuViewController: UIViewController, GuillotineMenu {
     }
     
     func dismissButtonTapped(_ sender: UIButton) {
+        AppDelegate.Database.layer = "home"
         presentingViewController!.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func eventsTapped(_ sender: UIButton) {
-        /*
-        let defaults = UserDefaults.standard
-        MyVariables.layer = "events"
-        if (defaults.string(forKey: "layer") == "events"){
+        if (AppDelegate.Database.layer == "events"){
             presentingViewController!.dismiss(animated: true, completion: nil)
         }else{
-            defaults.set("events", forKey: "layer")
-            defaults.synchronize()
-            print()
-            let menuViewController = storyboard!.instantiateViewController(withIdentifier: "EventsViewController")
-            present(menuViewController, animated: true, completion: nil)
-        }*/
-        if (MyVariables.layer == "events"){
-            presentingViewController!.dismiss(animated: true, completion: nil)
-        }else{
-            MyVariables.layer = "events"
+            AppDelegate.Database.layer = "events"
             let menuViewController = storyboard!.instantiateViewController(withIdentifier: "EventsViewController")
             present(menuViewController, animated: true, completion: nil)
         }
     }
     
     @IBAction func cellGroupTapped(_ sender: UIButton) {
-        /*
-        let defaults = UserDefaults.standard
-        if (defaults.string(forKey: "layer") == "cellgroup"){
+        if (AppDelegate.Database.layer == "cellgroup"){
             presentingViewController!.dismiss(animated: true, completion: nil)
         }else{
-            defaults.set("cellgroup", forKey: "layer")
-            defaults.synchronize()
-            let menuViewController = storyboard!.instantiateViewController(withIdentifier: "CellGroupViewController")
-            present(menuViewController, animated: true, completion: nil)
-        }*/
-        if (MyVariables.layer == "cellgroup"){
-            presentingViewController!.dismiss(animated: true, completion: nil)
-        }else{
-            MyVariables.layer = "cellgroup"
+            AppDelegate.Database.layer = "cellgroup"
             let menuViewController = storyboard!.instantiateViewController(withIdentifier: "DemoViewController")
             present(menuViewController, animated: true, completion: nil)
         }
     }
     
     @IBAction func videosTapped(_ sender: UIButton) {
-        if (MyVariables.layer == "videos"){
+        if (AppDelegate.Database.layer == "videos"){
             presentingViewController!.dismiss(animated: true, completion: nil)
         }else{
-            MyVariables.layer = "videos"
+            AppDelegate.Database.layer = "videos"
             let menuViewController = storyboard!.instantiateViewController(withIdentifier: "VideosViewController")
             present(menuViewController, animated: true, completion: nil)
         }
     }
     
+    @IBAction func podcastTapped(_ sender: UIButton) {
+        if (AppDelegate.Database.layer == "podcast"){
+            presentingViewController!.dismiss(animated: true, completion: nil)
+        }else{
+            AppDelegate.Database.layer = "podcast"
+            let menuViewController = storyboard!.instantiateViewController(withIdentifier: "PodcastViewController")
+            present(menuViewController, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func contactTapped(_ sender: UIButton) {
+        if (AppDelegate.Database.layer == "contact"){
+            presentingViewController!.dismiss(animated: true, completion: nil)
+        }else{
+            AppDelegate.Database.layer = "contact"
+            let menuViewController = storyboard!.instantiateViewController(withIdentifier: "ContactViewController")
+            present(menuViewController, animated: true, completion: nil)
+        }
+    }
+    
     @IBAction func closeMenu(_ sender: UIButton) {
+        AppDelegate.Database.layer = "home"
         presentingViewController!.dismiss(animated: true, completion: nil)
     }
 }

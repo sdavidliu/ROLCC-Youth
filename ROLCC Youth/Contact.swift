@@ -32,6 +32,7 @@ class Contact: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var churchEmail: UIButton!
     @IBOutlet weak var churchWebsite: UIButton!
     
+    fileprivate lazy var presentationAnimator = GuillotineTransitionAnimation()
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
     
@@ -41,7 +42,9 @@ class Contact: UIViewController, UIScrollViewDelegate {
         let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 64))
         let navigationItem = UINavigationItem()
         navigationItem.title = "Contact"
-        navBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Avenir-Light", size: 15.0)!];
+        navBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Avenir-Light", size: 15.0)!]
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named:"menubutton.png"), style: .plain, target: nil, action: #selector(showMenu))
+        navigationItem.leftBarButtonItem?.tintColor = UIColor.gray
         navBar.items = [navigationItem]
         self.view.addSubview(navBar)
         
@@ -188,8 +191,31 @@ class Contact: UIViewController, UIScrollViewDelegate {
         UIApplication.shared.openURL(url!)
     }
     
+    func showMenu(){
+        let menuViewController = storyboard!.instantiateViewController(withIdentifier: "MenuViewController")
+        menuViewController.modalPresentationStyle = .custom
+        menuViewController.transitioningDelegate = self
+        
+        presentationAnimator.animationDelegate = menuViewController as? GuillotineAnimationDelegate
+        //presentationAnimator.supportView = navigationController!.navigationBar
+        present(menuViewController, animated: true, completion: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+}
+
+extension Contact: UIViewControllerTransitioningDelegate {
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        presentationAnimator.mode = .presentation
+        return presentationAnimator
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        presentationAnimator.mode = .dismissal
+        return presentationAnimator
+    }
 }

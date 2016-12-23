@@ -39,6 +39,7 @@ PODS:
     - GoogleToolboxForMac/Defines (= 2.1.0)
   - GTMSessionFetcher/Core (1.1.7)
   - GuillotineMenu (3.0)
+  - Jukebox (0.2.1)
   - moa (8.0.2)
   - NVActivityIndicatorView (3.1)
   - RAMAnimatedTabBarController (2.0.13)
@@ -54,6 +55,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Storage
   - GuillotineMenu (~> 3.0)
+  - Jukebox
   - NVActivityIndicatorView
   - RAMAnimatedTabBarController (~> 2.0.13)
   - SnapKit
@@ -74,12 +76,13 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
   GTMSessionFetcher: a1f8ed39e4fe21c68957daed472c7afbcdf29166
   GuillotineMenu: 611ccb58ae092f2d929535377570ef25a7b5bc63
+  Jukebox: 81db618ccd3a1cc9b154f4ae0f5c4b54638666dd
   moa: 73d2dd56fe838a31e255c64b7873d2c2fbc71076
   NVActivityIndicatorView: 9f47e8a4affb860ef729aeec99b1550219e6c233
   RAMAnimatedTabBarController: 2510f3b66954c3f77ea1042a35d34df8f5f3b604
   RBBAnimation: 4b2d66f6d993febce63cd564da934985313b9c59
   SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
 
-PODFILE CHECKSUM: 36a1aea27ab86c0f0733da97b56ef0c1ace96f2e
+PODFILE CHECKSUM: db0063d43c696a1508bc5ce351611896a3fa4349
 
 COCOAPODS: 1.1.1

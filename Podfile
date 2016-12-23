@@ -17,6 +17,7 @@ target 'ROLCC Youth' do
   pod 'CNPPopupController'
   pod 'NVActivityIndicatorView'
   pod 'expanding-collection', '~> 1.0.3'
+  pod 'Jukebox'
 
   target 'ROLCC YouthTests' do
     inherit! :search_paths

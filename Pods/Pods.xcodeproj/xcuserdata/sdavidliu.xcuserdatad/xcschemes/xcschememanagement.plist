@@ -34,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Jukebox.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>NVActivityIndicatorView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -97,6 +102,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>0A521FD5A46DDD3CBBB218DE11ECB37E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>14465FC28324FBB065DDCCBD77FA238C</key>
 		<dict>
 			<key>primary</key>
@@ -117,12 +127,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>45CADA83862F76C648BAEE47F5DA22AD</key>
+		<key>4C67514EA7D98658F641516ED8328206</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4C67514EA7D98658F641516ED8328206</key>
+		<key>58E624C2C61AB1DE03567589E03C3BEE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -132,17 +142,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7F210683518EFEBA626B8E82B5B7674E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>95F23E2CA64744EAD8DE0263F4024188</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9D091B448E171FC14014B6B796F8BAC3</key>
+		<key>AADD738AF4C1B3881AC78FC81841FD96</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -153,6 +158,11 @@
 			<true/>
 		</dict>
 		<key>C6DEFA22CCEEB5F1F1D43D157996301F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FB2A690AB40B01E89DB82102E7249ED2</key>
 		<dict>
 			<key>primary</key>
 			<true/>

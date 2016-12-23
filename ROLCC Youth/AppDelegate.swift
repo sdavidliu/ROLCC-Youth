@@ -16,7 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var pagesPresenter: PageViewControllerPresenter!
     struct Database {
         static var cellGroups = Dictionary<String,Dictionary<String,String>>()
-        static var test = [String]()
+        static var podcastDict = Dictionary<String,String>()
+        static var podcastNames = ""
+        static var layer = "home"
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -34,6 +36,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let s = (snapshot.value! as AnyObject).object(forKey: "Cell Groups")! as! Dictionary<String,Dictionary<String,String>>
             Database.cellGroups = s
             
+            let p = (snapshot.value! as AnyObject).object(forKey: "Podcasts")! as! Dictionary<String,String>
+            Database.podcastDict = p
+            Database.podcastNames = p["Name"]!
             
         }, withCancel: {
             (error:Error) -> Void in
