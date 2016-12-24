@@ -29,7 +29,9 @@ class Podcast: UIViewController, UITableViewDelegate, UITableViewDataSource {
         navBar.items = [navigationItem]
         self.view.addSubview(navBar)
         
-        if (Reachability.isConnectedToNetwork() == true){
+        let reachability = Reachability()
+        
+        if (reachability?.isReachable == true){
             podcasts = AppDelegate.Database.podcastNames.components(separatedBy: ",")
             
             tableView.backgroundColor = UIColor.clear
@@ -73,13 +75,21 @@ class Podcast: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell")! as UITableViewCell
+        let cell:PodcastCell = tableView.dequeueReusableCell(withIdentifier: "PodcastCell")! as! PodcastCell
         
-        cell.textLabel?.text = self.podcasts[indexPath.row]
-        cell.textLabel?.textColor = UIColor.white
+        let wordsArray = podcasts[indexPath.row].components(separatedBy: " ")
+        
         cell.backgroundColor = UIColor.clear
-        //cell.selectionStyle = .none
-        
+        cell.titleLabel.text = wordsArray[0] + " " + wordsArray[1]
+        cell.dateLabel.text = wordsArray[2] + " " + wordsArray[3]
+        if (podcasts[indexPath.row].hasPrefix("Sunday Worship")){
+            cell.podcastImage.image = UIImage(named: "worship.png")
+        }else if (podcasts[indexPath.row].hasPrefix("Sunday Sermon")){
+            cell.podcastImage.image = UIImage(named: "sermon.jpg")
+        }else{
+            cell.podcastImage.image = UIImage(named: "logo.png")
+        }
+                
         return cell
     }
     
@@ -89,7 +99,8 @@ class Podcast: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         let podcastPlayerViewController = storyboard!.instantiateViewController(withIdentifier: "PodcastPlayer") as! PodcastPlayer
         podcastPlayerViewController.url = AppDelegate.Database.podcastDict[podcasts[row]]!
-        podcastPlayerViewController.podcastTitle = podcasts[row]
+        let wordsArray = podcasts[indexPath.row].components(separatedBy: " ")
+        podcastPlayerViewController.podcastTitle = wordsArray[0] + " " + wordsArray[1] + " - " + wordsArray[2] + " " + wordsArray[3]
         present(podcastPlayerViewController, animated: true, completion: nil)
         
     }

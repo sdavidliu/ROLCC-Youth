@@ -70,29 +70,33 @@ final class PageViewControllerPresenter: NSObject {
         pageViewController.dayLabel.text = index % 2 == 0 ? "Youth" : "Junior High"
         pageViewController.heartRateLabel.text = index % 2 == 0 ? "9:45am" : "11:15am"
         var array = [String]()
+        
+        let reachability = Reachability()
+        if (reachability?.isReachable)!{
         let ref = FIRDatabase.database().reference()
-        ref.observe(.value, with: { snapshot in
-            
-            let s = (snapshot.value! as AnyObject).object(forKey: "home")! as! String
-            
-            let Str = s.components(separatedBy: ",")
-            
-            for part in Str {
-                array.append(part)
-            }
-            
-            if (index % 2 == 0){
-                pageViewController.moreInfoButton.setTitle("SERMON: " + array[0].uppercased(), for: .normal)
-                pageViewController.settingsButton.setTitle("WORSHIP: " + array[1].uppercased(), for: .normal)
-            }else{
-                pageViewController.moreInfoButton.setTitle("SERMON: " + array[2].uppercased(), for: .normal)
-                pageViewController.settingsButton.setTitle("WORSHIP: " + array[3].uppercased(), for: .normal)
-            }
-            
-        }, withCancel: {
-            (error:Error) -> Void in
-            print(error.localizedDescription)
-        })
+            ref.observe(.value, with: { snapshot in
+                
+                let s = (snapshot.value! as AnyObject).object(forKey: "home")! as! String
+                
+                let Str = s.components(separatedBy: ",")
+                
+                for part in Str {
+                    array.append(part)
+                }
+                
+                if (index % 2 == 0){
+                    pageViewController.moreInfoButton.setTitle("SERMON: " + array[0].uppercased(), for: .normal)
+                    pageViewController.settingsButton.setTitle("WORSHIP: " + array[1].uppercased(), for: .normal)
+                }else{
+                    pageViewController.moreInfoButton.setTitle("SERMON: " + array[2].uppercased(), for: .normal)
+                    pageViewController.settingsButton.setTitle("WORSHIP: " + array[3].uppercased(), for: .normal)
+                }
+                
+            }, withCancel: {
+                (error:Error) -> Void in
+                print(error.localizedDescription)
+            })
+        }
         return pageViewController
     }
     

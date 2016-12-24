@@ -42,7 +42,9 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
         navBar.items = [navigationItem]
         self.view.addSubview(navBar)
         
-        if (Reachability.isConnectedToNetwork() == true){
+        let reachability = Reachability()
+        
+        if (reachability?.isReachable == true){
         /*
             let loading = RPCircularProgress()
             loading.trackTintColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 255 / 255, alpha: 0.3)

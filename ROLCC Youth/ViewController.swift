@@ -10,8 +10,7 @@
  To Do:
  - Change up cell leader pictures
  - MCM Header Animated
- - Doesn't work when connected to cellular data (Reachability.swift)
- - Podcast tableview cell
+ - Liquid contact button
  - Delete all unessasary images
  - Delete unessasary comments
  - Get rid of unessasary pods

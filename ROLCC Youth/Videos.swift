@@ -33,7 +33,9 @@ class Videos: UIViewController, UITableViewDelegate, UITableViewDataSource {
         navBar.items = [navigationItem]
         self.view.addSubview(navBar)
         
-        if (Reachability.isConnectedToNetwork() == true){
+        let reachability = Reachability()
+        
+        if (reachability?.isReachable == true){
         
             tableView.backgroundColor = UIColor.clear
             tableView.separatorColor = UIColor.white

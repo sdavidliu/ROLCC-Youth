@@ -57,7 +57,10 @@ class Home: UIViewController {
         minutesProgress.progressTintColor = UIColor.init(red: 144 / 255, green: 226 / 255, blue: 74 / 255, alpha: 1)
         minutesProgress.thicknessRatio = 0.3
         */
-        if (Reachability.isConnectedToNetwork() == true){
+        
+        let reachability = Reachability()
+        
+        if (reachability?.isReachable == true){
             
             let thisWeek = UILabel(frame: CGRect(x: 10, y: 0, width: screenWidth - 20, height: 30))
             thisWeek.text = "This Week:"
