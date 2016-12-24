@@ -34,6 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let reachability = Reachability()
         
         if (reachability?.isReachable)!{
+            
+            FIRApp.configure()
         
             let ref = FIRDatabase.database().reference()
             ref.observe(.value, with: { snapshot in

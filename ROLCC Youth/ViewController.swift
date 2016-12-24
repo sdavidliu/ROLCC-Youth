@@ -8,6 +8,8 @@
 
 /*
  To Do:
+ - Click dots on bottom right to get full resolution
+ - Make better UX for menu
  - Change up cell leader pictures
  - MCM Header Animated
  - Liquid contact button

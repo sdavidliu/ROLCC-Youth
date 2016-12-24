@@ -38,7 +38,7 @@ class Podcast: UIViewController, UITableViewDelegate, UITableViewDataSource {
             tableView.separatorColor = UIColor.white
             tableView.rowHeight = 70
             tableView.allowsSelection = true
-            tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+            //tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
             tableView.delegate = self
             tableView.dataSource = self
         }else{

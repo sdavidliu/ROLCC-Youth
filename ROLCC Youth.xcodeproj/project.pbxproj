@@ -25,6 +25,7 @@
 		E84C0F7A1E0B9FAF008B8BF6 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = E84C0F791E0B9FAF008B8BF6 /* map.png */; };
 		E84C0F7E1E0B9FBB008B8BF6 /* search(f).png in Resources */ = {isa = PBXBuildFile; fileRef = E84C0F7D1E0B9FBB008B8BF6 /* search(f).png */; };
 		E84C0F801E0B9FD4008B8BF6 /* text-1.png in Resources */ = {isa = PBXBuildFile; fileRef = E84C0F7F1E0B9FD4008B8BF6 /* text-1.png */; };
+		E85D356B1E0E76C40080BA12 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85D356A1E0E76C40080BA12 /* MenuCell.swift */; };
 		E8607F931E0CD9FA00A501A5 /* sermon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E8607F921E0CD9FA00A501A5 /* sermon.jpg */; };
 		E8607F971E0CDC2200A501A5 /* worship.png in Resources */ = {isa = PBXBuildFile; fileRef = E8607F961E0CDC2200A501A5 /* worship.png */; };
 		E8607F9E1E0CE08C00A501A5 /* pausebutton.png in Resources */ = {isa = PBXBuildFile; fileRef = E8607F9A1E0CE08C00A501A5 /* pausebutton.png */; };
@@ -159,6 +160,7 @@
 		E84C0F7D1E0B9FBB008B8BF6 /* search(f).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search(f).png"; sourceTree = "<group>"; };
 		E84C0F7F1E0B9FD4008B8BF6 /* text-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "text-1.png"; sourceTree = "<group>"; };
 		E858D62E1E04C265001C60B6 /* ROLCC Youth-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ROLCC Youth-Bridging-Header.h"; sourceTree = "<group>"; };
+		E85D356A1E0E76C40080BA12 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		E8607F921E0CD9FA00A501A5 /* sermon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sermon.jpg; sourceTree = "<group>"; };
 		E8607F961E0CDC2200A501A5 /* worship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = worship.png; sourceTree = "<group>"; };
 		E8607F9A1E0CE08C00A501A5 /* pausebutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pausebutton.png; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 				E86AB0E81DFF39BD009E3076 /* ViewController.swift */,
 				E8751E121DFFCAD500327323 /* PageViewControllerPresenter.swift */,
 				E80797B41E00D83A00A16E72 /* MenuViewController.swift */,
+				E85D356A1E0E76C40080BA12 /* MenuCell.swift */,
 				E81D3DDA1E00D99D00770E2B /* GuillotineMenuTransitionAnimation.swift */,
 				E86AB1641DFF3A0E009E3076 /* ArtistTableViewCell.swift */,
 				E86AB1651DFF3A0E009E3076 /* Berryessa.swift */,
@@ -816,6 +819,7 @@
 				E8D87EC21E0BAB66007FE652 /* StoryboardHelper.swift in Sources */,
 				E86AB1951DFF3A0E009E3076 /* SelectCellGroup.swift in Sources */,
 				E8D87EAC1E0BA9C1007FE652 /* ConstraintsHelper.swift in Sources */,
+				E85D356B1E0E76C40080BA12 /* MenuCell.swift in Sources */,
 				E8D87EB61E0BAA36007FE652 /* PageCollectionLayout.swift in Sources */,
 				E8D87EC01E0BAB57007FE652 /* CollectionViewHelper.swift in Sources */,
 				E86AB1861DFF3A0E009E3076 /* DOFavoriteButton.swift in Sources */,
