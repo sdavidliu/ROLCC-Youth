@@ -48,8 +48,8 @@ let s = (snapshot.value! as AnyObject).object(forKey: "Cell Groups")! as! Dictio
 ![Events](https://raw.githubusercontent.com/sdavidliu/ROLCC-Youth/master/Screenshots/IMG_1869.PNG)
 ![Videos](https://raw.githubusercontent.com/sdavidliu/ROLCC-Youth/master/Screenshots/IMG_1870.PNG)
 
-## Special Thanks
-### I'm still learning Swift, so I found a lot of cool Github projects that I implemented in my app.
+## Credit
+#### Since I'm still learning Swift, I took a lot of cool Github projects online and implemented it in my app. Special thanks to:
 - [x] Firebase
 - [x] Auk
 - [x] BouncyPageViewController
