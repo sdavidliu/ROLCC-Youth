@@ -9,7 +9,9 @@
 /*
  To Do:
  - Click dots on bottom right to get full resolution
- - Make better UX for menu
+ - Start off at one favorite cell group
+ - Automatically close cell group when swipe to different one
+ - Create super good readme
  - Change up cell leader pictures
  - MCM Header Animated
  - Liquid contact button
@@ -55,7 +57,8 @@ class ViewController: UIViewController {
         let tintedImage = origImage?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         menuButton.setImage(tintedImage, for: .normal)
         menuButton.tintColor = self.tintColor
-    }
+        
+        }
     
     override func viewDidAppear(_ animated: Bool) {
         AppDelegate.Database.layer = "home"

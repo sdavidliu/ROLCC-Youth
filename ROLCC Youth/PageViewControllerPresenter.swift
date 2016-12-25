@@ -63,10 +63,10 @@ final class PageViewControllerPresenter: NSObject {
         
         let pageViewController =  UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! ViewController
         let firstColor = UIColor.white
-        let secondColor = UIColor(red:78/255, green:178/255, blue:231/255, alpha:1.00)
+        let secondColor = UIColor(red:91/255, green:177/255, blue:226/255, alpha:1.00)
         pageViewController.tintColor = index % 2 == 0 ?  secondColor : firstColor
         pageViewController.view.backgroundColor = index % 2 == 0 ? firstColor : secondColor
-        pageViewController.imageLogo.image = index % 2 == 0 ? UIImage(named: "LOGO.png") : UIImage(named: "jhlogo.png")
+        pageViewController.imageLogo.image = index % 2 == 0 ? UIImage(named: "LOGO.png") : UIImage(named: "jhbordered.png")
         pageViewController.dayLabel.text = index % 2 == 0 ? "Youth" : "Junior High"
         pageViewController.heartRateLabel.text = index % 2 == 0 ? "9:45am" : "11:15am"
         var array = [String]()

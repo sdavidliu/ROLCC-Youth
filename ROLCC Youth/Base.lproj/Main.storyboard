@@ -1372,7 +1372,7 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="Pwk-v1-R3g">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Pwk-v1-R3g">
                                 <rect key="frame" x="5" y="608" width="365" height="29"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQA-oz-rik">
@@ -1430,6 +1430,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="o4G-SL-n1D">
+                                <rect key="frame" x="67" y="147" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="o4G-SL-n1D" secondAttribute="height" multiplier="1080:1920" id="3UR-O4-2Jh"/>
+                                </constraints>
+                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DWN-yP-JbL">
                                 <rect key="frame" x="0.0" y="324" width="375" height="343"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1487,20 +1493,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO.png" translatesAutoresizingMaskIntoConstraints="NO" id="yXi-zO-xoh">
-                                <rect key="frame" x="16" y="30" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="Rg5-b8-wYu"/>
-                                    <constraint firstAttribute="width" constant="100" id="bDP-sW-CWJ"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jhlogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="d4P-Y0-8HR">
-                                <rect key="frame" x="126" y="30" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="Smj-Q2-Fdi"/>
-                                    <constraint firstAttribute="height" constant="100" id="h11-hw-6Tu"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JsA-Ek-iWS">
                                 <rect key="frame" x="108" y="274" width="136" height="30"/>
                                 <accessibility key="accessibilityConfiguration" label="SETTINGS"/>
@@ -1523,12 +1515,10 @@
                         <constraints>
                             <constraint firstItem="DWN-yP-JbL" firstAttribute="width" secondItem="qCf-ha-eyX" secondAttribute="width" id="2FE-77-lMj"/>
                             <constraint firstItem="DWN-yP-JbL" firstAttribute="leading" secondItem="qCf-ha-eyX" secondAttribute="leadingMargin" constant="-25" id="2b6-90-8iV"/>
-                            <constraint firstItem="d4P-Y0-8HR" firstAttribute="leading" secondItem="yXi-zO-xoh" secondAttribute="trailing" constant="10" id="58c-0F-M3a"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="yXi-zO-xoh" secondAttribute="leading" id="A2j-LQ-jVO"/>
-                            <constraint firstItem="yXi-zO-xoh" firstAttribute="top" secondItem="SQj-Ip-DnW" secondAttribute="bottom" constant="10" id="PEe-sb-KgT"/>
-                            <constraint firstItem="DWN-yP-JbL" firstAttribute="top" secondItem="JsA-Ek-iWS" secondAttribute="bottom" constant="10" id="UV3-gS-HSY"/>
+                            <constraint firstItem="DWN-yP-JbL" firstAttribute="top" secondItem="JsA-Ek-iWS" secondAttribute="bottom" id="UV3-gS-HSY"/>
                             <constraint firstItem="SWJ-AV-KCG" firstAttribute="top" secondItem="DWN-yP-JbL" secondAttribute="bottom" constant="30" id="UbM-rA-vnj"/>
-                            <constraint firstItem="d4P-Y0-8HR" firstAttribute="centerY" secondItem="yXi-zO-xoh" secondAttribute="centerY" id="pHy-Eu-AEB"/>
+                            <constraint firstItem="o4G-SL-n1D" firstAttribute="centerX" secondItem="qCf-ha-eyX" secondAttribute="centerX" id="VRu-Xq-g1D"/>
+                            <constraint firstItem="o4G-SL-n1D" firstAttribute="height" secondItem="qCf-ha-eyX" secondAttribute="height" id="oXO-db-HkH"/>
                             <constraint firstItem="JsA-Ek-iWS" firstAttribute="centerX" secondItem="qCf-ha-eyX" secondAttribute="centerX" constant="-5" id="yL0-mP-f0u"/>
                         </constraints>
                     </view>
@@ -2169,6 +2159,7 @@
         <image name="Gray-background-3.jpg" width="1050" height="630"/>
         <image name="LOGO.png" width="500" height="486"/>
         <image name="berryessa.png" width="1136" height="731"/>
+        <image name="bg.png" width="1080" height="1920"/>
         <image name="calendaricon.png" width="28" height="28"/>
         <image name="close.png" width="40" height="40"/>
         <image name="contacticon.png" width="50" height="50"/>
@@ -2180,7 +2171,6 @@
         <image name="heand.png" width="29" height="27"/>
         <image name="homeicon.png" width="30" height="30"/>
         <image name="instagram.png" width="100" height="100"/>
-        <image name="jhlogo.png" width="100" height="100"/>
         <image name="line.png" width="3000" height="200"/>
         <image name="map.png" width="750" height="248"/>
         <image name="menubutton.png" width="30" height="30"/>
