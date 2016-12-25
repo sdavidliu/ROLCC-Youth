@@ -43,11 +43,19 @@ let s = (snapshot.value! as AnyObject).object(forKey: "Cell Groups")! as! Dictio
 ## Screenshots:
 
 ![Home](https://raw.githubusercontent.com/sdavidliu/ROLCC-Youth/master/Screenshots/IMG_1867.PNG)
+![Menu](https://raw.githubusercontent.com/sdavidliu/ROLCC-Youth/master/Screenshots/IMG_1868.PNG)
+![Events](https://raw.githubusercontent.com/sdavidliu/ROLCC-Youth/master/Screenshots/IMG_1869.PNG)
+![Videos](https://raw.githubusercontent.com/sdavidliu/ROLCC-Youth/master/Screenshots/IMG_1870.PNG)
 
-## Features
-- [x] liquid animation
-- [x] easily customizable
-- [x] Objective-C compatible
-- [x] Swift2.0
+## Pods Used
+### I'm still learning Swift, so I found a lot of cool Github projects that I implemented in my app. Thank you to:
+- [x] Firebase
+- [x] Auk
+- [x] BouncyPageViewController
+- [x] GuillotineMenu
+- [x] CNPPopupController
+- [x] NVActivityIndicatorView
+- [x] expanding-collection
+- [x] Jukebox
 
 

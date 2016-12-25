@@ -6,7 +6,6 @@ target 'ROLCC Youth' do
   use_frameworks!
 
   # Pods for ROLCC Youth
-  pod 'RAMAnimatedTabBarController', "~> 2.0.13"
   pod 'Firebase'
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
