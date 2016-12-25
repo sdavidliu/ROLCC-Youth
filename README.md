@@ -31,6 +31,7 @@ Website: [ROLCC Youth](http://www.rolccyouth.com/#about)
 - Contact information for leaders in Youth and JH Ministry
 - Links to social media sites and more info about ROLCC
 
+### Other Info
 Most of the app's features require internet connection in order to retrieve information from Google Firebase:
 ```swift
 FIRApp.configure()
@@ -39,8 +40,9 @@ ref.observe(.value, with: { snapshot in
 let s = (snapshot.value! as AnyObject).object(forKey: "Cell Groups")! as! Dictionary<String,Dictionary<String,String>>
 ```
 
+## Screenshots:
 
-![Demo](https://github.com/yoavlt/LiquidFloatingActionButton/blob/master/Demo/top.gif?raw=true)
+![Home](https://raw.githubusercontent.com/sdavidliu/ROLCC-Youth/master/Screenshots/IMG_1867.PNG)
 
 ## Features
 - [x] liquid animation
