@@ -1,10 +1,4 @@
-//
-//  CellGroup.swift
-//  ROLCC Youth
-//
-//  Created by Jimy Liu Mini on 6/22/16.
-//  Copyright © 2016 Dave&Joe. All rights reserved.
-//
+//Doesn't do anything
 
 import UIKit
 

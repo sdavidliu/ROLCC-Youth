@@ -1,23 +1,10 @@
-//
-//  ViewController.swift
-//  BouncyPageViewController
-//
-//  Created by Bohdan Orlov on 10/08/2016.
-//  Copyright (c) 2016 Bohdan Orlov. All rights reserved.
-//
 
 /*
  To Do:
  - Click dots on bottom right to get full resolution
+ - Update default values for cell group
  - Start off at one favorite cell group
- - Automatically close cell group when swipe to different one
- - Create super good readme
- - Change up cell leader pictures
- - MCM Header Animated
- - Liquid contact button
  - Delete all unessasary images
- - Delete unessasary comments
- - Get rid of unessasary pods
  - Fix weird bug after opening up videos
  - Check with iPhone 7
  */
@@ -82,13 +69,11 @@ class ViewController: UIViewController {
         
         presentationAnimator.animationDelegate = menuViewController as? GuillotineAnimationDelegate
         presentationAnimator.supportView = navigationController!.navigationBar
-        //presentationAnimator.presentButton = sender
         present(menuViewController, animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func unwindToMainMenu(segue: UIStoryboardSegue) {

@@ -1,10 +1,3 @@
-//
-//  SecondViewController.swift
-//  ROLCC Youth
-//
-//  Created by Jimy Liu Mini on 6/22/16.
-//  Copyright © 2016 Dave&Joe. All rights reserved.
-//
 
 import UIKit
 import Firebase
@@ -45,16 +38,6 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
         let reachability = Reachability()
         
         if (reachability?.isReachable == true){
-        /*
-            let loading = RPCircularProgress()
-            loading.trackTintColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 255 / 255, alpha: 0.3)
-            loading.progressTintColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 255 / 255, alpha: 1)
-            loading.thicknessRatio = 0.1
-            loading.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-            loading.center = CGPoint(x: screenWidth/2, y: scrollView.center.y - 90)
-            loading.enableIndeterminate()
-            self.view.addSubview(loading)
-            self.view.sendSubview(toBack: loading)*/
             
             let activityIndicatorView = NVActivityIndicatorView(frame: CGRect(x: screenWidth/2-25, y: 170, width: 50, height: 50), type: NVActivityIndicatorType.ballBeat)
             activityIndicatorView.startAnimating()
@@ -70,7 +53,6 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
             
             events = AppDelegate.Database.eventsName.components(separatedBy: ",")
             imageLabel.text = events[0]
-            //tableView.reloadData()
             finalImages = [UIImage?](repeating: nil, count: events.count)
             
             tableView.backgroundColor = UIColor.clear
@@ -104,7 +86,6 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
         menuViewController.transitioningDelegate = self
         
         presentationAnimator.animationDelegate = menuViewController as? GuillotineAnimationDelegate
-        //presentationAnimator.supportView = navigationController!.navigationBar
         present(menuViewController, animated: true, completion: nil)
     }
     
@@ -152,7 +133,6 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
             
             URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
                 if error != nil {
-                    //print(error)
                     return
                 }
                 DispatchQueue.main.async(execute: {
@@ -221,7 +201,6 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
         button.layer.cornerRadius = 4;
         button.selectionHandler = { (button) -> Void in
             self.popupController?.dismiss(animated: true)
-            //print("Block for button: \(button.titleLabel?.text)")
         }
         
         let titleLabel = UILabel()
@@ -232,14 +211,10 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
         lineOneLabel.numberOfLines = 0;
         lineOneLabel.attributedText = lineOne;
         
-        //let imageView = UIImageView.init(image: UIImage.init(named: "icon"))
         
         let lineTwoLabel = UILabel()
         lineTwoLabel.numberOfLines = 0;
         lineTwoLabel.attributedText = lineTwo;
-        
-        //let customView = UIView.init(frame: CGRect(x: 0, y: 0, width: 250, height: 55))
-        //customView.backgroundColor = UIColor.lightGray
         
         let popupController = CNPPopupController(contents:[titleLabel, lineOneLabel, lineTwoLabel, button])
         popupController.theme = CNPPopupTheme.default()
@@ -247,8 +222,6 @@ class Calendar: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UIT
         popupController.delegate = self
         self.popupController = popupController
         popupController.present(animated: true)
-        
-        
     }
     
     @IBAction func unwindToEvents(segue: UIStoryboardSegue) {

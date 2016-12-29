@@ -1,10 +1,3 @@
-//
-//  Podcast.swift
-//  ROLCC Youth
-//
-//  Created by David Liu on 12/22/16.
-//  Copyright © 2016 David Liu. All rights reserved.
-//
 
 import UIKit
 
@@ -38,7 +31,6 @@ class Podcast: UIViewController, UITableViewDelegate, UITableViewDataSource {
             tableView.separatorColor = UIColor.white
             tableView.rowHeight = 70
             tableView.allowsSelection = true
-            //tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
             tableView.delegate = self
             tableView.dataSource = self
         }else{
@@ -66,7 +58,6 @@ class Podcast: UIViewController, UITableViewDelegate, UITableViewDataSource {
         menuViewController.transitioningDelegate = self
         
         presentationAnimator.animationDelegate = menuViewController as? GuillotineAnimationDelegate
-        //presentationAnimator.supportView = navigationController!.navigationBar
         present(menuViewController, animated: true, completion: nil)
     }
     
@@ -108,17 +99,6 @@ class Podcast: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 

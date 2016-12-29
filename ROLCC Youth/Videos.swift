@@ -1,10 +1,3 @@
-//
-//  Videos.swift
-//  ROLCC Youth
-//
-//  Created by Jimy Liu Mini on 9/2/16.
-//  Copyright © 2016 Dave&Joe. All rights reserved.
-//
 
 import UIKit
 
@@ -144,27 +137,21 @@ class Videos: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     let parsedData = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! [String:AnyObject]
                     
                     var desiredValuesDict: Dictionary<String, AnyObject> = Dictionary<String, AnyObject>()
-                    //var desiredValuesDict = Dictionary<String,String>()
-                    //let desiredValuesDict: NSDictionary = NSDictionary()
-                    //desiredValuesDict["title"] = snippetDict["title"] as! String?
                     
                     let itemDict = (parsedData["items"] as! NSArray)
                     let snippetDict = itemDict.value(forKey: "snippet") as! NSArray
-                    desiredValuesDict.updateValue(snippetDict.value(forKey: "title") as! AnyObject, forKey: "title")
-                    desiredValuesDict.updateValue(snippetDict.value(forKey: "description") as! AnyObject, forKey: "description")
-                    desiredValuesDict.updateValue((((snippetDict.value(forKey: "thumbnails") as! NSArray).value(forKey: "default") as! NSArray).value(forKey: "url") as! AnyObject), forKey: "thumbnail")
+                    desiredValuesDict.updateValue(snippetDict.value(forKey: "title") as AnyObject, forKey: "title")
+                    desiredValuesDict.updateValue(snippetDict.value(forKey: "description") as AnyObject, forKey: "description")
+                    desiredValuesDict.updateValue((((snippetDict.value(forKey: "thumbnails") as! NSArray).value(forKey: "default") as! NSArray).value(forKey: "url") as AnyObject), forKey: "thumbnail")
                     
                     let contentDict = itemDict.value(forKey: "contentDetails") as! NSArray
                     
-                    //let firstDict = itemDict[0] as! NSDictionary
-                    //print(firstDict.value(forKey: "contentDetails") as! NSArray)
-                    desiredValuesDict.updateValue(((contentDict.value(forKey: "relatedPlaylists") as! NSArray).value(forKey: "uploads") as! AnyObject), forKey: "playlistID")
+                    desiredValuesDict.updateValue(((contentDict.value(forKey: "relatedPlaylists") as! NSArray).value(forKey: "uploads") as AnyObject), forKey: "playlistID")
                                         
                     self.channelsDataArray.append(desiredValuesDict as NSDictionary)
                     
                     self.getVideosForChannelAtIndex(0)
                     
-                    // Reload the tableview.
                     self.tableView.reloadData()
                     
                     
@@ -174,128 +161,38 @@ class Videos: UIViewController, UITableViewDelegate, UITableViewDataSource {
             }
             
             }.resume()
-        
-        /*
-        performGetRequest(targetURL, completion: { (data, HTTPStatusCode, error) -> Void in
-            if HTTPStatusCode == 200 && error == nil {
-                
-                do {
-                    // Convert the JSON data to a dictionary.
-                    //let resultsDict = try JSONSerialization.jsonObject(with: data!, options: []) as! Dictionary<NSObject, AnyObject>
-                    let resultsDict = try JSONSerialization.jsonObject(with: data!, options: []) as! NSDictionary
-                    
-                    let items = resultsDict["items"]
-                    print(items as Any)
-                    
-                    
-                    // Get the first dictionary item from the returned items (usually there's just one item).
-                    let items: AnyObject! = resultsDict["items"] as AnyObject!
-                    
-                    //let firstItemDict = (items as! Array<AnyObject>)[0] as! Dictionary<NSObject, AnyObject>
-                    let firstItemDict = (items as! Array<AnyObject>)[0] as! NSDictionary
-                    
-                    print()
-                    print(firstItemDict)
-                    print()
-                    
-                    // Get the snippet dictionary that contains the desired data.
-                    let snippetDict = firstItemDict["snippet"] as! Dictionary<String, Dictionary<String,Dictionary<String,String>>>
-                    //let snippetDict = firstItemDict["snippet"] as! NSDictionary
-                    
-                    // Create a new dictionary to store only the values we care about.
-                    //var desiredValuesDict: Dictionary<NSObject, AnyObject> = Dictionary<NSObject, AnyObject>()
-                    var desiredValuesDict = Dictionary<String,String>()
-                    //let desiredValuesDict: NSDictionary = NSDictionary()
-                    //desiredValuesDict["title"] = snippetDict["title"] as! String?
-                    desiredValuesDict["title"] = (firstItemDict["snippet"] as! Dictionary)["title"]
-                    
-                    //desiredValuesDict.setValue(snippetDict.value(forKey: "title") as! String, forKey: "title")
-                    //desiredValuesDict["description"] = snippetDict["description"]
-                    
-                    desiredValuesDict["thumbnail"] = snippetDict["thumbnails"]?["default"]?["url"]
-                    
-                    //desiredValuesDict.setValue("description", forKey: snippetDict.value(forKey: "description") as! String)
-                    //desiredValuesDict.setValue("thumbnail", forKey: snippetDict.value(forKey: "thumbnail") as! String)
-                    
-                    // Save the channel's uploaded videos playlist ID.
-                    let playlistTest = (firstItemDict["contentDetails"] as! Dictionary<String,Dictionary<String,String>>)["relatedPlaylists"]
-                    print()
-                    print(playlistTest as Any)
-                    print()
-                    desiredValuesDict["playlistID"] = playlistTest?["uploads"]
-                    print(desiredValuesDict)
-                    //desiredValuesDict.setValue("playlistID", forKey: ((firstItemDict.value(forKey: "contentDetails") as! NSDictionary).value(forKey: "relatedPlaylists") as! NSDictionary).value(forKey: "uploads") as! String)
-                    
-                    
-                    // Append the desiredValuesDict dictionary to the following array.
-                    self.channelsDataArray.append(desiredValuesDict as NSDictionary)
-                    
-                    self.getVideosForChannelAtIndex(0)
-                    
-                    // Reload the tableview.
-                    self.tableView.reloadData()
-                    
-                } catch {
-                    print(error)
-                }
-                
-            } else {
-                print("HTTP Status Code = \(HTTPStatusCode)")
-                print("Error while loading channel details: \(error)")
-            }
-        })*/
     }
     
     func getVideosForChannelAtIndex(_ index: Int!) {
-        // Get the selected channel's playlistID value from the channelsDataArray array and use it for fetching the proper video playlst.
-        let playlistID = channelsDataArray[index]["playlistID"].debugDescription
         
         let playlistIDHardcode = "UUYD_bWBcs-ddO5otGM9qF4Q"
         
-        // Form the request URL string.
         let urlString = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=10&playlistId=\(playlistIDHardcode)&key=\(apiKey)"
         
-        // Create a NSURL object based on the above string.
         let targetURL = URL(string: urlString)
         
-        // Fetch the playlist from Google.
         performGetRequest(targetURL, completion: { (data, HTTPStatusCode, error) -> Void in
             if HTTPStatusCode == 200 && error == nil {
                 do {
-                    // Convert the JSON data into a dictionary.
                     let resultsDict = try JSONSerialization.jsonObject(with: data!, options: []) as! NSDictionary
-                    //let parsedData = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! [String:AnyObject]
                     
-                    // Get all playlist items ("items" array).
-                    //let items: NSDictionary = resultsDict["items"] as! NSDictionary
                     let items: NSArray = resultsDict["items"] as! NSArray
                     
-                    // Use a loop to go through all video items.
                     for i in 0 ..< items.count {
                         
                         let playlistSnippetDict = (items[i] as! NSDictionary).value(forKey: "snippet") as! NSDictionary
                         
-                        // Initialize a new dictionary and store the data of interest.
-                        //let desiredPlaylistItemDataDict = NSDictionary()
                         var desiredPlaylistItemDataDict: Dictionary<String,String> = Dictionary<String,String>()
                         
-                        //desiredPlaylistItemDataDict["title"] = playlistSnippetDict["title"]
-                        //desiredPlaylistItemDataDict.setValue(playlistSnippetDict.value(forKey: "title") as! String, forKey: "title")
                         desiredPlaylistItemDataDict.updateValue(playlistSnippetDict.value(forKey: "title") as! String, forKey: "title")
                         
-                        //desiredPlaylistItemDataDict["thumbnail"] = ((playlistSnippetDict["thumbnails"] as! Dictionary<NSObject, AnyObject>)["default"] as! Dictionary<NSObject, AnyObject>)["url"]
-                        //desiredPlaylistItemDataDict.setValue("thumbnail", forKey: ((playlistSnippetDict.value(forKey: "thumbnails") as! NSDictionary).value(forKey: "default") as! NSDictionary).value(forKey: "url") as! String)
                         let thumbnailDict = playlistSnippetDict["thumbnails"] as! Dictionary<String,AnyObject>
                         desiredPlaylistItemDataDict.updateValue((thumbnailDict["default"] as! NSDictionary)["url"] as! String, forKey: "thumbnail")
-                        //desiredPlaylistItemDataDict["videoID"] = (playlistSnippetDict["resourceId"] as! Dictionary<NSObject, AnyObject>)["videoId"]
-                        //desiredPlaylistItemDataDict.setValue("videoID", forKey: (playlistSnippetDict.value(forKey: "resourceId") as! NSDictionary).value(forKey: "videoId") as! String)
                         let resourceDict = playlistSnippetDict["resourceId"] as! Dictionary<String,AnyObject>
                         desiredPlaylistItemDataDict.updateValue(resourceDict["videoId"] as! String, forKey: "videoID")
                         
-                        // Append the desiredPlaylistItemDataDict dictionary to the videos array.
                         self.videosArray.append(desiredPlaylistItemDataDict)
                         
-                        // Reload the tableview.
                         self.tableView.reloadData()
                     }
                 } catch {
@@ -315,19 +212,7 @@ class Videos: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 

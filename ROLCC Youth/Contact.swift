@@ -1,10 +1,3 @@
-//
-//  Contact.swift
-//  ROLCC Youth
-//
-//  Created by Jimy Liu Mini on 6/22/16.
-//  Copyright © 2016 Dave&Joe. All rights reserved.
-//
 
 import UIKit
 
@@ -197,7 +190,6 @@ class Contact: UIViewController, UIScrollViewDelegate {
         menuViewController.transitioningDelegate = self
         
         presentationAnimator.animationDelegate = menuViewController as? GuillotineAnimationDelegate
-        //presentationAnimator.supportView = navigationController!.navigationBar
         present(menuViewController, animated: true, completion: nil)
     }
     

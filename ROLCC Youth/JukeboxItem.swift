@@ -1,25 +1,4 @@
-//
-// JukeboxItem.swift
-//
-// Copyright (c) 2015 Teodor Patraş
-//
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
-//
-// The above copyright notice and this permission notice shall be included in all
-// copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-// SOFTWARE.
+
 
 import Foundation
 import AVFoundation
@@ -41,7 +20,6 @@ open class JukeboxItem: NSObject {
         fileprivate(set) public var artwork: UIImage?
     }
     
-    // MARK:- Properties -
     
             let identifier: String
             var delegate: JukeboxItemDelegate?
@@ -57,16 +35,7 @@ open class JukeboxItem: NSObject {
     fileprivate var timer: Timer?
     fileprivate let observedValue = "timedMetadata"
     
-    // MARK:- Initializer -
-    
-    /**
-    Create an instance with an URL and local title
-    
-    - parameter URL: local or remote URL of the audio file
-    - parameter localTitle: an optional title for the file
-    
-    - returns: JukeboxItem instance
-    */
+
     public required init(URL : Foundation.URL, localTitle : String? = nil) {
         self.URL = URL
         self.identifier = UUID().uuidString
@@ -97,7 +66,6 @@ open class JukeboxItem: NSObject {
         playerItem?.removeObserver(self, forKeyPath: observedValue)
     }
     
-    // MARK: - Internal methods -
     
     func loadPlayerItem() {
         
@@ -139,7 +107,6 @@ open class JukeboxItem: NSObject {
         return "<JukeboxItem:\ntitle: \(meta.title)\nalbum: \(meta.album)\nartist:\(meta.artist)\nduration : \(meta.duration),\ncurrentTime : \(currentTime)\nURL: \(URL)>"
     }
     
-    // MARK:- Private methods -
     
     fileprivate func validateAsset(_ asset : AVURLAsset) -> Bool {
         var e: NSError?
@@ -219,12 +186,10 @@ private extension JukeboxItem.Meta {
         let copiedValue: AnyObject = value.copy(with: nil) as AnyObject
         
         if let dict = copiedValue as? [AnyHashable: Any] {
-            //AVMetadataKeySpaceID3
             if let imageData = dict["data"] as? Data {
                 artwork = UIImage(data: imageData)
             }
         } else if let data = copiedValue as? Data{
-            //AVMetadataKeySpaceiTunes
             artwork = UIImage(data: data)
         }
     }

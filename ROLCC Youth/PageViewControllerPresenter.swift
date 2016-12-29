@@ -1,15 +1,7 @@
-//
-//  PageViewControllerPresenter.swift
-//  BouncyPageViewController
-//
-//  Created by Bohdan Orlov on 08/10/2016.
-//  Copyright © 2016 CocoaPods. All rights reserved.
-//
 
 import Foundation
 import UIKit
 import BouncyPageViewController
-import RAMAnimatedTabBarController
 import Firebase
 
 final class PageViewControllerPresenter: NSObject {

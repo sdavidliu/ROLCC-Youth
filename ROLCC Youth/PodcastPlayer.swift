@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  Jukebox-Demo
-//
-//  Created by Teodor Patras on 27/08/15.
-//  Copyright (c) 2015 Teodor Patras. All rights reserved.
-//
 
 import Foundation
 import UIKit
@@ -37,10 +30,8 @@ class PodcastPlayer: UIViewController, JukeboxDelegate {
         super.viewDidLoad()
         configureUI()
         
-        // begin receiving remote events
         UIApplication.shared.beginReceivingRemoteControlEvents()
         
-        // configure jukebox
         jukebox = Jukebox(delegate: self, items: [
             JukeboxItem(URL: URL(string: url)!)])!
         titleLabel.text = podcastTitle
@@ -68,12 +59,7 @@ class PodcastPlayer: UIViewController, JukeboxDelegate {
         
         let pauseImage = UIImage(named: "pausebutton.png");
         pauseTinted = (pauseImage?.withRenderingMode(UIImageRenderingMode.alwaysTemplate))!
-        
-        /// Later add another item
-        //let delay = DispatchTime.now() + Double(Int64(3 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
-        //DispatchQueue.main.asyncAfter(deadline: delay) {
-            //self.jukebox.append(item: JukeboxItem (URL: URL(string: "http://www.noiseaddicts.com/samples_1w72b820/2228.mp3")!), loadingAssets: true)
-        //}
+
     }
     
     func dismissPlayer(){
@@ -99,20 +85,9 @@ class PodcastPlayer: UIViewController, JukeboxDelegate {
         self.view.addSubview(navBar)
         
         slider.setThumbImage(UIImage(named: "sliderThumb"), for: UIControlState())
-        //slider.minimumTrackTintColor = color
-        //slider.maximumTrackTintColor = UIColor.black
-        
-        //volumeSlider.minimumTrackTintColor = color
-        //volumeSlider.maximumTrackTintColor = UIColor.black
-        //volumeSlider.thumbTintColor = color
-        
-        //titleLabel.textColor =  color
         
         centerContainer.layer.cornerRadius = 12
-        //view.backgroundColor = UIColor.black
     }
-    
-    // MARK:- JukeboxDelegate -
     
     func jukeboxDidLoadItem(_ jukebox: Jukebox, item: JukeboxItem) {
         print("Jukebox did load: \(item.URL.lastPathComponent)")
@@ -189,8 +164,6 @@ class PodcastPlayer: UIViewController, JukeboxDelegate {
         }
     }
     
-    // MARK:- Callbacks -
-    
     @IBAction func volumeSliderValueChanged() {
         if let jk = jukebox {
             jk.volume = volumeSlider.value
@@ -202,19 +175,6 @@ class PodcastPlayer: UIViewController, JukeboxDelegate {
             jukebox.seek(toSecond: Int(Double(slider.value) * duration))
         }
     }
-    /*
-    @IBAction func prevAction() {
-        
-        if let time = jukebox.currentItem?.currentTime, time > 5.0 || jukebox.playIndex == 0 {
-            jukebox.replayCurrentItem()
-        } else {
-            jukebox.playPrevious()
-        }
-    }
-    
-    @IBAction func nextAction() {
-        jukebox.playNext()
-    }*/
     
     @IBAction func playPauseAction() {
         switch jukebox.state {
@@ -239,9 +199,7 @@ class PodcastPlayer: UIViewController, JukeboxDelegate {
         resetUI()
         jukebox.stop()
     }
-    
-    // MARK:- Helpers -
-    
+        
     func populateLabelWithTime(_ label : UILabel, time: Double) {
         let minutes = Int(time / 60)
         let seconds = Int(time) - minutes * 60

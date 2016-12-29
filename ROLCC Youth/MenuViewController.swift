@@ -1,10 +1,3 @@
-//
-//  MenuViewController.swift
-//  GuillotineMenuExample
-//
-//  Created by Maksym Lazebnyi on 10/8/15.
-//  Copyright © 2015 Yalantis. All rights reserved.
-//
 
 import UIKit
 
@@ -17,6 +10,8 @@ class MenuViewController: UIViewController, GuillotineMenu, UITableViewDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        UIApplication.shared.statusBarStyle = .lightContent
         
         dismissButton = {
             let button = UIButton(frame: .zero)
@@ -38,7 +33,6 @@ class MenuViewController: UIViewController, GuillotineMenu, UITableViewDelegate,
         tableView.backgroundColor = UIColor.clear
         tableView.separatorColor = UIColor.white
         tableView.allowsSelection = true
-        //tableView.register(UITableViewCell.self, forCellReuseIdentifier: "MenuCell")
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -154,22 +148,19 @@ class MenuViewController: UIViewController, GuillotineMenu, UITableViewDelegate,
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("Menu: viewWillAppear")
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print("Menu: viewDidAppear")
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        print("Menu: viewWillDisappear")
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        print("Menu: viewDidDisappear")
     }
     
     func dismissButtonTapped(_ sender: UIButton) {
@@ -182,18 +173,18 @@ class MenuViewController: UIViewController, GuillotineMenu, UITableViewDelegate,
 extension MenuViewController: GuillotineAnimationDelegate {
     
     func animatorDidFinishPresentation(_ animator: GuillotineTransitionAnimation) {
-        print("menuDidFinishPresentation")
+        
     }
+    
     func animatorDidFinishDismissal(_ animator: GuillotineTransitionAnimation) {
-        print("menuDidFinishDismissal")
         self.dismiss(animated: true, completion: nil)
     }
     
     func animatorWillStartPresentation(_ animator: GuillotineTransitionAnimation) {
-        print("willStartPresentation")
+        
     }
     
     func animatorWillStartDismissal(_ animator: GuillotineTransitionAnimation) {
-        print("willStartDismissal")
+        
     }
 }
