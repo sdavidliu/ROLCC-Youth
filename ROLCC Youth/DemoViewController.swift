@@ -119,7 +119,16 @@ extension DemoViewController {
         cell.leaders.text = cgInfo[info.title]?["Head"]
         cell.email.text = cgInfo[info.title]?["Email"]
         cell.icon.image = UIImage(named: "\(info.imageName)Leaders.png")
+        cell.dotsButton.accessibilityHint = info.imageName
+        cell.dotsButton.addTarget(self, action: #selector(test(_:)), for: .touchUpInside)
         cell.cellIsOpen(cellsIsOpen[index], animated: false)
+    }
+    
+    func test(_ sender : UIButton){
+        //print(sender.accessibilityHint)
+        let cellGroupImage = storyboard!.instantiateViewController(withIdentifier: "CellGroupImage") as! CellGroupImage
+        cellGroupImage.imageName = sender.accessibilityHint!
+        present(cellGroupImage, animated: true, completion: nil)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: IndexPath) {

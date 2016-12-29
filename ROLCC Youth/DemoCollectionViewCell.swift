@@ -11,6 +11,7 @@ class DemoCollectionViewCell: BasePageCollectionCell {
     @IBOutlet weak var leftLabel: UILabel!
     @IBOutlet weak var rightLabel: UILabel!
     @IBOutlet weak var icon: UIImageView!
+    @IBOutlet weak var dotsButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,4 +20,5 @@ class DemoCollectionViewCell: BasePageCollectionCell {
         customTitle.layer.shadowOffset = CGSize(width: 0, height: 3)
         customTitle.layer.shadowOpacity = 0.2
     }
+    
 }

@@ -1,10 +1,6 @@
 
 /*
  To Do:
- - Click dots on bottom right to get full resolution
- - Update default values for cell group
- - Start off at one favorite cell group
- - Delete all unessasary images
  - Fix weird bug after opening up videos
  - Check with iPhone 7
  */
@@ -21,7 +17,6 @@ class ViewController: UIViewController {
             let scale = 0.7 + 0.3 * progressRelativeToEnd
             self.heartImageView.transform = CGAffineTransform(scaleX:scale, y:scale)
             self.dayLabel.transform = CGAffineTransform(scaleX:scale, y:scale)
-            //            self.heartRateLabel.transform = CGAffineTransform(scaleX:scale, y:scale)
         }
     }
     fileprivate lazy var presentationAnimator = GuillotineTransitionAnimation()

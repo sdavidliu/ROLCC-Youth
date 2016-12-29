@@ -18,7 +18,6 @@
 		E82945601E0F5D1900863394 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E829455F1E0F5D1900863394 /* bg.png */; };
 		E84C0F621E0B9F4E008B8BF6 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = E84C0F611E0B9F4E008B8BF6 /* close.png */; };
 		E84C0F641E0B9F56008B8BF6 /* dots.png in Resources */ = {isa = PBXBuildFile; fileRef = E84C0F631E0B9F56008B8BF6 /* dots.png */; };
-		E84C0F781E0B9FA9008B8BF6 /* Circle.png in Resources */ = {isa = PBXBuildFile; fileRef = E84C0F771E0B9FA9008B8BF6 /* Circle.png */; };
 		E84C0F7E1E0B9FBB008B8BF6 /* search(f).png in Resources */ = {isa = PBXBuildFile; fileRef = E84C0F7D1E0B9FBB008B8BF6 /* search(f).png */; };
 		E84C0F801E0B9FD4008B8BF6 /* text-1.png in Resources */ = {isa = PBXBuildFile; fileRef = E84C0F7F1E0B9FD4008B8BF6 /* text-1.png */; };
 		E85D356B1E0E76C40080BA12 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85D356A1E0E76C40080BA12 /* MenuCell.swift */; };
@@ -120,6 +119,7 @@
 		E8D87EC51E0BAB79007FE652 /* DemoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D87EC31E0BAB79007FE652 /* DemoCollectionViewCell.swift */; };
 		E8D87EC61E0BAB79007FE652 /* DemoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8D87EC41E0BAB79007FE652 /* DemoCollectionViewCell.xib */; };
 		E8D87EC81E0BAC17007FE652 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D87EC71E0BAC17007FE652 /* Images.swift */; };
+		E8DBD4371E14F93D004CB02F /* CellGroupImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DBD4361E14F93D004CB02F /* CellGroupImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,7 +157,6 @@
 		E829455F1E0F5D1900863394 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
 		E84C0F611E0B9F4E008B8BF6 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		E84C0F631E0B9F56008B8BF6 /* dots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dots.png; sourceTree = "<group>"; };
-		E84C0F771E0B9FA9008B8BF6 /* Circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Circle.png; sourceTree = "<group>"; };
 		E84C0F7D1E0B9FBB008B8BF6 /* search(f).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search(f).png"; sourceTree = "<group>"; };
 		E84C0F7F1E0B9FD4008B8BF6 /* text-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "text-1.png"; sourceTree = "<group>"; };
 		E858D62E1E04C265001C60B6 /* ROLCC Youth-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ROLCC Youth-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -267,6 +266,7 @@
 		E8D87EC31E0BAB79007FE652 /* DemoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoCollectionViewCell.swift; sourceTree = "<group>"; };
 		E8D87EC41E0BAB79007FE652 /* DemoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoCollectionViewCell.xib; sourceTree = "<group>"; };
 		E8D87EC71E0BAC17007FE652 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		E8DBD4361E14F93D004CB02F /* CellGroupImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellGroupImage.swift; sourceTree = "<group>"; };
 		F630056E73607BF32BCA9752 /* Pods-ROLCC Youth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ROLCC Youth.release.xcconfig"; path = "Pods/Target Support Files/Pods-ROLCC Youth/Pods-ROLCC Youth.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -373,6 +373,7 @@
 				E8D87EC11E0BAB66007FE652 /* StoryboardHelper.swift */,
 				E8D87EBF1E0BAB57007FE652 /* CollectionViewHelper.swift */,
 				E8D87EBD1E0BAB46007FE652 /* DemoViewController.swift */,
+				E8DBD4361E14F93D004CB02F /* CellGroupImage.swift */,
 				E8D87E9F1E0BA8A7007FE652 /* ExpandingViewController.swift */,
 				E8D87EA11E0BA8C5007FE652 /* ExpandingTableViewController.swift */,
 				E8D87EA31E0BA8F8007FE652 /* AnimationBarButton.swift */,
@@ -445,7 +446,6 @@
 				E8A7F4971E0D08920018F9F5 /* menubutton.png */,
 				E84C0F611E0B9F4E008B8BF6 /* close.png */,
 				E84C0F631E0B9F56008B8BF6 /* dots.png */,
-				E84C0F771E0B9FA9008B8BF6 /* Circle.png */,
 				E84C0F7D1E0B9FBB008B8BF6 /* search(f).png */,
 				E84C0F7F1E0B9FD4008B8BF6 /* text-1.png */,
 				E8607F921E0CD9FA00A501A5 /* sermon.jpg */,
@@ -666,7 +666,6 @@
 				E8A7F4981E0D08930018F9F5 /* menubutton.png in Resources */,
 				E86AB1601DFF39E2009E3076 /* videosicon.png in Resources */,
 				E86AB0EC1DFF39BD009E3076 /* Main.storyboard in Resources */,
-				E84C0F781E0B9FA9008B8BF6 /* Circle.png in Resources */,
 				E8C0BB211E14C78100D7B90A /* cupertino1Leaders.png in Resources */,
 				E86AB18B1DFF3A0E009E3076 /* GoogleService-Info.plist in Resources */,
 				E86AB1561DFF39E2009E3076 /* sadface2.png in Resources */,
@@ -845,6 +844,7 @@
 				E8D87EB61E0BAA36007FE652 /* PageCollectionLayout.swift in Sources */,
 				E8D87EC01E0BAB57007FE652 /* CollectionViewHelper.swift in Sources */,
 				E86AB1861DFF3A0E009E3076 /* DOFavoriteButton.swift in Sources */,
+				E8DBD4371E14F93D004CB02F /* CellGroupImage.swift in Sources */,
 				E8D87EA81E0BA949007FE652 /* Rotatable.swift in Sources */,
 				E823BEB61E0CA6A10033AD52 /* JukeboxItem.swift in Sources */,
 				E80797B51E00D83A00A16E72 /* MenuViewController.swift in Sources */,
