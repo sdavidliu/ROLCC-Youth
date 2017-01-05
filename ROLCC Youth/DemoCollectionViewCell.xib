@@ -31,25 +31,26 @@
                                 <rect key="frame" x="224" y="295" width="8" height="19"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="A2l-4z-dnK"/>
-                                    <constraint firstAttribute="height" constant="20" id="WYs-UV-n26"/>
+                                    <constraint firstAttribute="width" constant="25" id="A2l-4z-dnK"/>
+                                    <constraint firstAttribute="height" constant="25" id="WYs-UV-n26"/>
                                 </constraints>
-                                <state key="normal" image="dots.png"/>
+                                <color key="tintColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="zoomicon.png"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="NO. 7911847" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMH-Qa-ClW">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="La Crescenta-Montrose, CA91020" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eC4-wU-lTH">
+                                <rect key="frame" x="5" y="236" width="246" height="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" red="0.49803921569999998" green="0.51764705879999995" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NO. 7911847" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMH-Qa-ClW">
                                 <rect key="frame" x="24" y="262" width="68" height="14"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" red="0.49803921568627452" green="0.51764705882352935" blue="0.53725490196078429" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="NO. 7911847" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wiE-1C-7fa">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NO. 7911847" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wiE-1C-7fa">
                                 <rect key="frame" x="159" y="262" width="68" height="14"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                <color key="textColor" red="0.49803921569999998" green="0.51764705879999995" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="La Crescenta-Montrose, CA91020" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eC4-wU-lTH">
-                                <rect key="frame" x="6" y="236" width="246" height="14"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" red="0.49803921569999998" green="0.51764705879999995" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -61,8 +62,8 @@
                             <constraint firstItem="pMH-Qa-ClW" firstAttribute="leading" secondItem="rbd-6U-uYZ" secondAttribute="leading" constant="24" id="7zn-VD-NCK"/>
                             <constraint firstItem="pMH-Qa-ClW" firstAttribute="centerY" secondItem="wiE-1C-7fa" secondAttribute="centerY" id="AhK-Yf-fFC"/>
                             <constraint firstItem="eC4-wU-lTH" firstAttribute="width" secondItem="rbd-6U-uYZ" secondAttribute="width" constant="-10" id="DDX-QX-Ple"/>
+                            <constraint firstItem="7zK-Le-Npw" firstAttribute="top" secondItem="wiE-1C-7fa" secondAttribute="bottom" constant="4" id="DFH-qs-FpO"/>
                             <constraint firstItem="eC4-wU-lTH" firstAttribute="centerX" secondItem="rbd-6U-uYZ" secondAttribute="centerX" id="GPf-gb-s8O"/>
-                            <constraint firstItem="wiE-1C-7fa" firstAttribute="bottom" secondItem="zwf-5m-T26" secondAttribute="top" constant="20" id="HoX-Ut-I5f"/>
                             <constraint firstAttribute="bottom" secondItem="eC4-wU-lTH" secondAttribute="bottom" constant="85" id="IBD-EA-167"/>
                             <constraint firstItem="7zK-Le-Npw" firstAttribute="leading" secondItem="rbd-6U-uYZ" secondAttribute="leading" constant="19" id="TPF-bw-RZD"/>
                             <constraint firstAttribute="width" constant="256" id="bOS-YB-1Lf"/>
@@ -70,7 +71,7 @@
                             <constraint firstAttribute="trailing" secondItem="wiE-1C-7fa" secondAttribute="trailing" constant="29.5" id="mgm-FF-Lrg"/>
                             <constraint firstAttribute="bottom" secondItem="7zK-Le-Npw" secondAttribute="bottom" constant="5" id="rz8-al-BzK"/>
                             <constraint firstAttribute="height" constant="335" id="uVN-GL-ji7"/>
-                            <constraint firstItem="pMH-Qa-ClW" firstAttribute="top" secondItem="eC4-wU-lTH" secondAttribute="bottom" constant="12" id="uzm-dE-lnj"/>
+                            <constraint firstItem="7zK-Le-Npw" firstAttribute="top" secondItem="pMH-Qa-ClW" secondAttribute="bottom" constant="4" id="v73-6h-SXr"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4h2-Xv-xjU">
@@ -111,7 +112,7 @@
                                 <rect key="frame" x="119" y="293" width="20" height="32"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eventsicon.png" translatesAutoresizingMaskIntoConstraints="NO" id="LFF-iv-Z1U">
-                                        <rect key="frame" x="2" y="-14" width="18" height="20"/>
+                                        <rect key="frame" x="1" y="-14" width="18" height="20"/>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" staticText="YES"/>
@@ -204,7 +205,7 @@
     <resources>
         <image name="berryessa.png" width="900" height="579"/>
         <image name="berryessaLeaders.png" width="250" height="70"/>
-        <image name="dots.png" width="5" height="38"/>
         <image name="eventsicon.png" width="50" height="50"/>
+        <image name="zoomicon.png" width="50" height="50"/>
     </resources>
 </document>

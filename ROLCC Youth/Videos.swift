@@ -48,8 +48,8 @@ class Videos: UIViewController, UITableViewDelegate, UITableViewDataSource {
             
             let errorMessage = UILabel()
             errorMessage.text = "No internet connection"
-            errorMessage.font = UIFont(name: "Avenir-Light", size: 15.0)
-            errorMessage.textColor = UIColor(red: 21/255, green: 21/255, blue: 21/255, alpha: 1.0)
+            errorMessage.font = UIFont(name: "Avenir", size: 15.0)
+            errorMessage.textColor = UIColor(red: 50/255, green: 50/255, blue: 50/255, alpha: 1.0)
             errorMessage.frame = CGRect(x: 0, y: 0, width: screenWidth, height: 20.0)
             errorMessage.textAlignment = NSTextAlignment.center
             errorMessage.center = CGPoint(x: screenWidth/2, y: screenHeight/2 + 40)

@@ -29,7 +29,7 @@ class Podcast: UIViewController, UITableViewDelegate, UITableViewDataSource {
             
             tableView.backgroundColor = UIColor.clear
             tableView.separatorColor = UIColor.white
-            tableView.rowHeight = 70
+            tableView.rowHeight = 80
             tableView.allowsSelection = true
             tableView.delegate = self
             tableView.dataSource = self
@@ -43,8 +43,8 @@ class Podcast: UIViewController, UITableViewDelegate, UITableViewDataSource {
             
             let errorMessage = UILabel()
             errorMessage.text = "No internet connection"
-            errorMessage.font = UIFont(name: "Avenir-Light", size: 15.0)
-            errorMessage.textColor = UIColor(red: 21/255, green: 21/255, blue: 21/255, alpha: 1.0)
+            errorMessage.font = UIFont(name: "Avenir", size: 15.0)
+            errorMessage.textColor = UIColor(red: 50/255, green: 50/255, blue: 50/255, alpha: 1.0)
             errorMessage.frame = CGRect(x: 0, y: 0, width: screenWidth, height: 20.0)
             errorMessage.textAlignment = NSTextAlignment.center
             errorMessage.center = CGPoint(x: screenWidth/2, y: screenHeight/2 + 40)
@@ -73,6 +73,13 @@ class Podcast: UIViewController, UITableViewDelegate, UITableViewDataSource {
         cell.backgroundColor = UIColor.clear
         cell.titleLabel.text = wordsArray[0] + " " + wordsArray[1]
         cell.dateLabel.text = wordsArray[2] + " " + wordsArray[3]
+        var person = ""
+        for i in 4..<wordsArray.count{
+            person += wordsArray[i] + " "
+        }
+        let endIndex = person.index(person.endIndex, offsetBy: -1)
+        person = person.substring(to: endIndex)
+        cell.personLabel.text = person
         if (podcasts[indexPath.row].hasPrefix("Sunday Worship")){
             cell.podcastImage.image = UIImage(named: "worship.png")
         }else if (podcasts[indexPath.row].hasPrefix("Sunday Sermon")){
@@ -91,7 +98,14 @@ class Podcast: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let podcastPlayerViewController = storyboard!.instantiateViewController(withIdentifier: "PodcastPlayer") as! PodcastPlayer
         podcastPlayerViewController.url = AppDelegate.Database.podcastDict[podcasts[row]]!
         let wordsArray = podcasts[indexPath.row].components(separatedBy: " ")
+        var person = ""
+        for i in 4..<wordsArray.count{
+            person += wordsArray[i] + " "
+        }
+        let endIndex = person.index(person.endIndex, offsetBy: -1)
+        person = person.substring(to: endIndex)
         podcastPlayerViewController.podcastTitle = wordsArray[0] + " " + wordsArray[1] + " - " + wordsArray[2] + " " + wordsArray[3]
+        podcastPlayerViewController.personTitle = person
         present(podcastPlayerViewController, animated: true, completion: nil)
         
     }

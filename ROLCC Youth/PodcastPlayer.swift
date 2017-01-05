@@ -14,6 +14,7 @@ class PodcastPlayer: UIViewController, JukeboxDelegate {
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var volumeSlider: UISlider!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var personLabel: UILabel!
     @IBOutlet weak var centerContainer: UIView!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var imageView: UIImageView!
@@ -23,6 +24,7 @@ class PodcastPlayer: UIViewController, JukeboxDelegate {
     let screenHeight = UIScreen.main.bounds.height
     var url = ""
     var podcastTitle = ""
+    var personTitle = ""
     var playTinted = UIImage()
     var pauseTinted = UIImage()
     
@@ -35,6 +37,7 @@ class PodcastPlayer: UIViewController, JukeboxDelegate {
         jukebox = Jukebox(delegate: self, items: [
             JukeboxItem(URL: URL(string: url)!)])!
         titleLabel.text = podcastTitle
+        personLabel.text = personTitle
         
         if (podcastTitle.hasPrefix("Sunday Worship")){
             imageView.image = UIImage(named: "worship.png")

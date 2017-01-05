@@ -44,6 +44,7 @@ PODS:
   - NVActivityIndicatorView (3.1)
   - RBBAnimation (0.4.0)
   - SnapKit (3.0.2)
+  - SwiftPhotoGallery (3.0.1)
 
 DEPENDENCIES:
   - Auk (~> 7.0)
@@ -57,6 +58,7 @@ DEPENDENCIES:
   - Jukebox
   - NVActivityIndicatorView
   - SnapKit
+  - SwiftPhotoGallery
 
 SPEC CHECKSUMS:
   Auk: 6f8c4e93427d0d02641263776dd3b66ae4050903
@@ -79,7 +81,8 @@ SPEC CHECKSUMS:
   NVActivityIndicatorView: 9f47e8a4affb860ef729aeec99b1550219e6c233
   RBBAnimation: 4b2d66f6d993febce63cd564da934985313b9c59
   SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
+  SwiftPhotoGallery: 004cad817138f4f418aca417aa018d69ebc2fb14
 
-PODFILE CHECKSUM: 09fe7caf85f2a88f2281d7c929a6d0cf38d9abc0
+PODFILE CHECKSUM: d1d74f117155b5f879cae039aa0e9afff4c4b28d
 
 COCOAPODS: 1.1.1

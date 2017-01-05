@@ -6,7 +6,7 @@ class MenuViewController: UIViewController, GuillotineMenu, UITableViewDelegate,
     var dismissButton: UIButton?
     var titleLabel: UILabel?
     @IBOutlet weak var tableView: UITableView!
-    let buttons = ["Events", "Cell Group", "Videos", "Podcasts", "Contact", "Close"]
+    let buttons = ["Events", "Cell Group", "Videos", "Podcasts", "Gallery", "Contact", "Close"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,9 +60,12 @@ class MenuViewController: UIViewController, GuillotineMenu, UITableViewDelegate,
             cell.icon.image = UIImage(named: "podcasticon.png")
         }else if (row == 4){
             cell.indicator.backgroundColor = UIColor(red: 0/255, green: 170/255, blue: 255/255, alpha: 1.0)
-            cell.icon.image = UIImage(named: "contacticon.png")
+            cell.icon.image = UIImage(named: "albumicon.png")
         }else if (row == 5){
             cell.indicator.backgroundColor = UIColor(red: 170/255, green: 0/255, blue: 255/255, alpha: 1.0)
+            cell.icon.image = UIImage(named: "contacticon.png")
+        }else if (row == 6){
+            cell.indicator.backgroundColor = UIColor.gray
             cell.icon.image = UIImage(named: "closeicon.png")
         }
         
@@ -85,8 +88,10 @@ class MenuViewController: UIViewController, GuillotineMenu, UITableViewDelegate,
         }else if (row == 3){
             podcastTapped()
         }else if (row == 4){
-            contactTapped()
+            galleryTapped()
         }else if (row == 5){
+            contactTapped()
+        }else if (row == 6){
             closeMenu()
         }
     }
@@ -127,6 +132,16 @@ class MenuViewController: UIViewController, GuillotineMenu, UITableViewDelegate,
         }else{
             AppDelegate.Database.layer = "podcast"
             let menuViewController = storyboard!.instantiateViewController(withIdentifier: "PodcastViewController")
+            present(menuViewController, animated: true, completion: nil)
+        }
+    }
+    
+    func galleryTapped() {
+        if (AppDelegate.Database.layer == "gallery"){
+            presentingViewController!.dismiss(animated: true, completion: nil)
+        }else{
+            AppDelegate.Database.layer = "gallery"
+            let menuViewController = storyboard!.instantiateViewController(withIdentifier: "GalleryViewController")
             present(menuViewController, animated: true, completion: nil)
         }
     }

@@ -15,8 +15,9 @@ target 'ROLCC Youth' do
   pod 'GuillotineMenu', '~> 3.0'
   pod 'CNPPopupController'
   pod 'NVActivityIndicatorView'
-  pod 'expanding-collection', '~> 1.0.3'
+  pod 'expanding-collection', '~> 1.0.3’
   pod 'Jukebox'
+  pod ‘SwiftPhotoGallery’
 
   target 'ROLCC YouthTests' do
     inherit! :search_paths

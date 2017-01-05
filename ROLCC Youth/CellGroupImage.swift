@@ -19,6 +19,8 @@ class CellGroupImage: UIViewController, UIScrollViewDelegate {
         scrollView.contentSize = imageView.bounds.size
         scrollView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         scrollView.contentOffset = CGPoint(x: 0, y: 0)
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.showsHorizontalScrollIndicator = false
         
         scrollView.addSubview(imageView)
         view.addSubview(scrollView)

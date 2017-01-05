@@ -69,6 +69,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwiftPhotoGallery.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>expanding-collection.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -117,11 +122,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>258042F339879692C5275E0043675221</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>3EDFE4052B5DE7D509935AC0774CB135</key>
 		<dict>
 			<key>primary</key>
@@ -132,17 +132,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>583EC5562B0BFA1EBAF4899E39E0D42B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>7BDE4A0097B901ED452A26CD14A2C344</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7C73493577440E2D812B668C0F49D487</key>
+		<key>95F23E2CA64744EAD8DE0263F4024188</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>95F23E2CA64744EAD8DE0263F4024188</key>
+		<key>9F5134B31F54CE7C12D7BB485C1001A4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -153,6 +158,11 @@
 			<true/>
 		</dict>
 		<key>C6DEFA22CCEEB5F1F1D43D157996301F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CB1BB6B7E93BB56A78E567C63E08D56C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

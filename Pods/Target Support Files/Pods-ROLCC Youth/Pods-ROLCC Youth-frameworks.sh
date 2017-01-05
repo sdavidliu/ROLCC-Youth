@@ -94,6 +94,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/NVActivityIndicatorView/NVActivityIndicatorView.framework"
   install_framework "$BUILT_PRODUCTS_DIR/RBBAnimation/RBBAnimation.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SnapKit/SnapKit.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwiftPhotoGallery/SwiftPhotoGallery.framework"
   install_framework "$BUILT_PRODUCTS_DIR/expanding-collection/expanding_collection.framework"
   install_framework "$BUILT_PRODUCTS_DIR/moa/moa.framework"
 fi
@@ -108,6 +109,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/NVActivityIndicatorView/NVActivityIndicatorView.framework"
   install_framework "$BUILT_PRODUCTS_DIR/RBBAnimation/RBBAnimation.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SnapKit/SnapKit.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwiftPhotoGallery/SwiftPhotoGallery.framework"
   install_framework "$BUILT_PRODUCTS_DIR/expanding-collection/expanding_collection.framework"
   install_framework "$BUILT_PRODUCTS_DIR/moa/moa.framework"
 fi

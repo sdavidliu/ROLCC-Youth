@@ -13,6 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         static var podcastNames = ""
         static var eventsDict = Dictionary<String,String>()
         static var eventsName = ""
+        static var galleryDict = Dictionary<String,String>()
+        static var galleryName = ""
         static var layer = "home"
     }
 
@@ -42,6 +44,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let e = (snapshot.value! as AnyObject).object(forKey: "Events")! as! Dictionary<String,String>
                 Database.eventsDict = e
                 Database.eventsName = e["Name"]!
+                
+                let g = (snapshot.value! as AnyObject).object(forKey: "Gallery")! as! Dictionary<String,String>
+                Database.galleryDict = g
+                Database.galleryName = g["Name"]!
                 
                 
             }, withCancel: {
@@ -145,7 +151,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     "Head": "Jonathan Ko",
                     "Time": "7:30 PM",
                     "Day": "Friday",
-                    "Description": "Everyone loves Chi"]]
+                    "Description": "food, fellowship, and fun"]]
         }
         
         self.pagesPresenter = PageViewControllerPresenter(window: window!)

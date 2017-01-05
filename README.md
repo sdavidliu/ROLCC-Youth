@@ -28,6 +28,10 @@
 - TableView of a couple of Sunday Worship & Sermons
 - Listen on the go wherever you are
 
+### Gallery (NEW)
+- Shows CollectionView of photo albums from different events
+- Swipe through the photos and double tap to zoom in
+
 ### Contact
 - Contact information for leaders in Youth and JH Ministry
 - Links to social media sites and more info about ROLCC
@@ -58,4 +62,5 @@ let s = (snapshot.value! as AnyObject).object(forKey: "Cell Groups")! as! Dictio
 - [x] NVActivityIndicatorView
 - [x] expanding-collection
 - [x] Jukebox
+- [x] SwiftPhotoGallery
 

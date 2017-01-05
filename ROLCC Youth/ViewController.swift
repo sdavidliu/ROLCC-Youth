@@ -1,10 +1,4 @@
 
-/*
- To Do:
- - Fix weird bug after opening up videos
- - Check with iPhone 7
- */
-
 import UIKit
 
 class ViewController: UIViewController {
