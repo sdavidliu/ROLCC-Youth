@@ -146,18 +146,26 @@ public class SwiftPhotoGallery: UIViewController {
      public override func viewDidLoad() {
         super.viewDidLoad()
         
+        UIApplication.shared.statusBarStyle = .lightContent
+        
         view.backgroundColor = UIColor.black
 
         pageControl.currentPageIndicatorTintColor = UIColor.black
         pageControl.pageIndicatorTintColor = UIColor(white: 0.75, alpha: 0.35) //Dim Grey
+        pageControl.backgroundColor = UIColor.clear
 
         setupPageControl()
         setupGestureRecognizer()
     }
+    
+    public override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
+    }
 
     public override var prefersStatusBarHidden: Bool {
         get {
-            return true
+            return false
         }  
     }
 

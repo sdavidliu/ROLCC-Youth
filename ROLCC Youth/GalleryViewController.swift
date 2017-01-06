@@ -6,6 +6,7 @@ class GalleryViewController: UIViewController, UICollectionViewDataSource, UICol
     
     let reuseIdentifier = "collectionCell"
     fileprivate lazy var presentationAnimator = GuillotineTransitionAnimation()
+    @IBOutlet weak var collectionView: UICollectionView!
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
     var gallery = [String]()
@@ -14,7 +15,7 @@ class GalleryViewController: UIViewController, UICollectionViewDataSource, UICol
     override func viewDidLoad() {
         let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 64))
         let navigationItem = UINavigationItem()
-        navigationItem.title = "Gallery"
+        navigationItem.title = "Photo Gallery"
         navBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Avenir-Light", size: 15.0)!]
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named:"menubutton.png"), style: .plain, target: nil, action: #selector(showMenu))
         navigationItem.leftBarButtonItem?.tintColor = UIColor.gray
@@ -58,17 +59,17 @@ class GalleryViewController: UIViewController, UICollectionViewDataSource, UICol
     }
     
     
-    // MARK: - UICollectionViewDataSource protocol
-    
-    // tell the collection view how many cells to make
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.gallery.count
     }
     
-    // make a cell for each cell index path
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! MyCollectionViewCell
+        
+        let flow = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        flow.sectionInset = UIEdgeInsetsMake(20, 20, 20, 20)
+        flow.itemSize = CGSize(width: screenWidth/2 - 30, height: screenWidth/2 - 30)
         
         let imagesUrl = (AppDelegate.Database.galleryDict[gallery[indexPath.item]]!).components(separatedBy: ",")
         URLSession.shared.dataTask(with: URL(string: imagesUrl[0])!, completionHandler: { (data, response, error) in
@@ -89,9 +90,7 @@ class GalleryViewController: UIViewController, UICollectionViewDataSource, UICol
         return cell
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //print("You selected cell #\(indexPath.item)!")
         
         let imagesUrl = (AppDelegate.Database.galleryDict[gallery[indexPath.item]]!).components(separatedBy: ",")
         
@@ -105,10 +104,9 @@ class GalleryViewController: UIViewController, UICollectionViewDataSource, UICol
                     self.images.append(test!)
                     if (self.images.count == imagesUrl.count){
                         let gallery = SwiftPhotoGallery(delegate: self, dataSource: self)
-                        gallery.backgroundColor = UIColor.white
+                        gallery.backgroundColor = UIColor.black
                         gallery.pageIndicatorTintColor = UIColor.gray.withAlphaComponent(0.5)
                         gallery.currentPageIndicatorTintColor = UIColor(red: 0.0, green: 0.66, blue: 0.875, alpha: 1.0)
-                        
                         gallery.hidePageControl = false
                         self.present(gallery, animated: true, completion: nil)
                     }
@@ -131,7 +129,6 @@ extension GalleryViewController: UIViewControllerTransitioningDelegate {
     }
 }
 
-// MARK: SwiftPhotoGalleryDataSource Methods
 extension GalleryViewController: SwiftPhotoGalleryDataSource {
     
     func numberOfImagesInGallery(gallery: SwiftPhotoGallery) -> Int {
@@ -143,7 +140,6 @@ extension GalleryViewController: SwiftPhotoGalleryDataSource {
     }
 }
 
-// MARK: SwiftPhotoGalleryDelegate Methods
 extension GalleryViewController: SwiftPhotoGalleryDelegate {
     
     func galleryDidTapToClose(gallery: SwiftPhotoGallery) {
